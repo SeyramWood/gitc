@@ -178,29 +178,79 @@ const Index = () => {
             </div>
 
             {/* story */}
-
             <div className="">
 
                 <div className="mb-16">
                     <div className="md:flex justify-center">
-                        <div className="border max-w-fit">
-                            <img class="w-full object-cover" src="https://baconmockup.com/640/303" alt="" />
+                        <div className="border h-[35rem]  ">
+                            <img class="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
-                        <div className="border max-w-fit">
-                            <img src="https://baconmockup.com/640/309" alt="" />
+                        <div className="border h-[35rem]  bg-black">
+                            <div className="container p-4 border ">
+                                <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sit consectetur perferendis quidem a corrupti, veniam itaque minima culpa quibusdam voluptate id dignissimos mollitia rem sequi quasi nisi aspernatur omnis.</p>
+                            </div>
                         </div>
                     </div>
                     <div className="md:flex justify-center">
-                        <div className="border max-w-fit">
-                            <img src="https://baconmockup.com/640/304" alt="" />
+                        <div className="border h-[35rem]  ">
+                            <div className="container p-4 border ">
+                                <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sit consectetur perferendis quidem a corrupti, veniam itaque minima culpa quibusdam voluptate id dignissimos mollitia rem sequi quasi nisi aspernatur omnis.</p>
+                            </div>
                         </div>
-                        <div className="border max-w-fit">
-                            <img src="https://baconmockup.com/640/331" alt="" />
+                        <div className="border h-[35rem]  ">
+                            <img class="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* partners */}
+            <div className="">
+                <div className="flex justify-center gap-1 h-[20rem]">
+                    <div className="">
+                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                    </div>
+                    <div className="">
+                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                    </div>
+                    <div className="">
+                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                    </div>
+                    <div className="">
+                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                    </div>
+                    <div className="">
+                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                    </div>
+
+                </div>
+            </div>
+
+
+            {/* Minister */}
+            <div className="">
+
+                <div className="mb-16">
+                    <div className="md:flex justify-center">
+                        <div className="border h-[40rem]  ">
+                            <img class="w-[80rem] h-[40rem]" src="https://baconmockup.com/640/303" alt="" />
+                        </div>
+                        <div className="border h-[40rem]  bg-black">
+                            <div className="container p-4 border ">
+                                <p className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sit consectetur perferendis quidem a corrupti, veniam itaque minima culpa quibusdam voluptate id dignissimos mollitia rem sequi quasi nisi aspernatur omnis.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            {/* contact */}
+
+            {/* Footer */}
+
 
         </div>
     );
