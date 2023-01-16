@@ -1,9 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Index = () => {
+
+    let [open, setOpen] = useState(false);
+
+    // dropdowns
+    let [aboutDropDown, setAboutDropDown] = useState(false);
+    let [serviceDropDown, setServiceDropDown] = useState(false);
+
+    // slide images
+    const slide = [
+        {
+            img: 'https://baconmockup.com/640/303',
+        },
+        {
+            img: 'https://baconmockup.com/640/301',
+        },
+        {
+            img: 'https://baconmockup.com/640/306',
+        },
+    ];
+
+    // navigation functions
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const prev = () => {
+        const firstSlide = currentIndex === 0;
+        const newIndex = firstSlide ? slide.length - 1 : currentIndex - 1;
+        setCurrentIndex(newIndex);
+    };
+    const next = () => {
+        const lastSlide = currentIndex === slide.length - 1;
+        const newIndex = lastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
+    };
+
     return (
         <div className="">
-            <div className="h-[45rem] bg-cover bg-[url('https://baconmockup.com/640/303')] ">
+            <div className={`h-[45rem] bg-cover `} style={{ backgroundImage: `url(${slide[currentIndex].img})` }}>
                 {/* header */}
                 <div className="h-[45rem] bg-[rgba(0,0,0,0.5)] w-full">
                     {/* infor bar */}
@@ -15,20 +48,35 @@ const Index = () => {
                             <li className="xs:flex text-center">GL-040-2630</li>
                         </ul>
                     </div>
-
                     <div className="sm:mt-7 text-white ">
-                        
-                        <nav class="flex justify-around  p-4 mx-[7rem]  xs:mx-0 xs:block bg-[rgb(225,35,28)] " >
-                            <div class="sm:flex list-none gap-8">
-                                <li>Home</li>
-                                <li>About Us</li>
-                                <li>Our Services</li>
-                                <li>Resources</li>
-                                <li>News</li>
-                                <li>Contact us</li>
+                        <nav className="flex justify-around  p-4 mx-[7rem]  xs:mx-0 xs:block bg-[rgb(225,35,28)] " >
+                            {/* toggler */}
+                            <div className="sm:hidden flex justify-center cursor-pointer " onClick={() => { setOpen(!open) }}>
+                                {open ? 'close' : 'open'}
+                            </div>
+
+                            <div className={`sm:flex list-none gap-8 ${open ? '' : 'hidden'}`}>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">Home</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer block " onClick={() => { setAboutDropDown(!aboutDropDown) }}>About Us
+                                    <div className={`absolute text-white border p-3 mx-auto bg-red-300 ${aboutDropDown ? '' : 'hidden'}`}>
+                                        <div className="">item One</div>
+                                        <div className="">item two</div>
+                                        <div className="">item three</div>
+                                    </div>
+                                </li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer" onClick={() => { setServiceDropDown(!serviceDropDown) }}>Our Services
+                                    <div className={`absolute text-white border p-3 bg-red-300 mx-auto  ${serviceDropDown ? '' : 'hidden'}`}>
+                                        <div className="">item 1</div>
+                                        <div className="">item 2</div>
+                                        <div className="">item 3</div>
+                                    </div>
+                                </li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">Resources</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">News</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">Contact us</li>
                             </div>
                         </nav>
-                        <div className=" md:pl-24 md:mt-[20rem] xs:text-center xs:mt-10">
+                        <div className="px-4 md:pl-24 md:mt-[20rem] xs:text-center xs:mt-10">
                             <p className="text-7xl font-bold">Anti - Dumping</p>
                             <p className="text-3xl ">
                                 We provide provide actions that counteract the dumping of goods in Ghana.
@@ -38,22 +86,27 @@ const Index = () => {
                                 <button className=" border p-4 mx-1 rounded-full  hover:bg-[rgb(225,35,28)] ">Contact Us</button>
                             </div>
                         </div>
-
+                        {/* nav arrows */}
+                        <div className="">
+                            <img src="images/left.png" onClick={prev} className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 w-6 cursor-pointer " alt="left" />
+                        </div>
+                        <div className="">
+                            <img src="images/right.png" onClick={next} className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 w-6 cursor-pointer" alt="right" />
+                        </div>
                     </div>
                 </div>
             </div>
 
-            {/* values */}
+            {/* values section */}
             <div className="bg-slate-100  ">
-                <div className="p-12 md:flex justify-around ">
-
-                    <div className="border flex">
-                        <div className="">
-                            <img src="https://www.flaticon.com/free-icon/target_813907?related_id=813907" alt="logo1" />
+                <div className="container p-12 md:flex justify-center ">
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 w-[30%]">
+                            <img src="images/target.png" alt="Objectivity" className="object-contain" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] text-[rgb(255,0,0)]">Objectivity</h1>
-                            <p>
+                            <p className=" ">
                                 To ensure equality and
                                 fairness in the application of
                                 measures affecting
@@ -62,11 +115,11 @@ const Index = () => {
                                 regulations.
                             </p>
                         </div>
-
                     </div>
-                    <div className="border flex">
-                        <div className="">
-                            <img src="" alt="logo" />
+
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 w-[30%]">
+                            <img src="images/professional.png" alt="professional" className="object-contain" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] text-[rgb(255,0,0)]">Professionalism</h1>
@@ -82,9 +135,9 @@ const Index = () => {
                         </div>
 
                     </div>
-                    <div className="border flex">
-                        <div className="">
-                            <img src="" alt="logo" />
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 w-[30%] ">
+                            <img src="images/integrity.png" alt="Integrity" className="object-contain" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] text-[rgb(255,0,0)]">Integrity</h1>
@@ -96,13 +149,11 @@ const Index = () => {
                                 Commission.
                             </p>
                         </div>
-
                     </div>
-
                 </div>
             </div>
 
-            {/* services */}
+            {/* services section*/}
             <div className="container mx-auto ">
                 <div className="text-center mt-24">
                     <h3 className="text-[60px] font-bold text-[rgb(255,0,0)] ">Services We Provide</h3>
@@ -112,7 +163,7 @@ const Index = () => {
                 <div className=" md:flex justify-center mb-16  ">
                     <div className="m-1">
                         <div className="">
-                            <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Trade Remedies</h1>
@@ -130,7 +181,7 @@ const Index = () => {
                     </div>
                     <div className="m-1">
                         <div className="">
-                            <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Dispute Settlement</h1>
@@ -148,7 +199,7 @@ const Index = () => {
                     </div>
                     <div className="m-1">
                         <div className="">
-                            <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Tarrif Review</h1>
@@ -166,7 +217,7 @@ const Index = () => {
                     </div>
                     <div className="m-1">
                         <div className="">
-                            <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Research</h1>
@@ -187,13 +238,12 @@ const Index = () => {
                 <button className="block border p-4 rounded-full mx-auto w-[30%] hover:bg-[rgb(255,35,34)]"> View More</button>
             </div>
 
-            {/* story */}
+            {/* story section*/}
             <div className="mt-11">
-
                 <div className="mb-16">
                     <div className="md:flex justify-center">
                         <div className="border h-[35rem]  ">
-                            <img class="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
+                            <img className="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
                         <div className="border ">
                             <div className="container p-4  ">
@@ -214,7 +264,7 @@ const Index = () => {
                                     Egypt,South Africa, Morocco,
                                     Tunisia,Mauritius, and Madagascar.
                                 </p>
-                                <button className="block border-2 border-[rgb(255,34,23)] p-4 rounded-full mx-auto mt-3 hover:border-8">
+                                <button className="block border-[rgb(255,35,24)] border p-4 mt-3 rounded-full mx-auto hover:border-2">
                                     Read Our Story
                                 </button>
                             </div>
@@ -223,75 +273,67 @@ const Index = () => {
                     <div className="md:flex justify-center">
                         <div className="border text-white bg-[rgb(255,35,25)] sm:w-[50%]">
                             <div className="container p-4   text-center">
-                                <h1 class="text-[3rem]">
+                                <h1 className="text-[3rem]">
                                     We ensure:
                                 </h1>
                                 <div className="sm:text-[1.3rem]">
                                     <p className="py-4">
                                         (a)Ghana’s compliance with international trade rules and regulations;
-
                                     </p>
                                     <p className="py-3">
-
                                         (b)Fairness, efficiency, transparency and objectivity in the application of measures affecting international trade rules and the use of world trade regulations;
                                     </p>
                                     <p className="py-3">
-
                                         (c)Fair ompetition for persons engaged in domestic production and international trade.
                                     </p>
-                                    <p className="py-3">
-
+                                    <p className="pt-3">
                                         (d)Protection of the domestic market from the impact of unfair trade practices in the course of international trade.
                                     </p>
                                 </div>
-                                <button className="block border-2 border-white p-4 mt-3 rounded-full mx-auto w-[30%] hover:border-8">
+                                <button className="block border-white border p-4 mt-3 rounded-full mx-auto hover:border-2">
                                     Read Our Story
                                 </button>
                             </div>
                         </div>
                         <div className="border h-[35rem] sm:w-[50%] ">
-                            <img class="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
+                            <img className="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
                     </div>
-
                 </div>
-
             </div>
 
-            {/* partners */}
+            {/* partners section */}
             <div className="bg-gray-100 py-16 px-2">
                 <div className="flex justify-center gap-1 h-10rem]">
                     <div className="">
-                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="https://baconmockup.com/640/300" class="w-full object-cover h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
-
                 </div>
             </div>
 
             {/* Minister */}
             <div className="mt-[5rem]">
-
                 <div className="mb-16">
                     <div className="md:flex justify-center">
                         <div className="border  ">
-                            <img class="w-[80rem] h-[40rem]" src="https://baconmockup.com/640/303" alt="" />
+                            <img className="w-[80rem] h-[40rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
                         <div className="border h-[40rem]  ">
                             <div className="container p-4 border ">
+                                <img src="images/quote.png" alt="quote" className="w-[20%] xs:hidden" />
                                 <p className="pl-4 sm:text-[2rem] ">
-                                    <span className="pl-4 font-bold " >“</span><br />
                                     The bane of development
                                     in developing countries as
                                     against developed
@@ -299,11 +341,10 @@ const Index = () => {
                                     industrialization in the
                                     former. The inability of
                                     developing counties.......
-
                                 </p>
                                 <h1 className="pl-5 text-6  ">Read More </h1>
                                 <div className="pl-5 ">
-                                    <h1 class="text-[30px] font-bold text-[rgba(255,23,025)]">
+                                    <h1 className="text-[30px] font-bold text-[rgba(255,23,025)]">
                                         Frank Agyakum
                                     </h1>
                                     <p className="">Executive Secretary</p>
@@ -312,10 +353,9 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            {/* contact */}
+            {/* contact section*/}
             <div className="md:flex w-full  text-center px-4">
                 <div className="sm:w-[50%] ">
                     <div className="container mx-auto">
@@ -350,7 +390,6 @@ const Index = () => {
             {/* Footer */}
             <div className="bg-black px-12 py-12">
                 <div className="sm:flex  justify-around gap-9 sm:gap-3 text-white">
-
                     <ul>
                         <p className="mb-4">Contact Information</p>
                         <li>2nd Floor (West Wing),</li>
