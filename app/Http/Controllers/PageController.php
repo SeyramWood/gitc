@@ -11,4 +11,8 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Index');
     }
+      public function about()
+    {
+        return Inertia::render('Website/About');
+    }
 }
