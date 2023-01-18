@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Service = () => {
 
     return (
-     <div className="bg-white">
+     <div className="bg-white text-black">
 
 
          <div className="hero min-h-screen bg-accent-content">
