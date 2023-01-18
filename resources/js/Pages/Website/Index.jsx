@@ -36,6 +36,8 @@ const Index = () => {
 
     return (
         <div className="">
+
+
             <div className={`h-[45rem] bg-cover `} style={{ backgroundImage: `url(${slide[currentIndex].img})` }}>
                 {/* header */}
                 <div className="h-[45rem] bg-[rgba(0,0,0,0.5)] w-full">
@@ -58,7 +60,7 @@ const Index = () => {
                             <div className={`sm:flex list-none gap-8 ${open ? '' : 'hidden'}`}>
                                 <li className="hover:text-red-100 hover:underline cursor-pointer">Home</li>
                                 <li className="hover:text-red-100 hover:underline cursor-pointer block " onClick={() => { setAboutDropDown(!aboutDropDown) }}>About Us
-                                    <div className={`absolute text-white border p-3 mx-auto bg-red-300 ${aboutDropDown ? '' : 'hidden'}`}>
+                                    <div className={`absolute text-white border p-3 mx-auto bg-red-300 ${aboutDropDown ? '' : 'hidden'}`}  aria-labelledby="dropdownLargeButton">
                                         <div className="">item One</div>
                                         <div className="">item two</div>
                                         <div className="">item three</div>

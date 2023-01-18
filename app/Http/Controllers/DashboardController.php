@@ -9,6 +9,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Backend/Index');
+        return Inertia::render('Backend/Footer');
     }
 }
