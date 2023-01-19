@@ -26,16 +26,25 @@ class PageController extends Controller
     {
         return Inertia::render('Website/ServiceSaufgard');
     }
+
     public function ServiceResearch()
     {
         return Inertia::render('Website/ServiceResearch');
     }
+
     public function ServiceDispute()
     {
         return Inertia::render('Website/ServiceDispute');
     }
+
     public function ServiceDumping()
     {
         return Inertia::render('Website/ServiceDumping');
     }
+
+    public function about()
+    {
+        return Inertia::render('Website/About');
+    }
+    
 }

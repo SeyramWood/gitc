@@ -15,9 +15,15 @@ module.exports = {
             fontFamily: {
                 sans: ["Nunito", ...defaultTheme.fontFamily.sans],
             },
-            screens: {
-                'xs': {'max':'475px'},
-                ...defaultTheme.screens,
+            colors: {
+                primary: "#F9443E",
+                secondary: "#111111",
+                tertiary: "#272727",
+            },
+            spacing: {
+                "web-l": "3rem",
+                "web-s": "1.5rem",
+                "web-xs": "1rem",
             },
         },
     },

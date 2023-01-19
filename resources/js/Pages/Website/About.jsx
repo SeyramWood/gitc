@@ -1,0 +1,203 @@
+const About = () => {
+    return (
+        <main>
+            {/* Governing Board */}
+            <p className="text-[2rem] font-bold text-[rgb(255,34,23)] text-center">
+                Governing Board
+            </p>
+            <div className="px-[2rem]">
+                {/* cards container */}
+                <div class="sm:grid grid-cols-3 sm:gap-10 mt-3 ">
+                    <div className="shadow-lg hover:scale-110 transition duration-700 ease-in-out">
+                        <div className="bg-black cursor-pointer">
+                            <img src="images/homePage/serviceOne.jpg" className=" object-cover h-[17rem] hover:opacity-75   bg-black/20" alt="" />
+                        </div>
+                        <div className="p-3 bg-slate-100">
+                            <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
+                                Personality Name
+                            </p>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officia cumque
+                                ratione incidunt ipsa dolor
+                                neque
+                            </p>
+                        </div>
+                    </div>
+                    <div className="shadow-lg hover:scale-110 transition duration-700 ease-in-out">
+                        <div className="bg-black cursor-pointer">
+                            <img src="images/homePage/serviceOne.jpg" className=" object-cover h-[17rem] hover:opacity-75   bg-black/20" alt="" />
+                        </div>
+                        <div className="p-3 bg-slate-100">
+                            <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
+                                Personality Name
+                            </p>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officia cumque
+                                ratione incidunt ipsa dolor
+                                neque
+                            </p>
+                        </div>
+                    </div>
+                    <div className="shadow-lg hover:scale-110 transition duration-700 ease-in-out">
+                        <div className="bg-black cursor-pointer">
+                            <img src="images/homePage/serviceOne.jpg" className=" object-cover h-[17rem] hover:opacity-75   bg-black/20" alt="" />
+                        </div>
+                        <div className="p-3 bg-slate-100">
+                            <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
+                                Personality Name
+                            </p>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officia cumque
+                                ratione incidunt ipsa dolor
+                                neque
+                            </p>
+                        </div>
+                    </div>
+                    <div className="shadow-lg hover:scale-110 transition duration-700 ease-in-out">
+                        <div className="bg-black cursor-pointer">
+                            <img src="images/homePage/serviceOne.jpg" className=" object-cover h-[17rem] hover:opacity-75   bg-black/20" alt="" />
+                        </div>
+                        <div className="p-3 bg-slate-100">
+                            <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
+                                Personality Name
+                            </p>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officia cumque
+                                ratione incidunt ipsa dolor
+                                neque
+                            </p>
+                        </div>
+                    </div>
+                    <div className="shadow-lg hover:scale-110 transition duration-700 ease-in-out">
+                        <div className="bg-black cursor-pointer">
+                            <img src="images/homePage/serviceOne.jpg" className=" object-cover h-[17rem] hover:opacity-75   bg-black/20" alt="" />
+                        </div>
+                        <div className="p-3 bg-slate-100">
+                            <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
+                                Personality Name
+                            </p>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officia cumque
+                                ratione incidunt ipsa dolor
+                                neque
+                            </p>
+                        </div>
+                    </div>
+                    <div className="shadow-lg hover:scale-110 transition duration-700 ease-in-out">
+                        <div className="bg-black cursor-pointer">
+                            <img src="images/homePage/serviceOne.jpg" className=" object-cover h-[17rem] hover:opacity-75   bg-black/20" alt="" />
+                        </div>
+                        <div className="p-3 bg-slate-100">
+                            <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
+                                Personality Name
+                            </p>
+                            <p className="mt-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officia cumque
+                                ratione incidunt ipsa dolor
+                                neque
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            {/* values */}
+            <div class="my-[8rem]" style={{ backgroundImage: "url('images/about/bg.jpg')" }}>
+                <div className="p-12 md:flex justify-center bg-[rgba(255,34,24,0.51)] text-white" >
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
+                            <img src="images/homePage/objectivity.png" alt="Objectivity" className="object-contain" />
+                        </div>
+                        <div className="">
+                            <h1 className="text-[30px] text-white">Objectivity</h1>
+                            <p className=" ">
+                                To ensure equality and
+                                fairness in the application of
+                                measures affecting
+                                international trade and the
+                                use of world trade
+                                regulations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
+                            <img src="images/homePage/professionalism.png" alt="professional" className="object-contain" />
+                        </div>
+                        <div className="">
+                            <h1 className="text-[30px] text-white">Professionalism</h1>
+                            <p>
+                                To ensure a high level of
+                                competence and efficiency
+                                in applying international
+                                trade rules and regulations
+                                as under the World Trade
+                                Organization (WTO)
+                                provisions.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
+                            <img src="images/homePage/integrity.png" alt="Integrity" className="object-contain" />
+                        </div>
+                        <div className="">
+                            <h1 className="text-[30px] text-white">Integrity</h1>
+                            <p>
+                                To ensure absolute
+                                neutrality and consistency in
+                                the execution of the
+                                mandate of the
+                                Commission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* team */}
+            <div className="flex p-2">
+                <div className="w-[25%]">
+                    <div className="h-[10rem]">
+                        <img src="images/homePage/serviceOne.jpg" className="h-[10rem]" alt="" />
+                    </div>
+                    <div className="p-3">
+                        <p>Head</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ratione rem dolor dolorem ipsam !</p>
+                    </div>
+                </div>
+                <div className="w-[25%]">
+                    <div className="h-[10rem]">
+                        <img src="images/homePage/serviceOne.jpg" className="h-[10rem]" alt="" />
+                    </div>
+                    <div className="p-3">
+                        <p>Head</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ratione rem dolor dolorem ipsam !</p>
+                    </div>
+                </div>
+                <div className="w-[25%]">
+                    <div className="h-[10rem]">
+                        <img src="images/homePage/serviceOne.jpg" className="h-[10rem]" alt="" />
+                    </div>
+                    <div className="p-3">
+                        <p>Head</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ratione rem dolor dolorem ipsam !</p>
+                    </div>
+                </div>
+                <div className="w-[25%]">
+                    <div className="h-[10rem]">
+                        <img src="images/homePage/serviceOne.jpg" className="h-[10rem]" alt="" />
+                    </div>
+                    <div className="p-3">
+                        <p>Head</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ratione rem dolor dolorem ipsam !</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
+}
+
+export default About;

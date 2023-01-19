@@ -22,3 +22,4 @@ Route::get('/service/saufgard', [PageController::class, 'ServiceSaufgard']);
 Route::get('/service/research', [PageController::class, 'ServiceResearch']);
 Route::get('/service/dispute', [PageController::class, 'ServiceDispute']);
 Route::get('/service/dumping', [PageController::class, 'ServiceDumping']);
+Route::get('/about', [PageController::class, 'about']);
