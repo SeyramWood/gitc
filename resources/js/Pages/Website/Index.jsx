@@ -45,9 +45,9 @@ const Index = () => {
 
     return (
         <WebsiteLayout page="home">
-            <div className="text-grey text-web-s">
+            <div className="text-grey text-lg">
                 {/* values section */}
-                <div className="bg-slate-100 text-grey">
+                <div className="bg-slate-100 mb-32 ">
                     <div
                         className="container justify-center p-12 md:flex"
                         data-aos="fade-up"
@@ -62,7 +62,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-[30px] text-[rgb(255,0,0)]">
+                                <h1 className="text-3xl text-primary">
                                     Objectivity
                                 </h1>
                                 <p className="">
@@ -82,7 +82,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-[30px] text-[rgb(255,0,0)]">
+                                <h1 className="text-3xl text-primary">
                                     Professionalism
                                 </h1>
                                 <p>
@@ -102,7 +102,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-[30px] text-[rgb(255,0,0)]">
+                                <h1 className="text-3xl text-primary">
                                     Integrity
                                 </h1>
                                 <p>
@@ -115,16 +115,16 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="container mx-auto ">
-                    <div className="mt-24 text-center">
-                        <h3 className="text-[60px] xs:text-[30px] font-bold text-[rgb(255,0,0)] ">
+                <div className="container mb-32 mx-auto ">
+                    <div className=" pb-10 text-center">
+                        <h3 className="text-5xl font-bold text-primary ">
                             Services We Provide
                         </h3>
-                        <p className="mb-12">COVERED IN THESE AREAS</p>
+                        <p className="">COVERED IN THESE AREAS</p>
                     </div>
 
                     <div
-                        className="justify-center mb-16 md:flex"
+                        className="justify-center md:flex"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
@@ -136,17 +136,17 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-9">
-                                <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">
+                            <div className="my-3">
+                                <h1 className="text-3xl text-primary py-2">
                                     Trade Remedies
                                 </h1>
-                                <p className="text-[16px]">
+                                <p className="mb-3">
                                     To ensure equality and fairness in the
                                     application of measures affecting international
                                     trade and the use of world trade regulations.
                                 </p>
 
-                                <Link href="/" className="pt-4 text-red-600 hover:text-red-300">
+                                <Link href="/" className="text-primary hover:text-red-300">
                                     Read More
                                 </Link>
                             </div>
@@ -159,18 +159,18 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-9 ">
-                                <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">
+                            <div className="my-3">
+                                <h1 className="text-3xl text-primary py-2">
                                     Dispute Settlement
                                 </h1>
-                                <p className="text-[16px]">
+                                <p className="mb-3">
                                     Providing actions to resolve issues arising out
                                     of a member-state violating the rules and
                                     regulationso f the World Trade Organization.
                                 </p>
-                                <p className="pt-4 text-red-600 hover:text-red-300">
+                                <Link href="/" className="text-primary hover:text-red-300">
                                     Read More
-                                </p>
+                                </Link>
                             </div>
                         </div>
                         <div className="sm:w-[25%]  ">
@@ -181,19 +181,19 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-9">
-                                <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">
+                            <div className="my-3">
+                                <h1 className="text-3xl text-primary">
                                     Tarrif Review
                                 </h1>
-                                <p className="text-[16px]">
+                                <p className="mb-3 sm:px-1">
                                     Providing a review of customs duty that affects
                                     the production and competitiveness of goods in
                                     relation to the domestic producer or domestic
                                     industry
                                 </p>
-                                <p className="pt-4 text-red-600 hover:text-red-300">
+                                <Link href="/" className="text-primary hover:text-red-300 sm:pl-1">
                                     Read More
-                                </p>
+                                </Link>
                             </div>
                         </div>
                         <div className="sm:w-[25%] ">
@@ -204,20 +204,20 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-9">
-                                <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">
+                            <div className="my-3">
+                                <h1 className="text-3xl text-primary">
                                     Research
                                 </h1>
-                                <p className="text-[16px]">
+                                <p className="mb-3">
                                     The Commission is to study, identify, and
                                     recommend to the Minister of Trade and Industry
                                     tariff levels for specific sectors of the
                                     economy with due regard to the effective rate of
                                     protection.
                                 </p>
-                                <p className="pt-4 text-red-600 hover:text-red-300">
+                                <Link href="/" className="text-primary hover:text-red-300">
                                     Read More
-                                </p>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -226,7 +226,7 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
-                <div className="mt-11">
+                <div className="mb-32">
                     <div className="mb-16">
                         <div className="justify-center md:flex">
                             <div className=" h-[35rem]  ">
@@ -238,19 +238,19 @@ const Index = () => {
                             </div>
                             <div className="">
                                 <div
-                                    className="container p-4 "
+                                    className="container p-6 "
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <p className="sm:text-[25px]">
+                                    <p className="sm:text-3lx text-center">
                                         DID YOU KNOW THAT
                                     </p>
-                                    <p className="sm:text-[30px] font-bold text-[rgb(255,35,24)] my-5">
+                                    <p className="sm:text-3xl font-bold text-primary my-5 text-center">
                                         GITC is among seven trade remedy
                                         institutions and investigating authorities
                                         in Africa.
                                     </p>
-                                    <p className="sm:text-[1.2rem] mb-5">
+                                    <p className="mb-5 sm:mb-14 sm:text-2xl text-center">
                                         These other African countries are:
                                         Egypt,South Africa, Morocco,
                                         Tunisia,Mauritius, and Madagascar. These
@@ -259,7 +259,7 @@ const Index = () => {
                                         Madagascar.
                                     </p>
                                     <Link hre="/">
-                                        <ButtonOutline className="block border-[rgb(255,35,24)] border p-4 mt-3 rounded-full mx-auto hover:border-2">
+                                        <ButtonOutline className="block border-primary border p-4 rounded-full mx-auto hover:border-2">
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
@@ -269,7 +269,7 @@ const Index = () => {
                         <div className="justify-center md:flex xs:flex-col-reverse ">
                             <div className=" text-white bg-[rgb(255,35,25)]">
                                 <div
-                                    className="container p-4 text-center"
+                                    className="container p-6 text-center"
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -315,15 +315,12 @@ const Index = () => {
                 </div>
 
                 {/* partners section */}
-                <div className="px-2 py-16 bg-gray-100">
+                <div className="px-2 mb-32 bg-gray-100">
                     <div
                         className="flex justify-center gap-1 h-10rem]"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        {/* <div className="">
-                        <img src="images/homePage/sponsorOne.jpg" className="w-full object-contain h-[10rem]" alt="" />
-                    </div> */}
                         <div className="">
                             <img
                                 src="images/homePage/sponsorTwo.png"
@@ -356,55 +353,55 @@ const Index = () => {
                 </div>
 
                 {/* Minister */}
-                <div className="mt-[5rem]">
-                    <div className="mb-16">
-                        <div className="justify-center md:flex">
-                            <div className="border ">
+                <div className="mb-32 block mx-12 shadow-lg"
+                 data-aos="fade-up"
+                    data-aos-duration="2000">
+
+                    <div className="justify-center sm:flex sm:w-[100%]">
+                        <div className="sm:w-[50%] ">
+                            <img
+                                className="object-cover sm:h-[25rem]"
+                                src="https://baconmockup.com/640/303"
+                                alt=""
+                               
+                            />
+                        </div>
+                        <div className="sm:w-[50%] sm:px-8">
+                            <div
+                                className="container py-4"
+
+                            >
                                 <img
-                                    className="w-[80rem] sm:h-[25rem]"
-                                    src="https://baconmockup.com/640/303"
-                                    alt=""
-                                    data-aos="zoom-in-down"
-                                    data-aos-duration="300"
+                                    src="images/quote.png"
+                                    alt="quote"
+                                    className="w-[8%] pl-5 xs:hidden"
                                 />
-                            </div>
-                            <div className="">
-                                <div
-                                    className="container py-4"
-                                    data-aos="zoom-in-down"
-                                    data-aos-duration="500"
-                                >
-                                    <img
-                                        src="images/quote.png"
-                                        alt="quote"
-                                        className="w-[8%] pl-5 xs:hidden"
-                                    />
-                                    <p className="pl-4 sm:text-[1.8rem] my-2">
-                                        The bane of development in developing
-                                        countries as against developed countries is
-                                        the lack of industrialization in the former.
-                                        The inability of developing counties.......
-                                    </p>
-                                    <h1 className="pl-5 my-5 text-6 ">
-                                        Read More{" "}
+                                <p className="pl-4 sm:text-3xl text-black font-bold my-6">
+                                    The bane of development in developing
+                                    countries as against developed countries is
+                                    the lack of industrialization in the former.
+                                    The inability of developing counties ...
+                                </p>
+                                <h1 className="pl-5 hover:text-red-300 text-red-400 cursor-pointer  ">
+                                    Read More
+                                </h1>
+                                <div className="pl-5 ">
+                                    <h1 className="text-2xl text-primary pt-3">
+                                        Frank Agyakum
                                     </h1>
-                                    <div className="pl-5 ">
-                                        <h1 className="text-[30px] font-bold text-[rgba(255,23,025)]">
-                                            Frank Agyakum
-                                        </h1>
-                                        <p className="">Executive Secretary</p>
-                                    </div>
+                                    <p className=" text-primary font-light pt-1">Executive Secretary</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 {/* contact section*/}
-                <div className="w-full px-4 text-center md:flex">
+                <div className="w-full text-center md:flex px-2">
                     <div className="md:w-[50%] ">
-                        <div className="container mx-auto">
-                            <h1 className="text-[3rem] font-bold text-[rgb(255,35,25)]">
+                        <div className="mx-auto">
+                            <h1 className="text-3xl font-bold text-primary">
                                 Connect with us
                             </h1>
                             <p className="text-[1.3rem]">
@@ -415,17 +412,17 @@ const Index = () => {
                         </div>
                     </div>
                     <div className="md:w-[50%]  ">
-                        <div className="container ">
-                            <form action="" className="">
+                        <div className=" ">
+                            <form action="" className="sm:float-left">
                                 <div className="">
                                     <input
-                                        className="m-3 bg-gray-100"
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Full Name *"
                                         required="required"
                                         type="text"
                                     />
                                     <input
-                                        className="m-3 bg-gray-100"
+                                        className="m-3 border-none bg-gray-100 focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Email *"
                                         required="required"
                                         type="Email"
@@ -433,29 +430,28 @@ const Index = () => {
                                 </div>
                                 <div className="">
                                     <input
-                                        className="m-3 bg-gray-100"
+                                        className="m-3 border-none bg-gray-100 focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Subject *"
                                         required="required"
                                         type="text"
                                     />
                                     <input
-                                        className="m-3 bg-gray-100"
+                                        className="m-3 border-none bg-gray-100 focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Phone Number"
                                         type="text"
                                     />
                                 </div>
-                                <div className="">
-                                    {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
+                                <div className="pt-2">
                                     <textarea
-                                        className="sm:w-[68%] bg-gray-100"
+                                        className="sm:w-[95%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
                                         rows="4"
                                         placeholder="Message"
                                         required="required"
                                         name=""
-                                    ></textarea>
+                                    />
                                 </div>
 
-                                <Button className="my-[3rem]">Submit</Button>
+                                <Button className="mt-[2rem] mb-[3rem]">Submit</Button>
                             </form>
                         </div>
                     </div>
