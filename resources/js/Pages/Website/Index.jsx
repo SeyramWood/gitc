@@ -54,7 +54,7 @@ const Index = () => {
                         data-aos-duration="2000"
                     >
                         <div className="my-5 sm:flex">
-                            <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
+                            <div className="flex p-3 sm:w-[80%] w-[40%] ">
                                 <img
                                     src="images/homePage/objectivity.png"
                                     alt="Objectivity"
@@ -62,7 +62,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-3xl text-primary">
+                                <h1 className="text-3xl my-4 text-primary">
                                     Objectivity
                                 </h1>
                                 <p className="">
@@ -74,7 +74,7 @@ const Index = () => {
                         </div>
 
                         <div className="my-5 sm:flex">
-                            <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
+                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
                                 <img
                                     src="images/homePage/professionalism.png"
                                     alt="professional"
@@ -82,7 +82,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-3xl text-primary">
+                                <h1 className="text-3xl my-4 text-primary">
                                     Professionalism
                                 </h1>
                                 <p>
@@ -94,7 +94,7 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="my-5 sm:flex">
-                            <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
+                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
@@ -102,7 +102,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-3xl text-primary">
+                                <h1 className="text-3xl my-4 text-primary">
                                     Integrity
                                 </h1>
                                 <p>
@@ -229,9 +229,9 @@ const Index = () => {
                 <div className="mb-32">
                     <div className="mb-16">
                         <div className="justify-center md:flex">
-                            <div className=" h-[35rem]  ">
+                            <div className=" sm:h-[35rem]  ">
                                 <img
-                                    className="w-[80rem] h-[35rem]"
+                                    className="sm:w-[80rem] sm:h-[35rem]"
                                     src="images/homePage/storyOne.jpg"
                                     alt=""
                                 />
@@ -266,8 +266,8 @@ const Index = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="justify-center md:flex xs:flex-col-reverse ">
-                            <div className=" text-white bg-[rgb(255,35,25)]">
+                        <div className="justify-center sm:flex sm:flex-row flex flex-col-reverse ">
+                            <div className=" text-white bg-primary">
                                 <div
                                     className="container p-6 text-center"
                                     data-aos="fade-up"
@@ -303,9 +303,9 @@ const Index = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="h-[35rem] ">
+                            <div className="sm:h-[35rem] ">
                                 <img
-                                    className="w-[80rem] h-[35rem]"
+                                    className="sm:w-[80rem] sm:h-[35rem]"
                                     src="images/homePage/storyTwo.jpg"
                                     alt=""
                                 />
