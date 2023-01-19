@@ -1,12 +1,6 @@
-import React, { useEffect, useState } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'
+import React, { useState } from "react";
 
 const Index = () => {
-
-    useEffect(() => {
-        AOS.init();
-    }, [])
 
     let [open, setOpen] = useState(false);
 
@@ -46,44 +40,44 @@ const Index = () => {
                 {/* header */}
                 <div className="h-[45rem] bg-[rgba(0,0,0,0.5)] w-full">
                     {/* infor bar */}
-                    <div className="p-3 bg-white ">
+                    <div className=" p-3 bg-white ">
                         <ul className="flex justify-around xs:text-xs ">
-                            <li className="text-center xs:flex " >Mon-Fri 08:00 - 17:00</li>
-                            <li className="text-center xs:flex">+233(0) 30 296 0298</li>
-                            <li className="text-center xs:flex">info@gitc.gov.gh</li>
-                            <li className="text-center xs:flex">GL-040-2630</li>
+                            <li className="xs:flex text-center " >Mon-Fri 08:00 - 17:00</li>
+                            <li className="xs:flex text-center">+233(0) 30 296 0298</li>
+                            <li className="xs:flex text-center">info@gitc.gov.gh</li>
+                            <li className="xs:flex text-center">GL-040-2630</li>
                         </ul>
                     </div>
-                    <div className="text-white sm:mt-7 ">
-                        <nav className="flex justify-around  p-4 mx-[7rem] sm:mx-0 xs:mx-0 xs:block bg-[rgb(225,35,28)] " >
+                    <div className="sm:mt-7 text-white ">
+                        <nav className="flex justify-around  p-4 mx-[7rem]  xs:mx-0 xs:block bg-[rgb(225,35,28)] " >
                             {/* toggler */}
-                            <div className="flex justify-center cursor-pointer sm:hidden " onClick={() => { setOpen(!open) }}>
+                            <div className="sm:hidden flex justify-center cursor-pointer " onClick={() => { setOpen(!open) }}>
                                 {open ? 'close' : 'open'}
                             </div>
 
                             <div className={`sm:flex list-none gap-8 ${open ? '' : 'hidden'}`}>
-                                <li className="cursor-pointer hover:text-red-100 hover:underline">Home</li>
-                                <li className="block cursor-pointer hover:text-red-100 hover:underline " onClick={() => { setAboutDropDown(!aboutDropDown) }}>About Us
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">Home</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer block " onClick={() => { setAboutDropDown(!aboutDropDown) }}>About Us
                                     <div className={`absolute text-white border p-3 mx-auto bg-red-300 ${aboutDropDown ? '' : 'hidden'}`}>
                                         <div className="">item One</div>
                                         <div className="">item two</div>
                                         <div className="">item three</div>
                                     </div>
                                 </li>
-                                <li className="cursor-pointer hover:text-red-100 hover:underline" onClick={() => { setServiceDropDown(!serviceDropDown) }}>Our Services
+                                <li className="hover:text-red-100 hover:underline cursor-pointer" onClick={() => { setServiceDropDown(!serviceDropDown) }}>Our Services
                                     <div className={`absolute text-white border p-3 bg-red-300 mx-auto  ${serviceDropDown ? '' : 'hidden'}`}>
                                         <div className="">item 1</div>
                                         <div className="">item 2</div>
                                         <div className="">item 3</div>
                                     </div>
                                 </li>
-                                <li className="cursor-pointer hover:text-red-100 hover:underline">Resources</li>
-                                <li className="cursor-pointer hover:text-red-100 hover:underline">News</li>
-                                <li className="cursor-pointer hover:text-red-100 hover:underline">Contact us</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">Resources</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">News</li>
+                                <li className="hover:text-red-100 hover:underline cursor-pointer">Contact us</li>
                             </div>
                         </nav>
-                        <div className="px-4 md:pl-24 sm:pl-24 sm:mt-[15rem] md:mt-[20rem] xs:text-center xs:mt-10">
-                            <p className="font-bold text-7xl">Anti - Dumping</p>
+                        <div className="px-4 md:pl-24 md:mt-[20rem] xs:text-center xs:mt-10">
+                            <p className="text-7xl font-bold">Anti - Dumping</p>
                             <p className="text-3xl ">
                                 We provide provide actions that counteract the dumping of goods in Ghana.
                             </p>
@@ -104,15 +98,15 @@ const Index = () => {
             </div>
 
             {/* values section */}
-            <div className="bg-slate-100" >
-                <div className="container justify-center p-12 md:flex" data-aos="fade-up" data-aos-duration="2000">
-                    <div className="my-5 sm:flex">
-                        <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
-                            <img src="images/homePage/objectivity.png" alt="Objectivity" className="object-contain" />
+            <div className="bg-slate-100  ">
+                <div className="container p-12 md:flex justify-center ">
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 w-[30%]">
+                            <img src="images/target.png" alt="Objectivity" className="object-contain" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] text-[rgb(255,0,0)]">Objectivity</h1>
-                            <p className="">
+                            <p className=" ">
                                 To ensure equality and
                                 fairness in the application of
                                 measures affecting
@@ -123,9 +117,9 @@ const Index = () => {
                         </div>
                     </div>
 
-                    <div className="my-5 sm:flex">
-                        <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
-                            <img src="images/homePage/professionalism.png" alt="professional" className="object-contain" />
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 w-[30%]">
+                            <img src="images/professional.png" alt="professional" className="object-contain" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] text-[rgb(255,0,0)]">Professionalism</h1>
@@ -141,9 +135,9 @@ const Index = () => {
                         </div>
 
                     </div>
-                    <div className="my-5 sm:flex">
-                        <div className="flex p-3 xs:w-[30%] sm:w-[80%] ">
-                            <img src="images/homePage/integrity.png" alt="Integrity" className="object-contain" />
+                    <div className="sm:flex my-5">
+                        <div className="flex p-3 w-[30%] ">
+                            <img src="images/integrity.png" alt="Integrity" className="object-contain" />
                         </div>
                         <div className="">
                             <h1 className="text-[30px] text-[rgb(255,0,0)]">Integrity</h1>
@@ -161,19 +155,19 @@ const Index = () => {
 
             {/* services section*/}
             <div className="container mx-auto ">
-                <div className="mt-24 text-center">
-                    <h3 className="text-[60px] xs:text-[30px] font-bold text-[rgb(255,0,0)] ">Services We Provide</h3>
-                    <p className="mb-12">COVERED IN THESE AREAS</p>
+                <div className="text-center mt-24">
+                    <h3 className="text-[60px] font-bold text-[rgb(255,0,0)] ">Services We Provide</h3>
+                    <p>COVERED IN THESE AREAS</p>
                 </div>
 
-                <div className="justify-center mb-16 md:flex" data-aos="fade-up" data-aos-duration="2000">
-                    <div className="sm:w-[25%]">
+                <div className=" md:flex justify-center mb-16  ">
+                    <div className="m-1">
                         <div className="">
-                            <img src="images/homePage/serviceOne.jpg" className="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
-                        <div className="my-9">
+                        <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Trade Remedies</h1>
-                            <p className="text-[16px]">
+                            <p>
                                 To ensure equality and
                                 fairness in the application of
                                 measures affecting
@@ -181,92 +175,88 @@ const Index = () => {
                                 use of world trade
                                 regulations.
                             </p>
-                            <p className="pt-4 text-red-600 hover:text-red-300">Read More</p>
+                            <p className="hover:text-red-500">Read More</p>
                         </div>
 
                     </div>
-                    <div className="sm:w-[25%] ">
+                    <div className="m-1">
                         <div className="">
-                            <img src="images/homePage/serviceTwo.jpg" className="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
-                        <div className="my-9 ">
+                        <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Dispute Settlement</h1>
-                            <p className="text-[16px]">
-                                Providing actions to
-                                resolve issues arising out
-                                of a member-state
-                                violating the rules and
-                                regulationso f the World
-                                Trade Organization.
+                            <p>
+                                To ensure equality and
+                                fairness in the application of
+                                measures affecting
+                                international trade and the
+                                use of world trade
+                                regulations.
                             </p>
-                            <p className="pt-4 text-red-600 hover:text-red-300">Read More</p>
+                            <p className="hover:text-red-500">Read More</p>
                         </div>
 
                     </div>
-                    <div className="sm:w-[25%]  ">
+                    <div className="m-1">
                         <div className="">
-                            <img src="images/homePage/serviceThree.jpg" className="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
-                        <div className="my-9">
+                        <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Tarrif Review</h1>
-                            <p className="text-[16px]">
-                                Providing a review of
-                                customs duty that affects
-                                the production and
-                                competitiveness of goods
-                                in relation to the
-                                domestic producer or
-                                domestic industry
+                            <p>
+                                To ensure equality and
+                                fairness in the application of
+                                measures affecting
+                                international trade and the
+                                use of world trade
+                                regulations.
                             </p>
-                            <p className="pt-4 text-red-600 hover:text-red-300">Read More</p>
+                            <p className="hover:text-red-500">Read More</p>
                         </div>
 
                     </div>
-                    <div className="sm:w-[25%] ">
+                    <div className="m-1">
                         <div className="">
-                            <img src="images/homePage/serviceFour.jpg" className="w-full object-cover h-[15rem]" alt="" />
+                            <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[15rem]" alt="" />
                         </div>
-                        <div className="my-9">
+                        <div className="">
                             <h1 className="text-[30px] font-bold text-[rgb(255,0,0)]">Research</h1>
-                            <p className="text-[16px]">
-                                The Commission is to
-                                study, identify, and
-                                recommend to the
-                                Minister of Trade and
-                                Industry tariff levels for
-                                specific sectors of the
-                                economy with due regard
-                                to the effective rate of
-                                protection.
+                            <p>
+                                To ensure equality and
+                                fairness in the application of
+                                measures affecting
+                                international trade and the
+                                use of world trade
+                                regulations.
                             </p>
-                            <p className="pt-4 text-red-600 hover:text-red-300">Read More</p>
+                            <p className="hover:text-red-500">Read More</p>
                         </div>
 
                     </div>
                 </div>
 
-                <button className="block border p-4 rounded-full mx-auto hover:text-white hover:bg-[rgb(255,35,34)]"> View More</button>
+                <button className="block border p-4 rounded-full mx-auto w-[30%] hover:bg-[rgb(255,35,34)]"> View More</button>
             </div>
 
             {/* story section*/}
             <div className="mt-11">
                 <div className="mb-16">
-                    <div className="justify-center md:flex">
-                        <div className=" h-[35rem]  ">
-                            <img className="w-[80rem] h-[35rem]" src="images/homePage/storyOne.jpg" alt="" />
+                    <div className="md:flex justify-center">
+                        <div className="border h-[35rem]  ">
+                            <img className="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
-                        <div className="" >
-                            <div className="container p-4 " data-aos="fade-up" data-aos-duration="2000">
+                        <div className="border ">
+                            <div className="container p-4  ">
                                 <p className="sm:text-[25px]">
                                     DID YOU KNOW THAT
                                 </p>
-                                <p className="sm:text-[30px] font-bold text-[rgb(255,35,24)] my-5">
+                                <p className="sm:text-[35px] font-bold text-[rgb(255,35,24)] my-5">
                                     GITC is among seven trade
                                     remedy institutions and
                                     investigating authorities in
                                     Africa.
                                 </p>
-                                <p className="sm:text-[1.2rem] mb-5">
+                                <p className="sm:text-[25px] mb-5">
                                     These other African countries are:
                                     Egypt,South Africa, Morocco,
                                     Tunisia,Mauritius, and Madagascar.
@@ -280,9 +270,9 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="justify-center md:flex xs:flex-col-reverse ">
-                        <div className=" text-white bg-[rgb(255,35,25)]" >
-                            <div className="container p-4 text-center" data-aos="fade-up" data-aos-duration="2000">
+                    <div className="md:flex justify-center">
+                        <div className="border text-white bg-[rgb(255,35,25)] sm:w-[50%]">
+                            <div className="container p-4   text-center">
                                 <h1 className="text-[3rem]">
                                     We ensure:
                                 </h1>
@@ -300,35 +290,35 @@ const Index = () => {
                                         (d)Protection of the domestic market from the impact of unfair trade practices in the course of international trade.
                                     </p>
                                 </div>
-                                <button className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
+                                <button className="block border-white border p-4 mt-3 rounded-full mx-auto hover:border-2">
                                     Read Our Story
                                 </button>
                             </div>
                         </div>
-                        <div className="h-[35rem] ">
-                            <img className="w-[80rem] h-[35rem]" src="images/homePage/storyTwo.jpg" alt="" />
+                        <div className="border h-[35rem] sm:w-[50%] ">
+                            <img className="w-[80rem] h-[35rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* partners section */}
-            <div className="px-2 py-16 bg-gray-100">
-                <div className="flex justify-center gap-1 h-10rem]" data-aos="fade-up" data-aos-duration="2000">
-                    {/* <div className="">
-                        <img src="images/homePage/sponsorOne.jpg" className="w-full object-contain h-[10rem]" alt="" />
-                    </div> */}
+            <div className="bg-gray-100 py-16 px-2">
+                <div className="flex justify-center gap-1 h-10rem]">
                     <div className="">
-                        <img src="images/homePage/sponsorTwo.png" className="w-full object-contain h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="images/homePage/sponsorThree.png" className="w-full object-contain h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="images/homePage/sponsorFour.png" className="w-full object-contain h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                     <div className="">
-                        <img src="images/homePage/sponsorFive.png" className="w-full object-contain h-[10rem]" alt="" />
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
+                    </div>
+                    <div className="">
+                        <img src="https://baconmockup.com/640/300" className="w-full object-cover h-[10rem]" alt="" />
                     </div>
                 </div>
             </div>
@@ -336,14 +326,14 @@ const Index = () => {
             {/* Minister */}
             <div className="mt-[5rem]">
                 <div className="mb-16">
-                    <div className="justify-center md:flex">
-                        <div className="border ">
-                            <img className="w-[80rem] sm:h-[25rem]" src="https://baconmockup.com/640/303" alt="" data-aos="zoom-in-down" data-aos-duration="300" />
+                    <div className="md:flex justify-center">
+                        <div className="border  ">
+                            <img className="w-[80rem] h-[40rem]" src="https://baconmockup.com/640/303" alt="" />
                         </div>
-                        <div className="">
-                            <div className="container py-4" data-aos="zoom-in-down" data-aos-duration="500">
-                                <img src="images/quote.png" alt="quote" className="w-[8%] pl-5 xs:hidden" />
-                                <p className="pl-4 sm:text-[1.8rem] my-2">
+                        <div className="border h-[40rem]  ">
+                            <div className="container p-4 border ">
+                                <img src="images/quote.png" alt="quote" className="w-[20%] xs:hidden" />
+                                <p className="pl-4 sm:text-[2rem] ">
                                     The bane of development
                                     in developing countries as
                                     against developed
@@ -352,7 +342,7 @@ const Index = () => {
                                     former. The inability of
                                     developing counties.......
                                 </p>
-                                <h1 className="pl-5 my-5 text-6 ">Read More </h1>
+                                <h1 className="pl-5 text-6  ">Read More </h1>
                                 <div className="pl-5 ">
                                     <h1 className="text-[30px] font-bold text-[rgba(255,23,025)]">
                                         Frank Agyakum
@@ -366,8 +356,8 @@ const Index = () => {
             </div>
 
             {/* contact section*/}
-            <div className="w-full px-4 text-center md:flex">
-                <div className="md:w-[50%] ">
+            <div className="md:flex w-full  text-center px-4">
+                <div className="sm:w-[50%] ">
                     <div className="container mx-auto">
                         <h1 className="text-[3rem] font-bold text-[rgb(255,35,25)]">Connect with us</h1>
                         <p className="text-[1.3rem]">Please fill out the form and press the submit button.
@@ -375,7 +365,7 @@ const Index = () => {
                         </p>
                     </div>
                 </div>
-                <div className="md:w-[50%]  ">
+                <div className="sm:w-[50%]  ">
                     <div className="container ">
                         <form action="" className="">
                             <div className="">
@@ -398,8 +388,8 @@ const Index = () => {
             </div>
 
             {/* Footer */}
-            <div className="px-12 py-12 bg-black">
-                <div className="justify-around text-white sm:flex gap-9 sm:gap-3">
+            <div className="bg-black px-12 py-12">
+                <div className="sm:flex  justify-around gap-9 sm:gap-3 text-white">
                     <ul>
                         <p className="mb-4">Contact Information</p>
                         <li>2nd Floor (West Wing),</li>
@@ -443,23 +433,12 @@ const Index = () => {
                 </div>
             </div>
             <div className="w-full bg-[rgba(0,0,0,0.8)]">
-                <h1 className="py-8 pl-5 text-white ">© Copyright 2022, All Right Reserved, Ghana International Trade Commission</h1>
+                <h1 className="py-8 text-white  pl-5 ">© Copyright 2022, All Right Reserved, Ghana International Trade Commission</h1>
             </div>
 
 
         </div>
-    )}
-
-    
-// import React, { useState } from "react";
-// import { WebsiteLayout } from "../../components/layouts";
-
-// const Index = () => {
-//     return (
-//         <WebsiteLayout page="home">
-//             <h1>Home Page</h1>
-//         </WebsiteLayout>
-//     );
-// };
+    );
+};
 
 export default Index;
