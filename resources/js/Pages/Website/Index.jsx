@@ -136,7 +136,7 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-3">
+                            <div className="my-3 mx-auto">
                                 <h1 className="text-3xl text-primary py-2">
                                     Trade Remedies
                                 </h1>
@@ -159,7 +159,7 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-3">
+                            <div className="my-3 mx-auto">
                                 <h1 className="text-3xl text-primary py-2">
                                     Dispute Settlement
                                 </h1>
@@ -181,7 +181,7 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-3">
+                            <div className="my-3 mx-auto">
                                 <h1 className="text-3xl text-primary">
                                     Tarrif Review
                                 </h1>
@@ -204,7 +204,7 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-3">
+                            <div className="my-3 border mx-auto">
                                 <h1 className="text-3xl text-primary">
                                     Research
                                 </h1>
@@ -238,7 +238,7 @@ const Index = () => {
                             </div>
                             <div className="">
                                 <div
-                                    className="container p-6 "
+                                    className="container px-6 py-12 "
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -269,7 +269,7 @@ const Index = () => {
                         <div className="justify-center sm:flex sm:flex-row flex flex-col-reverse ">
                             <div className=" text-white bg-primary">
                                 <div
-                                    className="container p-6 text-center"
+                                    className="container px-6 py-12 text-center"
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -404,7 +404,7 @@ const Index = () => {
                             <h1 className="text-3xl font-bold text-primary">
                                 Connect with us
                             </h1>
-                            <p className="text-[1.3rem]">
+                            <p className="text-[1.3rem] sm:pl-[5rem]">
                                 Please fill out the form and press the submit
                                 button. We will get back to you with 1-2 business
                                 days.
@@ -413,7 +413,7 @@ const Index = () => {
                     </div>
                     <div className="md:w-[50%]  ">
                         <div className=" ">
-                            <form action="" className="sm:float-left">
+                            <form action="" className="">
                                 <div className="">
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
@@ -443,7 +443,7 @@ const Index = () => {
                                 </div>
                                 <div className="pt-2">
                                     <textarea
-                                        className="sm:w-[95%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
+                                        className="sm:w-[67%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
                                         rows="4"
                                         placeholder="Message"
                                         required="required"
