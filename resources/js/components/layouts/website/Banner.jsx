@@ -53,6 +53,8 @@ const Banner = ({ page }) => {
                 </ul>
             </header>
             {page === "home" && <BannerHome />}
+            {page === "about" && <BannerAbout />}
+            {page === "service" && <BannerServices />}
         </section>
     );
 };
@@ -124,7 +126,7 @@ const BannerHome = () => {
 
     return (
         <section className="w-full h-screen overflow-hidden bg-tertiary">
-            {/* <div className="h-full navigation-wrapper">
+            <div className="h-full navigation-wrapper">
                 <div ref={sliderRef} className="h-full fader">
                     {sliders.map((item, idx) => (
                         <div
@@ -196,11 +198,10 @@ const BannerHome = () => {
                         })}
                     </div>
                 )}
-            </div> */}
+            </div>
         </section>
     );
 };
-
 function Arrow(props) {
     const disabeld = props.disabled ? " arrow--disabled" : "";
     return (
@@ -221,3 +222,28 @@ function Arrow(props) {
         </svg>
     );
 }
+
+const BannerAbout = () => {
+    return (
+        <section className="banner__static about">
+            <article className="text-white banner__static__article">
+                <h1 className="text-7xl">About Us</h1>
+                <p className="mt-5 text-2xl">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </article>
+        </section>
+    );
+};
+const BannerServices = () => {
+    return (
+        <section className="banner__static about">
+            <article className="text-white banner__static__article">
+                <h1 className="text-7xl">Our Services</h1>
+                <p className="mt-5 text-2xl">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </article>
+        </section>
+    );
+};

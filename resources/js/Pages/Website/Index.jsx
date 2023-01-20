@@ -45,9 +45,9 @@ const Index = () => {
 
     return (
         <WebsiteLayout page="home">
-            <div className="text-grey text-lg">
+            <div className="text-lg text-grey">
                 {/* values section */}
-                <div className="bg-slate-100 mb-32 ">
+                <div className="mb-32 bg-slate-100 ">
                     <div
                         className="container justify-center p-12 md:flex"
                         data-aos="fade-up"
@@ -62,13 +62,14 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-3xl my-4 text-primary">
+                                <h1 className="my-4 text-3xl text-primary">
                                     Objectivity
                                 </h1>
                                 <p className="">
                                     To ensure equality and fairness in the
-                                    application of measures affecting international
-                                    trade and the use of world trade regulations.
+                                    application of measures affecting
+                                    international trade and the use of world
+                                    trade regulations.
                                 </p>
                             </div>
                         </div>
@@ -82,14 +83,14 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-3xl my-4 text-primary">
+                                <h1 className="my-4 text-3xl text-primary">
                                     Professionalism
                                 </h1>
                                 <p>
                                     To ensure a high level of competence and
-                                    efficiency in applying international trade rules
-                                    and regulations as under the World Trade
-                                    Organization (WTO) provisions.
+                                    efficiency in applying international trade
+                                    rules and regulations as under the World
+                                    Trade Organization (WTO) provisions.
                                 </p>
                             </div>
                         </div>
@@ -102,12 +103,13 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="text-3xl my-4 text-primary">
+                                <h1 className="my-4 text-3xl text-primary">
                                     Integrity
                                 </h1>
                                 <p>
-                                    To ensure absolute neutrality and consistency in
-                                    the execution of the mandate of the Commission.
+                                    To ensure absolute neutrality and
+                                    consistency in the execution of the mandate
+                                    of the Commission.
                                 </p>
                             </div>
                         </div>
@@ -115,8 +117,8 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="container mb-32 mx-auto ">
-                    <div className=" pb-10 text-center">
+                <div className="container mx-auto mb-32 ">
+                    <div className="pb-10 text-center ">
                         <h3 className="text-5xl font-bold text-primary ">
                             Services We Provide
                         </h3>
@@ -137,16 +139,20 @@ const Index = () => {
                                 />
                             </div>
                             <div className="my-3">
-                                <h1 className="text-3xl text-primary py-2">
+                                <h1 className="py-2 text-3xl text-primary">
                                     Trade Remedies
                                 </h1>
                                 <p className="mb-3">
                                     To ensure equality and fairness in the
-                                    application of measures affecting international
-                                    trade and the use of world trade regulations.
+                                    application of measures affecting
+                                    international trade and the use of world
+                                    trade regulations.
                                 </p>
 
-                                <Link href="/" className="text-primary hover:text-red-300">
+                                <Link
+                                    href="/"
+                                    className="text-primary hover:text-red-300"
+                                >
                                     Read More
                                 </Link>
                             </div>
@@ -160,15 +166,19 @@ const Index = () => {
                                 />
                             </div>
                             <div className="my-3">
-                                <h1 className="text-3xl text-primary py-2">
+                                <h1 className="py-2 text-3xl text-primary">
                                     Dispute Settlement
                                 </h1>
                                 <p className="mb-3">
-                                    Providing actions to resolve issues arising out
-                                    of a member-state violating the rules and
-                                    regulationso f the World Trade Organization.
+                                    Providing actions to resolve issues arising
+                                    out of a member-state violating the rules
+                                    and regulationso f the World Trade
+                                    Organization.
                                 </p>
-                                <Link href="/" className="text-primary hover:text-red-300">
+                                <Link
+                                    href="/"
+                                    className="text-primary hover:text-red-300"
+                                >
                                     Read More
                                 </Link>
                             </div>
@@ -186,12 +196,15 @@ const Index = () => {
                                     Tarrif Review
                                 </h1>
                                 <p className="mb-3 sm:px-1">
-                                    Providing a review of customs duty that affects
-                                    the production and competitiveness of goods in
-                                    relation to the domestic producer or domestic
-                                    industry
+                                    Providing a review of customs duty that
+                                    affects the production and competitiveness
+                                    of goods in relation to the domestic
+                                    producer or domestic industry
                                 </p>
-                                <Link href="/" className="text-primary hover:text-red-300 sm:pl-1">
+                                <Link
+                                    href="/"
+                                    className="text-primary hover:text-red-300 sm:pl-1"
+                                >
                                     Read More
                                 </Link>
                             </div>
@@ -210,19 +223,23 @@ const Index = () => {
                                 </h1>
                                 <p className="mb-3">
                                     The Commission is to study, identify, and
-                                    recommend to the Minister of Trade and Industry
-                                    tariff levels for specific sectors of the
-                                    economy with due regard to the effective rate of
-                                    protection.
+                                    recommend to the Minister of Trade and
+                                    Industry tariff levels for specific sectors
+                                    of the economy with due regard to the
+                                    effective rate of protection.
                                 </p>
-                                <Link href="/" className="text-primary hover:text-red-300">
+                                <Link
+                                    href="/"
+                                    className="text-primary hover:text-red-300"
+                                >
                                     Read More
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <Link href="/"><Button>  View More </Button> </Link>
-
+                    <Link href="/">
+                        <Button> View More </Button>{" "}
+                    </Link>
                 </div>
 
                 {/* story section*/}
@@ -242,15 +259,15 @@ const Index = () => {
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <p className="sm:text-3lx text-center">
+                                    <p className="text-center sm:text-3lx">
                                         DID YOU KNOW THAT
                                     </p>
-                                    <p className="sm:text-3xl font-bold text-primary my-5 text-center">
+                                    <p className="my-5 font-bold text-center sm:text-3xl text-primary">
                                         GITC is among seven trade remedy
-                                        institutions and investigating authorities
-                                        in Africa.
+                                        institutions and investigating
+                                        authorities in Africa.
                                     </p>
-                                    <p className="mb-5 sm:mb-14 sm:text-2xl text-center">
+                                    <p className="mb-5 text-center sm:mb-14 sm:text-2xl">
                                         These other African countries are:
                                         Egypt,South Africa, Morocco,
                                         Tunisia,Mauritius, and Madagascar. These
@@ -259,15 +276,15 @@ const Index = () => {
                                         Madagascar.
                                     </p>
                                     <Link hre="/">
-                                        <ButtonOutline className="block border-primary border p-4 rounded-full mx-auto hover:border-2">
+                                        <ButtonOutline className="block p-4 mx-auto border rounded-full border-primary hover:border-2">
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="justify-center sm:flex sm:flex-row flex flex-col-reverse ">
-                            <div className=" text-white bg-primary">
+                        <div className="flex flex-col-reverse justify-center sm:flex sm:flex-row ">
+                            <div className="text-white  bg-primary">
                                 <div
                                     className="container p-6 text-center"
                                     data-aos="fade-up"
@@ -276,30 +293,33 @@ const Index = () => {
                                     <h1 className="text-[3rem]">We ensure:</h1>
                                     <div className="sm:text-[1.3rem]">
                                         <p className="py-4">
-                                            (a)Ghana’s compliance with international
-                                            trade rules and regulations;
-                                        </p>
-                                        <p className="py-3">
-                                            (b)Fairness, efficiency, transparency
-                                            and objectivity in the application of
-                                            measures affecting international trade
-                                            rules and the use of world trade
+                                            (a)Ghana’s compliance with
+                                            international trade rules and
                                             regulations;
                                         </p>
                                         <p className="py-3">
-                                            (c)Fair ompetition for persons engaged
-                                            in domestic production and international
-                                            trade.
+                                            (b)Fairness, efficiency,
+                                            transparency and objectivity in the
+                                            application of measures affecting
+                                            international trade rules and the
+                                            use of world trade regulations;
+                                        </p>
+                                        <p className="py-3">
+                                            (c)Fair ompetition for persons
+                                            engaged in domestic production and
+                                            international trade.
                                         </p>
                                         <p className="pt-3">
                                             (d)Protection of the domestic market
                                             from the impact of unfair trade
-                                            practices in the course of international
-                                            trade.
+                                            practices in the course of
+                                            international trade.
                                         </p>
                                     </div>
                                     <Link href="/">
-                                        <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">Read Our Story</ButtonOutline>
+                                        <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
+                                            Read Our Story
+                                        </ButtonOutline>
                                     </Link>
                                 </div>
                             </div>
@@ -353,52 +373,50 @@ const Index = () => {
                 </div>
 
                 {/* Minister */}
-                <div className="mb-32 block mx-12 shadow-lg"
-                 data-aos="fade-up"
-                    data-aos-duration="2000">
-
+                <div
+                    className="block mx-12 mb-32 shadow-lg"
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
+                >
                     <div className="justify-center sm:flex sm:w-[100%]">
                         <div className="sm:w-[50%] ">
                             <img
                                 className="object-cover sm:h-[25rem]"
                                 src="https://baconmockup.com/640/303"
                                 alt=""
-                               
                             />
                         </div>
                         <div className="sm:w-[50%] sm:px-8">
-                            <div
-                                className="container py-4"
-
-                            >
+                            <div className="container py-4">
                                 <img
                                     src="images/quote.png"
                                     alt="quote"
                                     className="w-[8%] pl-5 xs:hidden"
                                 />
-                                <p className="pl-4 sm:text-3xl text-black font-bold my-6">
+                                <p className="pl-4 my-6 font-bold text-black sm:text-3xl">
                                     The bane of development in developing
                                     countries as against developed countries is
                                     the lack of industrialization in the former.
                                     The inability of developing counties ...
                                 </p>
-                                <h1 className="pl-5 hover:text-red-300 text-red-400 cursor-pointer  ">
+                                <h1 className="pl-5 text-red-400 cursor-pointer hover:text-red-300 ">
                                     Read More
                                 </h1>
                                 <div className="pl-5 ">
-                                    <h1 className="text-2xl text-primary pt-3">
+                                    <h1 className="pt-3 text-2xl text-primary">
                                         Frank Agyakum
                                     </h1>
-                                    <p className=" text-primary font-light pt-1">Executive Secretary</p>
+                                    <p className="pt-1 font-light  text-primary">
+                                        Executive Secretary
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 {/* contact section*/}
-                <div className="w-full text-center md:flex px-2">
+                <div className="w-full px-2 text-center md:flex">
                     <div className="md:w-[50%] ">
                         <div className="mx-auto">
                             <h1 className="text-3xl font-bold text-primary">
@@ -406,13 +424,13 @@ const Index = () => {
                             </h1>
                             <p className="text-[1.3rem]">
                                 Please fill out the form and press the submit
-                                button. We will get back to you with 1-2 business
-                                days.
+                                button. We will get back to you with 1-2
+                                business days.
                             </p>
                         </div>
                     </div>
                     <div className="md:w-[50%]  ">
-                        <div className=" ">
+                        <div className="">
                             <form action="" className="sm:float-left">
                                 <div className="">
                                     <input
@@ -422,7 +440,7 @@ const Index = () => {
                                         type="text"
                                     />
                                     <input
-                                        className="m-3 border-none bg-gray-100 focus:outline-none focus:ring focus:ring-primary/20"
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Email *"
                                         required="required"
                                         type="Email"
@@ -430,13 +448,13 @@ const Index = () => {
                                 </div>
                                 <div className="">
                                     <input
-                                        className="m-3 border-none bg-gray-100 focus:outline-none focus:ring focus:ring-primary/20"
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Subject *"
                                         required="required"
                                         type="text"
                                     />
                                     <input
-                                        className="m-3 border-none bg-gray-100 focus:outline-none focus:ring focus:ring-primary/20"
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Phone Number"
                                         type="text"
                                     />
@@ -451,7 +469,9 @@ const Index = () => {
                                     />
                                 </div>
 
-                                <Button className="mt-[2rem] mb-[3rem]">Submit</Button>
+                                <Button className="mt-[2rem] mb-[3rem]">
+                                    Submit
+                                </Button>
                             </form>
                         </div>
                     </div>
@@ -460,16 +480,5 @@ const Index = () => {
         </WebsiteLayout>
     );
 };
-
-// import React, { useState } from "react";
-// import { WebsiteLayout } from "../../components/layouts";
-
-// const Index = () => {
-//     return (
-//         <WebsiteLayout page="home">
-//             <h1>Home Page</h1>
-//         </WebsiteLayout>
-//     );
-// };
 
 export default Index;
