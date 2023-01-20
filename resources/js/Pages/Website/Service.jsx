@@ -1,33 +1,49 @@
 import React, { useState } from "react";
+import { WebsiteLayout } from "../../components/layouts";
+import {
+    SlCallIn,
+    SlEnvelopeOpen,
+    SlLocationPin,
+    SlPaperPlane,
+} from "react-icons/sl";
 
 const Service = () => {
 
     return (
+        <WebsiteLayout page="home">
      <div className="bg-white text-black">
-
+         <div className="bg-gray-300  p-3">
+             <span>GITC . Our Services </span>
+         </div>
 
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col xl:flex-row-reverse">
                  <div className=" w-11/12">
-                            <h3 className="text-blue-700 text-center font-semibold text-3xl">Tariff Review</h3>
-                         <img className="w-screen" src="https://placeimg.com/400/400/arch" alt="Album"/>
+                            <h3 className="text-blue-700 mt-20 text-center font-bold text-3xl">Tariff Review</h3>
+                         <img className="w-screen" src="/images/service.jpg" alt="Album"/>
 
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white  ">
                      <div className="card-body">
-                         <h3 className="text-black text-lg font-bold">Our Services</h3>
+                         <h3 className="text-black text-center text-xl font-bold">Our Services</h3>
 
                          <p className="text-blue-700 text-xl">
-                             +233 030 296 0298
+
+                             <span className=" flex ">
+                               <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
+                            </span>
+                         </p>
+
+                         <p className="text-blue-700 text-xl">
+                               <span className=" flex ">
+                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
+                            </span>
                          </p>
                          <p className="text-blue-700 text-xl">
-                             info@gitc.gov.gh
-                         </p>
-                         <p className="text-blue-700 text-xl">
-                             info@gitc.gov.gh
-                         </p>
-                         <p className="text-blue-700 text-xl">
-                             info@gitc.gov.gh
+                            <span className=" flex ">
+                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
+                            </span>
+
                          </p>
                      </div>
                  </div>
@@ -67,20 +83,32 @@ const Service = () => {
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white border-solid border-2 border-sky-500 ">
                      <div className="card-body">
-                         <h3>Contact us</h3>
+                         <h3 className="text-center text-xl font-bold">Contact us</h3>
 
                          <p className="text-blue-700 text-xl">
-                             +233 030 296 0298
+
+                             <span className=" flex ">
+                               <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
+                            </span>
+                         </p>
+
+                         <p className="text-blue-700 text-xl">
+                               <span className=" flex ">
+                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
+                            </span>
                          </p>
                          <p className="text-blue-700 text-xl">
-                             info@gitc.gov.gh
+                            <span className=" flex ">
+                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
+                            </span>
+
                          </p>
                      </div>
                  </div>
              </div>
          </div>
      </div>
-
+        </WebsiteLayout>
     );
 };
 

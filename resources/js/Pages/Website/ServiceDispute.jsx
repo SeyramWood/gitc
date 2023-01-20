@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-
+import { WebsiteLayout } from "../../components/layouts";
+import {Link} from "@inertiajs/inertia-react";
 const ServiceDispute = () => {
 
     return (
+        <WebsiteLayout page="home">
      <div className="bg-white text-black">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . dispute Settlement</span>
@@ -11,53 +13,55 @@ const ServiceDispute = () => {
 
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col md:flex-row-reverse">
-                 <div className="  max-h-4xl ">
+                 <div className="  max-h-4xl mt-20">
                             <h3 className="text-blue-700 mb-2 font-semibold text-3xl">
                                 Dispute Settlement
                             </h3>
 
-                         <img className="w-screen" src="https://placeimg.com/400/400/arch" alt="Album"/>
+                         <img className="w-screen" src="/images/dispute.jpg" alt="Album"/>
 
                  </div>
                  <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
                      <div className="card-body">
-                         <h3 className="text-black text-lg font-bold">Our Services</h3>
+                         <h3 className="text-black  text-xl font-bold">Our Services</h3>
 
-                         <p className="text-blue-700 text-xl">
+                         <p className="text-blue-700 text-xl ">
                              Trade Remedies
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Anti - Dumping Duties
-
+                             <Link href="/service">  Anti - Dumping Duties</Link>
                          </p>
                          <p className="text-blue-700 text-xl">
 
 
-                             Subsidy and Countervailing Duties
+                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
+                         </p>
+                         <p className="text-blue-700 text-xl">
+
+                             <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
+
+
+                         </p>
+                         <p className="text-blue-700 text-xl">
+
+                             <Link href="/service/safeguard">  Safeguards Measures</Link>
+
 
                          </p>
                          <p className="text-blue-700 text-xl">
 
 
-                             Safeguards Measures
+                             <Link href="/service/dispute">Dispute Settlement</Link>
+
+
+                         </p>
+                         <p className="text-blue-700 text-xl">
+                             <Link href="/service">  Tariff Review</Link>
+
 
                          </p>
                          <p className="text-blue-700 text-xl">
 
+                             <Link href="/service/research">  Research</Link>
 
-                             Dispute Settlement
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Tariff Review
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Research
                          </p>
                      </div>
                  </div>
@@ -99,7 +103,7 @@ const ServiceDispute = () => {
                      <div>
                          <div className="card card-side bg-white shadow-xl">
                              <figure className="w-10 bo">
-                                 <img src="https://placeimg.com/200/280/arch" alt="Movie"/>
+                                 <img src="/images/pdfred.png" alt="Movie"/>
                              </figure>
                              <div className="card-body">
                                  <h2 className="card-title"> GITC (Subsidy and Countervailing Measures)</h2>
@@ -111,7 +115,7 @@ const ServiceDispute = () => {
                      <div>
                          <div className="card card-side bg-white shadow-xl">
                              <figure className="w-10 bo">
-                                 <img src="https://placeimg.com/200/280/arch" alt="Movie"/>
+                                 <img src="/images/pdfblue.png" alt="Movie"/>
                              </figure>
                              <div className="card-body">
 
@@ -136,7 +140,7 @@ const ServiceDispute = () => {
              </div>
          </div>
      </div>
-
+        </WebsiteLayout>
     );
 };
 

@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { WebsiteLayout } from "../../components/layouts";
+import {
+    SlCallIn,
+    SlEnvelopeOpen,
+    SlLocationPin,
+    SlPaperPlane,
+} from "react-icons/sl";
+import {Link} from "@inertiajs/inertia-react";
 
 const ServiceSubsidy = () => {
 
     return (
+        <WebsiteLayout page="home">
      <div className="bg-white text-black">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . Trade Remedies . Subsidy & Countervailing Duties</span>
@@ -11,7 +20,7 @@ const ServiceSubsidy = () => {
 
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col md:flex-row-reverse">
-                 <div className="  max-h-4xl ">
+                 <div className="  max-h-4xl mt-20">
                      <h2 className="text-blue-700 text-blue-700 font-semibold text-3xl">Trade Remedy</h2>
                      <p className="text-sm mb-5">
                          Subsidy & controvailing duties; antidumping duties, safeguard and measures
@@ -20,48 +29,50 @@ const ServiceSubsidy = () => {
                                 Subsidy & Countervailing Duties
                             </h3>
 
-                         <img className="w-screen" src="https://placeimg.com/400/400/arch" alt="Album"/>
+                         <img className="w-screen" src="/images/subsidy.png" alt="Album"/>
 
                  </div>
                  <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
                      <div className="card-body">
                          <h3 className="text-black text-lg font-bold">Our Services</h3>
 
-                         <p className="text-blue-700 text-xl">
+                         <p className="text-blue-700 text-xl ">
                              Trade Remedies
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Anti - Dumping Duties
-
+                             <Link href="/service">  Anti - Dumping Duties</Link>
                          </p>
                          <p className="text-blue-700 text-xl">
 
 
-                             Subsidy and Countervailing Duties
+                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
+                         </p>
+                         <p className="text-blue-700 text-xl">
+
+                             <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
+
+
+                         </p>
+                         <p className="text-blue-700 text-xl">
+
+                             <Link href="/service/safeguard">  Safeguards Measures</Link>
+
 
                          </p>
                          <p className="text-blue-700 text-xl">
 
 
-                             Safeguards Measures
+                             <Link href="/service/dispute">Dispute Settlement</Link>
+
+
+                         </p>
+                         <p className="text-blue-700 text-xl">
+                             <Link href="/service">  Tariff Review</Link>
+
 
                          </p>
                          <p className="text-blue-700 text-xl">
 
+                             <Link href="/service/research">  Research</Link>
 
-                             Dispute Settlement
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Tariff Review
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Research
                          </p>
                      </div>
                  </div>
@@ -109,7 +120,7 @@ const ServiceSubsidy = () => {
                      <div>
                          <div className="card card-side bg-white shadow-xl">
                              <figure className="w-10 bo">
-                                 <img src="https://placeimg.com/200/280/arch" alt="Movie"/>
+                                 <img src="/images/pdfred.png" alt="Movie"/>
                              </figure>
                              <div className="card-body">
                                  <h2 className="card-title"> GITC (Subsidy and Countervailing Measures)</h2>
@@ -121,7 +132,7 @@ const ServiceSubsidy = () => {
                      <div>
                          <div className="card card-side bg-white shadow-xl">
                              <figure className="w-10 bo">
-                                 <img src="https://placeimg.com/200/280/arch" alt="Movie"/>
+                                 <img src="/images/pdfblue.png" alt="Movie"/>
                              </figure>
                              <div className="card-body">
 
@@ -133,20 +144,32 @@ const ServiceSubsidy = () => {
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white border-solid border-2 border-sky-500 ">
                      <div className="card-body">
-                         <h3>Contact us</h3>
+                         <h3 className="text-center text-xl font-bold">Contact us</h3>
 
                          <p className="text-blue-700 text-xl">
-                             +233 030 296 0298
+
+                             <span className=" flex ">
+                               <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
+                            </span>
+                         </p>
+
+                         <p className="text-blue-700 text-xl">
+                               <span className=" flex ">
+                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
+                            </span>
                          </p>
                          <p className="text-blue-700 text-xl">
-                             info@gitc.gov.gh
+                            <span className=" flex ">
+                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
+                            </span>
+
                          </p>
                      </div>
                  </div>
              </div>
          </div>
      </div>
-
+        </WebsiteLayout>
     );
 };
 
