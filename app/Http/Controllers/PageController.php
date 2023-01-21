@@ -11,8 +11,40 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Index');
     }
-      public function about()
+
+    public function service()
+    {
+        return Inertia::render('Website/Service');
+    }
+
+    public function ServiceSubsidy()
+    {
+        return Inertia::render('Website/ServiceSubsidy');
+    }
+
+    public function ServiceSaufgard()
+    {
+        return Inertia::render('Website/ServiceSaufgard');
+    }
+
+    public function ServiceResearch()
+    {
+        return Inertia::render('Website/ServiceResearch');
+    }
+
+    public function ServiceDispute()
+    {
+        return Inertia::render('Website/ServiceDispute');
+    }
+
+    public function ServiceDumping()
+    {
+        return Inertia::render('Website/ServiceDumping');
+    }
+
+    public function about()
     {
         return Inertia::render('Website/About');
     }
+    
 }
