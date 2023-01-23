@@ -46,5 +46,13 @@ class PageController extends Controller
     {
         return Inertia::render('Website/About');
     }
+    public function aboutMessage()
+    {
+        return Inertia::render('Website/AboutMessage');
+    }
+     public function aboutStory()
+    {
+        return Inertia::render('Website/AboutStory');
+    }
     
 }
