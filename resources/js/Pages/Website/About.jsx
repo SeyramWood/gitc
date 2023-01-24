@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/inertia-react";
 const About = () => {
     return (
         <WebsiteLayout page="about">
-            <main className="text-lg text-grey">
+            <main className="text-lg text-grey bg-white">
                 {/* Governing Board */}
                 <p className="my-10 text-5xl font-bold text-center text-primary">
                     Governing Board

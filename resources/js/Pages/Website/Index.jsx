@@ -5,6 +5,9 @@ import { WebsiteLayout } from "../../components/layouts";
 import { Link } from "@inertiajs/inertia-react";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
+import Paragraph from "../../components/layouts/website/Paragraph";
+import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
+import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 
 const Index = () => {
     useEffect(() => {
@@ -45,7 +48,7 @@ const Index = () => {
 
     return (
         <WebsiteLayout page="home">
-            <div className="text-lg text-grey">
+            <div className="text-lg text-grey bg-white">
                 {/* values section */}
                 <div className="mb-32 bg-slate-100 ">
                     <div
@@ -62,15 +65,15 @@ const Index = () => {
                                 />
                             </div>
                             <div className="">
-                                <h1 className="my-4 text-3xl text-primary">
+                                <HeadingSecondary className="">
                                     Objectivity
-                                </h1>
-                                <p className="">
+                                </HeadingSecondary>
+                                <Paragraph className="" >
                                     To ensure equality and fairness in the
                                     application of measures affecting
                                     international trade and the use of world
                                     trade regulations.
-                                </p>
+                                </Paragraph>
                             </div>
                         </div>
 
@@ -119,9 +122,9 @@ const Index = () => {
                 {/* services section*/}
                 <div className="container mx-auto mb-32 ">
                     <div className="pb-10 text-center ">
-                        <h3 className="text-5xl font-bold text-primary ">
+                        <HeadingPrimary className="" >
                             Services We Provide
-                        </h3>
+                        </HeadingPrimary>
                         <p className="">COVERED IN THESE AREAS</p>
                     </div>
 
@@ -191,7 +194,7 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-3">
+                            <div className="my-3 mx-auto">
                                 <h1 className="text-3xl text-primary">
                                     Tarrif Review
                                 </h1>
@@ -217,7 +220,7 @@ const Index = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="my-3">
+                            <div className="my-3 mx-auto">
                                 <h1 className="text-3xl text-primary">
                                     Research
                                 </h1>
@@ -245,7 +248,7 @@ const Index = () => {
                 {/* story section*/}
                 <div className="mb-32">
                     <div className="mb-16">
-                        <div className="justify-center md:flex">
+                        <div className="justify-center sm:flex">
                             <div className=" sm:h-[35rem]  ">
                                 <img
                                     className="sm:w-[80rem] sm:h-[35rem]"
@@ -255,7 +258,7 @@ const Index = () => {
                             </div>
                             <div className="">
                                 <div
-                                    className="container p-6 "
+                                    className="container px-6 py-12 "
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -286,7 +289,7 @@ const Index = () => {
                         <div className="flex flex-col-reverse justify-center sm:flex sm:flex-row ">
                             <div className="text-white  bg-primary">
                                 <div
-                                    className="container p-6 text-center"
+                                    className="container px-6 py-12 text-center"
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -422,7 +425,7 @@ const Index = () => {
                             <h1 className="text-3xl font-bold text-primary">
                                 Connect with us
                             </h1>
-                            <p className="text-[1.3rem]">
+                            <p className="text-[1.3rem] sm:pl-[5rem]">
                                 Please fill out the form and press the submit
                                 button. We will get back to you with 1-2
                                 business days.
@@ -461,7 +464,7 @@ const Index = () => {
                                 </div>
                                 <div className="pt-2">
                                     <textarea
-                                        className="sm:w-[95%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
+                                        className="sm:w-[67%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
                                         rows="4"
                                         placeholder="Message"
                                         required="required"
