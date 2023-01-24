@@ -7,7 +7,8 @@ import { createInertiaApp } from "@inertiajs/inertia-react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 
 const appName =
-    window.document.getElementsByTagName("title")[0]?.innerText || "Laravel";
+    window.document.getElementsByTagName("title")[0]?.innerText ||
+    "Ghana International Trade Commission";
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
