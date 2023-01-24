@@ -25,3 +25,4 @@ Route::get('/service/dumping', [PageController::class, 'ServiceDumping']);
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/message', [PageController::class, 'aboutMessage']);
 Route::get('/story', [PageController::class, 'aboutStory']);
+Route::get('/publish', [PageController::class, 'publish']);

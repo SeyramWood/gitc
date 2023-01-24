@@ -18,7 +18,7 @@ const Footer = () => {
                                 src="images/logo.png"
                                 alt=""
                                 srcSet=""
-                                className="w-[10rem]"
+                                className="w-[5rem] mt-9"
                             />
                         </a>
                     </div>
@@ -70,10 +70,10 @@ const Footer = () => {
                     </div>
                     <ul className="w-[100%] text-xl">
                         <li className="mb-2 text-xl capitalize transform hover:text-primary">
-                            <Link href="/about">About us</Link>
+                            <Link href="/team">About us</Link>
                         </li>
                         <li className="mb-2 text-xl capitalize transform hover:text-primary">
-                            <Link href="/team">Our team</Link>
+                            <Link href="/story">Our team</Link>
                         </li>
                         <li className="mb-2 text-xl capitalize transform hover:text-primary">
                             <Link href="/services">Our service</Link>
@@ -126,16 +126,16 @@ const Footer = () => {
 
                     <section class="grid grid-cols-2 gap-4">
                         <div>
-                            <img src="/images/logo.png" alt="" srcset="" />
+                            <img src="/images/footer/footer.jpg" alt="" srcset="" />
                         </div>
                         <div>
-                            <img src="/images/logo.png" alt="" srcSet="" />
+                            <img src="/images/footer/footer1.jpg" alt="" srcSet="" />
                         </div>
                         <div>
-                            <img src="/images/logo.png" alt="" srcSet="" />
+                            <img src="/images/footer/footer2.jpg" alt="" srcSet="" />
                         </div>
                         <div>
-                            <img src="/images/logo.png" alt="" srcSet="" />
+                            <img src="/images/footer/footer3.jpg" alt="" srcSet="" />
                         </div>
                     </section>
                 </section>

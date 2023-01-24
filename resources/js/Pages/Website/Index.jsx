@@ -384,8 +384,8 @@ const Index = () => {
                     <div className="justify-center sm:flex sm:w-[100%]">
                         <div className="sm:w-[50%] ">
                             <img
-                                className="object-cover sm:h-[25rem]"
-                                src="https://baconmockup.com/640/303"
+                                className="object-cover sm:h-[40rem]"
+                                src="images/index/agyekum.jpg"
                                 alt=""
                             />
                         </div>
@@ -396,7 +396,7 @@ const Index = () => {
                                     alt="quote"
                                     className="w-[8%] pl-5 xs:hidden"
                                 />
-                                <p className="pl-4 my-6 font-bold text-black sm:text-3xl">
+                                <p className="pl-4 my-6 mt-6 font-bold text-black sm:text-3xl">
                                     The bane of development in developing
                                     countries as against developed countries is
                                     the lack of industrialization in the former.
@@ -480,6 +480,10 @@ const Index = () => {
                     </div>
                 </div>
             </div>
+
+
+
+
         </WebsiteLayout>
     );
 };

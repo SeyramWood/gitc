@@ -6,6 +6,10 @@ import {
     SlLocationPin,
     SlPaperPlane,
 } from "react-icons/sl";
+import Paragraph from "../../components/layouts/website/Paragraph";
+import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
+import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
+import {Link} from "@inertiajs/inertia-react";
 
 const Service = () => {
 
@@ -19,32 +23,58 @@ const Service = () => {
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col xl:flex-row-reverse">
                  <div className=" w-11/12">
-                            <h3 className="text-blue-700 mt-20 text-center font-bold text-3xl">Tariff Review</h3>
+                     <HeadingSecondary>
+                         Tariff Review
+                     </HeadingSecondary>
+
                          <img className="w-screen" src="/images/service.jpg" alt="Album"/>
 
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white  ">
                      <div className="card-body">
-                         <h3 className="text-black text-center text-xl font-bold">Our Services</h3>
+                         <HeadingSecondary>
+                             Our Services
+                         </HeadingSecondary>
+                         <Paragraph>
 
-                         <p className="text-blue-700 text-xl">
+                             <Link href="/service">  Anti - Dumping Duties</Link>
+                         </Paragraph>
+                         <Paragraph>
 
-                             <span className=" flex ">
-                               <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
-                            </span>
-                         </p>
 
-                         <p className="text-blue-700 text-xl">
-                               <span className=" flex ">
-                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
-                            </span>
-                         </p>
-                         <p className="text-blue-700 text-xl">
-                            <span className=" flex ">
-                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
-                            </span>
+                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
+                         </Paragraph>
+                         <Paragraph>
 
-                         </p>
+                             <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
+
+
+                         </Paragraph>
+                         <Paragraph>
+
+                             <Link href="/service/safeguard">  Safeguards Measures</Link>
+
+
+                         </Paragraph>
+                         <Paragraph>
+
+
+                             <Link href="/service/dispute">Dispute Settlement</Link>
+
+
+                         </Paragraph>
+                         <Paragraph>
+                             <Link href="/service">  Tariff Review</Link>
+
+
+                         </Paragraph>
+                         <Paragraph>
+
+                             <Link href="/service/research">  Research</Link>
+
+                         </Paragraph>
+
+
                      </div>
                  </div>
              </div>
@@ -83,26 +113,27 @@ const Service = () => {
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white border-solid border-2 border-sky-500 ">
                      <div className="card-body">
-                         <h3 className="text-center text-xl font-bold">Contact us</h3>
+                         <HeadingSecondary>
+                             Contact Us
+                         </HeadingSecondary>
 
-                         <p className="text-blue-700 text-xl">
-
-                             <span className=" flex ">
+                         <Paragraph>
+                               <span className=" flex ">
                                <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
                             </span>
-                         </p>
-
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
                                <span className=" flex ">
-                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
+                            <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
                             </span>
-                         </p>
-                         <p className="text-blue-700 text-xl">
-                            <span className=" flex ">
-                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
+                         </Paragraph>
+                         <Paragraph>
+                               <span className=" flex ">
+                            <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
                             </span>
+                         </Paragraph>
 
-                         </p>
+
                      </div>
                  </div>
              </div>

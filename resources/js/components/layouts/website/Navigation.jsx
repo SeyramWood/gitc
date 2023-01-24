@@ -96,22 +96,17 @@ const Navigation = () => {
                                 <SlArrowDown />
                             </span>
                         </span>
-                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown">
+                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
                             <li>
-                                <Link href="/">Dropdown Dropdown Dropdown</Link>
+                                <Link href="/about">Our Team</Link>
                             </li>
                             <li>
-                                <Link href="/">Dropdown</Link>
+                                <Link href="/story">Our Story</Link>
                             </li>
                             <li>
-                                <Link href="/">Dropdown</Link>
+                                <Link href="/message">Our Message</Link>
                             </li>
-                            <li>
-                                <Link href="/">Dropdown</Link>
-                            </li>
-                            <li>
-                                <Link href="/">Dropdown</Link>
-                            </li>
+
                         </ul>
                     </li>
                     <li className="hover:opacity-100">
@@ -121,21 +116,24 @@ const Navigation = () => {
                                 <SlArrowDown />
                             </span>
                         </span>
-                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown">
+                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
                             <li>
-                                <Link href="/">Dropdown Dropdown Dropdown</Link>
+                                <Link href="/service/subsidy">Subsidy And Counter</Link>
                             </li>
                             <li>
-                                <Link href="/">Dropdown</Link>
+                                <Link href="/service/safeguard">SafeGuards Measures</Link>
                             </li>
                             <li>
-                                <Link href="/">Dropdown</Link>
+                                <Link href="/service/research">Research</Link>
                             </li>
                             <li>
-                                <Link href="/">Dropdown</Link>
+                                <Link href="/service/dispute">Dispute Settlements</Link>
                             </li>
                             <li>
-                                <Link href="/">Dropdown</Link>
+                                <Link href="/service/dispute">Ant-Dumping</Link>
+                            </li>
+                            <li>
+                                <Link href="/service">Tariff Review</Link>
                             </li>
                         </ul>
                     </li>
@@ -143,7 +141,7 @@ const Navigation = () => {
                         <Link href="/resources">Resources</Link>
                     </li>
                     <li className="hover:opacity-100">
-                        <Link href="/news">News</Link>
+                        <Link href="/publish">News</Link>
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/contact">Contact Us</Link>
@@ -188,23 +186,15 @@ const Navigation = () => {
                                     <SlArrowDown />
                                 </span>
                             </Link>
-                            <ul className="absolute bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown">
+                            <ul className="absolute bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
                                 <li>
-                                    <Link href="/">
-                                        Dropdown Dropdown Dropdown
-                                    </Link>
+                                    <Link href="/about">Our Team</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Dropdown</Link>
+                                    <Link href="/story">Our Story</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Dropdown</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Dropdown</Link>
-                                </li>
-                                <li>
-                                    <Link href="/">Dropdown</Link>
+                                    <Link href="/message">Our Message</Link>
                                 </li>
                             </ul>
                         </li>
@@ -215,23 +205,24 @@ const Navigation = () => {
                                     <SlArrowDown />
                                 </span>
                             </Link>
-                            <ul className="absolute bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown">
+                            <ul className="absolute bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
                                 <li>
-                                    <Link href="/">
-                                        Dropdown Dropdown Dropdown
-                                    </Link>
+                                    <Link href="/service/subsidy">Subsidy And Counter</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Dropdown</Link>
+                                    <Link href="/service/safeguard">SafeGuards Measures</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Dropdown</Link>
+                                    <Link href="/service/research">Research</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Dropdown</Link>
+                                    <Link href="/service/dispute">Dispute Settlements</Link>
                                 </li>
                                 <li>
-                                    <Link href="/">Dropdown</Link>
+                                    <Link href="/service/dispute">Ant-Dumping</Link>
+                                </li>
+                                <li>
+                                    <Link href="/service">Tariff Review</Link>
                                 </li>
                             </ul>
                         </li>
@@ -239,7 +230,7 @@ const Navigation = () => {
                             <Link href="/resources">Resources</Link>
                         </li>
                         <li className="hover:opacity-100">
-                            <Link href="/news">News</Link>
+                            <Link href="/publish">News</Link>
                         </li>
                         <li className="hover:opacity-100">
                             <Link href="/contact">Contact Us</Link>

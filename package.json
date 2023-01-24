@@ -12,9 +12,9 @@
         "autoprefixer": "^10.4.13",
         "axios": "^1.1.2",
         "flowbite": "^1.6.2",
+        "keen-slider": "^6.8.5",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
-        "keen-slider": "^6.8.5",
         "postcss": "^8.1.14",
         "react-icons": "^4.7.1",
         "sass": "^1.57.1",
@@ -24,13 +24,11 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-react": "^0.8.1",
-
-        "daisyui": "^2.47.0",
-        
-
         "@n8tb1t/use-scroll-position": "^2.0.3",
         "aos": "^2.3.4",
+        "daisyui": "^2.47.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-responsive-carousel": "^3.2.23"
     }
 }
