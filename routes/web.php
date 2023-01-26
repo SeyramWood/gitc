@@ -25,3 +25,5 @@ Route::get('/service/dumping', [PageController::class, 'ServiceDumping']);
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/message', [PageController::class, 'aboutMessage']);
 Route::get('/story', [PageController::class, 'aboutStory']);
+Route::get('/contact', [PageController::class, 'contact']);
+Route::get('/publication', [PageController::class, 'publication']);
