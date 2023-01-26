@@ -9,7 +9,13 @@ import Paragraph from "../../components/layouts/website/Paragraph";
 import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
 import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+
+const animation = { duration: 40000, easing: (t) => t }
+
 const Index = () => {
+
     useEffect(() => {
         AOS.init();
     }, []);
@@ -45,6 +51,26 @@ const Index = () => {
         const newIndex = lastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
     };
+
+    // sponsors animate
+    const [sliderRef] = useKeenSlider({
+        slides: {
+            perView: 3,
+
+        },
+        loop: true,
+        renderMode: "performance",
+        drag: true,
+        created(s) {
+            s.moveToIdx(5, true, animation)
+        },
+        updated(s) {
+            s.moveToIdx(s.track.details.abs + 5, true, animation)
+        },
+        animationEnded(s) {
+            s.moveToIdx(s.track.details.abs + 5, true, animation)
+        },
+    })
 
     return (
         <WebsiteLayout page="home">
@@ -344,7 +370,41 @@ const Index = () => {
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="">
+                        <div ref={sliderRef} className="keen-slider">
+                            <div className="keen-slider__slide number-slide1">
+                                <img
+                                    src="images/homePage/sponsorTwo.png"
+                                    className="w-full object-contain h-[10rem]"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="keen-slider__slide number-slide2">
+                                <img
+                                    src="images/homePage/sponsorThree.png"
+                                    className="w-full object-contain h-[10rem]"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="keen-slider__slide number-slide3">
+                                <img
+                                    src="images/homePage/sponsorFour.png"
+                                    className="w-full object-contain h-[10rem]"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="keen-slider__slide number-slide4">
+                                <div className="">
+                                    <img
+                                        src="images/homePage/sponsorFive.png"
+                                        className="w-full object-contain h-[10rem]"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                            {/* <div className="keen-slider__slide number-slide5">5</div>
+                            <div className="keen-slider__slide number-slide6">6</div> */}
+                        </div>
+                        {/* <div className="">
                             <img
                                 src="images/homePage/sponsorTwo.png"
                                 className="w-full object-contain h-[10rem]"
@@ -371,7 +431,7 @@ const Index = () => {
                                 className="w-full object-contain h-[10rem]"
                                 alt=""
                             />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
