@@ -50,12 +50,24 @@ class PageController extends Controller
     {
         return Inertia::render('Website/AboutMessage');
     }
-     public function aboutStory()
+    public function aboutStory()
     {
         return Inertia::render('Website/AboutStory');
     }
+
     public function publish()
     {
         return Inertia::render('Website/Publish');
     }
+
+   public function contact()
+    {
+        return Inertia::render('Website/Contact');
+    }
+    public function publication()
+    {
+        return Inertia::render('Website/Publication');
+    }
+    
+
 }

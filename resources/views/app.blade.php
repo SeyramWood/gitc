@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        
         <meta charset="utf-8">
         <link rel="icon" type="image/jpg" href="/images/logo.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
