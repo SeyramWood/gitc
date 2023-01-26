@@ -6,7 +6,7 @@ import Navigation from "./Navigation";
 
 const WebsiteLayout = ({ children, page }) => {
     return (
-        <main className="w-full">
+        <main className="w-full ">
             <Navigation />
             <Banner page={page} />
             <main>{children}</main>

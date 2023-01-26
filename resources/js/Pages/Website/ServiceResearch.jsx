@@ -1,8 +1,16 @@
 import React, { useState } from "react";
-
+import { WebsiteLayout } from "../../components/layouts";
+import {
+    SlCallIn,
+    SlEnvelopeOpen,
+    SlLocationPin,
+    SlPaperPlane,
+} from "react-icons/sl";
+import {Link} from "@inertiajs/inertia-react";
 const ServiceResearch = () => {
 
     return (
+        <WebsiteLayout page="home">
      <div className="bg-white text-black">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . Research</span>
@@ -11,55 +19,56 @@ const ServiceResearch = () => {
 
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col md:flex-row-reverse">
-                 <div className="  max-h-4xl ">
+                 <div className="  max-h-4xl mt-20">
 
-                            <h3 className="text-blue-700 mb-2 font-semibold text-3xl">
+                            <h3 className="text-blue-700 mb-2 font-bold text-3xl mt-3">
                                 Research
                             </h3>
 
-                         <img className="w-screen" src="https://placeimg.com/400/400/arch" alt="Album"/>
+                         <img className="w-screen" src="/images/research.png" alt="Album"/>
 
                  </div>
                  <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
                      <div className="card-body">
-                         <h3 className="text-black text-lg font-bold">Our Services</h3>
+                         <h3 className="text-black  text-xl font-bold">Our Services</h3>
 
-                         <p className="text-blue-700 text-xl">
+                         <p className="text-blue-700 text-xl ">
                              Trade Remedies
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Anti - Dumping Duties
-
+                             <Link href="/service">  Anti - Dumping Duties</Link>
                          </p>
                          <p className="text-blue-700 text-xl">
 
 
-                             Subsidy and Countervailing Duties
-
+                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
                          </p>
-
                          <p className="text-blue-700 text-xl">
 
+                             <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
 
-                             Safeguards Measures
 
                          </p>
                          <p className="text-blue-700 text-xl">
 
+                             <Link href="/service/safeguard">  Safeguards Measures</Link>
 
-                             Dispute Settlement
-
-                         </p>
-                         <p className="text-blue-700 text-xl">
-
-                             Tariff Review
 
                          </p>
                          <p className="text-blue-700 text-xl">
 
-                             Research
+
+                             <Link href="/service/dispute">Dispute Settlement</Link>
+
+
+                         </p>
+                         <p className="text-blue-700 text-xl">
+                             <Link href="/service">  Tariff Review</Link>
+
+
+                         </p>
+                         <p className="text-blue-700 text-xl">
+
+                             <Link href="/service/research">  Research</Link>
+
                          </p>
                      </div>
                  </div>
@@ -94,20 +103,32 @@ const ServiceResearch = () => {
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white border-solid border-2 border-sky-500 ">
                      <div className="card-body">
-                         <h3>Contact with us</h3>
+                         <h3 className="text-center text-xl font-bold">Contact us</h3>
 
                          <p className="text-blue-700 text-xl">
-                             +233 030 296 0298
+
+                             <span className=" flex ">
+                               <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
+                            </span>
+                         </p>
+
+                         <p className="text-blue-700 text-xl">
+                               <span className=" flex ">
+                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
+                            </span>
                          </p>
                          <p className="text-blue-700 text-xl">
-                             info@gitc.gov.gh
+                            <span className=" flex ">
+                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
+                            </span>
+
                          </p>
                      </div>
                  </div>
              </div>
          </div>
      </div>
-
+        </WebsiteLayout>
     );
 };
 
