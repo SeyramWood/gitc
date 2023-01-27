@@ -14,8 +14,8 @@ const AboutMessage = () => {
         AOS.init();
     }, []);
     return (
-        <WebsiteLayout page="about">
-        <div className="bg-white ">
+        <WebsiteLayout page="story">
+        <div className="bg-white">
             <div className="sm:flex text-center sm:text-left p-4 mt-6 mb-32 bg-slate-300">
                 <div className="sm:w-[20%] sm:mt-7 sm:mx-3">
                     <HeadingPrimary className="text-black ">
@@ -194,21 +194,38 @@ const AboutMessage = () => {
                                 data-aos-duration="2000"
 
                             >
-                                <p className="text-center sm:text-3lx">
-                                    DID YOU KNOW THAT
+                                <p className="text-center text-5xl font-bold">
+                                    {/*DID YOU KNOW THAT*/}
+                                    Mission
                                 </p>
                                 <p className="my-5 font-bold text-center sm:text-2xl text-white">
-                                    GITC is among seven trade remedy
-                                    institutions and investigating
-                                    authorities in Africa.
+
+                                    To promote Ghana’s international
+                                    trade through the application of fair,
+                                    efficient,transparent, and objective
+                                    measures affecting international
+                                    trade in conformity with World Trade Organization rules and regulations.
+
+
+                                    {/*GITC is among seven trade remedy*/}
+                                    {/*institutions and investigating*/}
+                                    {/*authorities in Africa.*/}
+                                </p>
+
+                                <p className="text-center text-5xl font-bold">
+                                    {/*DID YOU KNOW THAT*/}
+                                    Vission
                                 </p>
                                 <p className="mb-5 text-center sm:mb-14 sm:text-lg">
-                                    These other African countries are:
-                                    Egypt,South Africa, Morocco,
-                                    Tunisia,Mauritius, and Madagascar. These
-                                    other African countries are: Egypt,South
-                                    Africa, Morocco, Tunisia,Mauritius, and
-                                    Madagascar.
+
+                                    To become world-class fair trade regulatory agency.
+
+                                    {/*These other African countries are:*/}
+                                    {/*Egypt,South Africa, Morocco,*/}
+                                    {/*Tunisia,Mauritius, and Madagascar. These*/}
+                                    {/*other African countries are: Egypt,South*/}
+                                    {/*Africa, Morocco, Tunisia,Mauritius, and*/}
+                                    {/*Madagascar.*/}
                                 </p>
                                 <Link href="/">
                                     <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
@@ -221,7 +238,6 @@ const AboutMessage = () => {
 
                 </div>
             </div>
-
         </div>
         </WebsiteLayout>
     );

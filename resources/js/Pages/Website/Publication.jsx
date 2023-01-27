@@ -11,6 +11,8 @@ import { useKeenSlider } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
 import "../../../css/style.css"
 import { Link } from "@inertiajs/inertia-react";
+import {WebsiteLayout} from "../../components/layouts";
+import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 
 const Publication = () => {
 
@@ -48,10 +50,19 @@ const Publication = () => {
     ]
 
     return (
-        <div className="bg-white">
+        <WebsiteLayout page="publication">
+        <div className="bg-white mt-3">
+            <div className="text-center ">
+                <HeadingSecondary>
+                    PRERSS RELEAESES & SPEECHES
+                </HeadingSecondary>
+            </div>
 
-            <div className=" sm:mx-[10rem] sm:mb-28">
+            <div className=" sm:mx-[10rem] sm:mb-28 ">
+
+
                 <div className="navigation-wrapper  ">
+
                     <div ref={sliderRef} className="keen-slider ">
 
                         <div className="keen-slider__slide number-slide1 " >
@@ -143,38 +154,6 @@ const Publication = () => {
                             </div>
                         </div>
 
-                        <div className="keen-slider__slide number-slide4" >
-                            <div className="">
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
-                            </div>
-                            <div className="">
-                                <Paragraph>
-                                    Text here
-                                </Paragraph>
-                            </div>
-                        </div>
-
-                        <div className="keen-slider__slide number-slide5" >
-                            <div className="">
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
-                            </div>
-                            <div className="">
-                                <Paragraph>
-                                    Text here
-                                </Paragraph>
-                            </div>
-                        </div>
-
-                        <div className="keen-slider__slide number-slide6" >
-                            <div className="">
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
-                            </div>
-                            <div className="">
-                                <Paragraph>
-                                    Text here
-                                </Paragraph>
-                            </div>
-                        </div>
 
                     </div>
                     {loaded && instanceRef.current && (
@@ -215,16 +194,14 @@ const Publication = () => {
                     <div class="sm:grid grid-cols-3">
                         <div className="relative sm:w-[20rem] mx-3 mb-10" >
                             <div className="bg-black overflow-hidden " onClick={() => setOpen(true)}>
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
+                                <img src="images/publish/publish.jpg" className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
                             </div>
                             <div className="bg-black/40 insect-0 absolute"></div>
                             <Lightbox
                                 open={open}
                                 close={() => setOpen(false)}
                                 slides={[
-                                    { src: "/images/homepage/serviceOne.jpg" },
-                                    { src: "/images/homepage/serviceTwo.jpg" },
-                                    { src: "/images/homepage/serviceThree.jpg" },
+                                    { src: "/images/publish/publish.jpg" },
                                 ]}
                             />
                             <div className="text-center bg-slate-100 p-5">
@@ -239,15 +216,13 @@ const Publication = () => {
                         </div>
                         <div className=" sm:w-[20rem]  mx-3 mb-10" >
                             <div className="bg-black overflow-hidden" onClick={() => setOpen(true)}>
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
+                                <img src="images/publish/publish1.jpg" className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
                             </div>
                             <Lightbox
                                 open={openOne}
                                 close={() => setOpenOne(false)}
                                 slides={[
-                                    { src: "/images/homepage/sponsorOne.jpg" },
-                                    { src: "/images/homepage/serviceTwo.jpg" },
-                                    { src: "/images/homepage/serviceThree.jpg" },
+                                    { src: "/images/publish/publish1.jpg" },
                                 ]}
                             />
                             <div className="text-center bg-slate-100 p-5">
@@ -262,15 +237,13 @@ const Publication = () => {
                         </div>
                         <div className=" sm:w-[20rem]  mx-3 mb-10" >
                             <div className="" onClick={() => setOpenTwo(true)}>
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
+                                <img src="images/publish/publish2.jpg" className="object-cover h-[17rem]" alt="" />
                             </div>
                             <Lightbox
                                 open={openTwo}
                                 close={() => setOpenTwo(false)}
                                 slides={[
-                                    { src: "/images/homepage/sponsorOne.jpg" },
-                                    { src: "/images/homepage/serviceTwo.jpg" },
-                                    { src: "/images/homepage/serviceThree.jpg" },
+                                    { src: "/images/publish/publish2.jpg" },
                                 ]}
                             />
                             <div className="text-center bg-slate-100 p-5">
@@ -287,15 +260,13 @@ const Publication = () => {
                         </div>
                         <div className="sm:w-[20rem]  mx-3 mb-10" >
                             <div className="" onClick={() => setOpenThree(true)}>
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
+                                <img src="images/publish/publish3.jpg" className="object-cover h-[17rem]" alt="" />
                             </div>
                             <Lightbox
                                 open={openThree}
                                 close={() => setOpenThree(false)}
                                 slides={[
-                                    { src: "/images/homepage/sponsorOne.jpg" },
-                                    { src: "/images/homepage/serviceTwo.jpg" },
-                                    { src: "/images/homepage/serviceThree.jpg" },
+                                    { src: "/images/publish/publish3.jpg" },
                                 ]}
                             />
                             <div className="text-center bg-slate-100 p-5">
@@ -311,15 +282,13 @@ const Publication = () => {
                         </div>
                         <div className=" sm:w-[20rem]  mx-3 mb-10" >
                             <div className="" onClick={() => setOpenFour(true)}>
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
+                                <img src="images/publish/publish4.jpg" className="object-cover h-[17rem]" alt="" />
                             </div>
                             <Lightbox
                                 open={openFour}
                                 close={() => setOpenFour(false)}
                                 slides={[
-                                    { src: "/images/homepage/sponsorOne.jpg" },
-                                    { src: "/images/homepage/serviceTwo.jpg" },
-                                    { src: "/images/homepage/serviceThree.jpg" },
+                                    { src: "/images/publish/publish4.jpg" },
                                 ]}
                             />
                             <div className="text-center bg-slate-100 p-5">
@@ -334,15 +303,13 @@ const Publication = () => {
                         </div>
                         <div className=" sm:w-[20rem]  mx-3 mb-10" >
                             <div className="" onClick={() => setOpenFive(true)}>
-                                <img src="images/about/bg.jpg" className="object-cover h-[17rem]" alt="" />
+                                <img src="images/publish/publish5.jpg" className="object-cover h-[17rem]" alt="" />
                             </div>
                             <Lightbox
                                 open={openFive}
                                 close={() => setOpenFive(false)}
                                 slides={[
-                                    { src: "/images/homepage/sponsorOne.jpg" },
-                                    { src: "/images/homepage/serviceTwo.jpg" },
-                                    { src: "/images/homepage/serviceThree.jpg" },
+                                    { src: "/images/publish/publish5.jpg" },
                                 ]}
                             />
                             <div className="text-center bg-slate-100 p-5">
@@ -361,6 +328,7 @@ const Publication = () => {
             </div>
 
         </div>
+        </WebsiteLayout>
     );
 }
 

@@ -130,10 +130,10 @@ const Navigation = () => {
                                 <Link href="/service/dispute">Dispute Settlements</Link>
                             </li>
                             <li>
-                                <Link href="/service/dispute">Ant-Dumping</Link>
+                                <Link href="/service/dumping">Ant-Dumping</Link>
                             </li>
                             <li>
-                                <Link href="/service">Tariff Review</Link>
+                                <Link href="/services">Tariff Review</Link>
                             </li>
                         </ul>
                     </li>
@@ -141,7 +141,7 @@ const Navigation = () => {
                         <Link href="/resources">Resources</Link>
                     </li>
                     <li className="hover:opacity-100">
-                        <Link href="/publish">News</Link>
+                        <Link href="/publication">News</Link>
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/contact">Contact Us</Link>
@@ -219,10 +219,10 @@ const Navigation = () => {
                                     <Link href="/service/dispute">Dispute Settlements</Link>
                                 </li>
                                 <li>
-                                    <Link href="/service/dispute">Ant-Dumping</Link>
+                                    <Link href="/service/dumping">Ant-Dumping</Link>
                                 </li>
                                 <li>
-                                    <Link href="/service">Tariff Review</Link>
+                                    <Link href="/services">Tariff Review</Link>
                                 </li>
                             </ul>
                         </li>
@@ -230,7 +230,7 @@ const Navigation = () => {
                             <Link href="/resources">Resources</Link>
                         </li>
                         <li className="hover:opacity-100">
-                            <Link href="/publish">News</Link>
+                            <Link href="/publication">News</Link>
                         </li>
                         <li className="hover:opacity-100">
                             <Link href="/contact">Contact Us</Link>

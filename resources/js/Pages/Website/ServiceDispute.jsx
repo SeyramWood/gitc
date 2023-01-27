@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { WebsiteLayout } from "../../components/layouts";
 import {Link} from "@inertiajs/inertia-react";
-// import HeadingSecondary from "./Service";
 import Paragraph from "../../components/layouts/website/Paragraph";
-import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
+import {
+    SlCallIn,
+    SlEnvelopeOpen,
+    SlLocationPin,
+    SlPaperPlane,
+} from "react-icons/sl";
 import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 const ServiceDispute = () => {
 

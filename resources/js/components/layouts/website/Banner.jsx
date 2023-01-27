@@ -55,6 +55,10 @@ const Banner = ({ page }) => {
             {page === "home" && <BannerHome />}
             {page === "about" && <BannerAbout />}
             {page === "service" && <BannerServices />}
+            {page === "contactUs" && <ContactUs />}
+            {page === "publication" && <Publication />}
+            {page === "story" && <Story/>}
+            {page === "message" && <Message/>}
         </section>
     );
 };
@@ -229,7 +233,7 @@ const BannerAbout = () => {
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">About Us</h1>
                 <p className="mt-5 text-2xl">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
                 </p>
             </article>
         </section>
@@ -243,6 +247,50 @@ const BannerServices = () => {
                 <p className="mt-5 text-2xl">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
+            </article>
+        </section>
+    );
+};
+
+const ContactUs = () => {
+    return (
+        <section className="banner__static contact">
+            <article className="text-white banner__static__article">
+                <h1 className="text-7xl">Contact Us</h1>
+                <p className="mt-5 text-2xl">
+                    Connect with Us
+                </p>
+            </article>
+        </section>
+    );
+};
+const Publication = () => {
+    return (
+        <section className="banner__static publication">
+            <article className="text-white banner__static__article">
+                <h1 className="text-7xl">PUBLICATIONS</h1>
+
+            </article>
+        </section>
+    );
+};
+
+const Story = () => {
+    return (
+        <section className="banner__static story">
+            <article className="text-white banner__static__article">
+                <h1 className="text-7xl">Our Story</h1>
+
+            </article>
+        </section>
+    );
+};
+const Message = () => {
+    return (
+        <section className="banner__static message">
+            <article className="text-white banner__static__article">
+                <h1 className="text-7xl">Our Message</h1>
+
             </article>
         </section>
     );

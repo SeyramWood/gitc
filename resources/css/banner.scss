@@ -112,6 +112,38 @@
             ),
             url("/images/homePage/storyTwo.jpg");
     }
+    &.publication {
+        background-image: linear-gradient(
+                        to top,
+                        rgba(249, 68, 62, 0.637),
+                        rgba(249, 68, 62, 0.637)
+        ),
+        url("/images/publish/publicbanner.jpg");
+    }
+    &.contact{
+        background-image: linear-gradient(
+                        to top,
+                        rgba(249, 68, 62, 0.637),
+                        rgba(249, 68, 62, 0.637)
+        ),
+        url("/images/contact/contactbanner.jpg");
+    }
+  &.story{
+    background-image: linear-gradient(
+                    to top,
+                    rgba(249, 68, 62, 0.637),
+                    rgba(249, 68, 62, 0.637)
+    ),
+    url("/images/about/story.jpg");
+  }
+  &.message{
+    background-image: linear-gradient(
+                    to top,
+                    rgba(249, 68, 62, 0.637),
+                    rgba(249, 68, 62, 0.637)
+    ),
+    url("/images/about/message.jpg");
+  }
     &.services {
         background-image: linear-gradient(
                 to top,
