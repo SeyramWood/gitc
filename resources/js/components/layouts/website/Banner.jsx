@@ -59,6 +59,7 @@ const Banner = ({ page }) => {
             {page === "publication" && <Publication />}
             {page === "story" && <Story/>}
             {page === "message" && <Message/>}
+            {page === "faq" && <Faq/>}
         </section>
     );
 };
@@ -245,7 +246,6 @@ const BannerServices = () => {
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">Our Services</h1>
                 <p className="mt-5 text-2xl">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
             </article>
         </section>
@@ -291,6 +291,19 @@ const Message = () => {
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">Our Message</h1>
 
+            </article>
+        </section>
+    );
+};
+const Faq = () => {
+    return (
+        <section className="banner__static faq">
+            <article className="text-white banner__static__article">
+                <h1 className="text-5xl">Frequently Asked Question</h1>
+                <p className="mt-5 text-2xl">
+                    The most common questions about how our business works and what
+                    can do for you.
+                </p>
             </article>
         </section>
     );

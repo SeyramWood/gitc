@@ -159,7 +159,7 @@ const Navigation = () => {
                 </div>
                 <div>
                     <Link
-                        href="/"
+                        href="/faq"
                         as="button"
                         className={`block  p-4 w-[10rem] rounded-md text-white text-bold text-2xl bg-primary`}
                     >

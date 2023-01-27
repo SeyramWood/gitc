@@ -78,11 +78,11 @@ const Footer = () => {
                         <li className="mb-2 text-xl capitalize transform hover:text-primary">
                             <Link href="/services">Our service</Link>
                         </li>
+                        {/*<li className="mb-2 text-xl capitalize transform hover:text-primary">*/}
+                            {/*<Link href="/resources">Resources</Link>*/}
+                        {/*</li>*/}
                         <li className="mb-2 text-xl capitalize transform hover:text-primary">
-                            <Link href="/resources">Resources</Link>
-                        </li>
-                        <li className="mb-2 text-xl capitalize transform hover:text-primary">
-                            <Link href="/news">News</Link>
+                            <Link href="/publication">News</Link>
                         </li>
                     </ul>
                 </section>
@@ -113,7 +113,7 @@ const Footer = () => {
                             </Link>
                         </li>
                         <li className="mb-2 text-xl capitalize transform hover:text-primary">
-                            <Link href="/news">World Trade Center</Link>
+                            <Link href="/publication">World Trade Center</Link>
                         </li>
                     </ul>
                 </section>
@@ -140,13 +140,17 @@ const Footer = () => {
                     </section>
                 </section>
             </nav>
+
             <section className="w-[100%] h-[5rem] bg-tertiary flex items-center text-web-s md:text-xl  px-web-xs lg:px-web-l">
                 <strong>
                     &copy;Copyright {new Date().getUTCFullYear()}, All Rights
                     Reserved, Ghana International Trade Commission.
                 </strong>
             </section>
+
         </footer>
+
+
     );
 };
 
