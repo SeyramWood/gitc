@@ -206,7 +206,7 @@ const Index = () => {
                                     trade regulations.
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/service/subsidy"
                                     className="text-primary hover:text-red-300"
                                 >
                                     Read More
@@ -235,7 +235,7 @@ const Index = () => {
                                     Organization.
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/service/dumping"
                                     className="text-primary hover:text-red-300"
                                 >
                                     Read More
@@ -264,7 +264,7 @@ const Index = () => {
                                     producer or domestic industry
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/services"
                                     className="text-primary hover:text-red-300 sm:pl-1"
                                 >
                                     Read More
@@ -294,7 +294,7 @@ const Index = () => {
                                     effective rate of protection.
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/service/research"
                                     className="text-primary hover:text-red-300"
                                 >
                                     Read More
@@ -340,8 +340,13 @@ const Index = () => {
                                         Africa, Morocco, Tunisia, Mauritius, and
                                         Madagascar.
                                     </p>
+
                                     <Link hre="/">
                                         <ButtonOutline className="block p-4  border rounded-full border-primary hover:border-2">
+
+                                    <Link hre="/story">
+                                        <ButtonOutline className="block p-4 mx-auto border rounded-full border-primary hover:border-2">
+
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
@@ -379,9 +384,15 @@ const Index = () => {
                                             from the impact of unfair trade
                                             practices in the course of
                                             international trade.
+
                                         </li>
                                     </ul>
                                     <Link href="/">
+
+                                        </p>
+                                    </div>
+                                    <Link href="/story">
+
                                         <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
                                             Read Our Story
                                         </ButtonOutline>

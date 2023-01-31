@@ -30,7 +30,7 @@ const Service = () => {
                          <img className="w-screen" src="/images/service.jpg" alt="Album"/>
 
                  </div>
-                 <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white  ">
+                 <div className="card  text-dark flex-shrink-0 w-full max-w-sm  bg-white  ">
                      <div className="card-body">
                          <HeadingSecondary>
                              Our Services
