@@ -4,7 +4,7 @@ import Paragraph from "../../components/layouts/website/Paragraph";
 
 const AboutMessage = () => {
     return (
-        <WebsiteLayout page="about" className="bg-white">
+        <WebsiteLayout page="message" className="bg-white">
             <div className="bg-white">
                 <div className="my-20 bg-slate-100 px-10">
                     <HeadingPrimary className="text-black text-left py-8">
@@ -13,7 +13,7 @@ const AboutMessage = () => {
                     <div className="">
                         <div className="float-right sm:w-[30%] sm:h-[70%] sm:mx-4 sm:mb-4">
                             <img
-                                src="images/homePage/serviceFour.jpg"
+                                src="images/index/agyekum.jpg"
                                 className="object-fit "
                                 alt="img"
                             />

@@ -7,6 +7,9 @@ import {
     SlPaperPlane,
 } from "react-icons/sl";
 import {WebsiteLayout} from "../../components/layouts";
+import Paragraph from "../../components/layouts/website/Paragraph";
+import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
+import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 const ServiceDumping = () => {
 
     return (
@@ -20,60 +23,64 @@ const ServiceDumping = () => {
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col md:flex-row-reverse">
                  <div className="  max-h-4xl ">
-                     <h2 className="text-blue-700 mt-20 text-blue-700 font-bold text-3xl">Trade Remedies</h2>
-                     <p className="text-sm mb-5">
-                         Subsidy & controvailing duties; antidumping duties, safeguard and measures
-                     </p>
-                            <h3 className="text-blue-700 mb-2 font-bold text-3xl">
+                     <HeadingSecondary>
+                         Trade Remedies
+                     </HeadingSecondary>
 
-                                Antidumping Duties
-                            </h3>
+                     <Paragraph>
+                         Subsidy & controvailing duties; antidumping duties, safeguard and measures
+                     </Paragraph>
+
+                     <HeadingSecondary>
+                         Ant-Dumping
+                     </HeadingSecondary>
 
                          <img className="w-screen" src="/images/dump.jpg" alt="Album"/>
 
                  </div>
                  <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
                      <div className="card-body">
-                         <h3 className="text-black text-xl font-bold">Our Services</h3>
+                         <HeadingSecondary>
+                             Our Services
+                         </HeadingSecondary>
+                         <Paragraph>
 
-                         <p className="text-blue-700 text-xl ">
-                             Trade Remedies
                              <Link href="/service">  Anti - Dumping Duties</Link>
-                         </p>
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
 
 
                              <Link href="/service/dumping">  Anti - Dumping Duties</Link>
-                         </p>
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
 
                              <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
 
 
-                         </p>
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
 
                              <Link href="/service/safeguard">  Safeguards Measures</Link>
 
 
-                         </p>
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
 
 
                              <Link href="/service/dispute">Dispute Settlement</Link>
 
 
-                         </p>
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
                              <Link href="/service">  Tariff Review</Link>
 
 
-                         </p>
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
 
                              <Link href="/service/research">  Research</Link>
 
-                         </p>
+                         </Paragraph>
                      </div>
                  </div>
              </div>
@@ -153,26 +160,27 @@ const ServiceDumping = () => {
                  </div>
                  <div className="card  text-dark flex-shrink-0 w-full max-w-sm shadow-2xl bg-white border-solid border-2 border-sky-500 ">
                      <div className="card-body">
-                         <h3 className="text-center text-xl font-bold">Contact us</h3>
+                         <HeadingSecondary>
+                             Contact Us
+                         </HeadingSecondary>
 
-                         <p className="text-blue-700 text-xl">
-
-                             <span className=" flex ">
+                         <Paragraph>
+                               <span className=" flex ">
                                <span className="text-rose-700"> < SlCallIn/> </span><span className="ml-4"> +233 030 296 0298</span>
                             </span>
-                         </p>
-
-                         <p className="text-blue-700 text-xl">
+                         </Paragraph>
+                         <Paragraph>
                                <span className=" flex ">
-                               <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
+                            <span className="text-rose-700"> <SlEnvelopeOpen /> </span><span className="ml-4">info@gitc.gov.gh</span>
                             </span>
-                         </p>
-                         <p className="text-blue-700 text-xl">
-                            <span className=" flex ">
-                               <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
+                         </Paragraph>
+                         <Paragraph>
+                               <span className=" flex ">
+                            <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
                             </span>
+                         </Paragraph>
 
-                         </p>
+
                      </div>
                  </div>
              </div>

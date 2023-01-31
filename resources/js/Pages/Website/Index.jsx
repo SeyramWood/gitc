@@ -187,7 +187,7 @@ const Index = () => {
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Link here</Link>
+                                        <Link href="/" className="text-white">Click here</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceOne.jpg"
@@ -217,7 +217,7 @@ const Index = () => {
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Link here</Link>
+                                        <Link href="/" className="text-white">Click here</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceTwo.jpg"
@@ -246,7 +246,7 @@ const Index = () => {
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Link here</Link>
+                                        <Link href="/" className="text-white">Click here</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceThree.jpg"

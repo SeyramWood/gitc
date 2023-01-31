@@ -54,6 +54,12 @@ class PageController extends Controller
     {
         return Inertia::render('Website/AboutStory');
     }
+
+    public function publish()
+    {
+        return Inertia::render('Website/Publish');
+    }
+
    public function contact()
     {
         return Inertia::render('Website/Contact');
@@ -62,5 +68,9 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Publication');
     }
-    
+
+    public function faq()
+    {
+        return Inertia::render('Website/Faq');
+    }
 }
