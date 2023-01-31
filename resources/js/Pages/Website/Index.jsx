@@ -175,7 +175,7 @@ const Index = () => {
                         <Paragraph className="pt-3 font-bold">
                             COVERED IN THESE AREAS
                         </Paragraph>
-                        <div className="-z-10 text-[grey] uppercase text-[15rem] absolute z-10 mx-auto">services</div>
+                        {/*<div className="-z-10 text-[grey] uppercase text-[15rem] absolute z-10 mx-auto">services</div>*/}
                     </div>
 
                     <div
@@ -199,7 +199,7 @@ const Index = () => {
                                 <h1 className=" py-5 text-3xl text-primary">
                                     Trade Remedies
                                 </h1>
-                                <p className="mb-3">
+                                <p className="mb-3 text-center">
                                     To ensure equality and fairness in the
                                     application of measures affecting
                                     international trade and the use of world
@@ -341,8 +341,8 @@ const Index = () => {
                                         Madagascar.
                                     </p>
 
-                                    <Link hre="/">
-                                        <ButtonOutline className="block p-4  border rounded-full border-primary hover:border-2">
+                                    {/*<Link hre="/">*/}
+                                        {/*<ButtonOutline className="block p-4  border rounded-full border-primary hover:border-2">*/}
 
                                     <Link hre="/story">
                                         <ButtonOutline className="block p-4 mx-auto border rounded-full border-primary hover:border-2">
@@ -387,10 +387,7 @@ const Index = () => {
 
                                         </li>
                                     </ul>
-                                    <Link href="/">
 
-                                        </p>
-                                    </div>
                                     <Link href="/story">
 
                                         <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">

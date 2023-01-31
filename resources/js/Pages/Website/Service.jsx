@@ -132,8 +132,6 @@ const Service = () => {
                             <span className="text-rose-700"> <SlLocationPin /> </span><span className="ml-4">GL-040-2630</span>
                             </span>
                          </Paragraph>
-
-
                      </div>
                  </div>
              </div>
