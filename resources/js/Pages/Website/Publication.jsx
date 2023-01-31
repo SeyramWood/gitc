@@ -41,10 +41,65 @@ const Publication = () => {
 
     const releases = [
         {
-            title: '',
-            img: '',
-            content: '',
-        }
+            main_img: 'images/about/bg.jpg',
+            gallery: [
+                '/images/homepage/serviceOne.jpg',
+                '/images/homepage/serviceTwo.jpg',
+                '/images/homepage/serviceTwo.jpg',
+            ],
+            title: ' COURTESY CALL TO GHANA STATISTICAL SERVICE',
+            date: ' 19th May 2022',
+        },
+        {
+            main_img: '',
+            gallery: [
+                '/images/homepage/serviceTwo.jpg',
+                '/images/homepage/serviceTwo.jpg',
+            ],
+            title: ' COURTESY CALL TO GHANA Revenue Authority',
+            date: '2nd June 2022',
+        },
+        {
+            main_img: '',
+            gallery: [
+                '',
+                '',
+                '',
+            ],
+            title: '  ASSOCIATION OF GHANA INDUSTRIES COURTESY CALL TO GITC',
+            date: '27th May 2022',
+        },
+        {
+            main_img: '',
+            gallery: [
+                '',
+                '',
+                '',
+            ],
+            title: 'HON.DEPUTY MINISTER (TRADE) COURTESY CALL TO GITC',
+            date: '19th May,2022',
+        },
+        {
+            main_img: '',
+            gallery: [
+                '',
+                '',
+                '',
+            ],
+            title: 'TRAINING SESSION WITH BMWK',
+            date: '19th -29th April 2022',
+        },
+        {
+            main_img: '',
+            gallery: [
+                'images/homepage/serviceTwo.jpg',
+                '',
+                '',
+            ],
+            title: ' GITC RETREAT WITH STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD',
+            date: '17th - 18th March 2022',
+        },
+
     ]
 
     return (
@@ -212,7 +267,39 @@ const Publication = () => {
                     </Paragraph>
                 </div>
                 <div className="sm:flex justify-center">
-                    <div class="sm:grid grid-cols-3">
+                    <div className="sm:grid grid-cols-3">
+                        {/*
+                         {
+                            releases.map((data) => (
+                            // console.log(data.gallery.img)
+                            // <div className="">{data.date}</div>
+                            <div className="relative sm:w-[20rem] mx-3 mb-10" >
+                                <div className="bg-black overflow-hidden " onClick={() => setOpen(true)}>
+                                    <img src={data.main_img} className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
+                                </div>
+                                <div className="bg-black/40 insect-0 absolute"></div>
+                                <Lightbox
+                                    open={open}
+                                    close={() => setOpen(false)}
+                                    slides={[
+                                        { src: "/images/homepage/serviceOne.jpg"},
+                                        { src: "/images/homepage/serviceTwo.jpg"},
+                                        { src: "/images/homepage/serviceThree.jpg"},
+                                    ]}
+                                />
+                                <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
+                                    <Paragraph className="text-primary uppercase ">
+                                        COURTESY CALL TO
+                                        GHANA STATISTICAL SERVICE
+                                    </Paragraph>
+                                    <Paragraph>
+                                        19th May 2022
+                                    </Paragraph>
+                                </div>
+                            </div>
+                        ))
+                        } 
+                        */}
                         <div className="relative sm:w-[20rem] mx-3 mb-10" >
                             <div className="bg-black overflow-hidden " onClick={() => setOpen(true)}>
                                 <img src="images/about/bg.jpg" className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
@@ -227,7 +314,7 @@ const Publication = () => {
                                     { src: "/images/homepage/serviceThree.jpg" },
                                 ]}
                             />
-                            <div className="text-center bg-slate-100 p-5">
+                            <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
                                 <Paragraph className="text-primary uppercase ">
                                     COURTESY CALL TO
                                     GHANA STATISTICAL SERVICE
@@ -250,7 +337,7 @@ const Publication = () => {
                                     { src: "/images/homepage/serviceThree.jpg" },
                                 ]}
                             />
-                            <div className="text-center bg-slate-100 p-5">
+                            <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
                                 <Paragraph className="text-primary uppercase ">
                                     COURTESY CALL TO
                                     GHANA Revenue Authority
@@ -273,7 +360,7 @@ const Publication = () => {
                                     { src: "/images/homepage/serviceThree.jpg" },
                                 ]}
                             />
-                            <div className="text-center bg-slate-100 p-5">
+                            <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
                                 <Paragraph className="text-primary uppercase ">
                                     ASSOCIATION OF GHANA
                                     INDUSTRIES COURTESY CALL
@@ -298,10 +385,9 @@ const Publication = () => {
                                     { src: "/images/homepage/serviceThree.jpg" },
                                 ]}
                             />
-                            <div className="text-center bg-slate-100 p-5">
+                            <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
                                 <Paragraph className="text-primary uppercase ">
-                                    HON.DEPUTY MINISTER (TRADE)
-                                    COURTESY CALL TO GITC
+                                    HON.DEPUTY MINISTER (TRADE) COURTESY CALL TO GITC
 
                                 </Paragraph>
                                 <Paragraph>
@@ -322,10 +408,9 @@ const Publication = () => {
                                     { src: "/images/homepage/serviceThree.jpg" },
                                 ]}
                             />
-                            <div className="text-center bg-slate-100 p-5">
+                            <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
                                 <Paragraph className="text-primary uppercase ">
-                                    TRAINING SESSION
-                                    WITH BMWK
+                                    TRAINING SESSION WITH BMWK
                                 </Paragraph>
                                 <Paragraph>
                                     19th -29th April 2022
@@ -345,16 +430,16 @@ const Publication = () => {
                                     { src: "/images/homepage/serviceThree.jpg" },
                                 ]}
                             />
-                            <div className="text-center bg-slate-100 p-5">
+                            <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
                                 <Paragraph className="text-primary uppercase ">
-                                    GITC RETREAT WITH
-                                    STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD
+                                    GITC RETREAT WITH STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD
                                 </Paragraph>
                                 <Paragraph>
                                     17th - 18th March 2022
                                 </Paragraph>
                             </div>
-                        </div>
+                        </div> 
+                        
                     </div>
                 </div>
 

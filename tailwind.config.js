@@ -13,11 +13,12 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+                // sans: ["Nunito", ...defaultTheme.fontFamily.sans],
+                sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 primary: "#F9443E",
-                "primary-light": "rgba(249, 68, 62, 0.637)",
+                primary_light: "rgba(249, 68, 62, 0.637)",
                 secondary: "#111111",
                 tertiary: "#272727",
                 grey:"rgb(126,125,125)",
