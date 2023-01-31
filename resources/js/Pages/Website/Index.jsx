@@ -82,15 +82,15 @@ const Index = () => {
                         data-aos-duration="2000"
                     >
                         <div className="my-5 sm:flex">
-                            <div className="flex p-3 sm:w-[80%] w-[40%] ">
+                            <div className="flex p-3 sm:w-[80%] w-[40%]  ">
                                 <img
                                     src="images/homePage/objectivity.png"
                                     alt="Objectivity"
-                                    className="object-contain"
+                                    className="object-contain sm:-translate-y-[5rem]"
                                 />
                             </div>
                             <div className="">
-                                <HeadingSecondary className="">
+                                <HeadingSecondary className="font-bold ">
                                     Objectivity
                                 </HeadingSecondary>
                                 <Paragraph className="" >
@@ -107,13 +107,14 @@ const Index = () => {
                                 <img
                                     src="images/homePage/professionalism.png"
                                     alt="professional"
-                                    className="object-contain"
+                                    className="object-contain sm:-translate-y-[5rem]"
                                 />
                             </div>
                             <div className="">
-                                <h1 className="my-4 text-3xl text-primary">
+                                <HeadingSecondary className="font-bold">
                                     Professionalism
-                                </h1>
+                                </HeadingSecondary>
+
                                 <p>
                                     To ensure a high level of competence and
                                     efficiency in applying international trade
@@ -127,13 +128,13 @@ const Index = () => {
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
-                                    className="object-contain"
+                                    className="object-contain sm:-translate-y-[5rem]"
                                 />
                             </div>
                             <div className="">
-                                <h1 className="my-4 text-3xl text-primary">
+                                <HeadingSecondary className="font-bold ">
                                     Integrity
-                                </h1>
+                                </HeadingSecondary>
                                 <p>
                                     To ensure absolute neutrality and
                                     consistency in the execution of the mandate
@@ -147,13 +148,13 @@ const Index = () => {
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
-                                    className="object-contain"
+                                    className="object-contain sm:-translate-y-[5rem]"
                                 />
                             </div>
                             <div className="">
-                                <h1 className="my-4 text-3xl text-primary">
+                                <HeadingSecondary className="font-bold">
                                     Integrity
-                                </h1>
+                                </HeadingSecondary>
                                 <p>
                                     To ensure absolute neutrality and
                                     consistency in the execution of the mandate
@@ -167,13 +168,14 @@ const Index = () => {
 
                 {/* services section*/}
                 <div className=" mb-32 ">
-                    <div className="pb-10 text-center ">
+                    <div className="pb-10 text-center relative">
                         <HeadingPrimary className="underline" >
                             Services We Provide
                         </HeadingPrimary>
                         <Paragraph className="pt-3 font-bold">
                             COVERED IN THESE AREAS
                         </Paragraph>
+                        <div className="-z-10 text-[grey] uppercase text-[15rem] absolute z-10 mx-auto">services</div>
                     </div>
 
                     <div
@@ -318,7 +320,7 @@ const Index = () => {
                             </div>
                             <div className="">
                                 <div
-                                    className="container pt-12 px-16"
+                                    className="container sm:pt-12 sm:px-16"
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -349,11 +351,11 @@ const Index = () => {
                         <div className="flex flex-col-reverse justify-center sm:flex sm:flex-row ">
                             <div className="text-white  bg-primary">
                                 <div
-                                    className="container px-16  "
+                                    className="container sm:px-16  "
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <h1 className="text-[3rem] pt-14 pb-6 font-bold">We ensure:</h1>
+                                    <h1 className="text-[3rem] sm:pt-14 pb-6 font-bold">We ensure:</h1>
                                     <ul className="sm:text-[1.3rem] list-disc ">
                                         <li className="py-4">
                                             Ghana’s compliance with
@@ -470,7 +472,7 @@ const Index = () => {
 
                 {/* Minister */}
                 <div
-                    className="block mx-24 mb-32 shadow-lg"
+                    className="block sm:mx-24 mb-32 shadow-lg"
                     data-aos="fade-up"
                     data-aos-duration="2000"
                 >
@@ -556,13 +558,13 @@ const Index = () => {
                                     />
                                 </div>
                                 {/* <div className="pt-2 m-3"> */}
-                                    <textarea
-                                        className="sm:w-[70%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
-                                        rows="4"
-                                        placeholder="Message"
-                                        required="required"
-                                        name=""
-                                    />
+                                <textarea
+                                    className="sm:w-[70%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
+                                    rows="4"
+                                    placeholder="Message"
+                                    required="required"
+                                    name=""
+                                />
                                 {/* </div> */}
 
                                 <Button className="mt-[2rem] mb-[3rem]">
@@ -573,7 +575,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-        </WebsiteLayout>
+         </WebsiteLayout>
     );
 };
 
