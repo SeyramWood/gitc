@@ -1,18 +1,18 @@
 import React from "react";
 import {
-    SlClock,
     SlCallIn,
+    SlClock,
     SlEnvelopeOpen,
     SlLocationPin,
 } from "react-icons/sl";
-import "keen-slider/keen-slider.min.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import "../../../../css/banner.scss";
-import { useKeenSlider } from "keen-slider/react";
 
 const Banner = ({ page }) => {
     return (
         <section className="w-full">
-            <header className="w-full h-[4rem] bg-white hidden md:flex justify-between items-center text-xl px-web-l text-primary">
+            <header className="w-full h-[4rem] bg-white hidden md:flex justify-between items-center text-lg px-web-l text-secondary">
                 <ul className="flex self-stretch">
                     <li className="flex items-center pr-4 mr-5 text-center border-r-2 border-gray-100">
                         <span className="mr-2">
@@ -57,9 +57,9 @@ const Banner = ({ page }) => {
             {page === "service" && <BannerServices />}
             {page === "contactUs" && <ContactUs />}
             {page === "publication" && <Publication />}
-            {page === "story" && <Story/>}
-            {page === "message" && <Message/>}
-            {page === "faq" && <Faq/>}
+            {page === "story" && <Story />}
+            {page === "message" && <Message />}
+            {page === "faq" && <Faq />}
         </section>
     );
 };
@@ -71,7 +71,26 @@ const BannerHome = () => {
     const [opacities, setOpacities] = React.useState([]);
     const [loaded, setLoaded] = React.useState(false);
 
-    const animation = { duration: 16000, easing: (t) => t };
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 1,
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 1,
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 1,
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+        },
+    };
+
     const sliders = [
         {
             image: "/images/homePage/serviceTwo.jpg",
@@ -79,6 +98,14 @@ const BannerHome = () => {
                 h1: "Subsidy and countervailing",
                 p: `We provide action where imposed subsidy is specified an causes material injury to a domestic industry.`,
             },
+            buttons: [
+                <button className="banner__buttons__btn banner__buttons--transparent">
+                    Learn More
+                </button>,
+                <button className="banner__buttons__btn banner__buttons--solid">
+                    Contact Us
+                </button>,
+            ],
         },
         {
             image: "/images/homePage/storyTwo.jpg",
@@ -86,6 +113,11 @@ const BannerHome = () => {
                 h1: "Safeguard Measures",
                 p: `We provide measures that ensure domestic producers in Ghana are not adversely  affected by the influx of imports.`,
             },
+            buttons: [
+                <button className="banner__buttons__btn banner__buttons--solid">
+                    Contact Us
+                </button>,
+            ],
         },
         {
             image: "/images/homePage/serviceThree.jpg",
@@ -93,149 +125,76 @@ const BannerHome = () => {
                 h1: "Anti-Dumping",
                 p: `We provide actions that counteract the import dumping of goods in Ghana.`,
             },
+            buttons: [
+                <button className="banner__buttons__btn banner__buttons--solid">
+                    Contact Us
+                </button>,
+            ],
         },
     ];
-    const [sliderRef, instanceRef] = useKeenSlider({
-        // initial: 0,
-        slides: sliders.length,
-        loop: true,
-        renderMode: "performance",
-        slideChanged(slider) {
-            setCurrentSlide(slider.track.details.rel);
-        },
-        created(s) {
-            s.moveToIdx(sliders.length - 1, true, animation);
-            setLoaded(true);
-        },
-        updated(s) {
-            s.moveToIdx(
-                s.track.details.abs + (sliders.length - 1),
-                true,
-                animation
-            );
-        },
-        animationEnded(s) {
-            s.moveToIdx(
-                s.track.details.abs + (sliders.length - 1),
-                true,
-                animation
-            );
-        },
-        detailsChanged(s) {
-            const new_opacities = s.track.details.slides.map(
-                (slide) => slide.portion
-            );
-            setOpacities(new_opacities);
-        },
-    });
 
     return (
-        <section className="w-full h-screen overflow-hidden bg-tertiary">
-            <div className="h-full navigation-wrapper">
-                <div ref={sliderRef} className="h-full fader">
+        <section className="w-full h-[calc(100vh + 4rem)] overflow-hidden">
+            <div className="h-full carousel-wrapper">
+                <Carousel
+                    swipeable={false}
+                    draggable={false}
+                    showDots={true}
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={12000}
+                    keyBoardControl={true}
+                    customTransition="all .3s ease-in"
+                    // transitionDuration={500}
+                    containerClass="carousel--container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    dotListClass="custom-dot-list-style"
+                    itemClass=""
+                    responsive={responsive}
+                >
                     {sliders.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className="fader__slide"
-                            style={{ opacity: opacities[idx] }}
-                        >
-                            <img src={item.image} />
-                            <div className="z-10 overlay">
+                        <div key={idx.toString()} className="carousel--item">
+                            <div className="carousel--item--image">
+                                <img src={item.image} />
+                            </div>
+                            <div className="overlay">
                                 <section className="text-white mx-web-2xl mt-web-s px-web-s overlay__article">
-                                    <article className="w-[65%]">
-                                        <h1 className="text-7xl">
+                                    <article className="w-[100%] px-web-xl">
+                                        <h1 className="text-9xl text-bold">
                                             {item.content.h1}
                                         </h1>
-                                        <p className="mt-5 text-2xl">
-                                            {item.content.p}
-                                        </p>
+                                        <div className="w-[60%]">
+                                            <p className="mt-5 text-xl">
+                                                {item.content.p}
+                                            </p>
+                                        </div>
                                     </article>
+                                    <section className="w-[100%] px-web-xl mt-12 banner__buttons">
+                                        {item.buttons.map((btn, index) => (
+                                            <React.Fragment
+                                                key={index.toString()}
+                                            >
+                                                {btn}
+                                            </React.Fragment>
+                                        ))}
+                                    </section>
                                 </section>
                             </div>
                         </div>
                     ))}
-                </div>
-                {loaded && instanceRef.current && (
-                    <>
-                        <Arrow
-                            left
-                            onClick={(e) =>
-                                e.stopPropagation() ||
-                                instanceRef.current?.prev()
-                            }
-                            disabled={currentSlide === 0}
-                        />
-
-                        <Arrow
-                            onClick={(e) =>
-                                e.stopPropagation() ||
-                                instanceRef.current?.next()
-                            }
-                            disabled={
-                                currentSlide ===
-                                instanceRef.current.track.details.slides
-                                    .length -
-                                    1
-                            }
-                        />
-                    </>
-                )}
-
-                {loaded && instanceRef.current && (
-                    <div className="dots">
-                        {[
-                            ...Array(
-                                instanceRef.current.track.details.slides.length
-                            ).keys(),
-                        ].map((idx) => {
-                            return (
-                                <button
-                                    key={idx}
-                                    onClick={() => {
-                                        instanceRef.current?.moveToIdx(idx);
-                                    }}
-                                    className={
-                                        "dot" +
-                                        (currentSlide === idx ? " active" : "")
-                                    }
-                                ></button>
-                            );
-                        })}
-                    </div>
-                )}
+                </Carousel>
             </div>
         </section>
     );
 };
-function Arrow(props) {
-    const disabeld = props.disabled ? " arrow--disabled" : "";
-    return (
-        <svg
-            onClick={props.onClick}
-            className={`arrow ${
-                props.left ? "arrow--left" : "arrow--right"
-            } ${disabeld}`}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-        >
-            {props.left && (
-                <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-            )}
-            {!props.left && (
-                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-            )}
-        </svg>
-    );
-}
 
 const BannerAbout = () => {
     return (
         <section className="banner__static about">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">About Us</h1>
-                <p className="mt-5 text-2xl">
-
-                </p>
+                <p className="mt-5 text-2xl"></p>
             </article>
         </section>
     );
@@ -245,8 +204,7 @@ const BannerServices = () => {
         <section className="banner__static about">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">Our Services</h1>
-                <p className="mt-5 text-2xl">
-                </p>
+                <p className="mt-5 text-2xl"></p>
             </article>
         </section>
     );
@@ -257,9 +215,7 @@ const ContactUs = () => {
         <section className="banner__static contact">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">Contact Us</h1>
-                <p className="mt-5 text-2xl">
-                    Connect with Us
-                </p>
+                <p className="mt-5 text-2xl">Connect with Us</p>
             </article>
         </section>
     );
@@ -269,7 +225,6 @@ const Publication = () => {
         <section className="banner__static publication">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">PUBLICATIONS</h1>
-
             </article>
         </section>
     );
@@ -280,7 +235,6 @@ const Story = () => {
         <section className="banner__static story">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">Our Story</h1>
-
             </article>
         </section>
     );
@@ -290,7 +244,6 @@ const Message = () => {
         <section className="banner__static message">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl">Our Message</h1>
-
             </article>
         </section>
     );
@@ -301,8 +254,8 @@ const Faq = () => {
             <article className="text-white banner__static__article">
                 <h1 className="text-5xl">Frequently Asked Question</h1>
                 <p className="mt-5 text-2xl">
-                    The most common questions about how our business works and what
-                    can do for you.
+                    The most common questions about how our business works and
+                    what can do for you.
                 </p>
             </article>
         </section>

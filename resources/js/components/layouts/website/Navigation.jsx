@@ -35,7 +35,7 @@ const Navigation = () => {
             };
             const shouldBeStyle = {
                 position: isSticky ? "sticky" : "absolute",
-                top: isSticky ? "0" : "16rem",
+                top: isSticky ? "0" : "14rem",
             };
             if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) {
                 return;
@@ -141,14 +141,14 @@ const Navigation = () => {
                         <Link href="/resources">Resources</Link>
                     </li>
                     <li className="hover:opacity-100">
-                        <Link href="/publication">News</Link>
+                        <Link href="/publications">Publications</Link>
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/contact">Contact Us</Link>
                     </li>
                 </ul>
             </nav>
-            <section className="absolute left-0 h-[4rem] items-center justify-between w-full bg-transparent top-[7.5rem] md:px-web-l z-10 hidden md:flex">
+            <section className="absolute left-0 h-[4rem] items-center justify-between w-full bg-transparent top-[5.5rem] md:px-web-l z-10 hidden md:flex">
                 <div>
                     <img
                         src="/images/logo.png"
@@ -161,14 +161,14 @@ const Navigation = () => {
                     <Link
                         href="/faq"
                         as="button"
-                        className={`block  p-4 w-[10rem] rounded-md text-white text-bold text-2xl bg-primary`}
+                        className={`block  py-2 w-[6rem] rounded-md text-white text-bold text-lg bg-primary`}
                     >
                         FAQ
                     </Link>
                 </div>
             </section>
             <section
-                className="w-full bg-transparent absolute top-[16rem] left-0 h-[4rem] justify-center items-center z-10 hidden md:flex"
+                className="w-full bg-transparent md:absolute top-[14rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
                 style={{ ...headerStyle }}
             >
                 <nav
@@ -230,7 +230,7 @@ const Navigation = () => {
                             <Link href="/resources">Resources</Link>
                         </li>
                         <li className="hover:opacity-100">
-                            <Link href="/publication">News</Link>
+                            <Link href="/publications">Publications</Link>
                         </li>
                         <li className="hover:opacity-100">
                             <Link href="/contact">Contact Us</Link>

@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { WebsiteLayout } from "../../components/layouts";
 import { Link } from "@inertiajs/inertia-react";
+import AOS from "aos";
+import { useKeenSlider } from "keen-slider/react";
+import React, { useEffect, useState } from "react";
+
+import { WebsiteLayout } from "../../components/layouts";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
-import Paragraph from "../../components/layouts/website/Paragraph";
-import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
 import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
+import Paragraph from "../../components/layouts/website/Paragraph";
 
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
+import "aos/dist/aos.css";
+import "keen-slider/keen-slider.min.css";
 
-const animation = { duration: 40000, easing: (t) => t }
+const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
-
     useEffect(() => {
         AOS.init();
     }, []);
@@ -61,19 +60,19 @@ const Index = () => {
         renderMode: "performance",
         drag: true,
         created(s) {
-            s.moveToIdx(5, true, animation)
+            s.moveToIdx(5, true, animation);
         },
         updated(s) {
-            s.moveToIdx(s.track.details.abs + 5, true, animation)
+            s.moveToIdx(s.track.details.abs + 5, true, animation);
         },
         animationEnded(s) {
-            s.moveToIdx(s.track.details.abs + 5, true, animation)
+            s.moveToIdx(s.track.details.abs + 5, true, animation);
         },
-    })
+    });
 
     return (
         <WebsiteLayout page="home">
-            <div className="text-lg text-grey bg-white">
+            <div className="text-lg bg-white text-grey">
                 {/* values section */}
                 <div className="mb-32 bg-slate-100 ">
                     <div
@@ -81,7 +80,7 @@ const Index = () => {
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="my-5 flex p-2">
+                        <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%]">
                                 <img
                                     src="images/homePage/objectivity.png"
@@ -93,7 +92,7 @@ const Index = () => {
                                 <HeadingSecondary className="font-bold ">
                                     Objectivity
                                 </HeadingSecondary>
-                                <Paragraph className="" >
+                                <Paragraph className="">
                                     To ensure equality and fairness in the
                                     application of measures affecting
                                     international trade and the use of world
@@ -102,7 +101,7 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="my-5 flex p-2">
+                        <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/professionalism.png"
@@ -124,7 +123,7 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="my-5 flex p-2">
+                        <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/integrity.png"
@@ -142,10 +141,9 @@ const Index = () => {
                                     of the Commission.
                                 </p>
                             </div>
-
                         </div>
 
-                        <div className="my-5 flex p-2">
+                        <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/integrity.png"
@@ -163,34 +161,37 @@ const Index = () => {
                                     of the Commission.
                                 </p>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
                 {/* services section*/}
-                <div className=" mb-32 ">
+                <div className="mb-32 ">
                     <div
                         className="justify-center md:flex"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="sm:w-[25%]" >
-                            <div className="h-[45%] relative" >
+                        <div className="sm:w-[25%]">
+                            <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
-                                        <Link href="/service/subsidy" className="text-white">View More</Link>
+                                        <Link
+                                            href="/service/subsidy"
+                                            className="text-white"
+                                        >
+                                            View More
+                                        </Link>
                                     </div>
-
                                 </div>
-                                <img src="images/homePage/serviceOne.jpg"
+                                <img
+                                    src="images/homePage/serviceOne.jpg"
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
 
-                            <div className="my-3  sm:px-8">
-                                <h1 className=" py-5 text-3xl text-primary">
+                            <div className="my-3 sm:px-8">
+                                <h1 className="py-5 text-3xl  text-primary">
                                     Trade Remedies
                                 </h1>
                                 <p className="mb-3">
@@ -208,18 +209,24 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="sm:w-[25%] ">
-                            <div className="h-[45%] relative" >
+                            <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
-                                        <Link href="/service/dumping" className="text-white">View More</Link>
+                                        <Link
+                                            href="/service/dumping"
+                                            className="text-white"
+                                        >
+                                            View More
+                                        </Link>
                                     </div>
                                 </div>
-                                <img src="images/homePage/serviceTwo.jpg"
+                                <img
+                                    src="images/homePage/serviceTwo.jpg"
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
                             <div className="my-3 sm:px-8">
-                                <h1 className="text-3xl text-primary py-5 ">
+                                <h1 className="py-5 text-3xl text-primary ">
                                     Dispute Settlement
                                 </h1>
                                 <p className="mb-3">
@@ -237,18 +244,24 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="sm:w-[25%]  ">
-                            <div className="h-[45%] relative" >
+                            <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
-                                        <Link href="/services" className="text-white">View More</Link>
+                                        <Link
+                                            href="/services"
+                                            className="text-white"
+                                        >
+                                            View More
+                                        </Link>
                                     </div>
                                 </div>
-                                <img src="images/homePage/serviceThree.jpg"
+                                <img
+                                    src="images/homePage/serviceThree.jpg"
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
                             <div className="my-3 sm:px-8">
-                                <h1 className="text-3xl py-4 text-primary">
+                                <h1 className="py-4 text-3xl text-primary">
                                     Tarrif Review
                                 </h1>
                                 <p className="mb-3">
@@ -266,18 +279,24 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="sm:w-[25%] ">
-                            <div className="h-[45%] relative" >
+                            <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
-                                        <Link href="/service/research" className="text-white">View More</Link>
+                                        <Link
+                                            href="/service/research"
+                                            className="text-white"
+                                        >
+                                            View More
+                                        </Link>
                                     </div>
                                 </div>
-                                <img src="images/homePage/serviceFour.jpg"
+                                <img
+                                    src="images/homePage/serviceFour.jpg"
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
                             <div className="my-3 sm:px-8">
-                                <h1 className="text-3xl py-4 text-primary">
+                                <h1 className="py-4 text-3xl text-primary">
                                     Research
                                 </h1>
                                 <p className="mb-3">
@@ -303,7 +322,7 @@ const Index = () => {
 
                 {/* story section*/}
                 <div className="mb-32">
-                    <div className="mb-16  mx-auto">
+                    <div className="mx-auto mb-16">
                         <div className="justify-center sm:flex">
                             <div className="sm:h-[35rem]  ">
                                 <img
@@ -328,17 +347,15 @@ const Index = () => {
                                     </p>
                                     <p className="mb-5 text-center sm:mb-14 sm:text-left sm:text-2xl">
                                         These other African countries are:
-                                        Egypt, South Africa, Morocco,
-                                        Tunisia, Mauritius, and Madagascar. These
-                                        other African countries are: Egypt,South
+                                        Egypt, South Africa, Morocco, Tunisia,
+                                        Mauritius, and Madagascar. These other
+                                        African countries are: Egypt,South
                                         Africa, Morocco, Tunisia, Mauritius, and
                                         Madagascar.
                                     </p>
 
-
                                     <Link hre="/story">
                                         <ButtonOutline className="block p-4 mx-auto border rounded-full border-primary hover:border-2">
-
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
@@ -346,13 +363,15 @@ const Index = () => {
                             </div>
                         </div>
                         <div className="flex flex-col-reverse justify-center sm:flex sm:flex-row ">
-                            <div className="text-white  bg-primary">
+                            <div className="text-white bg-primary">
                                 <div
-                                    className="container sm:px-16  "
+                                    className="container sm:px-16 "
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <h1 className="text-[3rem] sm:pt-10 pb-6 font-bold">We ensure:</h1>
+                                    <h1 className="text-[3rem] sm:pt-10 pb-6 font-bold">
+                                        We ensure:
+                                    </h1>
                                     <ul className="sm:text-[1.3rem] list-disc ">
                                         <li className="py-4">
                                             Ghana’s compliance with
@@ -360,15 +379,15 @@ const Index = () => {
                                             regulations;
                                         </li>
                                         <li className="py-3">
-                                            Fairness, efficiency,
-                                            transparency and objectivity in the
-                                            application of measures affecting
-                                            international trade rules and the
-                                            use of world trade regulations;
+                                            Fairness, efficiency, transparency
+                                            and objectivity in the application
+                                            of measures affecting international
+                                            trade rules and the use of world
+                                            trade regulations;
                                         </li>
                                         <li className="py-3">
-                                            Fair ompetition for persons
-                                            engaged in domestic production and
+                                            Fair ompetition for persons engaged
+                                            in domestic production and
                                             international trade.
                                         </li>
                                         <li className="pt-3">
@@ -376,7 +395,6 @@ const Index = () => {
                                             from the impact of unfair trade
                                             practices in the course of
                                             international trade.
-
                                         </li>
                                     </ul>
 
@@ -399,11 +417,8 @@ const Index = () => {
                 </div>
 
                 {/* partners section */}
-                <div className="px-2 mb-32 bg-gray-100" >
-                    <div
-                        className="flex justify-center gap-1 h-10rem]"
-
-                    >
+                <div className="px-2 mb-32 bg-gray-100">
+                    <div className="flex justify-center gap-1 h-10rem]">
                         <div ref={sliderRef} className="keen-slider">
                             <div className="keen-slider__slide number-slide1">
                                 <img
@@ -471,7 +486,7 @@ const Index = () => {
 
                 {/* Minister */}
                 <div
-                    className="block sm:mx-24 mb-32 shadow-lg"
+                    className="block mb-32 shadow-lg sm:mx-24"
                     data-aos="fade-up"
                     data-aos-duration="2000"
                 >
@@ -479,7 +494,7 @@ const Index = () => {
                         <div className="sm:w-[50%] ">
                             {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                             <img
-                                className="object-fill  "
+                                className="object-fill "
                                 src="/images/about/our_team/Mr. Frank Agyekum.jpg"
                                 alt=""
                             />
@@ -504,7 +519,7 @@ const Index = () => {
                                     <h1 className="pt-8 text-2xl text-primary">
                                         Frank Agyakum
                                     </h1>
-                                    <p className="pt-1 font-light  text-primary">
+                                    <p className="pt-1 font-light text-primary">
                                         Executive Secretary
                                     </p>
                                 </div>
@@ -516,7 +531,7 @@ const Index = () => {
                 {/* contact section*/}
                 <div className="w-full px-2 text-center md:flex">
                     <div className="md:w-[50%] ">
-                        <div className="mx-auto pt-10">
+                        <div className="pt-10 mx-auto">
                             <h1 className="text-3xl font-bold text-primary">
                                 Connect with us
                             </h1>

@@ -5,7 +5,7 @@ import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
 import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 const Publish = () => {
     return (
-        <WebsiteLayout page="home">
+        <WebsiteLayout page="publish">
             <main className="text-lg text-grey bg-white">
                 {/* Governing Board */}
                 <p className="my-10 text-3xl font-bold text-center text-primary">

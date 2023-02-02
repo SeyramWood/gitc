@@ -1,3 +1,7 @@
+.navigation-wrapper {
+    position: relative;
+    z-index: 999999;
+}
 .navigation {
     & > li {
         position: inherit;

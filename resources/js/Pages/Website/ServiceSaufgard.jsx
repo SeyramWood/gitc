@@ -14,7 +14,7 @@ import HeadingSecondary from "../../components/layouts/website/HeadingSecondary"
 const ServiceSaufgard = () => {
 
     return (
-        <WebsiteLayout page="home">
+        <WebsiteLayout page="service">
      <div className="bg-white text-black">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . Trade Remedies . Subsidy & Countervailing Duties</span>
@@ -41,49 +41,39 @@ const ServiceSaufgard = () => {
 
                  </div>
                  <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
-                     <div className="card-body">
-                         <HeadingSecondary>
-                             Our Services
-                         </HeadingSecondary>
-                         <Paragraph>
-
-                             <Link href="/service">  Anti - Dumping Duties</Link>
-                         </Paragraph>
-                         <Paragraph>
-
-
-                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
-                         </Paragraph>
-                         <Paragraph>
-
-                             <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
-
-
-                         </Paragraph>
-                         <Paragraph>
-
-                             <Link href="/service/safeguard">  Safeguards Measures</Link>
-
-
-                         </Paragraph>
-                         <Paragraph>
-
-
-                             <Link href="/service/dispute">Dispute Settlement</Link>
-
-
-                         </Paragraph>
-                         <Paragraph>
-                             <Link href="/service">  Tariff Review</Link>
-
-
-                         </Paragraph>
-                         <Paragraph>
-
-                             <Link href="/service/research">  Research</Link>
-
-                         </Paragraph>
-                     </div>
+                 <div className="card-body">
+                                <HeadingSecondary>
+                                    Our Services
+                                </HeadingSecondary>
+                                <Paragraph>
+                                    <Link href="/service/dumping">
+                                        Anti - Dumping Duties
+                                    </Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link href="/service/subsidy">
+                                        Subsidy and Countervailing Duties
+                                    </Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link href="/service/safeguard">
+                                        Safeguards Measures
+                                    </Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link href="/service/dispute">
+                                        Dispute Settlement
+                                    </Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link href="/service"> Tariff Review</Link>
+                                </Paragraph>
+                                <Paragraph>
+                                    <Link href="/service/research">
+                                        Research
+                                    </Link>
+                                </Paragraph>
+                            </div>
                  </div>
              </div>
          </div>

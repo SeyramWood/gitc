@@ -7,21 +7,20 @@ module.exports = {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.jsx",
-        "./node_modules/flowbite/**/*.js"
+        "./node_modules/flowbite/**/*.js",
     ],
 
     theme: {
         extend: {
             fontFamily: {
-                // sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 primary: "#F9443E",
-                primary_light: "rgba(249, 68, 62, 0.637)",
+                "primary-light": "rgba(249, 68, 62, 0.637)",
                 secondary: "#111111",
                 tertiary: "#272727",
-                grey:"rgb(126,125,125)",
+                grey: "rgb(126,125,125)",
             },
             spacing: {
                 "web-l": "3rem",
@@ -33,9 +32,5 @@ module.exports = {
         },
     },
 
-    plugins: [require("@tailwindcss/forms"),require('flowbite/plugin'),[require("daisyui")]],
-
-
-
-
+    plugins: [require("@tailwindcss/forms")],
 };

@@ -1,13 +1,14 @@
-import { WebsiteLayout } from "../../components/layouts";
 import { Link } from "@inertiajs/inertia-react";
+
+import { WebsiteLayout } from "../../components/layouts";
 import Paragraph from "../../components/layouts/website/Paragraph";
 
 const About = () => {
     return (
         <WebsiteLayout page="about">
-            <main className="text-lg text-grey bg-white">
+            <main className="text-lg text-grey">
                 {/* Governing Board */}
-                <p className="my-10 text-5xl font-bold text-center text-primary">
+                <p className="my-[6rem] text-5xl font-bold text-center text-primary">
                     Governing Board
                 </p>
                 <div className="sm:px-[8rem] mb-32">
@@ -27,7 +28,6 @@ const About = () => {
                                 </Paragraph>
                                 <Paragraph className="mt-2">
                                     Chairman, Board
-
                                 </Paragraph>
                             </div>
                         </div>
@@ -40,7 +40,7 @@ const About = () => {
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
+                                <Paragraph className="cursor-pointer text-primary">
                                     Mr. Philip Mensah
                                 </Paragraph>
                                 <Paragraph className="mt-2">
@@ -57,7 +57,7 @@ const About = () => {
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
+                                <Paragraph className="cursor-pointer text-primary">
                                     Mr. Arnold Tetteh Okai
                                 </Paragraph>
                                 <Paragraph className="mt-2">
@@ -74,7 +74,7 @@ const About = () => {
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
+                                <Paragraph className="cursor-pointer text-primary">
                                     Ms. Sophia Kokor
                                 </Paragraph>
                                 <Paragraph className="mt-2">
@@ -91,7 +91,7 @@ const About = () => {
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
+                                <Paragraph className="cursor-pointer text-primary">
                                     Mr. Frank Agyekum
                                 </Paragraph>
                                 <Paragraph className="mt-2">
@@ -111,9 +111,7 @@ const About = () => {
                                 <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
                                     Personality Name
                                 </p>
-                                <p className="mt-2">
-                                    Lorem ipsum
-                                </p>
+                                <p className="mt-2">Lorem ipsum</p>
                             </div>
                         </div>
                     </div>
@@ -121,13 +119,11 @@ const About = () => {
 
                 {/* team */}
                 <div className="mb-32 text-black sm:mx-20">
-                    <div className="pb-10 text-center ">
+                    <div className="pb-[6rem] text-center ">
                         <h3 className="text-5xl font-bold text-primary ">
                             Our Team
                         </h3>
-                        <p className="">
-                            Meet The Head Of Departments
-                        </p>
+                        <p className="">Meet The Head Of Departments</p>
                     </div>
                     <div className="p-4 sm:flex">
                         <div className="sm:w-[25%] mx-2 mb-4 transition duration-700 ease-in-out shadow-lg hover:scale-110">
@@ -142,7 +138,6 @@ const About = () => {
                                 <div className="p-3 text-center bg-slate-100 sm:h-[7rem]">
                                     <Paragraph className="text-primary">
                                         Linda Adomako - Kwabia
-
                                     </Paragraph>
                                     <Paragraph>
                                         Human Resource & Administration
@@ -183,9 +178,7 @@ const About = () => {
                                     <Paragraph className="text-primary">
                                         Paa Kwesi Fynn
                                     </Paragraph>
-                                    <Paragraph>
-                                        Trade Investigation
-                                    </Paragraph>
+                                    <Paragraph>Trade Investigation</Paragraph>
                                 </div>
                             </Link>
                         </div>
@@ -203,7 +196,6 @@ const About = () => {
                                         Nathan Lartey
                                     </Paragraph>
                                     <Paragraph>
-
                                         Management Information System
                                     </Paragraph>
                                 </div>
