@@ -9,7 +9,7 @@ const Contact = () => {
         <WebsiteLayout page="contactUs">
         <div className="bg-white">
             {/* contacts */}
-            <div className="">
+            <div className="pt-16">
                 <div class="sm:grid grid-cols-3 px-[6rem] gap-4 ">
                     <div className=" mb-14 mt-7">
                         <div className="mb-5 sm:block flex justify-center">
@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
 
             {/* Form */}
-            <div className="">
+            <div className="sm:p-32">
                 <div className="text-center pb-6">
                     <HeadingPrimary >
                         Contact Us

@@ -81,15 +81,15 @@ const Index = () => {
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 sm:w-[80%] w-[40%]  ">
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%]">
                                 <img
                                     src="images/homePage/objectivity.png"
                                     alt="Objectivity"
-                                    className="object-contain sm:-translate-y-[5rem]"
+                                    className="object-contain "
                                 />
                             </div>
-                            <div className="">
+                            <div className="w-[70%]">
                                 <HeadingSecondary className="font-bold ">
                                     Objectivity
                                 </HeadingSecondary>
@@ -102,15 +102,15 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/professionalism.png"
                                     alt="professional"
-                                    className="object-contain sm:-translate-y-[5rem]"
+                                    className="object-contain"
                                 />
                             </div>
-                            <div className="">
+                            <div className="w-[70%] ">
                                 <HeadingSecondary className="font-bold">
                                     Professionalism
                                 </HeadingSecondary>
@@ -123,15 +123,16 @@ const Index = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
+
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
-                                    className="object-contain sm:-translate-y-[5rem]"
+                                    className="object-contain "
                                 />
                             </div>
-                            <div className="">
+                            <div className="w-[70%] ">
                                 <HeadingSecondary className="font-bold ">
                                     Integrity
                                 </HeadingSecondary>
@@ -143,16 +144,17 @@ const Index = () => {
                             </div>
 
                         </div>
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
+
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
-                                    className="object-contain sm:-translate-y-[5rem]"
+                                    className="object-contain "
                                 />
                             </div>
-                            <div className="">
-                                <HeadingSecondary className="font-bold">
+                            <div className="w-[70%] ">
+                                <HeadingSecondary className="font-bold ">
                                     Integrity
                                 </HeadingSecondary>
                                 <p>
@@ -163,6 +165,7 @@ const Index = () => {
                             </div>
 
                         </div>
+
                     </div>
                 </div>
 
@@ -177,18 +180,18 @@ const Index = () => {
                         </Paragraph>
                         {/*<div className="-z-10 text-[grey] uppercase text-[15rem] absolute z-10 mx-auto">services</div>*/}
                     </div>
-
                     <div
                         className="justify-center md:flex"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="sm:w-[25%]" > {/* <div className="h-[45%] relative overflow-hidden transition duration-700 ease-in-out hover:scale-110" style={{ backgroundImage: "url('images/homePage/serviceOne.jpg')" }}> */}
+                        <div className="sm:w-[25%]" >
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Click here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/service/subsidy" className="text-white">View More</Link>
                                     </div>
+
                                 </div>
                                 <img src="images/homePage/serviceOne.jpg"
                                     className="w-full object-cover h-[15rem] "
@@ -216,8 +219,8 @@ const Index = () => {
                         <div className="sm:w-[25%] ">
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Click here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/service/dumping" className="text-white">View More</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceTwo.jpg"
@@ -245,8 +248,8 @@ const Index = () => {
                         <div className="sm:w-[25%]  ">
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Click here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/services" className="text-white">View More</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceThree.jpg"
@@ -274,8 +277,8 @@ const Index = () => {
                         <div className="sm:w-[25%] ">
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className=" translate-y-[6rem] translate-x-[7rem]">
-                                        <Link href="/" className="text-white">Link here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/service/research" className="text-white">View More</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceFour.jpg"
@@ -302,8 +305,8 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                    <Link href="/">
-                        <Button> View More </Button>{" "}
+                    <Link href="/service">
+                        <Button> View More </Button>
                     </Link>
                 </div>
 
@@ -341,6 +344,7 @@ const Index = () => {
                                         Madagascar.
                                     </p>
 
+
                                     {/*<Link hre="/">*/}
                                         {/*<ButtonOutline className="block p-4  border rounded-full border-primary hover:border-2">*/}
 
@@ -360,7 +364,7 @@ const Index = () => {
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <h1 className="text-[3rem] sm:pt-14 pb-6 font-bold">We ensure:</h1>
+                                    <h1 className="text-[3rem] sm:pt-10 pb-6 font-bold">We ensure:</h1>
                                     <ul className="sm:text-[1.3rem] list-disc ">
                                         <li className="py-4">
                                             Ghana’s compliance with
@@ -389,7 +393,6 @@ const Index = () => {
                                     </ul>
 
                                     <Link href="/story">
-
                                         <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
                                             Read Our Story
                                         </ButtonOutline>
@@ -486,6 +489,7 @@ const Index = () => {
                 >
                     <div className="justify-center sm:flex sm:w-[100%]">
                         <div className="sm:w-[50%] ">
+                            {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                             <img
                                 className="object-fill  "
                                 src="/images/about/our_team/Mr. Frank Agyekum.jpg"
@@ -583,7 +587,7 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-         </WebsiteLayout>
+        </WebsiteLayout>
     );
 };
 
