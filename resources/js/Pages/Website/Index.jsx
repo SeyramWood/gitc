@@ -81,15 +81,15 @@ const Index = () => {
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 sm:w-[80%] w-[40%] bg-black/20 ">
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%]">
                                 <img
                                     src="images/homePage/objectivity.png"
                                     alt="Objectivity"
-                                    className="object-contain sm:-translate-y-[3rem]"
+                                    className="object-contain "
                                 />
                             </div>
-                            <div className="">
+                            <div className="w-[70%]">
                                 <HeadingSecondary className="font-bold ">
                                     Objectivity
                                 </HeadingSecondary>
@@ -102,15 +102,15 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/professionalism.png"
                                     alt="professional"
-                                    className="object-contain sm:-translate-y-[3rem]"
+                                    className="object-contain"
                                 />
                             </div>
-                            <div className="">
+                            <div className="w-[70%] ">
                                 <HeadingSecondary className="font-bold">
                                     Professionalism
                                 </HeadingSecondary>
@@ -123,15 +123,16 @@ const Index = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
+
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
-                                    className="object-contain sm:-translate-y-[3rem]"
+                                    className="object-contain "
                                 />
                             </div>
-                            <div className="">
+                            <div className="w-[70%] ">
                                 <HeadingSecondary className="font-bold ">
                                     Integrity
                                 </HeadingSecondary>
@@ -143,16 +144,17 @@ const Index = () => {
                             </div>
 
                         </div>
-                        <div className="my-5 sm:flex">
-                            <div className="flex p-3 w-[40%] sm:w-[80%] ">
+
+                        <div className="my-5 flex p-2">
+                            <div className="p-3 w-[30%] ">
                                 <img
                                     src="images/homePage/integrity.png"
                                     alt="Integrity"
-                                    className="object-contain sm:-translate-y-[3rem]"
+                                    className="object-contain "
                                 />
                             </div>
-                            <div className="">
-                                <HeadingSecondary className="font-bold">
+                            <div className="w-[70%] ">
+                                <HeadingSecondary className="font-bold ">
                                     Integrity
                                 </HeadingSecondary>
                                 <p>
@@ -163,20 +165,12 @@ const Index = () => {
                             </div>
 
                         </div>
+
                     </div>
                 </div>
 
                 {/* services section*/}
                 <div className=" mb-32 ">
-                    {/* <div className="pb-10 text-center relative">
-                        <HeadingPrimary className="underline" >
-                            Services We Provide
-                        </HeadingPrimary>
-                        <Paragraph className="pt-3 font-bold">
-                            COVERED IN THESE AREAS
-                        </Paragraph>
-                    </div> */}
-
                     <div
                         className="justify-center md:flex"
                         data-aos="fade-up"
@@ -186,7 +180,7 @@ const Index = () => {
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
-                                        <Link href="/" className="text-white">Click here</Link>
+                                        <Link href="/service/subsidy" className="text-white">View More</Link>
                                     </div>
 
                                 </div>
@@ -206,18 +200,18 @@ const Index = () => {
                                     trade regulations.
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/service/subsidy"
                                     className="text-primary hover:text-red-300"
                                 >
                                     Read More
                                 </Link>
                             </div>
                         </div>
-                         <div className="sm:w-[25%] ">
+                        <div className="sm:w-[25%] ">
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                          <div className="text-center translate-y-[6rem]">
-                                        <Link href="/" className="text-white">Click here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/service/dumping" className="text-white">View More</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceTwo.jpg"
@@ -235,7 +229,7 @@ const Index = () => {
                                     Organization.
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/service/dumping"
                                     className="text-primary hover:text-red-300"
                                 >
                                     Read More
@@ -245,8 +239,8 @@ const Index = () => {
                         <div className="sm:w-[25%]  ">
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                     <div className="text-center translate-y-[6rem]">
-                                        <Link href="/" className="text-white">Click here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/services" className="text-white">View More</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceThree.jpg"
@@ -264,7 +258,7 @@ const Index = () => {
                                     producer or domestic industry
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/services"
                                     className="text-primary hover:text-red-300 sm:pl-1"
                                 >
                                     Read More
@@ -274,8 +268,8 @@ const Index = () => {
                         <div className="sm:w-[25%] ">
                             <div className="h-[45%] relative" >
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                   <div className="text-center translate-y-[6rem]">
-                                        <Link href="/" className="text-white">Link here</Link>
+                                    <div className="text-center translate-y-[6rem]">
+                                        <Link href="/service/research" className="text-white">View More</Link>
                                     </div>
                                 </div>
                                 <img src="images/homePage/serviceFour.jpg"
@@ -294,16 +288,16 @@ const Index = () => {
                                     effective rate of protection.
                                 </p>
                                 <Link
-                                    href="/"
+                                    href="/service/research"
                                     className="text-primary hover:text-red-300"
                                 >
                                     Read More
                                 </Link>
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                    <Link href="/">
-                        <Button> View More </Button>{" "}
+                    <Link href="/service">
+                        <Button> View More </Button>
                     </Link>
                 </div>
 
@@ -340,8 +334,11 @@ const Index = () => {
                                         Africa, Morocco, Tunisia, Mauritius, and
                                         Madagascar.
                                     </p>
-                                    <Link hre="/">
-                                        <ButtonOutline className="block p-4  border rounded-full border-primary hover:border-2">
+
+
+                                    <Link hre="/story">
+                                        <ButtonOutline className="block p-4 mx-auto border rounded-full border-primary hover:border-2">
+
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
@@ -355,7 +352,7 @@ const Index = () => {
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <h1 className="text-[3rem] sm:pt-14 pb-6 font-bold">We ensure:</h1>
+                                    <h1 className="text-[3rem] sm:pt-10 pb-6 font-bold">We ensure:</h1>
                                     <ul className="sm:text-[1.3rem] list-disc ">
                                         <li className="py-4">
                                             Ghana’s compliance with
@@ -379,10 +376,12 @@ const Index = () => {
                                             from the impact of unfair trade
                                             practices in the course of
                                             international trade.
+
                                         </li>
                                     </ul>
-                                    <Link href="/">
-                                        <ButtonOutline className="block p-4 mt-3 border border-white rounded-full hover:border-2">
+
+                                    <Link href="/story">
+                                        <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
@@ -478,6 +477,7 @@ const Index = () => {
                 >
                     <div className="justify-center sm:flex sm:w-[100%]">
                         <div className="sm:w-[50%] ">
+                            {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                             <img
                                 className="object-fill  "
                                 src="/images/about/our_team/Mr. Frank Agyekum.jpg"
@@ -559,7 +559,7 @@ const Index = () => {
                                 </div>
                                 {/* <div className="pt-2 m-3"> */}
                                 <textarea
-                                    className="sm:w-[65%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
+                                    className="sm:w-[70%] border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20"
                                     rows="4"
                                     placeholder="Message"
                                     required="required"
