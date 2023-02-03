@@ -21,6 +21,7 @@ module.exports = {
                 secondary: "#111111",
                 tertiary: "#272727",
                 grey: "rgb(126,125,125)",
+                footer: "#1F1F1F",
             },
             spacing: {
                 "web-l": "3rem",

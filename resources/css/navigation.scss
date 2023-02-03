@@ -1,6 +1,5 @@
 .navigation-wrapper {
-    position: relative;
-    z-index: 999999;
+    z-index: 9999;
 }
 .navigation {
     & > li {
@@ -19,36 +18,45 @@
                 }
             }
         }
-        & > .dropdown {
+        & > .dropdown__wrapper {
             z-index: 999;
             position: absolute;
-            min-width: 12rem;
-            top: 4rem;
-            white-space: nowrap;
-            list-style-type: none;
-            overflow: hidden;
-            background-color: white;
-            border-radius: 5px;
-            perspective: 8000px;
-            opacity: 0;
-            visibility: hidden;
-            & > li {
-                padding: 0.3rem 1rem;
-                transition: all 0.5s ease-out;
-                & > a {
-                    display: block;
-                }
-                &:hover {
-                    background-color: rgba(205, 205, 205, 0.494);
+            & > .dropdown__list {
+                display: block;
+                min-width: 12rem;
+                margin-top: 0.3rem;
+                white-space: nowrap;
+                list-style-type: none;
+                overflow: hidden;
+                border-radius: 5px;
+                perspective: 8000px;
+                opacity: 0;
+                visibility: hidden;
+                background-color: white;
+                box-shadow: 5px 7px 15px 2px rgb(82 90 101 / 12%);
+                
+                & > li {
+                    padding: 0.3rem 1rem;
+                    transition: all 0.5s ease-out;
+                    & > a {
+                        display: block;
+                    }
+                    &:hover {
+                        background-color: rgba(205, 205, 205, 0.494);
+                    }
                 }
             }
         }
+
         &:hover {
-            & > .dropdown {
-                opacity: 1;
-                visibility: visible;
-                animation: scaleZ 0.3s ease-in forwards;
-                transform-origin: center center;
+            & > .dropdown__wrapper {
+                background-color: inherit;
+                & > .dropdown__list {
+                    opacity: 1;
+                    visibility: visible;
+                    animation: scaleZ 0.3s ease-in forwards;
+                    transform-origin: center center;
+                }
             }
         }
     }

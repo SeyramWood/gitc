@@ -98,7 +98,7 @@ const Publication = () => {
                 </div>
 
                 <div className=" sm:mx-[10rem] sm:mb-28 ">
-                    <div className="navigation-wrapper  ">
+                    <div className="relative">
                         <div ref={sliderRef} className="keen-slider ">
                             <div className="keen-slider__slide number-slide1 ">
                                 <div className="relative">

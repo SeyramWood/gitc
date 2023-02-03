@@ -1,24 +1,19 @@
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
-import {
-    SlCallIn,
-    SlEnvelopeOpen,
-    SlLocationPin,
-    SlPaperPlane,
-} from "react-icons/sl";
+import { SlCallIn, SlEnvelopeOpen, SlLocationPin, SlPaperPlane } from "react-icons/sl";
 
 const Footer = () => {
     return (
         <footer className="w-[100%] text-white">
-            <nav className="w-[100%] h-[auto] lg:h-[75vh] flex flex-col md:flex-row md:flex-wrap bg-secondary px-web-s lg:px-web-l justify-start items-start py-[5rem]">
+            <nav className="w-[100%] h-[auto] lg:h-[80vh] flex flex-col md:flex-row md:flex-wrap bg-footer px-web-s lg:px-web-l justify-start items-start py-[5rem]">
                 <section className="w-[100%] md:w-[50%] lg:w-[25%]">
-                    <div className="w-[100%] mb-web-xs md:mb-web-xl md:mt-[-1rem]">
+                    <div className="w-[100%] mb-web-xs md:mb-web-l md:mt-[-4rem]">
                         <a href="/">
                             <img
                                 src="images/logo.png"
                                 alt=""
                                 srcSet=""
-                                className="w-[5rem] mt-9"
+                                className="w-[8rem] mt-9"
                             />
                         </a>
                     </div>
@@ -59,7 +54,13 @@ const Footer = () => {
                         </li>
                         <li className="flex items-center mb-3 text-center">
                             <span className="mr-3">
-                                <SlLocationPin />
+                                {/* <SlLocationPin /> */}
+                                <img
+                                    src="/images/location.png"
+                                    alt="icon"
+                                    srcset=""
+                                    className="w-[1.5rem]"
+                                />
                             </span>
                             <span>GL-040-2630</span>
                         </li>
@@ -67,11 +68,11 @@ const Footer = () => {
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l">
                     <div className="w-[100%] mb-web-xs md:mb-web-xl">
-                        <h5 className="text-4xl font-bold capitalize">
+                        <h5 className="text-xl font-bold capitalize">
                             Useful Links
                         </h5>
                     </div>
-                    <ul className="w-[100%] text-xl">
+                    <ul className="w-[100%] text-lg">
                         <li className="mb-2 text-lg capitalize transform hover:text-primary">
                             <Link href="/team">About us</Link>
                         </li>
@@ -91,12 +92,12 @@ const Footer = () => {
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l">
                     <div className="w-[100%] mb-web-xs md:mb-web-xl">
-                        <h5 className="text-4xl font-bold capitalize">
+                        <h5 className="text-xl font-bold capitalize">
                             External Links
                         </h5>
                     </div>
 
-                    <ul className="w-[100%] text-xl">
+                    <ul className="w-[100%] text-lg">
                         <li className="mb-2 text-lg capitalize transform hover:text-primary">
                             <Link href="/about">
                                 Ministry of Trade and Industry
@@ -122,7 +123,7 @@ const Footer = () => {
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l">
                     <div className="w-[100%] mb-web-xs md:mb-web-xl">
-                        <h5 className="text-4xl font-bold capitalize">
+                        <h5 className="text-xl font-bold capitalize">
                             Gallery
                         </h5>
                     </div>

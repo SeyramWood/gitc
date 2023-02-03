@@ -1,8 +1,9 @@
-import React from "react";
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { Link } from "@inertiajs/inertia-react";
-import { SlArrowDown, SlMagnifier, SlMenu } from "react-icons/sl";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import React from "react";
 import { RxCross1 } from "react-icons/rx";
+import { SlArrowDown, SlMagnifier } from "react-icons/sl";
+
 import "../../../../css/navigation.scss";
 
 const Navigation = () => {
@@ -106,7 +107,6 @@ const Navigation = () => {
                             <li>
                                 <Link href="/message">Our Message</Link>
                             </li>
-
                         </ul>
                     </li>
                     <li className="hover:opacity-100">
@@ -118,16 +118,22 @@ const Navigation = () => {
                         </span>
                         <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
                             <li>
-                                <Link href="/service/subsidy">Subsidy And Counter</Link>
+                                <Link href="/service/subsidy">
+                                    Subsidy And Counter
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/service/safeguard">SafeGuards Measures</Link>
+                                <Link href="/service/safeguard">
+                                    SafeGuards Measures
+                                </Link>
                             </li>
                             <li>
                                 <Link href="/service/research">Research</Link>
                             </li>
                             <li>
-                                <Link href="/service/dispute">Dispute Settlements</Link>
+                                <Link href="/service/dispute">
+                                    Dispute Settlements
+                                </Link>
                             </li>
                             <li>
                                 <Link href="/service/dumping">Ant-Dumping</Link>
@@ -168,25 +174,26 @@ const Navigation = () => {
                 </div>
             </section>
             <section
-                className="w-full bg-transparent md:absolute top-[14rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
+                className="w-full bg-transparent absolute top-[14rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
                 style={{ ...headerStyle }}
             >
                 <nav
                     className="w-[93%] h-[100%] text-white md:px-web-l flex justify-between items-center rounded-sm bg-primary-light shadow-md"
                     style={{ ...navStyle }}
                 >
-                    <ul className="flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-70 text-xl font-bold relative navigation">
+                    <ul className="flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-70 text-lg font-bold relative navigation">
                         <li className="[&:hover>a]:opacity-100">
                             <Link href="/">Home</Link>
                         </li>
-                        <li className="relative hover:opacity-100">
+                        <li className="relative [&:hover>a]:opacity-100">
                             <Link href="/about">
                                 <span>About Us</span>
-                                <span className="ml-2 text-xl text-bolder">
+                                <span className="ml-2 text-xl text-bold">
                                     <SlArrowDown />
                                 </span>
                             </Link>
-                            <ul className="absolute bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
+                            <div className="absolute  top-[4rem]  dropdown__wrapper">
+                            <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
                                 <li>
                                     <Link href="/about">Our Team</Link>
                                 </li>
@@ -197,42 +204,55 @@ const Navigation = () => {
                                     <Link href="/message">Our Message</Link>
                                 </li>
                             </ul>
+                            </div>
                         </li>
-                        <li className="hover:opacity-100">
+                        <li className="[&:hover>a]:opacity-100">
                             <Link href="/services">
                                 <span>Our Services</span>
-                                <span className="ml-2 text-xl text-bolder">
+                                <span className="ml-2 text-xl text-bold">
                                     <SlArrowDown />
                                 </span>
                             </Link>
-                            <ul className="absolute bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
+                            <div className="absolute  top-[4rem]  dropdown__wrapper">
+                            <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
                                 <li>
-                                    <Link href="/service/subsidy">Subsidy And Counter</Link>
+                                    <Link href="/service/subsidy">
+                                        Subsidy And Counter
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link href="/service/safeguard">SafeGuards Measures</Link>
+                                    <Link href="/service/safeguard">
+                                        SafeGuards Measures
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link href="/service/research">Research</Link>
+                                    <Link href="/service/research">
+                                        Research
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link href="/service/dispute">Dispute Settlements</Link>
+                                    <Link href="/service/dispute">
+                                        Dispute Settlements
+                                    </Link>
                                 </li>
                                 <li>
-                                    <Link href="/service/dumping">Ant-Dumping</Link>
+                                    <Link href="/service/dumping">
+                                        Ant-Dumping
+                                    </Link>
                                 </li>
                                 <li>
                                     <Link href="/services">Tariff Review</Link>
                                 </li>
                             </ul>
+                            </div>
                         </li>
-                        <li className="hover:opacity-100">
+                        <li className="[&:hover>a]:opacity-100">
                             <Link href="/resources">Resources</Link>
                         </li>
-                        <li className="hover:opacity-100">
+                        <li className="[&:hover>a]:opacity-100">
                             <Link href="/publications">Publications</Link>
                         </li>
-                        <li className="hover:opacity-100">
+                        <li className="[&:hover>a]:opacity-100">
                             <Link href="/contact">Contact Us</Link>
                         </li>
                     </ul>
