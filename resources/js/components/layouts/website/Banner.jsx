@@ -8,6 +8,7 @@ import {
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "../../../../css/banner.scss";
+import "../../../../css/main.css"
 
 const Banner = ({ page }) => {
     return (
