@@ -90,11 +90,11 @@ const Publication = () => {
 
     return (
         <WebsiteLayout page="publication">
-            <div className="bg-white mt-3">
+            <div className="bg-white ">
                 <div className="text-center ">
-                    <HeadingPrimary className="py-16">
-                        PRERSS RELEAESES & SPEECHES
-                    </HeadingPrimary>
+                    <h4 className="py-16">
+                        PRESS RELEASES & SPEECHES
+                    </h4>
                 </div>
 
                 <div className=" sm:mx-[10rem] sm:mb-28 ">
@@ -116,17 +116,17 @@ const Publication = () => {
                                     </div>
                                 </div>
                                 <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <Paragraph className="uppercase font-sm text-primary">
+                                    <p className="uppercase  text-primary">
                                         <Link href="">
                                             GITC dismisses petition to ban iron,
                                             steels import
                                         </Link>
-                                    </Paragraph>
-                                    <Paragraph>
+                                    </p>
+                                    <p>
                                         The Ghana International Trade Commission
                                         has made Determinations on petitions
                                         brought before
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </div>
 
@@ -146,17 +146,17 @@ const Publication = () => {
                                     </div>
                                 </div>
                                 <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <Paragraph className="uppercase font-sm text-primary">
+                                    <p className="uppercase text-primary">
                                         <Link href="">
                                             Interim Ghana-UK Trade Partnership
                                             Agreement
                                         </Link>
-                                    </Paragraph>
-                                    <Paragraph>
+                                    </p>
+                                    <p>
                                         On 2 March 2021, the Interim Trade
                                         Partnership Agreement between the
                                         Republic of Ghana
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </div>
 
@@ -176,17 +176,17 @@ const Publication = () => {
                                     </div>
                                 </div>
                                 <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <Paragraph className="uppercase font-sm text-primary">
+                                    <p className="uppercase text-primary">
                                         <Link href="">
                                             Notice of Initiation and Request for
                                             Information Aluminium Coils and
                                             Circles
                                         </Link>
-                                    </Paragraph>
-                                    <Paragraph>
+                                    </p>
+                                    <p>
                                         Agency:Ghana InternationalTrade
                                         Commission
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </div>
 
@@ -206,17 +206,17 @@ const Publication = () => {
                                     </div>
                                 </div>
                                 <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <Paragraph className="uppercase font-sm text-primary">
+                                    <p className="uppercase text-primary">
                                         <Link href="">
                                             Notice of Initiation and Request for
                                             Information Aluminium Coils and
                                             Circles
                                         </Link>
-                                    </Paragraph>
-                                    <Paragraph>
+                                    </p>
+                                    <p>
                                         Agency:Ghana InternationalTrade
                                         Commission
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -251,10 +251,10 @@ const Publication = () => {
                 {/* gallery */}
                 <div className="">
                     <div className="text-center mb-7">
-                        <HeadingPrimary>Our Gallery</HeadingPrimary>
-                        <Paragraph>
+                        <h4>Our Gallery</h4>
+                        <p>
                             MEETINGS, WORSHSHOPS, COURTESY CALLS
-                        </Paragraph>
+                        </p>
                     </div>
                     <div className="sm:flex justify-center">
                         <div className="sm:grid grid-cols-3">
@@ -292,7 +292,7 @@ const Publication = () => {
                         */}
                             <div className="relative sm:w-[20rem] mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden "
+                                    className="bg-black overflow-hidden cursor-pointer "
                                     onClick={() => setOpen(true)}
                                 >
                                     <img
@@ -310,16 +310,16 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <p className="text-primary uppercase ">
                                         COURTESY CALL TO GHANA STATISTICAL
                                         SERVICE
-                                    </Paragraph>
-                                    <Paragraph>19th May 2022</Paragraph>
+                                    </p>
+                                    <p>19th May 2022</p>
                                 </div>
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden"
+                                    className="bg-black overflow-hidden cursor-pointer "
                                     onClick={() => setOpen(true)}
                                 >
                                     <img
@@ -336,15 +336,15 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <p className="text-primary uppercase ">
                                         COURTESY CALL TO GHANA Revenue Authority
-                                    </Paragraph>
+                                    </p>
                                     <Paragraph>2nd June 2022</Paragraph>
                                 </div>
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden"
+                                    className="bg-black overflow-hidden cursor-pointer "
                                     onClick={() => setOpenTwo(true)}
                                 >
                                     <img
@@ -361,16 +361,16 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <p className="text-primary uppercase ">
                                         ASSOCIATION OF GHANA INDUSTRIES COURTESY
                                         CALL TO GITC
-                                    </Paragraph>
-                                    <Paragraph>27th May 2022</Paragraph>
+                                    </p>
+                                    <p>27th May 2022</p>
                                 </div>
                             </div>
                             <div className="sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden"
+                                    className="bg-black overflow-hidden cursor-pointer  "
                                     onClick={() => setOpenThree(true)}
                                 >
                                     <img
@@ -387,16 +387,16 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <p className="text-primary uppercase ">
                                         HON.DEPUTY MINISTER (TRADE) COURTESY
                                         CALL TO GITC
-                                    </Paragraph>
-                                    <Paragraph>19th May,2022</Paragraph>
+                                    </p>
+                                    <p>19th May,2022</p>
                                 </div>
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden"
+                                    className="bg-black overflow-hidden cursor-pointer "
                                     onClick={() => setOpenFour(true)}
                                 >
                                     <img
@@ -413,15 +413,15 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <p className="text-primary uppercase ">
                                         TRAINING SESSION WITH BMWK
-                                    </Paragraph>
-                                    <Paragraph>19th -29th April 2022</Paragraph>
+                                    </p>
+                                    <p>19th -29th April 2022</p>
                                 </div>
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden"
+                                    className="bg-black overflow-hidden cursor-pointer "
                                     onClick={() => setOpenFive(true)}
                                 >
                                     <img
@@ -438,13 +438,13 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <p className="text-primary uppercase ">
                                         GITC RETREAT WITH STAFF,TECHNICAL
                                         COMMITTEE AND GOVERNING BOARD
-                                    </Paragraph>
-                                    <Paragraph>
+                                    </p>
+                                    <p>
                                         17th - 18th March 2022
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </div>
                         </div>

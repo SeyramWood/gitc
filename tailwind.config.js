@@ -17,11 +17,12 @@ module.exports = {
             },
             colors: {
                 primary: "#F9443E",
-                "primary-light": "rgba(249, 68, 62, 0.637)",
+                primary_light: "rgba(249, 68, 62, 0.637)",
                 secondary: "#111111",
                 tertiary: "#272727",
                 grey: "rgb(126,125,125)",
                 footer: "#1F1F1F",
+                faded:"#F5F5F5"
             },
             spacing: {
                 "web-l": "3rem",

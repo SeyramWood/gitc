@@ -1,195 +1,97 @@
-import { Link } from "@inertiajs/inertia-react";
-import React from "react";
-import { SlCallIn, SlEnvelopeOpen, SlLocationPin } from "react-icons/sl";
 import { WebsiteLayout } from "../../components/layouts";
-import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
-import Paragraph from "../../components/layouts/website/Paragraph";
 
-const ServiceSubsidy = () => {
-    return (
+import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
+
+function ServiceSubsidy() {
+    return ( 
         <WebsiteLayout page="service">
-            <div className="text-black bg-white">
-                <div className="p-3 bg-gray-300">
-                    <span>
-                        GITC . Our Services . Trade Remedies . Subsidy &
-                        Countervailing Duties
-                    </span>
+            <div className="sm:p-8 bg-faded">
+                <div className="sm:pl-12  sm:text-[1.1rem]">
+                    <span className="sm:px-5 text-md text-primary">GITC .  </span>
+                    <span className="sm:px-5 text-md text-primary "> Our Services  . </span>
+                    <span className="sm:px-5 text-md text-primary "> Trade Remedies  . </span>
+                    <span className="sm:px-5 text-md text-primary "> AntiDumping Duties   </span>
                 </div>
-                <div className="min-h-screen hero bg-accent-content">
-                    <div className="flex-col hero-content md:flex-row-reverse">
-                        <div className="mt-20  max-h-4xl">
-                            <HeadingSecondary>Trade Remedy</HeadingSecondary>
-
-                            <Paragraph>
-                                Subsidy & controvailing duties; antidumping
-                                duties, safeguard and measures
-                            </Paragraph>
-
-                            <HeadingSecondary>
-                                Subsidy & Countervailing Duties
-                            </HeadingSecondary>
-
-                            <img
-                                className="w-screen"
-                                src="/images/subsidy.png"
-                                alt="Album"
-                            />
+            </div>
+            <div className="bg-white">
+                <div className="sm:flex ">
+                    <div className="sm:w-[30%] sm:block hidden p-9">
+                        <h2 className="text-3xl ">Our Service</h2>
+                        <div className="px-5">
+                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Trade Remedies</p>
+                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Anti-Dumping Duties</p>
+                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Subsidy and Countervailing Duties </p>
+                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out" >Safeguard Measures </p>
                         </div>
-                        <div className="w-full bg-white card h-46 text-dark shadow-2sm ">
-                            <div className="card-body">
-                                <HeadingSecondary>
-                                    Our Services
-                                </HeadingSecondary>
-                                <Paragraph>
-                                    <Link href="/service/dumping">
-                                        Anti - Dumping Duties
-                                    </Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link href="/service/subsidy">
-                                        Subsidy and Countervailing Duties
-                                    </Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link href="/service/safeguard">
-                                        Safeguards Measures
-                                    </Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link href="/service/dispute">
-                                        Dispute Settlement
-                                    </Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link href="/service"> Tariff Review</Link>
-                                </Paragraph>
-                                <Paragraph>
-                                    <Link href="/service/research">
-                                        Research
-                                    </Link>
-                                </Paragraph>
-                            </div>
-                        </div>
+                        <p className="py-3 text-red-700 hover:text-red-700/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Dispute Settlement</p>
+                        <p className="py-3 text-red-700 hover:text-red-700/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out"> Tariff Review</p>
+                        <p className="py-3 text-red-700 hover:text-red-700/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out"> Research</p>
                     </div>
-                </div>
-                <div className="min-h-screen hero bg-accent-content">
-                    <div className="flex-col hero-content lg:flex-row-reverse">
-                        <div className="text-center lg:text-left">
-                            <p className="py-6 text-xl tracking-normal">
-                                Countervailing duty is imposed where subsidy is
-                                specific and causes material injury to a
-                                domestic industry producing a like product or
-                                directly competitive product. .
-                            </p>
-                            <p className="py-6 text-xl tracking-normal">
-                                A subsidy is considered to exist if the
-                                Government or a public body within the territory
-                                of an exporting country provides a financial
-                                contribution to the manufacturer, producer,
-                                exporter, or transporter of any product which
-                                has been imported into the domestic market and
-                                confers a benefit on the recipient. .
+                    <div className="sm:w-[70%]">
+                        <div className="text-black">
+                            <h2 className="text-primary text-[4rem] pb-0 pt-16">Trade Remedy</h2>
+                            <p className="text-xl"> Subsidy & Countervailing Duties;
+                                Anti-Dumping Duties and Safeguard Measures
                             </p>
 
-                            <p className="py-6 text-xl tracking-normal">
-                                A financial contribution is considered to have
-                                been granted where a Government practice
-                                involves the direct transfer of funds including
-                                grants, loans and equity infusionto a specific
-                                industry.
-                            </p>
-
-                            <p className="py-6 text-xl tracking-normal">
-                                The Commission will trigger an investigation
-                                when it has sufficient evidence of the existence
-                                of the Government or public body's involvement
-                                in the provision of financial contribution to a
-                                manufacturer, producer, exporter, or transporter
-                                of any product, that imposes injury or a threat
-                                of material injury to the domestic industry .
-                            </p>
-                            <h2 className="text-blue-700">Related Download</h2>
-                            <p className="text-sm">
-                                Downloadable Legislative Instrument and
-                                Questionnaire
-                            </p>
-                            <div>
-                                <div className="bg-white shadow-xl card card-side">
-                                    <figure className="w-10 bo">
-                                        <img
-                                            src="/images/pdfred.png"
-                                            alt="Movie"
-                                        />
-                                    </figure>
-                                    <div className="card-body">
-                                        <h2 className="card-title">
-                                            {" "}
-                                            GITC (Subsidy and Countervailing
-                                            Measures)
-                                        </h2>
-                                        <p>Regulations, 2020 (L.I 2425).</p>
-                                    </div>
-                                </div>
+                            <h2 className="text-red-500 text-4xl font-bold mt-20"> Subsidy & Countervailing Duties</h2>
+                            <div className="sm:pr-6 my-10 ">
+                                <img src="images/subsidy.png" className="overflow-hidden" alt="" />
                             </div>
-                            <div>
-                                <div className="bg-white shadow-xl card card-side">
-                                    <figure className="w-10 bo">
-                                        <img
-                                            src="/images/pdfblue.png"
-                                            alt="Movie"
-                                        />
-                                    </figure>
-                                    <div className="card-body">
-                                        <p>RGITC Questionnaire (Editable)</p>
-                                    </div>
+                            <div className="">
+                                <p className="pb-8 text-black">
+                                    Countervailing duty is imposed where subsidy is
+                                    specific and causes material injury to a
+                                    domestic industry producing a like product or
+                                    directly competitive product. .
+                                </p>
+                                <p className="pb-8 text-black">
+                                    A subsidy is considered to exist if the
+                                    Government or a public body within the territory
+                                    of an exporting country provides a financial
+                                    contribution to the manufacturer, producer,
+                                    exporter, or transporter of any product which
+                                    has been imported into the domestic market and
+                                    confers a benefit on the recipient. .
+                                </p>
+                                <p className="pb-8 text-black">
+                                    A financial contribution is considered to have
+                                    been granted where a Government practice
+                                    involves the direct transfer of funds including
+                                    grants, loans and equity infusionto a specific
+                                    industry.
+                                </p>
+                                <p className="pb-8 text-black">
+                                    The Commission will trigger an investigation
+                                    when it has sufficient evidence of the existence
+                                    of the Government or public body's involvement
+                                    in the provision of financial contribution to a
+                                    manufacturer, producer, exporter, or transporter
+                                    of any product, that imposes injury or a threat
+                                    of material injury to the domestic industry .
+
+                                </p>
+                            </div>
+                            <div className="sm:pr-4">
+                                <h2 className="text-4xl text-primary">Related Downloads</h2>
+                                <i>Downloadable Legislative Instrument and Questionnaire</i>
+                                <div className="my-2 shadow-lg p-5  rounded flex  transition duration-500 ease-in-out hover:scale-110 ">
+                                    <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
+                                    <span className="pt-6">  GITC ( Anti-Dumping ) Regulations, 2019 ( L.I 2380 ) </span>
+                                </div>
+                                <div className="my-2 shadow-lg p-5 mb-5 rounded flex cursor-pointer transition duration-500 ease-in-out hover:scale-110 ">
+
+                                    <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700" />{" "}
+                                    <span className="pt-6"> GITC Questionnaire ( Editable )</span>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex-shrink-0 w-full max-w-sm bg-white border-2 border-solid shadow-2xl card text-dark border-sky-500 ">
-                            <div className="card-body">
-                                <HeadingSecondary>Contact Us</HeadingSecondary>
 
-                                <Paragraph>
-                                    <span className="flex ">
-                                        <span className="text-rose-700">
-                                            {" "}
-                                            <SlCallIn />{" "}
-                                        </span>
-                                        <span className="ml-4">
-                                            {" "}
-                                            +233 030 296 0298
-                                        </span>
-                                    </span>
-                                </Paragraph>
-                                <Paragraph>
-                                    <span className="flex ">
-                                        <span className="text-rose-700">
-                                            {" "}
-                                            <SlEnvelopeOpen />{" "}
-                                        </span>
-                                        <span className="ml-4">
-                                            info@gitc.gov.gh
-                                        </span>
-                                    </span>
-                                </Paragraph>
-                                <Paragraph>
-                                    <span className="flex ">
-                                        <span className="text-rose-700">
-                                            {" "}
-                                            <SlLocationPin />{" "}
-                                        </span>
-                                        <span className="ml-4">
-                                            GL-040-2630
-                                        </span>
-                                    </span>
-                                </Paragraph>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </WebsiteLayout>
-    );
-};
+     );
+}
 
 export default ServiceSubsidy;
