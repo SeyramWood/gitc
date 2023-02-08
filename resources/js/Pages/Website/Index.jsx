@@ -202,7 +202,7 @@ const Index = () => {
                                 <h1 className=" py-5 text-3xl text-primary">
                                     Trade Remedies
                                 </h1>
-                                <p className="mb-3 text-center">
+                                <p className="mb-3 ">
                                     To ensure equality and fairness in the
                                     application of measures affecting
                                     international trade and the use of world
@@ -393,7 +393,7 @@ const Index = () => {
                                     </ul>
 
                                     <Link href="/story">
-                                        <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2">
+                                        <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2 mb-7">
                                             Read Our Story
                                         </ButtonOutline>
                                     </Link>
@@ -401,7 +401,7 @@ const Index = () => {
                             </div>
                             <div className="sm:h-[35rem] ">
                                 <img
-                                    className="sm:w-[80rem] sm:h-[35rem]"
+                                    className="sm:w-[80rem] sm:h-[40rem]"
                                     src="images/homePage/storyTwo.jpg"
                                     alt=""
                                 />

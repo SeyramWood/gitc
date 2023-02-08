@@ -15,22 +15,25 @@ const Service = () => {
 
     return (
         <WebsiteLayout page="home">
-     <div className="bg-white text-black">
+     <div className="bg-white ">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services </span>
          </div>
 
+
          <div className="hero min-h-screen bg-accent-content">
-             <div className="hero-content flex-col xl:flex-row-reverse">
-                 <div className=" w-11/12">
+             <div className="hero-content flex-col md:flex-row-reverse">
+                 <div className="  max-h-4xl mt-20">
+
                      <HeadingSecondary>
                          Tariff Review
                      </HeadingSecondary>
 
-                         <img className="w-screen" src="/images/service.jpg" alt="Album"/>
+
+                     <img className="w-screen" src="/images/service.jpg" alt="Album"/>
 
                  </div>
-                 <div className="card  text-dark flex-shrink-0 w-full max-w-sm  bg-white  ">
+                 <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
                      <div className="card-body">
                          <HeadingSecondary>
                              Our Services
@@ -39,11 +42,7 @@ const Service = () => {
 
                              <Link href="/service">  Anti - Dumping Duties</Link>
                          </Paragraph>
-                         <Paragraph>
 
-
-                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
-                         </Paragraph>
                          <Paragraph>
 
                              <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
@@ -73,12 +72,11 @@ const Service = () => {
                              <Link href="/service/research">  Research</Link>
 
                          </Paragraph>
-
-
                      </div>
                  </div>
              </div>
          </div>
+
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col lg:flex-row-reverse">
                  <div className="text-center lg:text-left">

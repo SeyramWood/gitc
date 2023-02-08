@@ -13,7 +13,7 @@ const ServiceDispute = () => {
 
     return (
         <WebsiteLayout page="home">
-     <div className="bg-white text-black">
+     <div className="bg-white ">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . dispute Settlement</span>
          </div>

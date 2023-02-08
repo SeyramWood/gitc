@@ -15,7 +15,7 @@ const ServiceSaufgard = () => {
 
     return (
         <WebsiteLayout page="home">
-     <div className="bg-white text-black">
+     <div className="bg-white ">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . Trade Remedies . Subsidy & Countervailing Duties</span>
          </div>
@@ -23,24 +23,22 @@ const ServiceSaufgard = () => {
 
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col md:flex-row-reverse">
-                 <div className="  max-h-4xl mt-20">
+                 <div className="  max-h-4xl mt-40">
                      <HeadingSecondary>
-                         Trade Remedy
+                         Safeguards Measures
                      </HeadingSecondary>
 
                      <Paragraph className="text-sm mb-5">
                          Subsidy & controvailing duties; antidumping duties, safeguard and measures
                      </Paragraph>
 
-                     <HeadingSecondary>
-                         Safeguards Measures
-                     </HeadingSecondary>
+
 
 
                      <img className="w-screen" src="/images/subsidy.png" alt="Album"/>
 
                  </div>
-                 <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
+                 <div className="card  text-dark  w-full shadow-2sm bg-white  ">
                      <div className="card-body">
                          <HeadingSecondary>
                              Our Services

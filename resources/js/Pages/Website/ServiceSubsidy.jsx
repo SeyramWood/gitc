@@ -15,13 +15,13 @@ const ServiceSubsidy = () => {
 
     return (
         <WebsiteLayout page="home">
-     <div className="bg-white text-black">
+     <div className="bg-white ">
          <div className="bg-gray-300  p-3">
              <span>GITC . Our Services . Trade Remedies . Subsidy & Countervailing Duties</span>
          </div>
          <div className="hero min-h-screen bg-accent-content">
              <div className="hero-content flex-col md:flex-row-reverse">
-                 <div className="  max-h-4xl mt-20">
+                 <div className="  max-h-4xl mt-40">
                      <HeadingSecondary>
                          Trade Remedy
                      </HeadingSecondary>

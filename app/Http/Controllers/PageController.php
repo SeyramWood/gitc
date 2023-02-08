@@ -73,4 +73,18 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Faq');
     }
+
+    public function sign()
+    {
+        return Inertia::render('Backend/Signin');
+    }
+    public function signup()
+    {
+        return Inertia::render('Backend/Signup');
+    }
+
+    public function dashboard()
+    {
+        return Inertia::render('Backend/Dashboard');
+    }
 }
