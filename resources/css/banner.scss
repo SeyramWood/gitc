@@ -51,7 +51,6 @@
 }
 .banner__buttons {
     width: 100%;
-
     &__btn {
         &:not(:last-child) {
             margin-right: 2rem;
@@ -100,48 +99,156 @@
     animation: growOut 12s ease-in forwards;
 }
 
+.carousel__container {
+    position: relative;
+    width: 100%;
+
+    &__item {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        display: block;
+        transition: all 0.3s linear;
+        visibility: hidden;
+        opacity: 0;
+
+        &__wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            &__image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            &__content {
+                background: transparent;
+                padding: 0 7rem;
+                position: absolute;
+                width: 100%;
+                color: white;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                & > h1 {
+                    margin-left: -1rem;
+                    padding: 0;
+                }
+            }
+        }
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        &.inactive {
+            visibility: hidden;
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+
+    &__controls {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        background-color: inherit;
+
+        & > button {
+            font-size: 3rem;
+            color: #fff;
+        }
+    }
+
+    &__indicators {
+        width: auto;
+        position: absolute;
+        overflow: hidden;
+        color: #fff;
+        left: 50%;
+        bottom: 0;
+        transform: translate(0, -50%);
+        & > button {
+            margin: 0.3rem;
+            border: 2px solid transparent;
+            outline: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.5s ease-in;
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #c5c5c5;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover,
+            &.active {
+                border-color: #fff;
+                outline: none;
+                &::after {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+}
+
 @-moz-keyframes growOut {
     0% {
-        transform: scale(0);
-    }
-    80% {
-        transform: scale(1.1);
+        transform: scale(1);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.5);
     }
 }
 @-webkit-keyframes growOut {
     0% {
-        transform: scale(0);
-    }
-    80% {
-        transform: scale(1.1);
+        transform: scale(1);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.5);
     }
 }
 @-o-keyframes growOut {
     0% {
-        transform: scale(0);
-    }
-    80% {
-        transform: scale(1.1);
+        transform: scale(1);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.5);
     }
 }
 @keyframes growOut {
     0% {
-        transform: scale(0);
-    }
-    80% {
-        transform: scale(1.1);
+        transform: scale(1);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.5);
     }
 }
 .dots {
@@ -239,54 +346,54 @@
     }
     &.publication {
         background-image: linear-gradient(
-            to bottom,
-            rgba(17, 17, 17, 0.605),
-            rgba(17, 17, 17, 0.805),
-            rgba(17, 17, 17, 0.805),
-            rgba(17, 17, 17, 0.905)
-        ),
-        url("/images/publish/publicbanner.jpg");
+                to bottom,
+                rgba(17, 17, 17, 0.605),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.905)
+            ),
+            url("/images/publish/publicbanner.jpg");
     }
-    &.contact{
+    &.contact {
         background-image: linear-gradient(
-            to bottom,
-            rgba(17, 17, 17, 0.605),
-            rgba(17, 17, 17, 0.805),
-            rgba(17, 17, 17, 0.805),
-            rgba(17, 17, 17, 0.905)
-        ),
-        url("/images/contact/contactbanner.jpg");
+                to bottom,
+                rgba(17, 17, 17, 0.605),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.905)
+            ),
+            url("/images/contact/contactbanner.jpg");
     }
-  &.story{
-    background-image: linear-gradient(
-        to bottom,
-        rgba(17, 17, 17, 0.605),
-        rgba(17, 17, 17, 0.805),
-        rgba(17, 17, 17, 0.805),
-        rgba(17, 17, 17, 0.905)
-    ),
-    url("/images/about/story.jpg");
-  }
-  &.message{
-    background-image: linear-gradient(
-        to bottom,
-        rgba(17, 17, 17, 0.605),
-        rgba(17, 17, 17, 0.805),
-        rgba(17, 17, 17, 0.805),
-        rgba(17, 17, 17, 0.905)
-    ),
-    url("/images/about/message.jpg");
-  }
-  &.faq{
-    background-image: linear-gradient(
-        to bottom,
-        rgba(17, 17, 17, 0.605),
-        rgba(17, 17, 17, 0.805),
-        rgba(17, 17, 17, 0.805),
-        rgba(17, 17, 17, 0.905)
-    ),
-    url("/images/faq/faq.jpg");
-  }
+    &.story {
+        background-image: linear-gradient(
+                to bottom,
+                rgba(17, 17, 17, 0.605),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.905)
+            ),
+            url("/images/about/story.jpg");
+    }
+    &.message {
+        background-image: linear-gradient(
+                to bottom,
+                rgba(17, 17, 17, 0.605),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.905)
+            ),
+            url("/images/about/message.jpg");
+    }
+    &.faq {
+        background-image: linear-gradient(
+                to bottom,
+                rgba(17, 17, 17, 0.605),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.805),
+                rgba(17, 17, 17, 0.905)
+            ),
+            url("/images/faq/faq.jpg");
+    }
     &.services {
         background-image: linear-gradient(
                 to bottom,
@@ -320,36 +427,37 @@
 }
 
 body {
-  background-color: #eee;
-  color: #7a7572;
+    background-color: #eee;
+    color: #7a7572;
 }
 
-
-.title::after, .title::before {
-  content: '';
-  position: absolute;
-  right: 1.25em;
-  top: 1.25em;
-  width: 2px;
-  height: 0.75em;
-  background-color: #7A7572;
-  transition: all 0.2s;
+.title::after,
+.title::before {
+    content: "";
+    position: absolute;
+    right: 1.25em;
+    top: 1.25em;
+    width: 2px;
+    height: 0.75em;
+    background-color: #7a7572;
+    transition: all 0.2s;
 }
 
 .title::after {
-  transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 .content {
-  max-height: 0;
+    max-height: 0;
 }
 
-.toggle:checked + .title, .toggle:checked + .title + .content {
-  box-shadow: 3px 3px 6px #ddd, -3px 3px 6px #ddd;
+.toggle:checked + .title,
+.toggle:checked + .title + .content {
+    box-shadow: 3px 3px 6px #ddd, -3px 3px 6px #ddd;
 }
 .toggle:checked + .title + .content {
-  max-height: 500px;
+    max-height: 500px;
 }
 .toggle:checked + .title::before {
-  transform: rotate(90deg) !important;
+    transform: rotate(90deg) !important;
 }
