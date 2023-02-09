@@ -7,9 +7,9 @@ const AboutMessage = () => {
         <WebsiteLayout page="message" className="bg-white">
             <div className="bg-white">
                 <div className="my-20 bg-slate-100 px-10">
-                    <HeadingPrimary className="text-black text-left py-8">
+                    <h3 className="text-[3rem]   text-left py-8">
                         Top Message
-                    </HeadingPrimary>
+                    </h3>
                     <div className="">
                         <div className="float-right sm:w-[30%] sm:h-[70%] sm:mx-4 sm:mb-4">
                             <img
@@ -17,12 +17,12 @@ const AboutMessage = () => {
                                 className="object-fit "
                                 alt="img"
                             />
-                            <Paragraph className="text-primary font-bold text-[1.6rem] mt-4">
+                            <h3 className="text-primary font-bold text-[1.6rem] mt-4">
                                 Frank Agyekum
-                            </Paragraph>
-                            <Paragraph>
+                            </h3>
+                            <p>
                                 Executive Secretary
-                            </Paragraph>
+                            </p>
                         </div>
                         <Paragraph className="mb-8">
                             The bane of development in developing countries as against

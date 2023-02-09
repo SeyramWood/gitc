@@ -1,5 +1,5 @@
 // slider
-import { Link } from "@inertiajs/inertia-react";
+import { InertiaLink, Link } from "@inertiajs/inertia-react";
 import { useKeenSlider } from "keen-slider/react";
 // gallery
 import { useState } from "react";
@@ -92,7 +92,7 @@ const Publication = () => {
         <WebsiteLayout page="publication">
             <div className="bg-white ">
                 <div className="text-center ">
-                    <h4 className="py-16">
+                    <h4 className="py-16 text-red-600">
                         PRESS RELEASES & SPEECHES
                     </h4>
                 </div>
@@ -101,123 +101,131 @@ const Publication = () => {
                     <div className="relative">
                         <div ref={sliderRef} className="keen-slider ">
                             <div className="keen-slider__slide number-slide1 ">
-                                <div className="relative">
-                                    <img
-                                        src="images/publication/pub1.jpg"
-                                        className="object-cover sm:h-[20rem]"
-                                        alt=""
-                                    />
-                                    <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                        <div className="block text-white text-center uppercase">
-                                            <div>June</div>
-                                            <div>10</div>
-                                            <div>2022</div>
+                                <Link href="">
+                                    <div className="relative">
+                                        <img
+                                            src="images/publication/pub1.jpg"
+                                            className="object-cover sm:h-[20rem]"
+                                            alt=""
+                                        />
+                                        <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
+                                            <div className="block text-white text-center uppercase">
+                                                <div>June</div>
+                                                <div>10</div>
+                                                <div>2022</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <p className="uppercase  text-primary">
-                                        <Link href="">
-                                            GITC dismisses petition to ban iron,
-                                            steels import
-                                        </Link>
-                                    </p>
-                                    <p>
-                                        The Ghana International Trade Commission
-                                        has made Determinations on petitions
-                                        brought before
-                                    </p>
-                                </div>
+                                    <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
+                                        <p className="uppercase  text-primary">
+                                            <Link href="">
+                                                GITC dismisses petition to ban iron,
+                                                steels import
+                                            </Link>
+                                        </p>
+                                        <p>
+                                            The Ghana International Trade Commission
+                                            has made Determinations on petitions
+                                            brought before
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
 
                             <div className="keen-slider__slide number-slide2">
-                                <div className="relative">
-                                    <img
-                                        src="images/publication/pub2.jpg"
-                                        className="object-cover h-[20rem]"
-                                        alt=""
-                                    />
-                                    <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                        <div className="block text-white text-center uppercase">
-                                            <div>March</div>
-                                            <div>2</div>
-                                            <div>2021</div>
+                                <Link href="/">
+                                    <div className="relative">
+                                        <img
+                                            src="images/publication/pub2.jpg"
+                                            className="object-cover h-[20rem]"
+                                            alt=""
+                                        />
+                                        <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
+                                            <div className="block text-white text-center uppercase">
+                                                <div>March</div>
+                                                <div>2</div>
+                                                <div>2021</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <p className="uppercase text-primary">
-                                        <Link href="">
-                                            Interim Ghana-UK Trade Partnership
-                                            Agreement
-                                        </Link>
-                                    </p>
-                                    <p>
-                                        On 2 March 2021, the Interim Trade
-                                        Partnership Agreement between the
-                                        Republic of Ghana
-                                    </p>
-                                </div>
+                                    <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
+                                        <p className="uppercase text-primary">
+                                            <Link href="">
+                                                Interim Ghana-UK Trade Partnership
+                                                Agreement
+                                            </Link>
+                                        </p>
+                                        <p>
+                                            On 2 March 2021, the Interim Trade
+                                            Partnership Agreement between the
+                                            Republic of Ghana
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
 
                             <div className="keen-slider__slide number-slide3">
-                                <div className="relative">
-                                    <img
-                                        src="images/publication/pub3.jpg"
-                                        className="object-cover h-[20rem]"
-                                        alt=""
-                                    />
-                                    <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                        <div className="block text-white text-center uppercase">
-                                            <div>Nov</div>
-                                            <div>7</div>
-                                            <div>2019</div>
+                                <Link href="/">
+                                    <div className="relative">
+                                        <img
+                                            src="images/publication/pub3.jpg"
+                                            className="object-cover h-[20rem]"
+                                            alt=""
+                                        />
+                                        <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
+                                            <div className="block text-white text-center uppercase">
+                                                <div>Nov</div>
+                                                <div>7</div>
+                                                <div>2019</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <p className="uppercase text-primary">
-                                        <Link href="">
-                                            Notice of Initiation and Request for
-                                            Information Aluminium Coils and
-                                            Circles
-                                        </Link>
-                                    </p>
-                                    <p>
-                                        Agency:Ghana InternationalTrade
-                                        Commission
-                                    </p>
-                                </div>
+                                    <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
+                                        <p className="uppercase text-primary">
+                                            <Link href="">
+                                                Notice of Initiation and Request for
+                                                Information Aluminium Coils and
+                                                Circles
+                                            </Link>
+                                        </p>
+                                        <p>
+                                            Agency:Ghana InternationalTrade
+                                            Commission
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
 
                             <div className="keen-slider__slide number-slide4">
-                                <div className="relative">
-                                    <img
-                                        src="images/publication/pub3.jpg"
-                                        className="object-cover h-[20rem]"
-                                        alt=""
-                                    />
-                                    <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                        <div className="block text-white text-center uppercase">
-                                            <div>Nov</div>
-                                            <div>7</div>
-                                            <div>2019</div>
+                                <Link href="">
+                                    <div className="relative">
+                                        <img
+                                            src="images/publication/pub3.jpg"
+                                            className="object-cover h-[20rem]"
+                                            alt=""
+                                        />
+                                        <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
+                                            <div className="block text-white text-center uppercase">
+                                                <div>Nov</div>
+                                                <div>7</div>
+                                                <div>2019</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                    <p className="uppercase text-primary">
-                                        <Link href="">
-                                            Notice of Initiation and Request for
-                                            Information Aluminium Coils and
-                                            Circles
-                                        </Link>
-                                    </p>
-                                    <p>
-                                        Agency:Ghana InternationalTrade
-                                        Commission
-                                    </p>
-                                </div>
+                                    <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
+                                        <p className="uppercase text-primary">
+                                            <Link href="">
+                                                Notice of Initiation and Request for
+                                                Information Aluminium Coils and
+                                                Circles
+                                            </Link>
+                                        </p>
+                                        <p>
+                                            Agency:Ghana InternationalTrade
+                                            Commission
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         {loaded && instanceRef.current && (
@@ -240,7 +248,7 @@ const Publication = () => {
                                         currentSlide ===
                                         instanceRef.current.track.details.slides
                                             .length -
-                                            1
+                                        1
                                     }
                                 />
                             </>
@@ -251,7 +259,7 @@ const Publication = () => {
                 {/* gallery */}
                 <div className="">
                     <div className="text-center mb-7">
-                        <h4>Our Gallery</h4>
+                        <h4 className="text-red-600">Our Gallery</h4>
                         <p>
                             MEETINGS, WORSHSHOPS, COURTESY CALLS
                         </p>
@@ -461,9 +469,8 @@ function Arrow(props) {
     return (
         <svg
             onClick={props.onClick}
-            className={`arrow ${
-                props.left ? "arrow--left" : "arrow--right"
-            } ${disabeld}`}
+            className={`arrow ${props.left ? "arrow--left" : "arrow--right"
+                } ${disabeld}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
         >

@@ -8,7 +8,7 @@ const About = () => {
         <WebsiteLayout page="about">
             <main className="">
                 {/* Governing Board */}
-                <h4 className="my-[4rem] uppercase ">
+                <h4 className="my-[4rem] uppercase text-red-600">
                     Governing Board
                 </h4>
                 <div className="sm:px-[8rem] mb-24">
@@ -132,7 +132,7 @@ const About = () => {
                 {/* team */}
                 <div className="mb-32 text-black sm:mx-20">
                     <div className="pb-[4rem] text-center ">
-                        <h4 className="uppercase ">
+                        <h4 className="uppercase text-red-600">
                             Our Team
                         </h4>
                         <p className="text-black">Meet The Head Of Departments</p>

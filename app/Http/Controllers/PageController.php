@@ -22,9 +22,9 @@ class PageController extends Controller
         return Inertia::render('Website/ServiceSubsidy');
     }
 
-    public function ServiceSaufgard()
+    public function ServiceSafeguard()
     {
-        return Inertia::render('Website/ServiceSaufgard');
+        return Inertia::render('Website/ServiceSafeguard');
     }
 
     public function ServiceResearch()

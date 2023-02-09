@@ -19,7 +19,7 @@ const AboutMessage = () => {
 
                 <div className="sm:flex text-center sm:text-left p-4 pt-14 bg-faded">
                     <div className="sm:w-[20%]  sm:mx-3">
-                        <h4 className="text-5xl">
+                        <h4 className="text-5xl text-red-600">
                             Our Story
                         </h4>
                     </div>
@@ -192,11 +192,11 @@ const AboutMessage = () => {
                                         </li>
                                     </ul>
 
-                                    <Link href="/story">
+                                    {/* <Link href="/story">
                                         <ButtonOutline className="sm:w-[14rem] mb-8">
                                             Read Our Story
                                         </ButtonOutline>
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                             <div className="sm:w-[50%]">
