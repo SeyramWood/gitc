@@ -1,32 +1,16 @@
 import { WebsiteLayout } from "../../components/layouts";
 
 import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
+import ServicesNav from "../../components/layouts/website/ServicesNav";
+import ServiceLinks from "../../components/layouts/website/ServiceLinks";
 
 function ServiceResarch() {
     return ( 
         <WebsiteLayout page="service">
-            <div className="sm:p-8 bg-faded">
-                <div className="sm:pl-12  sm:text-[1.1rem]">
-                    <span className="sm:px-5 text-md text-primary">GITC .  </span>
-                    <span className="sm:px-5 text-md text-primary "> Our Services  . </span>
-                    <span className="sm:px-5 text-md text-primary "> Trade Remedies  . </span>
-                    <span className="sm:px-5 text-md text-primary "> AntiDumping Duties   </span>
-                </div>
-            </div>
+           <ServiceLinks />
             <div className="bg-white">
                 <div className="sm:flex ">
-                    <div className="sm:w-[30%] sm:block hidden p-9">
-                        <h2 className="text-3xl ">Our Service</h2>
-                        <div className="px-5">
-                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Trade Remedies</p>
-                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Anti-Dumping Duties</p>
-                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Subsidy and Countervailing Duties </p>
-                            <p className="py-3 text-red-500 hover:text-red-500/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out" >Safeguard Measures </p>
-                        </div>
-                        <p className="py-3 text-red-700 hover:text-red-700/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out">Dispute Settlement</p>
-                        <p className="py-3 text-red-700 hover:text-red-700/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out"> Tariff Review</p>
-                        <p className="py-3 text-red-700 hover:text-red-700/90 cursor-pointer hover:scale-110 teansition duration-700 ease-in-out"> Research</p>
-                    </div>
+                   <ServicesNav />
                     <div className="sm:w-[70%]">
                         <div className="text-black">
                             <h2 className="text-primary text-[4rem] pb-0 pt-16"> Research</h2>
@@ -36,7 +20,7 @@ function ServiceResarch() {
 
                             <h2 className="text-red-500 text-4xl font-bold mt-20">Anti Dumping Duties</h2>
                             <div className="sm:pr-6 my-10 ">
-                                <img src="images/homePage/serviceOne.jpg" className="overflow-hidden" alt="" />
+                                <img src="/../images/research.png" className="overflow-hidden w-full h-[28rem]" alt="" />
                             </div>
                             <div className="">
                                 <p className="pb-8 text-black">

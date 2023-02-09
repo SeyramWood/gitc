@@ -48,4 +48,19 @@
     src: ("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
   }
 
+  .custom {
+    display: inline-block;
+    position: relative;
+  }
+
+  .custom::after {
+    content:'';
+    height: 5px;
+    width: 40%;
+    background: #e8cbc8;
+    position: absolute;
+    left: calc(50% - 20%);
+    bottom: -5px;
+  }
+
 }
