@@ -1,6 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
-import { SlCallIn, SlEnvelopeOpen, SlLocationPin, SlPaperPlane } from "react-icons/sl";
+import { SlCallIn, SlEnvelopeOpen, SlPaperPlane } from "react-icons/sl";
 
 const Footer = () => {
     return (
@@ -18,22 +18,24 @@ const Footer = () => {
                         </a>
                     </div>
 
-                    <ul className="text-lg">
+                    <ul className="text-[1rem]">
                         <li className="flex items-center mb-3 text-center">
                             <span className="mr-3">
                                 <SlPaperPlane />
                             </span>
                             <address
-                                className="font-normal text-left"
+                                className="pl-2 font-normal text-left font-"
                                 style={{ fontStyle: "normal" }}
                             >
-                                <p>2nd Floor (West Wing),</p>
-                                <p>
+                                <p className="text-white">
+                                    2nd Floor (West Wing),
+                                </p>
+                                <p className="text-white">
                                     East Cantonments near US Embassy, 5th Link
                                     Road,
                                 </p>
 
-                                <p>Accra</p>
+                                <p className="text-white">Accra</p>
                             </address>
                         </li>
                         <li className="flex items-center mb-3 text-center">
@@ -58,7 +60,7 @@ const Footer = () => {
                                 <img
                                     src="/images/location.png"
                                     alt="icon"
-                                    srcset=""
+                                    srcSet=""
                                     className="w-[1.5rem]"
                                 />
                             </span>
@@ -72,20 +74,20 @@ const Footer = () => {
                             Useful Links
                         </h5>
                     </div>
-                    <ul className="w-[100%] text-lg">
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                    <ul className="w-[100%] text-[1rem]">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/team">About us</Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/story">Our team</Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/services">Our service</Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/resources">Resources</Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/publications">Publications</Link>
                         </li>
                     </ul>
@@ -97,26 +99,26 @@ const Footer = () => {
                         </h5>
                     </div>
 
-                    <ul className="w-[100%] text-lg">
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                    <ul className="w-[100%] text-[1rem]">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/about">
                                 Ministry of Trade and Industry
                             </Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/team">Ghana Free Zone Authority</Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/services">
                                 Ghana Revenue Authority
                             </Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/resources">
                                 Ghana Standard Authority
                             </Link>
                         </li>
-                        <li className="mb-2 text-lg capitalize transform hover:text-primary">
+                        <li className="mb-2 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/publications">World Trade Center</Link>
                         </li>
                     </ul>
@@ -161,7 +163,7 @@ const Footer = () => {
                 </section>
             </nav>
 
-            <section className="w-[100%] h-[5rem] bg-tertiary flex items-center text-web-s md:text-lg  px-web-xs lg:px-web-l">
+            <section className="w-[100%] h-[5rem] bg-tertiary flex items-center text-web-s md:text-text-[1rem]  px-web-xs lg:px-web-l">
                 <strong>
                     &copy;Copyright {new Date().getUTCFullYear()}, All Rights
                     Reserved, Ghana International Trade Commission.

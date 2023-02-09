@@ -3,15 +3,13 @@ import { Link } from "@inertiajs/inertia-react";
 import { useKeenSlider } from "keen-slider/react.js";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
-import { W as WebsiteLayout } from "./WebsiteLayout-d376d318.mjs";
-import { H as HeadingPrimary } from "./HeadingPrimary-ed13ec4f.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
 import { P as Paragraph } from "./Paragraph-8ec8d723.mjs";
 /* empty css                           */import "react/jsx-runtime";
 import "react-dom/server";
 import "process";
 import "http";
 import "react-icons/sl";
-import "react-multi-carousel";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
 const style = "";
@@ -42,11 +40,11 @@ const Publication = () => {
       setLoaded(true);
     }
   });
-  return /* @__PURE__ */ jsx(WebsiteLayout, { page: "publication", children: /* @__PURE__ */ jsxs("div", { className: "bg-white mt-3", children: [
-    /* @__PURE__ */ jsx("div", { className: "text-center ", children: /* @__PURE__ */ jsx(HeadingPrimary, { className: "py-16", children: "PRERSS RELEAESES & SPEECHES" }) }),
+  return /* @__PURE__ */ jsx(WebsiteLayout, { page: "publication", children: /* @__PURE__ */ jsxs("div", { className: "bg-white ", children: [
+    /* @__PURE__ */ jsx("div", { className: "text-center ", children: /* @__PURE__ */ jsx("h4", { className: "py-16 text-red-600", children: "PRESS RELEASES & SPEECHES" }) }),
     /* @__PURE__ */ jsx("div", { className: " sm:mx-[10rem] sm:mb-28 ", children: /* @__PURE__ */ jsxs("div", { className: "relative", children: [
       /* @__PURE__ */ jsxs("div", { ref: sliderRef, className: "keen-slider ", children: [
-        /* @__PURE__ */ jsxs("div", { className: "keen-slider__slide number-slide1 ", children: [
+        /* @__PURE__ */ jsx("div", { className: "keen-slider__slide number-slide1 ", children: /* @__PURE__ */ jsxs(Link, { href: "", children: [
           /* @__PURE__ */ jsxs("div", { className: "relative", children: [
             /* @__PURE__ */ jsx(
               "img",
@@ -63,11 +61,11 @@ const Publication = () => {
             ] }) })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "bg-slate-100 p-3 overflow-hidden h-[60%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "uppercase font-sm text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "GITC dismisses petition to ban iron, steels import" }) }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "The Ghana International Trade Commission has made Determinations on petitions brought before" })
+            /* @__PURE__ */ jsx("p", { className: "uppercase  text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "GITC dismisses petition to ban iron, steels import" }) }),
+            /* @__PURE__ */ jsx("p", { children: "The Ghana International Trade Commission has made Determinations on petitions brought before" })
           ] })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { className: "keen-slider__slide number-slide2", children: [
+        ] }) }),
+        /* @__PURE__ */ jsx("div", { className: "keen-slider__slide number-slide2", children: /* @__PURE__ */ jsxs(Link, { href: "/", children: [
           /* @__PURE__ */ jsxs("div", { className: "relative", children: [
             /* @__PURE__ */ jsx(
               "img",
@@ -84,11 +82,11 @@ const Publication = () => {
             ] }) })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "bg-slate-100 p-3 overflow-hidden h-[60%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "uppercase font-sm text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "Interim Ghana-UK Trade Partnership Agreement" }) }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "On 2 March 2021, the Interim Trade Partnership Agreement between the Republic of Ghana" })
+            /* @__PURE__ */ jsx("p", { className: "uppercase text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "Interim Ghana-UK Trade Partnership Agreement" }) }),
+            /* @__PURE__ */ jsx("p", { children: "On 2 March 2021, the Interim Trade Partnership Agreement between the Republic of Ghana" })
           ] })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { className: "keen-slider__slide number-slide3", children: [
+        ] }) }),
+        /* @__PURE__ */ jsx("div", { className: "keen-slider__slide number-slide3", children: /* @__PURE__ */ jsxs(Link, { href: "/", children: [
           /* @__PURE__ */ jsxs("div", { className: "relative", children: [
             /* @__PURE__ */ jsx(
               "img",
@@ -105,11 +103,11 @@ const Publication = () => {
             ] }) })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "bg-slate-100 p-3 overflow-hidden h-[60%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "uppercase font-sm text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "Notice of Initiation and Request for Information Aluminium Coils and Circles" }) }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "Agency:Ghana InternationalTrade Commission" })
+            /* @__PURE__ */ jsx("p", { className: "uppercase text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "Notice of Initiation and Request for Information Aluminium Coils and Circles" }) }),
+            /* @__PURE__ */ jsx("p", { children: "Agency:Ghana InternationalTrade Commission" })
           ] })
-        ] }),
-        /* @__PURE__ */ jsxs("div", { className: "keen-slider__slide number-slide4", children: [
+        ] }) }),
+        /* @__PURE__ */ jsx("div", { className: "keen-slider__slide number-slide4", children: /* @__PURE__ */ jsxs(Link, { href: "", children: [
           /* @__PURE__ */ jsxs("div", { className: "relative", children: [
             /* @__PURE__ */ jsx(
               "img",
@@ -126,10 +124,10 @@ const Publication = () => {
             ] }) })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "bg-slate-100 p-3 overflow-hidden h-[60%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "uppercase font-sm text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "Notice of Initiation and Request for Information Aluminium Coils and Circles" }) }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "Agency:Ghana InternationalTrade Commission" })
+            /* @__PURE__ */ jsx("p", { className: "uppercase text-primary", children: /* @__PURE__ */ jsx(Link, { href: "", children: "Notice of Initiation and Request for Information Aluminium Coils and Circles" }) }),
+            /* @__PURE__ */ jsx("p", { children: "Agency:Ghana InternationalTrade Commission" })
           ] })
-        ] })
+        ] }) })
       ] }),
       loaded && instanceRef.current && /* @__PURE__ */ jsxs(Fragment, { children: [
         /* @__PURE__ */ jsx(
@@ -157,15 +155,15 @@ const Publication = () => {
     ] }) }),
     /* @__PURE__ */ jsxs("div", { className: "", children: [
       /* @__PURE__ */ jsxs("div", { className: "text-center mb-7", children: [
-        /* @__PURE__ */ jsx(HeadingPrimary, { children: "Our Gallery" }),
-        /* @__PURE__ */ jsx(Paragraph, { children: "MEETINGS, WORSHSHOPS, COURTESY CALLS" })
+        /* @__PURE__ */ jsx("h4", { className: "text-red-600", children: "Our Gallery" }),
+        /* @__PURE__ */ jsx("p", { children: "MEETINGS, WORSHSHOPS, COURTESY CALLS" })
       ] }),
       /* @__PURE__ */ jsx("div", { className: "sm:flex justify-center", children: /* @__PURE__ */ jsxs("div", { className: "sm:grid grid-cols-3", children: [
         /* @__PURE__ */ jsxs("div", { className: "relative sm:w-[20rem] mx-3 mb-10", children: [
           /* @__PURE__ */ jsx(
             "div",
             {
-              className: "bg-black overflow-hidden ",
+              className: "bg-black overflow-hidden cursor-pointer ",
               onClick: () => setOpen(true),
               children: /* @__PURE__ */ jsx(
                 "img",
@@ -189,15 +187,15 @@ const Publication = () => {
             }
           ),
           /* @__PURE__ */ jsxs("div", { className: "text-center bg-slate-100 p-5  sm:h-[35%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "text-primary uppercase ", children: "COURTESY CALL TO GHANA STATISTICAL SERVICE" }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "19th May 2022" })
+            /* @__PURE__ */ jsx("p", { className: "text-primary uppercase ", children: "COURTESY CALL TO GHANA STATISTICAL SERVICE" }),
+            /* @__PURE__ */ jsx("p", { children: "19th May 2022" })
           ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: " sm:w-[20rem]  mx-3 mb-10", children: [
           /* @__PURE__ */ jsx(
             "div",
             {
-              className: "bg-black overflow-hidden",
+              className: "bg-black overflow-hidden cursor-pointer ",
               onClick: () => setOpen(true),
               children: /* @__PURE__ */ jsx(
                 "img",
@@ -220,7 +218,7 @@ const Publication = () => {
             }
           ),
           /* @__PURE__ */ jsxs("div", { className: "text-center bg-slate-100 p-5 sm:h-[35%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "text-primary uppercase ", children: "COURTESY CALL TO GHANA Revenue Authority" }),
+            /* @__PURE__ */ jsx("p", { className: "text-primary uppercase ", children: "COURTESY CALL TO GHANA Revenue Authority" }),
             /* @__PURE__ */ jsx(Paragraph, { children: "2nd June 2022" })
           ] })
         ] }),
@@ -228,7 +226,7 @@ const Publication = () => {
           /* @__PURE__ */ jsx(
             "div",
             {
-              className: "bg-black overflow-hidden",
+              className: "bg-black overflow-hidden cursor-pointer ",
               onClick: () => setOpenTwo(true),
               children: /* @__PURE__ */ jsx(
                 "img",
@@ -251,15 +249,15 @@ const Publication = () => {
             }
           ),
           /* @__PURE__ */ jsxs("div", { className: "text-center bg-slate-100 p-5 sm:h-[35%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "text-primary uppercase ", children: "ASSOCIATION OF GHANA INDUSTRIES COURTESY CALL TO GITC" }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "27th May 2022" })
+            /* @__PURE__ */ jsx("p", { className: "text-primary uppercase ", children: "ASSOCIATION OF GHANA INDUSTRIES COURTESY CALL TO GITC" }),
+            /* @__PURE__ */ jsx("p", { children: "27th May 2022" })
           ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "sm:w-[20rem]  mx-3 mb-10", children: [
           /* @__PURE__ */ jsx(
             "div",
             {
-              className: "bg-black overflow-hidden",
+              className: "bg-black overflow-hidden cursor-pointer  ",
               onClick: () => setOpenThree(true),
               children: /* @__PURE__ */ jsx(
                 "img",
@@ -282,15 +280,15 @@ const Publication = () => {
             }
           ),
           /* @__PURE__ */ jsxs("div", { className: "text-center bg-slate-100 p-5 sm:h-[35%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "text-primary uppercase ", children: "HON.DEPUTY MINISTER (TRADE) COURTESY CALL TO GITC" }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "19th May,2022" })
+            /* @__PURE__ */ jsx("p", { className: "text-primary uppercase ", children: "HON.DEPUTY MINISTER (TRADE) COURTESY CALL TO GITC" }),
+            /* @__PURE__ */ jsx("p", { children: "19th May,2022" })
           ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: " sm:w-[20rem]  mx-3 mb-10", children: [
           /* @__PURE__ */ jsx(
             "div",
             {
-              className: "bg-black overflow-hidden",
+              className: "bg-black overflow-hidden cursor-pointer ",
               onClick: () => setOpenFour(true),
               children: /* @__PURE__ */ jsx(
                 "img",
@@ -313,15 +311,15 @@ const Publication = () => {
             }
           ),
           /* @__PURE__ */ jsxs("div", { className: "text-center bg-slate-100 p-5  sm:h-[35%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "text-primary uppercase ", children: "TRAINING SESSION WITH BMWK" }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "19th -29th April 2022" })
+            /* @__PURE__ */ jsx("p", { className: "text-primary uppercase ", children: "TRAINING SESSION WITH BMWK" }),
+            /* @__PURE__ */ jsx("p", { children: "19th -29th April 2022" })
           ] })
         ] }),
         /* @__PURE__ */ jsxs("div", { className: " sm:w-[20rem]  mx-3 mb-10", children: [
           /* @__PURE__ */ jsx(
             "div",
             {
-              className: "bg-black overflow-hidden",
+              className: "bg-black overflow-hidden cursor-pointer ",
               onClick: () => setOpenFive(true),
               children: /* @__PURE__ */ jsx(
                 "img",
@@ -344,8 +342,8 @@ const Publication = () => {
             }
           ),
           /* @__PURE__ */ jsxs("div", { className: "text-center bg-slate-100 p-5 sm:h-[35%]", children: [
-            /* @__PURE__ */ jsx(Paragraph, { className: "text-primary uppercase ", children: "GITC RETREAT WITH STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD" }),
-            /* @__PURE__ */ jsx(Paragraph, { children: "17th - 18th March 2022" })
+            /* @__PURE__ */ jsx("p", { className: "text-primary uppercase ", children: "GITC RETREAT WITH STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD" }),
+            /* @__PURE__ */ jsx("p", { children: "17th - 18th March 2022" })
           ] })
         ] })
       ] }) })

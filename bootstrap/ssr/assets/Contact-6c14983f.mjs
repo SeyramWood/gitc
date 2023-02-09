@@ -1,9 +1,8 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
-import { B as Button } from "./Button-d464bc07.mjs";
-import { H as HeadingPrimary } from "./HeadingPrimary-ed13ec4f.mjs";
+import { B as Button } from "./Button-c608a26e.mjs";
 import { H as HeadingSecondary } from "./HeadingSecondary-b4f9f193.mjs";
 import { P as Paragraph } from "./Paragraph-8ec8d723.mjs";
-import { W as WebsiteLayout } from "./WebsiteLayout-d376d318.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
 import "react/jsx-runtime";
 import "react-dom/server";
 import "@inertiajs/inertia-react";
@@ -11,9 +10,11 @@ import "process";
 import "http";
 import "react";
 import "react-icons/sl";
-import "react-multi-carousel";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
+const HeadingPrimary = (prop) => {
+  return /* @__PURE__ */ jsx("p", { className: `text-5xl font-bold text-primary ${prop.className}`, children: prop.children });
+};
 const Contact = () => {
   return /* @__PURE__ */ jsx(WebsiteLayout, { page: "contactUs", children: /* @__PURE__ */ jsxs("div", { className: "bg-white", children: [
     /* @__PURE__ */ jsx("div", { className: "pt-16", children: /* @__PURE__ */ jsxs("div", { class: "sm:grid grid-cols-3 px-[6rem] gap-4 ", children: [

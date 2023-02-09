@@ -2,14 +2,13 @@ import { j as jsx, a as jsxs } from "../ssr.mjs";
 import "react";
 import { Link } from "@inertiajs/inertia-react";
 import { SlCallIn, SlEnvelopeOpen, SlLocationPin } from "react-icons/sl";
-import { W as WebsiteLayout } from "./WebsiteLayout-d376d318.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
 import { P as Paragraph } from "./Paragraph-8ec8d723.mjs";
 import { H as HeadingSecondary } from "./HeadingSecondary-b4f9f193.mjs";
 import "react/jsx-runtime";
 import "react-dom/server";
 import "process";
 import "http";
-import "react-multi-carousel";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
 const ServiceDumping = () => {

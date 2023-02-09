@@ -1,16 +1,9 @@
 import React from "react";
 
-const CarouselItem = ({
-    children,
-    src,
-    heading,
-    paragraph,
-    buttons,
-    status,
-}) => {
+const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
     const styles = {
         animation: "growOut 18s ease-out infinite backwards",
-        backgroundImage: `linear-gradient(to bottom,rgba(17, 17, 17, 0.899),rgba(17, 17, 17, 1),rgba(17, 17, 17, 0.899),rgba(17, 17, 17, 0.605), ,rgba(17, 17, 17, 0.605)), url(${src})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074)), url(${src})`,
     };
 
     return (
@@ -32,7 +25,7 @@ const CarouselItem = ({
                     </h1>
                     <div className="w-[60%]">
                         <p
-                            className={`text-xl ${
+                            className={`text-xl text-white ${
                                 status === "active"
                                     ? "animate__animated animate__fadeInUp animate__delay-1s"
                                     : ""

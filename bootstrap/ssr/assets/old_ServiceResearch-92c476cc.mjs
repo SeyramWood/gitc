@@ -1,6 +1,6 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
 import "react";
-import { W as WebsiteLayout } from "./WebsiteLayout-d376d318.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
 import { SlCallIn, SlEnvelopeOpen, SlLocationPin } from "react-icons/sl";
 import { Link } from "@inertiajs/inertia-react";
 import { P as Paragraph } from "./Paragraph-8ec8d723.mjs";
@@ -9,7 +9,6 @@ import "react/jsx-runtime";
 import "react-dom/server";
 import "process";
 import "http";
-import "react-multi-carousel";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
 const ServiceResearch = () => {

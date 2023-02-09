@@ -6,8 +6,6 @@ import React, { useEffect, useState } from "react";
 import { WebsiteLayout } from "../../components/layouts";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
-import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
-import Paragraph from "../../components/layouts/website/Paragraph";
 
 import "aos/dist/aos.css";
 import "keen-slider/keen-slider.min.css";
@@ -89,9 +87,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="w-[70%] sm:pl-5">
-                                <h2 className=" ">
-                                    Objectivity
-                                </h2>
+                                <h2 className="">Objectivity</h2>
                                 <p className="">
                                     To ensure equality and fairness in the
                                     application of measures affecting
@@ -110,9 +106,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="w-[70%] ">
-                                <h2 className="">
-                                    Professionalism
-                                </h2>
+                                <h2 className="">Professionalism</h2>
 
                                 <p>
                                     To ensure a high level of competence and
@@ -132,9 +126,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="w-[70%] ">
-                                <h2 className=" ">
-                                    Integrity
-                                </h2>
+                                <h2 className="">Integrity</h2>
                                 <p>
                                     To ensure absolute neutrality and
                                     consistency in the execution of the mandate
@@ -152,9 +144,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="w-[70%] ">
-                                <h2 className="font-bold ">
-                                    Integrity
-                                </h2>
+                                <h2 className="font-bold ">Integrity</h2>
                                 <p>
                                     To ensure absolute neutrality and
                                     consistency in the execution of the mandate
@@ -166,13 +156,14 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="pb-28  ">
-                    <div
-                        className="justify-center md:flex"
-
-                    >
-                        <div className="sm:w-[25%]" data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom" data-aos-duration="700">
+                <div className="pb-28 ">
+                    <div className="justify-center md:flex">
+                        <div
+                            className="sm:w-[25%]"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom"
+                            data-aos-duration="700"
+                        >
                             <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
@@ -191,9 +182,7 @@ const Index = () => {
                             </div>
 
                             <div className="my-3 sm:px-8">
-                                <h2 className="py-5">
-                                    Trade Remedies
-                                </h2>
+                                <h2 className="py-5">Trade Remedies</h2>
                                 <p className="mb-3">
                                     To ensure equality and fairness in the
                                     application of measures affecting
@@ -208,8 +197,12 @@ const Index = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="sm:w-[25%] " data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
+                        <div
+                            className="sm:w-[25%] "
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom"
+                            data-aos-duration="1000"
+                        >
                             <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
@@ -227,9 +220,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="my-3 sm:px-8">
-                                <h2 className="py-5 ">
-                                    Dispute Settlement
-                                </h2>
+                                <h2 className="py-5 ">Dispute Settlement</h2>
                                 <p className="mb-3">
                                     Providing actions to resolve issues arising
                                     out of a member-state violating the rules
@@ -240,12 +231,16 @@ const Index = () => {
                                     href="/service/dispute"
                                     className="text-primary hover:text-red-300"
                                 >
-                                    Read More  . . .
+                                    Read More . . .
                                 </Link>
                             </div>
                         </div>
-                        <div className="sm:w-[25%]  " data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom" data-aos-duration="2000">
+                        <div
+                            className="sm:w-[25%]  "
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom"
+                            data-aos-duration="2000"
+                        >
                             <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
@@ -263,9 +258,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="my-3 sm:px-8">
-                                <h2 className="py-5">
-                                    Tarrif Review
-                                </h2>
+                                <h2 className="py-5">Tarrif Review</h2>
                                 <p className="mb-3">
                                     Providing a review of customs duty that
                                     affects the production and competitiveness
@@ -280,8 +273,12 @@ const Index = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="sm:w-[25%] " data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
+                        <div
+                            className="sm:w-[25%] "
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom"
+                            data-aos-duration="3000"
+                        >
                             <div className="h-[45%] relative">
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
@@ -299,9 +296,7 @@ const Index = () => {
                                 />
                             </div>
                             <div className="my-3 sm:px-8">
-                                <h2 className="py-4">
-                                    Research
-                                </h2>
+                                <h2 className="py-4">Research</h2>
                                 <p className="mb-3">
                                     The Commission is to study, identify, and
                                     recommend to the Minister of Trade and
@@ -324,11 +319,19 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
-                <div className="">
-                    <div className="px-9 shadow-2xl">
-                        <div className="mx-auto ">
-                            <div className="justify-center sm:flex bg-black">
-                                <div className="sm:w-[80rem] opacity-60" style={{ backgroundImage: "url('images/homePage/storyOne.jpg')", backgroundAttachment: "fixed", backgroundSize: "cover" }}>
+                <div className="relative">
+                    <div className="shadow-2xl px-9">
+                        <div className="">
+                            <div className="justify-center bg-black sm:flex">
+                                <div
+                                    className="sm:w-[80rem] opacity-60"
+                                    style={{
+                                        backgroundImage:
+                                            "url('images/homePage/storyOne.jpg')",
+                                        backgroundAttachment: "fixed",
+                                        backgroundSize: "cover",
+                                    }}
+                                >
                                     {/* <div className="sm:h-[35rem] bg-red-700" >
 
                                     <img
@@ -347,21 +350,21 @@ const Index = () => {
                                         <p className="text-center text-red-700 sm:text-left sm:text-2lx">
                                             DID YOU KNOW THAT
                                         </p>
-                                        <h2 className="my-5 font-bold text-center sm:text-left sm:text-3xl text-red-600">
+                                        <h2 className="my-5 font-bold text-center text-red-600 sm:text-left sm:text-3xl">
                                             GITC is among seven trade remedy
                                             institutions and investigating
                                             authorities in Africa.
                                         </h2>
-                                        <p className="mb-5 text-center sm:mb-14 sm:text-left text-red-400">
+                                        <p className="mb-5 text-center text-red-400 sm:mb-14 sm:text-left">
                                             These other African countries are:
-                                            Egypt, South Africa, Morocco, Tunisia,
-                                            Mauritius, and Madagascar. These other
-                                            African countries are: Egypt,South
-                                            Africa, Morocco, Tunisia, Mauritius, and
-                                            Madagascar.
+                                            Egypt, South Africa, Morocco,
+                                            Tunisia, Mauritius, and Madagascar.
+                                            These other African countries are:
+                                            Egypt,South Africa, Morocco,
+                                            Tunisia, Mauritius, and Madagascar.
                                         </p>
 
-                                        <Link hre="/story">
+                                        <Link href="/story">
                                             <ButtonOutline className="sm:w-[14rem] mb-7">
                                                 Read Our Story
                                             </ButtonOutline>
@@ -369,7 +372,7 @@ const Index = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex bg-black flex-col-reverse justify-center sm:flex sm:flex-row ">
+                            <div className="flex flex-col-reverse justify-center bg-black sm:flex sm:flex-row ">
                                 <div className="text-white bg-red-700">
                                     <div
                                         className="container sm:px-20 "
@@ -386,21 +389,22 @@ const Index = () => {
                                                 regulations;
                                             </li>
                                             <li className="py-3">
-                                                Fairness, efficiency, transparency
-                                                and objectivity in the application
-                                                of measures affecting international
-                                                trade rules and the use of world
-                                                trade regulations;
+                                                Fairness, efficiency,
+                                                transparency and objectivity in
+                                                the application of measures
+                                                affecting international trade
+                                                rules and the use of world trade
+                                                regulations;
                                             </li>
                                             <li className="py-3">
-                                                Fair competition for persons engaged
-                                                in domestic production and
-                                                international trade.
+                                                Fair competition for persons
+                                                engaged in domestic production
+                                                and international trade.
                                             </li>
                                             <li className="pt-3">
-                                                Protection of the domestic market
-                                                from the impact of unfair trade
-                                                practices in the course of
+                                                Protection of the domestic
+                                                market from the impact of unfair
+                                                trade practices in the course of
                                                 international trade.
                                             </li>
                                         </ul>
@@ -413,7 +417,16 @@ const Index = () => {
                                     </div>
                                 </div>
 
-                                <div className="sm:w-[80rem] opacity-60" style={{ backgroundImage: "url('images/homePage/storyTwo.jpg')", backgroundAttachment: "fixed", objectFit: "fill", backgroundRepeat: "round" }}>
+                                <div
+                                    className="sm:w-[80rem] opacity-60"
+                                    style={{
+                                        backgroundImage:
+                                            "url('images/homePage/storyTwo.jpg')",
+                                        backgroundAttachment: "fixed",
+                                        objectFit: "fill",
+                                        backgroundRepeat: "round",
+                                    }}
+                                >
                                     {/* <div className="sm:h-[35rem] ">
                                         <img
                                             className="sm:w-[80rem] sm:h-[35rem]"
@@ -425,7 +438,6 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* partners section */}
                 <div className="py-10 mb-1 bg-gray-100">
                     <div className="">
@@ -495,9 +507,8 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-
                 {/* Minister */}
-                <div className=" pb-24">
+                <div className="pb-24 ">
                     <div
                         className="block shadow-lg sm:mx-24"
                         data-aos="fade-up"
@@ -521,9 +532,10 @@ const Index = () => {
                                     />
                                     <p className="pl-4 my-6 font-bold text-black sm:text-[1.8rem]">
                                         The bane of development in developing
-                                        countries as against developed countries is
-                                        the lack of industrialization in the former.
-                                        The inability of developing counties ...
+                                        countries as against developed countries
+                                        is the lack of industrialization in the
+                                        former. The inability of developing
+                                        counties ...
                                     </p>
                                     <h2 className="pl-5 text-red-400 cursor-pointer hover:text-red-300 ">
                                         Read More
@@ -543,7 +555,7 @@ const Index = () => {
                 </div>
 
                 {/* contact section*/}
-                <div className="w-full px-2  text-center md:flex">
+                <div className="w-full px-2 text-center md:flex">
                     <div className="md:w-[50%] px-5 ">
                         <div className="pt-10 mx-auto ">
                             <h4 className="font-bold text-red-600 custom">
@@ -561,49 +573,48 @@ const Index = () => {
                             <form action="" className="px-3">
                                 <div className="grid grid-cols-2">
                                     {/* <div className=""> */}
-                                        <input
-                                            className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                            placeholder="Full Name *"
-                                            required="required"
-                                            type="text"
-                                        />
-                                        <input
-                                            className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                            placeholder="Email *"
-                                            required="required"
-                                            type="Email"
-                                        />
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Full Name *"
+                                        required="required"
+                                        type="text"
+                                    />
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Email *"
+                                        required="required"
+                                        type="Email"
+                                    />
                                     {/* </div> */}
                                     {/* <div className=""> */}
-                                        <input
-                                            className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                            placeholder="Subject *"
-                                            required="required"
-                                            type="text"
-                                        />
-                                        <input
-                                            className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                            placeholder="Phone Number"
-                                            type="text"
-                                        />
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Subject *"
+                                        required="required"
+                                        type="text"
+                                    />
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Phone Number"
+                                        type="text"
+                                    />
                                     {/* </div> */}
                                     {/* <div className="pt-2 m-3"> */}
                                 </div>
                                 <div className="px-3 mx-auto">
-
                                     <textarea
-                                        className="w-full border-none bg-gray-100  focus:outline-none focus:ring focus:ring-primary/20 "
+                                        className="w-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20 "
                                         rows="4"
                                         placeholder="Message"
                                         required="required"
                                         name=""
                                     />
                                 </div>
-                                    {/* </div> */}
+                                {/* </div> */}
 
-                                    <Button className="mt-[2rem] mb-[3rem]">
-                                        Submit
-                                    </Button>
+                                <Button className="mt-[2rem] mb-[3rem]">
+                                    Submit
+                                </Button>
                             </form>
                         </div>
                     </div>

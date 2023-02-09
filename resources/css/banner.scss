@@ -113,6 +113,7 @@
         transition: all 0.3s linear;
         visibility: hidden;
         opacity: 0;
+        overflow: hidden;
 
         &__wrapper {
             position: relative;
@@ -132,17 +133,11 @@
             }
             &__content {
                 background: transparent;
-                // padding: 0 7rem;
-                // padding-top: 5rem;
                 position: absolute;
                 color: white;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                // & > h1 {
-                //     margin-left: -1rem;
-                //     padding: 0;
-                // }
             }
         }
 
@@ -336,21 +331,21 @@
     object-fit: contain;
     &.about {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074)
             ),
             url("/images/homePage/storyTwo.jpg");
     }
     &.publication {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074)
             ),
             url("/images/publish/publicbanner.jpg");
     }
@@ -366,21 +361,21 @@
     }
     &.story {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074)
             ),
             url("/images/about/story.jpg");
     }
     &.message {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074),
+                rgba(17, 17, 17, 0.074)
             ),
             url("/images/about/message.jpg");
     }

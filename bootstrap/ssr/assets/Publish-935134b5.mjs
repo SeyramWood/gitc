@@ -1,5 +1,5 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
-import { W as WebsiteLayout } from "./WebsiteLayout-d376d318.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
 import { Link } from "@inertiajs/inertia-react";
 import "react/jsx-runtime";
 import "react-dom/server";
@@ -7,7 +7,6 @@ import "process";
 import "http";
 import "react";
 import "react-icons/sl";
-import "react-multi-carousel";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
 const Publish = () => {

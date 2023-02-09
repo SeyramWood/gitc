@@ -5,8 +5,6 @@ import {
     SlEnvelopeOpen,
     SlLocationPin,
 } from "react-icons/sl";
-// import Carousel from "react-multi-carousel";
-// import "react-multi-carousel/lib/styles.css";
 import "../../../../css/banner.scss";
 import "../../../../css/main.css";
 import { Carousel, CarouselItem } from "../../Carousel";
@@ -69,30 +67,6 @@ const Banner = ({ page }) => {
 export default Banner;
 
 const BannerHome = () => {
-    const [currentSlide, setCurrentSlide] = React.useState(0);
-    const [opacities, setOpacities] = React.useState([]);
-    const [loaded, setLoaded] = React.useState(false);
-
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 1,
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 1,
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 1,
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1,
-        },
-    };
-
     const sliders = [
         {
             image: "/images/homePage/serviceTwo.jpg",
@@ -136,7 +110,7 @@ const BannerHome = () => {
     ];
 
     return (
-        <section className="w-full h-[calc(100vh + 4rem)] overflow-hidden">
+        <section className="w-full h-[calc(100vh)] overflow-hidden">
             <div className="h-full carousel-wrapper">
                 <Carousel>
                     {sliders.map((slider, index) => (

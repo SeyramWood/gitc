@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/config', function ()
+{
+
+    Artisan::call("config:clear");
+    Artisan::call("cache:clear");
+    Artisan::call("config:cache");
+
+    return "Done";
+
+});
 
 Route::get('/', [PageController::class, 'index']);
 Route::get('/services', [PageController::class, 'service']);
