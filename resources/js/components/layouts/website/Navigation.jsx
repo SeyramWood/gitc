@@ -25,7 +25,7 @@ const Navigation = () => {
             const isSticky = currPos.y < -230;
 
             const animateNavStyle = {
-                width: isSticky ? "100%" : "93%",
+                width: isSticky ? "100%" : "85%",
                 transition: `width 200ms ${isSticky ? "ease-in" : "ease-out"}`,
                 transform: isSticky ? "none" : "translate(100)",
                 transformOrigin: "center",
@@ -36,7 +36,7 @@ const Navigation = () => {
             };
             const shouldBeStyle = {
                 position: isSticky ? "sticky" : "absolute",
-                top: isSticky ? "0" : "14rem",
+                top: isSticky ? "0" : "12rem",
             };
             if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) {
                 return;
@@ -136,7 +136,9 @@ const Navigation = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/service/dumping">Ant-Dumping</Link>
+                                <Link href="/service/dumping">
+                                    Anti-Dumping
+                                </Link>
                             </li>
                             <li>
                                 <Link href="/services">Tariff Review</Link>
@@ -154,31 +156,33 @@ const Navigation = () => {
                     </li>
                 </ul>
             </nav>
-            <section className="absolute left-0 h-[4rem] items-center justify-between w-full bg-transparent top-[5.5rem] md:px-web-l z-10 hidden md:flex">
-                <div>
-                    <img
-                        src="/images/logo.png"
-                        alt=""
-                        srcSet=""
-                        className="h-[6rem]"
-                    />
-                </div>
-                <div>
-                    <Link
-                        href="/faq"
-                        as="button"
-                        className={`block  py-2 w-[6rem] rounded-md text-white text-bold text-lg bg-primary`}
-                    >
-                        FAQ
-                    </Link>
+            <section className="absolute justify-center w-full h-[4rem] md:flex top-[5rem] z-10 hidden justify-items-center">
+                <div className=" left-0 h-[100%] items-center md:flex justify-between w-[85%]">
+                    <div>
+                        <img
+                            src="/images/logo.png"
+                            alt=""
+                            srcSet=""
+                            className="h-[6rem]"
+                        />
+                    </div>
+                    <div>
+                        <Link
+                            href="/faq"
+                            as="button"
+                            className={`block  py-2 w-[6rem] rounded-md text-white text-bold text-lg bg-primary`}
+                        >
+                            FAQ
+                        </Link>
+                    </div>
                 </div>
             </section>
             <section
-                className="w-full bg-transparent absolute top-[14rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
+                className="w-full bg-transparent absolute top-[12rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
                 style={{ ...headerStyle }}
             >
                 <nav
-                    className="w-[93%] h-[100%] text-white md:px-web-l flex justify-between items-center rounded-sm bg-primary-light shadow-md"
+                    className="w-[85%] h-[100%] text-white md:px-web-l flex justify-between items-center rounded-sm bg-primary-light shadow-md"
                     style={{ ...navStyle }}
                 >
                     <ul className="flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-70 text-lg font-bold relative navigation">
@@ -193,17 +197,17 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                            <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
-                                <li>
-                                    <Link href="/about">Our Team</Link>
-                                </li>
-                                <li>
-                                    <Link href="/story">Our Story</Link>
-                                </li>
-                                <li>
-                                    <Link href="/message">Our Message</Link>
-                                </li>
-                            </ul>
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
+                                    <li>
+                                        <Link href="/about">Our Team</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/story">Our Story</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/message">Our Message</Link>
+                                    </li>
+                                </ul>
                             </div>
                         </li>
                         <li className="[&:hover>a]:opacity-100">
@@ -214,36 +218,38 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                            <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
-                                <li>
-                                    <Link href="/service/subsidy">
-                                        Subsidy And Counter
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/service/safeguard">
-                                        SafeGuards Measures
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/service/research">
-                                        Research
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/service/dispute">
-                                        Dispute Settlements
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/service/dumping">
-                                        Ant-Dumping
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/services">Tariff Review</Link>
-                                </li>
-                            </ul>
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
+                                    <li>
+                                        <Link href="/service/subsidy">
+                                            Subsidy And Counter
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/service/safeguard">
+                                            SafeGuards Measures
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/service/research">
+                                            Research
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/service/dispute">
+                                            Dispute Settlements
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/service/dumping">
+                                            Ant-Dumping
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/services">
+                                            Tariff Review
+                                        </Link>
+                                    </li>
+                                </ul>
                             </div>
                         </li>
                         <li className="[&:hover>a]:opacity-100">

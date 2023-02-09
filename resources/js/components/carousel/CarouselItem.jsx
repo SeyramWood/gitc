@@ -10,7 +10,7 @@ const CarouselItem = ({
 }) => {
     const styles = {
         animation: "growOut 18s ease-out infinite backwards",
-        backgroundImage: `linear-gradient(to top,rgba(17, 17, 17, 0.805),rgba(17, 17, 17, 0.805),rgba(17, 17, 17, 0.605),rgba(17, 17, 17, 0.605)), url(${src})`,
+        backgroundImage: `linear-gradient(to bottom,rgba(17, 17, 17, 0.899),rgba(17, 17, 17, 1),rgba(17, 17, 17, 0.899),rgba(17, 17, 17, 0.605), ,rgba(17, 17, 17, 0.605)), url(${src})`,
     };
 
     return (
@@ -20,7 +20,7 @@ const CarouselItem = ({
                     className="carousel__container__item__wrapper__image"
                     style={styles}
                 ></div>
-                <div className="carousel__container__item__wrapper__content">
+                <div className="carousel__container__item__wrapper__content w-[85%] mt-[5rem]">
                     <h1
                         className={`text-8xl text-bold mb-8 ${
                             status === "active"
@@ -30,7 +30,6 @@ const CarouselItem = ({
                     >
                         {heading}
                     </h1>
-
                     <div className="w-[60%]">
                         <p
                             className={`text-xl ${

@@ -5,15 +5,16 @@ import {
     SlEnvelopeOpen,
     SlLocationPin,
 } from "react-icons/sl";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import Carousel from "react-multi-carousel";
+// import "react-multi-carousel/lib/styles.css";
 import "../../../../css/banner.scss";
-import "../../../../css/main.css"
+import "../../../../css/main.css";
+import { Carousel, CarouselItem } from "../../Carousel";
 
 const Banner = ({ page }) => {
     return (
         <section className="w-full">
-            <header className="w-full h-[4rem] bg-white hidden md:flex justify-between items-center text-lg px-web-l text-secondary">
+            <header className="w-full h-[4rem] bg-white hidden md:flex justify-between items-center px-web-l text-secondary">
                 <ul className="flex self-stretch">
                     <li className="flex items-center pr-4 mr-5 text-center border-r-2 border-gray-100">
                         <span className="mr-2">
@@ -96,7 +97,7 @@ const BannerHome = () => {
         {
             image: "/images/homePage/serviceTwo.jpg",
             content: {
-                h1: "Subsidy and countervailing",
+                h1: "Subsidy & countervailing",
                 p: `We provide action where imposed subsidy is specified an causes material injury to a domestic industry.`,
             },
             buttons: [
@@ -137,52 +138,15 @@ const BannerHome = () => {
     return (
         <section className="w-full h-[calc(100vh + 4rem)] overflow-hidden">
             <div className="h-full carousel-wrapper">
-                <Carousel
-                    swipeable={false}
-                    draggable={false}
-                    showDots={true}
-                    ssr={true} // means to render carousel on server-side.
-                    infinite={true}
-                    autoPlay={true}
-                    autoPlaySpeed={12000}
-                    keyBoardControl={true}
-                    customTransition="all .3s ease-in"
-                    // transitionDuration={500}
-                    containerClass="carousel--container"
-                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                    dotListClass="custom-dot-list-style"
-                    itemClass=""
-                    responsive={responsive}
-                >
-                    {sliders.map((item, idx) => (
-                        <div key={idx.toString()} className="carousel--item">
-                            <div className="carousel--item--image">
-                                <img src={item.image} />
-                            </div>
-                            <div className="overlay">
-                                <section className="text-white mx-web-2xl mt-web-s px-web-s overlay__article">
-                                    <article className="w-[100%] px-web-xl">
-                                        <h1 className="text-9xl text-bold">
-                                            {item.content.h1}
-                                        </h1>
-                                        <div className="w-[60%]">
-                                            <p className="mt-5 text-xl">
-                                                {item.content.p}
-                                            </p>
-                                        </div>
-                                    </article>
-                                    <section className="w-[100%] px-web-xl mt-12 banner__buttons">
-                                        {item.buttons.map((btn, index) => (
-                                            <React.Fragment
-                                                key={index.toString()}
-                                            >
-                                                {btn}
-                                            </React.Fragment>
-                                        ))}
-                                    </section>
-                                </section>
-                            </div>
-                        </div>
+                <Carousel>
+                    {sliders.map((slider, index) => (
+                        <CarouselItem
+                            key={`slider___${index}`}
+                            src={slider.image}
+                            heading={slider.content.h1}
+                            paragraph={slider.content.p}
+                            buttons={slider.buttons}
+                        />
                     ))}
                 </Carousel>
             </div>
