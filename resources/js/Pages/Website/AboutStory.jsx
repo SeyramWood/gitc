@@ -28,7 +28,7 @@ const AboutMessage = () => {
                             Ghana International Trade Commission (GITC), was
                             established in September 2016 under
                             Parliamentary Act 926 to provide for the regulation
-                            of Ghana’s International Trade inconformity with
+                            of Ghana’s International Trade in conformity with
                             the rules and regulations of the world trade
                             system and related matters.
                         </p>
@@ -52,7 +52,7 @@ const AboutMessage = () => {
                             protect domestic industries from such harmful effects of
                             international trade.
                         </p>
-                        <Paragraph className="mb-6 text-black">
+                        <p className="mb-6 text-black">
                             However, in Africa the trade remedy laws and
                             Investigating authorities are in Egypt, SouthAfrica,
                             Morocco, Tunisia, Mauritius and Madagascar. In the
@@ -60,92 +60,92 @@ const AboutMessage = () => {
                             for along time such as in the United States where the U.S
                             International Trade Commission (USITC) was set up in
                             September 1916.
-                        </Paragraph>
+                        </p>
                     </div>
                 </div>
 
                 {/* values */}
-                <div className="mt-1" style={{ backgroundImage: "url('images/contact/contactbanner.jpg')" }}>
-                    <div className="py-10 md:flex justify-center bg-white/40 ">
+                <div className="mt-32" style={{ backgroundImage: "url('images/contact/contactbanner.jpg')" }}>
+                    <div className="py-10 md:flex justify-center bg-white/20 ">
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%]">
-                                <img
-                                    src="images/homePage/objectivity.png"
-                                    alt="Objectivity"
-                                    className="object-contain "
-                                />
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/objectivity.png"
+                                        alt="Objectivity"
+                                        className="object-contain -translate-y-5 -translate-x-1"
+                                    />
+                                </div>
                             </div>
                             <div className="w-[70%] sm:pl-5">
-                                <h2 className="text-black ">
-                                    Objectivity
-                                </h2>
-                                <p className="text-black/100">
-                                    To ensure equality and fairness in the
-                                    application of measures affecting
+                                <h2 className="">Objectivity</h2>
+                                <p className="">
+                                    To ensure equality and fairness in
+                                    the application of measures affecting
                                     international trade and the use of world
-                                    trade regulations.
+                                    trade measures.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
-                                <img
-                                    src="images/homePage/professionalism.png"
-                                    alt="professional"
-                                    className="object-contain"
-                                />
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/professionalism.png"
+                                        alt="professional"
+                                        className="object-contain -translate-y-3 -translate-x-5"
+                                    />
+                                </div>
                             </div>
                             <div className="w-[70%] ">
-                                <h2 className="text-black">
-                                    Professionalism
-                                </h2>
+                                <h2 className="">Professionalism</h2>
 
-                                <p className="text-black/100">
-                                    To ensure a high level of competence and
-                                    efficiency in applying international trade
-                                    rules and regulations as under the World
-                                    Trade Organization (WTO) provisions.
+                                <p>
+                                    To ensure a high level of competence and efficiency in
+                                    applying
+                                    international trade rules
+                                    and regulations as under the World Trade Organization (WTO)
+                                    provisions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex p-2 my-5">
+                            <div className="p-3 w-[35%] ">
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/integrity.png"
+                                        alt="Integrity"
+                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                    />
+                                </div>
+                            </div>
+                            <div className="w-[65%] ">
+                                <h2 className="">Integrity</h2>
+                                <p>
+                                    To ensure absolute neutrality and consistency in the
+                                    execution of the mandate of the Commission.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
-                                <img
-                                    src="images/homePage/integrity.png"
-                                    alt="Integrity"
-                                    className="object-contain "
-                                />
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/integrity.png"
+                                        alt="Integrity"
+                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                    />
+                                </div>
                             </div>
                             <div className="w-[70%] ">
-                                <h2 className="text-black ">
-                                    Integrity
-                                </h2>
-                                <p className="text-black/100">
-                                    To ensure absolute neutrality and
-                                    consistency in the execution of the mandate
-                                    of the Commission.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex p-2 my-5">
-                            <div className="p-3 w-[30%] ">
-                                <img
-                                    src="images/homePage/integrity.png"
-                                    alt="Integrity"
-                                    className="object-contain "
-                                />
-                            </div>
-                            <div className="w-[70%] ">
-                                <h2 className="text-black ">
-                                    Integrity
-                                </h2>
-                                <p className="text-black/100">
-                                    To ensure absolute neutrality and
-                                    consistency in the execution of the mandate
-                                    of the Commission.
+                                <h2 className="">Transparency</h2>
+                                <p>
+                                    To ensure that the commission operates on an
+                                    open and fair terrain by providing a level playing
+                                    field in its dealings with all parties.
                                 </p>
                             </div>
                         </div>
@@ -154,40 +154,41 @@ const AboutMessage = () => {
                 </div>
 
                 {/* story */}
-                <div className="mt-1">
+                <div className="my-32">
                     <div className="mb-16">
                         <div className="flex flex-col-reverse justify-center sm:flex-row ">
                             <div className="text-white  bg-black sm:w-[50%]">
                                 <div
-                                    className="container sm:px-20 "
+                                    className="container pt-7 pb-14  sm:px-20 "
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
-                                    <h2 className="text-[3rem] text-white pt-4  font-bold">
+                                    <h2 className="text-[3rem] text-white sm:pt-10 pb-6 font-bold">
                                         We ensure:
                                     </h2>
-                                    <ul className="sm:text-[1.1rem] list-disc pb-5 px-4 ">
+                                    <ul className="sm:text-[1.1rem] list-disc pb-5 pl-4 ">
                                         <li className="py-4">
                                             Ghana’s compliance with
                                             international trade rules and
                                             regulations;
                                         </li>
                                         <li className="py-3">
-                                            Fairness, efficiency, transparency
-                                            and objectivity in the application
-                                            of measures affecting international
-                                            trade rules and the use of world
-                                            trade regulations;
+                                            Fairness, efficiency,
+                                            transparency and objectivity in
+                                            the application of measures
+                                            affecting international trade
+                                            rules and the use of world trade
+                                            regulations;
                                         </li>
                                         <li className="py-3">
-                                            Fair ompetition for persons engaged
-                                            in domestic production and
-                                            international trade.
+                                            Fair competition for persons
+                                            engaged in domestic production
+                                            and international trade.
                                         </li>
                                         <li className="pt-3">
-                                            Protection of the domestic market
-                                            from the impact of unfair trade
-                                            practices in the course of
+                                            Protection of the domestic
+                                            market from the impact of unfair
+                                            trade practices in the course of
                                             international trade.
                                         </li>
                                     </ul>
@@ -211,13 +212,13 @@ const AboutMessage = () => {
                             <div className="sm:w-[50%]">
                                 <img
                                     className=" sm:h-[100%]"
-                                    src="images/homePage/storyOne.jpg"
+                                    src="images/about/hand.jpg"
                                     alt=""
                                 />
                             </div>
                             <div className="sm:w-[50%]">
                                 <div
-                                    className="bg-primary text-white px-16 py-12 sm:h-[35rem]"
+                                    className="bg-primary text-white px-16 py-7 sm:h-[35rem]"
                                     // data-aos="fade-up"
                                     // data-aos-duration="2000"
 

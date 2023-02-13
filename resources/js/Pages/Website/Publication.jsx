@@ -92,14 +92,14 @@ const Publication = () => {
         <WebsiteLayout page="publication">
             <div className="bg-white ">
                 <div className="text-center ">
-                    <h4 className="py-16 text-red-600">
+                    <h2 className="py-16 sm:text-[3rem] text-center text-red-600">
                         PRESS RELEASES & SPEECHES
-                    </h4>
+                    </h2>
                 </div>
 
-                <div className=" sm:mx-[10rem] sm:mb-28 ">
+                <div className=" sm:mx-[7rem] sm:mb-28 ">
                     <div className="relative">
-                        <div ref={sliderRef} className="keen-slider ">
+                        <div ref={sliderRef} className="keen-slider gap-4">
                             <div className="keen-slider__slide number-slide1 ">
                                 <Link href="">
                                     <div className="relative">
@@ -259,7 +259,7 @@ const Publication = () => {
                 {/* gallery */}
                 <div className="">
                     <div className="text-center mb-7">
-                        <h4 className="text-red-600">Our Gallery</h4>
+                        <h2 className="text-red-600 sm:text-[4rem]">Our Gallery</h2>
                         <p>
                             MEETINGS, WORSHSHOPS, COURTESY CALLS
                         </p>
