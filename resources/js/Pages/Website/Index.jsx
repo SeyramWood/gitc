@@ -70,85 +70,93 @@ const Index = () => {
 
     return (
         <WebsiteLayout page="home">
-            <div className="text-lg bg-white text-grey">
+            <div className="text-lg bg-white ">
                 {/* values section */}
-                <div className="mb-32 sm:p-10 bg-faded ">
+                <div className="mb-32  sm:py-10 px-3 bg-faded ">
                     <div
-                        className="justify-center gap-3 pb-4 md:flex"
+                        className="justify-center gap-4 pb-4 md:flex"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%]">
-                                <img
-                                    src="images/homePage/objectivity.png"
-                                    alt="Objectivity"
-                                    className="object-contain "
-                                />
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/objectivity.png"
+                                        alt="Objectivity"
+                                        className="object-contain -translate-y-5 -translate-x-1"
+                                    />
+                                </div>
                             </div>
                             <div className="w-[70%] sm:pl-5">
                                 <h2 className="">Objectivity</h2>
                                 <p className="">
-                                    To ensure equality and fairness in the
-                                    application of measures affecting
+                                    To ensure equality and fairness in
+                                    the application of measures affecting
                                     international trade and the use of world
-                                    trade regulations.
+                                    trade measures.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
-                                <img
-                                    src="images/homePage/professionalism.png"
-                                    alt="professional"
-                                    className="object-contain"
-                                />
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/professionalism.png"
+                                        alt="professional"
+                                        className="object-contain -translate-y-3 -translate-x-5"
+                                    />
+                                </div>
                             </div>
                             <div className="w-[70%] ">
                                 <h2 className="">Professionalism</h2>
 
                                 <p>
-                                    To ensure a high level of competence and
-                                    efficiency in applying international trade
-                                    rules and regulations as under the World
-                                    Trade Organization (WTO) provisions.
+                                    To ensure a high level of competence and efficiency in
+                                    applying
+                                    international trade rules
+                                    and regulations as under the World Trade Organization (WTO)
+                                    provisions.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5">
-                            <div className="p-3 w-[30%] ">
-                                <img
-                                    src="images/homePage/integrity.png"
-                                    alt="Integrity"
-                                    className="object-contain "
-                                />
+                            <div className="p-3 w-[35%] ">
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/integrity.png"
+                                        alt="Integrity"
+                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                    />
+                                </div>
                             </div>
-                            <div className="w-[70%] ">
+                            <div className="w-[65%] ">
                                 <h2 className="">Integrity</h2>
                                 <p>
-                                    To ensure absolute neutrality and
-                                    consistency in the execution of the mandate
-                                    of the Commission.
+                                    To ensure absolute neutrality and consistency in the
+                                    execution of the mandate of the Commission.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%] ">
-                                <img
-                                    src="images/homePage/integrity.png"
-                                    alt="Integrity"
-                                    className="object-contain "
-                                />
+                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    <img
+                                        src="images/homePage/integrity.png"
+                                        alt="Integrity"
+                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                    />
+                                </div>
                             </div>
                             <div className="w-[70%] ">
-                                <h2 className="font-bold ">Integrity</h2>
+                                <h2 className="">Transparency</h2>
                                 <p>
-                                    To ensure absolute neutrality and
-                                    consistency in the execution of the mandate
-                                    of the Commission.
+                                    To ensure that the commission operates on an
+                                    open and fair terrain by providing a level playing
+                                    field in its dealings with all parties.
                                 </p>
                             </div>
                         </div>
@@ -156,8 +164,8 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="pb-28 ">
-                    <div className="justify-center md:flex">
+                <div className="pb-28 px-16">
+                    <div className="justify-center md:flex gap-6">
                         <div
                             className="sm:w-[25%]"
                             data-aos="fade-up"
@@ -181,7 +189,7 @@ const Index = () => {
                                 />
                             </div>
 
-                            <div className="my-3 sm:px-8">
+                            <div className="my-2 ">
                                 <h2 className="py-5">Trade Remedies</h2>
                                 <p className="mb-3">
                                     To ensure equality and fairness in the
@@ -219,7 +227,7 @@ const Index = () => {
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
-                            <div className="my-3 sm:px-8">
+                            <div className="my-2 ">
                                 <h2 className="py-5 ">Dispute Settlement</h2>
                                 <p className="mb-3">
                                     Providing actions to resolve issues arising
@@ -257,7 +265,7 @@ const Index = () => {
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
-                            <div className="my-3 sm:px-8">
+                            <div className="my-2 ">
                                 <h2 className="py-5">Tarrif Review</h2>
                                 <p className="mb-3">
                                     Providing a review of customs duty that
@@ -295,7 +303,7 @@ const Index = () => {
                                     className="w-full object-cover h-[15rem] "
                                 />
                             </div>
-                            <div className="my-3 sm:px-8">
+                            <div className="my-2 ">
                                 <h2 className="py-4">Research</h2>
                                 <p className="mb-3">
                                     The Commission is to study, identify, and
@@ -319,8 +327,8 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
-                <div className="relative">
-                    <div className="shadow-2xl px-9">
+                <div className=" ">
+                    <div className=" px-[5rem]">
                         <div className="">
                             <div className="justify-center bg-black sm:flex">
                                 <div
@@ -350,12 +358,12 @@ const Index = () => {
                                         <p className="text-center text-red-700 sm:text-left sm:text-2lx">
                                             DID YOU KNOW THAT
                                         </p>
-                                        <h2 className="my-5 font-bold text-center text-red-600 sm:text-left sm:text-3xl">
+                                        <h2 className=" font-bold text-center text-red-600 sm:text-left sm:text-3xl">
                                             GITC is among seven trade remedy
                                             institutions and investigating
                                             authorities in Africa.
                                         </h2>
-                                        <p className="mb-5 text-center text-red-400 sm:mb-14 sm:text-left">
+                                        <p className="mb-5 text-center sm:mb-14 sm:text-left">
                                             These other African countries are:
                                             Egypt, South Africa, Morocco,
                                             Tunisia, Mauritius, and Madagascar.
@@ -438,8 +446,9 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
+
                 {/* partners section */}
-                <div className="py-10 mb-1 bg-gray-100">
+                <div className="py-10 mb-20 mt-20 bg-gray-100">
                     <div className="">
                         <div className="flex justify-center gap-1 h-10rem]">
                             <div ref={sliderRef} className="keen-slider">
@@ -507,6 +516,7 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
+
                 {/* Minister */}
                 <div className="pb-24 ">
                     <div
@@ -514,17 +524,17 @@ const Index = () => {
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="justify-center  sm:flex sm:w-[100%]">
-                            <div className="sm:w-[50%] ">
+                        <div className="justify-center sm:flex  sm:w-[100%]">
+                            <div className="sm:w-[50%] border">
                                 {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                                 <img
-                                    className="object-fill "
-                                    src="/images/about/our_team/Mr. Frank Agyekum.jpg"
+                                    className="  "
+                                    src="/images/homePage/Min.jpg"
                                     alt=""
                                 />
                             </div>
                             <div className="sm:w-[50%] bg-white sm:px-8">
-                                <div className="container sm:pt-32">
+                                <div className="container sm:pt-14">
                                     <img
                                         src="images/quote.png"
                                         alt="quote"

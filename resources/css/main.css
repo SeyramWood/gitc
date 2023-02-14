@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h1 {
+        font-size: 8rem;
+        font-weight: 700;
+        font-style: bold;
+        font-family: Montserrat;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        );
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: red;
+        padding-bottom: 1rem;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        );
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        font-style: bold;
+        color: red;
+        font-family: Montserrat;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        );
+    }
+
+    h4 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: rgb(52, 1, 1);
+        padding-bottom: 1rem;
+        text-align: center;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        );
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        );
+    }
+
+    .custom {
+        display: inline-block;
+        position: relative;
+    }
+
+    .custom::after {
+        content: "";
+        height: 5px;
+        width: 40%;
+        background: #e8cbc8;
+        position: absolute;
+        left: calc(50% - 20%);
+        bottom: -5px;
+    }
+}
