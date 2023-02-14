@@ -1,16 +1,15 @@
 // slider
-import { InertiaLink, Link } from "@inertiajs/inertia-react";
+import { Link } from "@inertiajs/inertia-react";
 import { useKeenSlider } from "keen-slider/react";
 // gallery
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 
 import { WebsiteLayout } from "../../components/layouts";
-import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
 import Paragraph from "../../components/layouts/website/Paragraph";
 
-import "../../../css/style.css";
 import "keen-slider/keen-slider.min.css";
+// import "../../../css/style.css";
 import "yet-another-react-lightbox/styles.css";
 
 const Publication = () => {
@@ -99,7 +98,7 @@ const Publication = () => {
 
                 <div className=" sm:mx-[7rem] sm:mb-28 ">
                     <div className="relative">
-                        <div ref={sliderRef} className="keen-slider gap-4">
+                        <div ref={sliderRef} className="gap-4 keen-slider">
                             <div className="keen-slider__slide number-slide1 ">
                                 <Link href="">
                                     <div className="relative">
@@ -109,7 +108,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-white text-center uppercase">
+                                            <div className="block text-center text-white uppercase">
                                                 <div>June</div>
                                                 <div>10</div>
                                                 <div>2022</div>
@@ -117,16 +116,16 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase  text-primary">
+                                        <p className="uppercase text-primary">
                                             <Link href="">
-                                                GITC dismisses petition to ban iron,
-                                                steels import
+                                                GITC dismisses petition to ban
+                                                iron, steels import
                                             </Link>
                                         </p>
                                         <p>
-                                            The Ghana International Trade Commission
-                                            has made Determinations on petitions
-                                            brought before
+                                            The Ghana International Trade
+                                            Commission has made Determinations
+                                            on petitions brought before
                                         </p>
                                     </div>
                                 </Link>
@@ -141,7 +140,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-white text-center uppercase">
+                                            <div className="block text-center text-white uppercase">
                                                 <div>March</div>
                                                 <div>2</div>
                                                 <div>2021</div>
@@ -151,8 +150,8 @@ const Publication = () => {
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
                                         <p className="uppercase text-primary">
                                             <Link href="">
-                                                Interim Ghana-UK Trade Partnership
-                                                Agreement
+                                                Interim Ghana-UK Trade
+                                                Partnership Agreement
                                             </Link>
                                         </p>
                                         <p>
@@ -173,7 +172,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-white text-center uppercase">
+                                            <div className="block text-center text-white uppercase">
                                                 <div>Nov</div>
                                                 <div>7</div>
                                                 <div>2019</div>
@@ -183,9 +182,9 @@ const Publication = () => {
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
                                         <p className="uppercase text-primary">
                                             <Link href="">
-                                                Notice of Initiation and Request for
-                                                Information Aluminium Coils and
-                                                Circles
+                                                Notice of Initiation and Request
+                                                for Information Aluminium Coils
+                                                and Circles
                                             </Link>
                                         </p>
                                         <p>
@@ -205,7 +204,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-white text-center uppercase">
+                                            <div className="block text-center text-white uppercase">
                                                 <div>Nov</div>
                                                 <div>7</div>
                                                 <div>2019</div>
@@ -215,9 +214,9 @@ const Publication = () => {
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
                                         <p className="uppercase text-primary">
                                             <Link href="">
-                                                Notice of Initiation and Request for
-                                                Information Aluminium Coils and
-                                                Circles
+                                                Notice of Initiation and Request
+                                                for Information Aluminium Coils
+                                                and Circles
                                             </Link>
                                         </p>
                                         <p>
@@ -248,7 +247,7 @@ const Publication = () => {
                                         currentSlide ===
                                         instanceRef.current.track.details.slides
                                             .length -
-                                        1
+                                            1
                                     }
                                 />
                             </>
@@ -259,23 +258,23 @@ const Publication = () => {
                 {/* gallery */}
                 <div className="">
                     <div className="text-center mb-7">
-                        <h2 className="text-red-600 sm:text-[4rem]">Our Gallery</h2>
-                        <p>
-                            MEETINGS, WORSHSHOPS, COURTESY CALLS
-                        </p>
+                        <h2 className="text-red-600 sm:text-[4rem]">
+                            Our Gallery
+                        </h2>
+                        <p>MEETINGS, WORSHSHOPS, COURTESY CALLS</p>
                     </div>
-                    <div className="sm:flex justify-center">
-                        <div className="sm:grid grid-cols-3">
+                    <div className="justify-center sm:flex">
+                        <div className="grid-cols-3 sm:grid">
                             {/*
                          {
                             releases.map((data) => (
                             // console.log(data.gallery.img)
                             // <div className="">{data.date}</div>
                             <div className="relative sm:w-[20rem] mx-3 mb-10" >
-                                <div className="bg-black overflow-hidden " onClick={() => setOpen(true)}>
+                                <div className="overflow-hidden bg-black " onClick={() => setOpen(true)}>
                                     <img src={data.main_img} className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
                                 </div>
-                                <div className="bg-black/40 insect-0 absolute"></div>
+                                <div className="absolute bg-black/40 insect-0"></div>
                                 <Lightbox
                                     open={open}
                                     close={() => setOpen(false)}
@@ -286,7 +285,7 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <Paragraph className="text-primary uppercase ">
+                                    <Paragraph className="uppercase text-primary ">
                                         COURTESY CALL TO
                                         GHANA STATISTICAL SERVICE
                                     </Paragraph>
@@ -300,7 +299,7 @@ const Publication = () => {
                         */}
                             <div className="relative sm:w-[20rem] mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden cursor-pointer "
+                                    className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpen(true)}
                                 >
                                     <img
@@ -309,7 +308,7 @@ const Publication = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="bg-black/40 insect-0 absolute"></div>
+                                <div className="absolute bg-black/40 insect-0"></div>
                                 <Lightbox
                                     open={open}
                                     close={() => setOpen(false)}
@@ -318,7 +317,7 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <p className="text-primary uppercase ">
+                                    <p className="uppercase text-primary ">
                                         COURTESY CALL TO GHANA STATISTICAL
                                         SERVICE
                                     </p>
@@ -327,7 +326,7 @@ const Publication = () => {
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden cursor-pointer "
+                                    className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpen(true)}
                                 >
                                     <img
@@ -344,7 +343,7 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <p className="text-primary uppercase ">
+                                    <p className="uppercase text-primary ">
                                         COURTESY CALL TO GHANA Revenue Authority
                                     </p>
                                     <Paragraph>2nd June 2022</Paragraph>
@@ -352,7 +351,7 @@ const Publication = () => {
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden cursor-pointer "
+                                    className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpenTwo(true)}
                                 >
                                     <img
@@ -369,7 +368,7 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <p className="text-primary uppercase ">
+                                    <p className="uppercase text-primary ">
                                         ASSOCIATION OF GHANA INDUSTRIES COURTESY
                                         CALL TO GITC
                                     </p>
@@ -378,7 +377,7 @@ const Publication = () => {
                             </div>
                             <div className="sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden cursor-pointer  "
+                                    className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpenThree(true)}
                                 >
                                     <img
@@ -395,7 +394,7 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <p className="text-primary uppercase ">
+                                    <p className="uppercase text-primary ">
                                         HON.DEPUTY MINISTER (TRADE) COURTESY
                                         CALL TO GITC
                                     </p>
@@ -404,7 +403,7 @@ const Publication = () => {
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden cursor-pointer "
+                                    className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpenFour(true)}
                                 >
                                     <img
@@ -421,7 +420,7 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <p className="text-primary uppercase ">
+                                    <p className="uppercase text-primary ">
                                         TRAINING SESSION WITH BMWK
                                     </p>
                                     <p>19th -29th April 2022</p>
@@ -429,7 +428,7 @@ const Publication = () => {
                             </div>
                             <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
-                                    className="bg-black overflow-hidden cursor-pointer "
+                                    className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpenFive(true)}
                                 >
                                     <img
@@ -446,13 +445,11 @@ const Publication = () => {
                                     ]}
                                 />
                                 <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                    <p className="text-primary uppercase ">
+                                    <p className="uppercase text-primary ">
                                         GITC RETREAT WITH STAFF,TECHNICAL
                                         COMMITTEE AND GOVERNING BOARD
                                     </p>
-                                    <p>
-                                        17th - 18th March 2022
-                                    </p>
+                                    <p>17th - 18th March 2022</p>
                                 </div>
                             </div>
                         </div>
@@ -469,8 +466,9 @@ function Arrow(props) {
     return (
         <svg
             onClick={props.onClick}
-            className={`arrow ${props.left ? "arrow--left" : "arrow--right"
-                } ${disabeld}`}
+            className={`arrow ${
+                props.left ? "arrow--left" : "arrow--right"
+            } ${disabeld}`}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
         >
