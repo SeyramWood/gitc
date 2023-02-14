@@ -2,7 +2,7 @@ import React from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import "../../../css/banner.scss";
 
-const Carousel = ({ children, styles }) => {
+const Carousel = ({ children }) => {
     const [index, setIndex] = React.useState(0);
     const length = children.length;
 
@@ -24,7 +24,7 @@ const Carousel = ({ children, styles }) => {
     }, [index]);
 
     return (
-        <div className="carousel__container h-[100vh]" style={styles}>
+        <div className="carousel__container h-[inherit]">
             <>
                 {React.Children.map(children, (child, i) => {
                     return React.cloneElement(child, {

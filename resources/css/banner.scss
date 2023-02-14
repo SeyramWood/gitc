@@ -1,54 +1,54 @@
-.carousel-wrapper {
-    position: relative;
-    & > .carousel--container {
-        width: 100%;
-        height: 100%;
-        & > ul {
-            & > li {
-                & .carousel--item {
-                    height: 100%;
-                    position: relative;
-                    display: block;
+// .carousel-wrapper {
+//     position: relative;
+//     & > .carousel--container {
+//         width: 100%;
+//         height: 100%;
+//         & > ul {
+//             & > li {
+//                 & .carousel--item {
+//                     height: 100%;
+//                     position: relative;
+//                     display: block;
 
-                    &--image {
-                        width: 100%;
-                        height: 100%;
-                        display: inline-block;
-                        & > img {
-                            width: 100%;
-                            height: 100%;
-                            // display: none;
-                        }
-                    }
-                    & .overlay {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        z-index: 100;
-                        background-image: linear-gradient(
-                            to bottom,
-                            rgba(17, 17, 17, 0.605),
-                            rgba(17, 17, 17, 0.805),
-                            rgba(17, 17, 17, 0.805),
-                            rgba(17, 17, 17, 0.905)
-                        );
-                        & > .overlay__article {
-                            width: 100%;
-                            height: auto;
-                            position: absolute;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            -webkit-transform: translateY(-50%);
-                            margin-top: 4rem;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+//                     &--image {
+//                         width: 100%;
+//                         height: 100%;
+//                         display: inline-block;
+//                         & > img {
+//                             width: 100%;
+//                             height: 100%;
+//                             // display: none;
+//                         }
+//                     }
+//                     & .overlay {
+//                         position: absolute;
+//                         top: 0;
+//                         left: 0;
+//                         right: 0;
+//                         bottom: 0;
+//                         z-index: 100;
+//                         background-image: linear-gradient(
+//                             to bottom,
+//                             rgba(17, 17, 17, 0.905),
+//                             rgba(17, 17, 17, 0.905),
+//                             rgba(17, 17, 17, 0.905),
+//                             rgba(17, 17, 17, 0.905)
+//                         );
+//                         & > .overlay__article {
+//                             width: 100%;
+//                             height: auto;
+//                             position: absolute;
+//                             top: 50%;
+//                             transform: translateY(-50%);
+//                             -webkit-transform: translateY(-50%);
+//                             margin-top: 4rem;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
 .banner__buttons {
     width: 100%;
     &__btn {
@@ -80,18 +80,18 @@
         font-size: inherit;
     }
     &--transparent {
-        border: 1px solid white;
+        border: 2px solid #f90004;
         &:hover {
-            border: 1px solid white;
+            border: 2px solid white;
             background-color: white;
-            color: #f9443e;
+            color: #f90004;
         }
     }
     &--solid {
-        background-color: #f9443e;
+        background-color: #f90004;
         &:hover {
             background-color: white;
-            color: #f9443e;
+            color: #f90004;
         }
     }
 }
@@ -332,80 +332,64 @@
     &.about {
         background-image: linear-gradient(
                 to top,
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074)
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/homePage/storyTwo.jpg");
     }
     &.publication {
         background-image: linear-gradient(
                 to top,
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074)
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/publish/publicbanner.jpg");
     }
     &.contact {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/contact/contactbanner.jpg");
     }
     &.story {
         background-image: linear-gradient(
                 to top,
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074)
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/about/story.jpg");
     }
     &.message {
         background-image: linear-gradient(
                 to top,
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074),
-                rgba(17, 17, 17, 0.074)
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/about/message.jpg");
     }
     &.faq {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/faq/faq.jpg");
     }
     &.services {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/homePage/serviceTwo.jpg");
     }
     &.resources {
         background-image: linear-gradient(
-                to bottom,
-                rgba(17, 17, 17, 0.605),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.805),
-                rgba(17, 17, 17, 0.905)
+                to top,
+                rgba(17, 17, 17, 0.775),
+                rgba(17, 17, 17, 0.775)
             ),
             url("/images/homePage/serviceThree.jpg");
     }

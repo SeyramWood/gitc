@@ -31,7 +31,7 @@ const Navigation = () => {
                 transformOrigin: "center",
                 borderRadius: `${isSticky ? "0" : ".2rem"}`,
                 backgroundColor: `${
-                    isSticky ? "#F9443E" : "rgba(249, 68, 62, 0.637)"
+                    isSticky ? "#F90004" : "rgba(250, 0, 4, 0.899)"
                 }`,
             };
             const shouldBeStyle = {
@@ -52,6 +52,7 @@ const Navigation = () => {
 
     return (
         <>
+            {/* Mobile Navigation */}
             <section className="mobile__navigation sticky left-0 top-0 h-[4rem] flex md:hidden items-center justify-between w-full bg-white z-20 px-web-xs">
                 <div>
                     <img
@@ -156,27 +157,9 @@ const Navigation = () => {
                     </li>
                 </ul>
             </nav>
-            <section className="absolute justify-center w-full h-[4rem] md:flex top-[5rem] z-10 hidden justify-items-center">
-                <div className=" left-0 h-[100%] items-center md:flex justify-between w-[85%]">
-                    <div>
-                        <img
-                            src="/images/logo.png"
-                            alt=""
-                            srcSet=""
-                            className="h-[6rem]"
-                        />
-                    </div>
-                    <div>
-                        <Link
-                            href="/faq"
-                            as="button"
-                            className={`block  py-2 w-[6rem] rounded-md text-white text-bold text-lg bg-primary`}
-                        >
-                            FAQ
-                        </Link>
-                    </div>
-                </div>
-            </section>
+
+            {/* Main Navigation */}
+
             <section
                 className="w-full bg-transparent absolute top-[12rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
                 style={{ ...headerStyle }}
@@ -185,7 +168,7 @@ const Navigation = () => {
                     className="w-[85%] h-[100%] text-white md:px-web-l flex justify-between items-center rounded-sm bg-primary-light shadow-md"
                     style={{ ...navStyle }}
                 >
-                    <ul className="flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-70 text-lg font-bold relative navigation">
+                    <ul className="flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-85 text-lg font-bold relative navigation">
                         <li className="[&:hover>a]:opacity-100">
                             <Link href="/">Home</Link>
                         </li>
@@ -301,51 +284,7 @@ const Navigation = () => {
                             </div>
                         </form>
                         <section className="search__overlay__dropdown">
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdowndropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdowndropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdowndropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdowndropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdowndropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdowndropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdowndropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdowndropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdowndropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown dropdown dropdown dropdown dropdown
-                            dropdown
+                            Nothing found for your search!
                         </section>
                     </section>
                 </section>

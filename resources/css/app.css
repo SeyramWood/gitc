@@ -1,3 +1,130 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --banner-height: calc(100vh - 8rem);
+}
+:root,
+[data-theme] {
+    background-color: #fff !important;
+}
+
+/* Start Banner indicators and arrows */
+.dots {
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+}
+
+.dot {
+    border: none;
+    width: 10px;
+    height: 10px;
+    background: #c5c5c5;
+    border-radius: 50%;
+    margin: 0 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dot:focus {
+    outline: none;
+}
+
+.dot.active {
+    background: #000;
+}
+.arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    fill: #fff;
+    cursor: pointer;
+}
+
+.arrow--left {
+    left: 5px;
+}
+
+.arrow--right {
+    left: auto;
+    right: 5px;
+}
+
+.arrow--disabled {
+    fill: rgba(255, 255, 255, 0.5);
+}
+/* End Banner indicators and arrows */
+
+@layer components {
+    h1 {
+        font-size: 8rem;
+        font-weight: 700;
+        font-style: bold;
+        font-family: Montserrat;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        );
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: red;
+        padding-bottom: 1rem;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        );
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        font-style: bold;
+        color: red;
+        font-family: Montserrat;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        );
+    }
+
+    h4 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: rgb(52, 1, 1);
+        padding-bottom: 1rem;
+        text-align: center;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        );
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgb(122, 122, 122);
+        font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        src: (
+            "https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+        );
+    }
+
+    .custom {
+        display: inline-block;
+        position: relative;
+    }
+
+    .custom::after {
+        content: "";
+        height: 5px;
+        width: 40%;
+        background: #e8cbc8;
+        position: absolute;
+        left: calc(50% - 20%);
+        bottom: -5px;
+    }
+}
