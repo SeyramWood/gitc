@@ -12,19 +12,19 @@ function ServiceDispute() {
                 <div className="sm:flex ">
                    <ServicesNav />
                     <div className="sm:w-[70%]">
-                        <div className="text-black">
+                        <div className="text-black px-6">
                             <h2 className="text-primary text-[4rem] pb-0 pt-16">Trade Remedies</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
                             </p>
 
                             <h2 className="text-red-500 text-4xl font-bold mt-20">  Dispute Settlement</h2>
-                            <div className="sm:pr-6 my-10 ">
+                            <div className=" my-10 ">
                                 <img src="/../images/dispute.jpg" className="overflow-hidden w-full h-[28rem]" alt="" />
                                 {/* <img src="i" className="overflow-hidden" alt="image" /> */}
                             </div>
                             <div className="">
-                                <p className="pb-8 text-black">
+                                <p className="pb-8 ">
                                     Customs valuation is a customs procedure applied
                                     to determine or assess the customs value of
                                     imported goods. If the rate of duty is ad
@@ -36,7 +36,7 @@ function ServiceDispute() {
                                     valuation, or origin determination by the
                                     customs division of the Ghana Revenue Authority.
                                 </p>
-                                <p className="pb-8 text-black">
+                                <p className="pb-8 ">
                                     An importer of goods which are the subject
                                     matter of a dispute as a result of
                                     classification, valuation, or origin

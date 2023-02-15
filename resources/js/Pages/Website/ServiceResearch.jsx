@@ -12,18 +12,18 @@ function ServiceResarch() {
                 <div className="sm:flex ">
                    <ServicesNav />
                     <div className="sm:w-[70%]">
-                        <div className="text-black">
+                        <div className="text-black px-5">
                             <h2 className="text-primary text-[4rem] pb-0 pt-16"> Research</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
                             </p>
 
                             <h2 className="text-red-500 text-4xl font-bold mt-20">Anti Dumping Duties</h2>
-                            <div className="sm:pr-6 my-10 ">
+                            <div className="my-10 ">
                                 <img src="/../images/research.png" className="overflow-hidden w-full h-[28rem]" alt="" />
                             </div>
                             <div className="">
-                                <p className="pb-8 text-black">
+                                <p className="pb-8">
                                     The Ghana International Trade Commission’s (GITC)
                                     objective is to ensure fair competition for persons
                                     engaged in domestic production and protect the
@@ -35,7 +35,7 @@ function ServiceResarch() {
                                     specific sectors of the economy with due regard to
                                     the effective rate of protection
                                 </p>
-                                <p className="pb-8 text-black">
+                                <p className="pb-8 ">
                                     The Commission is also mandated to conduct
                                     studies and publish reports on the competitiveness
                                     of Ghana’s tariff structure and its impact on local

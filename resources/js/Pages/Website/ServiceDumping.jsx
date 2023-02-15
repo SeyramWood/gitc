@@ -12,14 +12,14 @@ function ServiceDumping() {
                 <div className="sm:flex ">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
-                        <div className="text-black">
+                        <div className="text-black sm:pl-2">
                             <h2 className="text-primary text-[4rem] pb-0 pt-16">Anti-Dumping</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
                             </p>
 
                             <h2 className="text-red-500 text-4xl font-bold mt-20">Anti Dumping Duties</h2>
-                            <div className="sm:pr-6 my-10 ">
+                            <div className=" my-10 ">
                                 <img src="/../images/dump.jpg" className="overflow-hidden w-full h-[28rem]" alt="" />
                             </div>
                             <div className="">
@@ -71,7 +71,6 @@ function ServiceDumping() {
                                     <span className="pt-6">  GITC ( Anti-Dumping ) Regulations, 2019 ( L.I 2380 ) </span>
                                 </div>
                                 <div className="my-2 shadow-lg p-5 mb-5 rounded flex cursor-pointer transition duration-500 ease-in-out hover:scale-110 ">
-
                                     <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700" />{" "}
                                     <span className="pt-6"> GITC Questionnaire ( Editable )</span>
                                 </div>

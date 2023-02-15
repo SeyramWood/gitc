@@ -72,13 +72,13 @@ const Index = () => {
         <WebsiteLayout page="home">
             <div className="text-lg bg-white ">
                 {/* values section */}
-                <div className="mb-32  sm:py-10 px-3 bg-faded ">
+                <div className="mb-32  sm:py-10 px-4 bg-faded ">
                     <div
-                        className="justify-center gap-4 pb-4 md:flex"
+                        className="justify-center gap-5 w-[100%] gap-4 pb-4 md:flex"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="flex p-2 my-5">
+                        <div className="flex p-2 w-[25%] my-5">
                             <div className="p-3 w-[30%]">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
@@ -88,7 +88,7 @@ const Index = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="w-[70%] sm:pl-5">
+                            <div className="w-[70%] sm:pl-2">
                                 <h2 className="">Objectivity</h2>
                                 <p className="">
                                     To ensure equality and fairness in
@@ -99,17 +99,18 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex p-2 my-5">
+                        <div className="flex w-[25%] p-2 my-5">
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
+                                        // src="images/homePage/objectivity.png"
                                         src="images/homePage/professionalism.png"
                                         alt="professional"
-                                        className="object-contain -translate-y-3 -translate-x-5"
+                                        className="object-contain -translate-y-5 -translate-x-1"
                                     />
                                 </div>
                             </div>
-                            <div className="w-[70%] ">
+                            <div className="w-[70%] sm:pl-2">
                                 <h2 className="">Professionalism</h2>
 
                                 <p>
@@ -122,17 +123,18 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex p-2 my-5">
-                            <div className="p-3 w-[35%] ">
+                        <div className="flex p-2 w-[25%] my-5">
+                            <div className="p-3 w-[30%] sm:pl-2">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
+                                        // src="images/homePage/objectivity.png"
                                         src="images/homePage/integrity.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                        className="object-contain -translate-y-5 -translate-x-1"
                                     />
                                 </div>
                             </div>
-                            <div className="w-[65%] ">
+                            <div className="w-[70%] ">
                                 <h2 className="">Integrity</h2>
                                 <p>
                                     To ensure absolute neutrality and consistency in the
@@ -141,17 +143,18 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex p-2 my-5">
+                        <div className="flex w-[25%] p-2 my-5">
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
                                         src="images/homePage/integrity.png"
+                                        // src="images/homePage/objectivity.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                        className="object-contain -translate-y-5 -translate-x-1 "
                                     />
                                 </div>
                             </div>
-                            <div className="w-[70%] ">
+                            <div className="w-[70%] sm:pl-2">
                                 <h2 className="">Transparency</h2>
                                 <p>
                                     To ensure that the commission operates on an
@@ -363,7 +366,7 @@ const Index = () => {
                                             institutions and investigating
                                             authorities in Africa.
                                         </h2>
-                                        <p className="mb-5 text-center sm:mb-14 sm:text-left">
+                                        <p className="mb-5 text-center sm:text-left">
                                             These other African countries are:
                                             Egypt, South Africa, Morocco,
                                             Tunisia, Mauritius, and Madagascar.
@@ -371,12 +374,15 @@ const Index = () => {
                                             Egypt,South Africa, Morocco,
                                             Tunisia, Mauritius, and Madagascar.
                                         </p>
-
-                                        <Link href="/story">
-                                            <ButtonOutline className="sm:w-[14rem] mb-7">
+                                        <div className="">
+                                           <Link href="/story">
+                                            <ButtonOutline className="sm:w-[14rem] my-12">
                                                 Read Our Story
                                             </ButtonOutline>
-                                        </Link>
+                                        </Link> 
+                                        </div>
+
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +396,7 @@ const Index = () => {
                                         <h2 className="text-[3rem] text-white sm:pt-10 pb-6 font-bold">
                                             We ensure:
                                         </h2>
-                                        <ul className="sm:text-[1.1rem] list-disc pb-5 pl-4 ">
+                                        <ul className="sm:text-[1.1rem] list-disc  pl-4 ">
                                             <li className="py-4">
                                                 Ghana’s compliance with
                                                 international trade rules and
@@ -418,7 +424,7 @@ const Index = () => {
                                         </ul>
 
                                         <Link href="/story">
-                                            <ButtonOutline className="sm:w-[14rem] mb-7">
+                                            <ButtonOutline className="sm:w-[14rem] my-12 border-white/40 hover:border-white ">
                                                 Read Our Story
                                             </ButtonOutline>
                                         </Link>
@@ -525,7 +531,7 @@ const Index = () => {
                         data-aos-duration="2000"
                     >
                         <div className="justify-center sm:flex  sm:w-[100%]">
-                            <div className="sm:w-[50%] border">
+                            <div className="sm:w-[50%] ">
                                 {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                                 <img
                                     className="  "

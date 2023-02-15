@@ -12,14 +12,14 @@ function ServiceSubsidy() {
                 <div className="sm:flex ">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
-                        <div className="text-black">
+                        <div className="text-black px-6">
                             <h2 className="text-primary sm:text-[4rem] pb-0 pt-16">Trade Remedy</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
                             </p>
 
                             <h2 className="text-red-500 text-4xl font-bold mt-20"> Subsidy & Countervailing Duties</h2>
-                            <div className="sm:pr-6 my-10 ">
+                            <div className="my-10 ">
                                 {/* <img src=" images/subsidy.png" alt="img" /> */}
                                 <img src="/../images/subsidy.png" className="overflow-hidden w-full h-[28rem]" alt="" />
                             </div>

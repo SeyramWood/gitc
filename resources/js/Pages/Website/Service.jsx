@@ -11,7 +11,7 @@ function Service() {
                 <div className="sm:flex ">
                   <ServicesNav />
                     <div className="sm:w-[70%]">
-                        <div className="text-black">
+                        <div className="text-black ">
                             <h2 className="text-primary text-[4rem] pb-0 pt-16">Trade Remedies</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
@@ -21,7 +21,7 @@ function Service() {
                             <div className="sm:pr-6 my-10 ">
                                 <img src="images/service.jpg" className="overflow-hidden w-full h-[28rem]" alt="" />
                             </div>
-                            <div className="">
+                            <div className="pr-5">
                                 <p className="pb-8 text-black">
                                     An anti-dumping duty is a protectionist tariff that a
                                     government imposes on foreign imports that it
