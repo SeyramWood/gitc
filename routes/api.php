@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\FileManagementController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,25 +26,41 @@ Route::middleware('auth:sanctum')->group(function () {
     // Auth user route
     Route::controller(AdminController::class)->group(function () {
         Route::get('/users', 'index');
-        Route::get('/user/{user}', 'userDetails');
-        Route::delete('/user/{user}', 'deleteUser');
-        Route::post('/user/logout', 'logout');
-        Route::patch('/user/password/{user}', 'autocompleteUsers');
-        Route::patch('/user/role/{user}', 'updateUserRole');
-        Route::get('/autocomplete/users', 'saveUserPassword');
+        Route::post('/users', 'store');
+        Route::get('/users/{user}', 'userDetails');
+        Route::delete('/users/{user}', 'deleteUser');
+        Route::post('/users/logout', 'logout');
+        Route::patch('/users/role/{user}', 'updateUserRole');
+        Route::patch('/admins/user/{user}', 'adminUpdateUserProfile');
+
 
     });
 
-    // Profile  route
-    Route::controller(AdminController::class)->group(function () {
-        Route::patch('/user/{user}', 'UpdateUserProfile');
+
+    // Auth user route
+    Route::controller(ProfileController::class)->group(function () {
+        Route::patch('/users/password', 'userUpdatePassword');
+        Route::patch('/users/profile', 'updateUserProfile');
+        Route::get('/profiles', 'updateUserProfile');
+    });
+
+    // FileManagement  route
+    Route::controller(FileManagementController::class)->group(function () {
+        Route::get('/files', 'index');
+        Route::post('/files', 'store');
+        Route::patch('/files/{file}', 'UpdateFile');
+        Route::delete('/files/{file}', 'destroy');
 
     });
-});
-
-
-// Auth user route required not middleware
-Route::controller(AdminController::class)->group(function () {
-    Route::post('/users', 'store');
 
 });
+
+
+
+// Enquiries route
+Route::controller(EnquiryController::class)->group(function () {
+
+    Route::post('/enquiries','enguiry');
+
+});
+

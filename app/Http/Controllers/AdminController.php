@@ -77,8 +77,10 @@ class AdminController extends Controller
 
                 } catch (\Throwable $th) {
 
-                    return Redirect::route('register')
-                        ->withErrors(['accountError' => "We couldn't create your account, please try again."]);
+                    return response()->json([
+                        'message' => "We couldn't create your account, please try again."
+                    ]);
+
                 }
         }
 
@@ -87,7 +89,7 @@ class AdminController extends Controller
     {
         $new_role = Role::whereNotIn('id', [request()->role])->first();
         $user->role_id = $new_role->id ?? $user->role_id;
-        $user->save();
+        $user->update();
         if ($user) {
             return response()->json([
                 'message' => "User role  updated ",
@@ -102,18 +104,32 @@ class AdminController extends Controller
         }
     }
 
-    public function saveUserPassword($request, User $user)
+
+    public function AdminUpdateUserProfile($request, User $user)
     {
         $request->validate([
-            'current_password' => ['required', new MatchOldPassword],
-            'password' => 'required|confirmed|min:8',
+            'first_name' => 'nullable|string',
+            'last_name' => 'nullable|string',
+            'username' => 'required|string|min:3,max:10|unique:users,username',
+            'email' => ['required|email'],
+            'contact' => ['required|number']
         ]);
-      $data['user'] = $user->update([
-            "password" => Hash::make($request->password)
+
+        $data['user'] = $user->update([
+            'role_id' => Role::where('name', 'admin')->first()->id,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
+        $user->profile()->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'image' =>  Null,
+        ]);
+        $data['user'] = User::with('profile')->whereId($user->id)->first();
         if ($data) {
             return response()->json([
-                'message' => "User password updated ",
+                'message' => "User  updated ",
                 'data' => $data,
                 'code' => 200
             ],200);
@@ -125,7 +141,23 @@ class AdminController extends Controller
         }
     }
 
+    public function userDetails(User $user)
+    {
 
+        $data['user'] = User::with('profile')->whereId($user->id)->first();
+        if ($data) {
+            return response()->json([
+                'message' => "User found  ",
+                'data' => $data,
+                'code' => 200
+            ],200);
+        } else {
+            return response()->json([
+                'message' => "Request  unsuccessful ",
+                'code'=>400
+            ],400);
+        }
+    }
 
 
     public function deleteUser(User $user)
@@ -149,7 +181,7 @@ class AdminController extends Controller
     {
 
         $credentials = $request->validate([
-            'userName' => 'required|string',
+            'username' => 'required|string',
             'password' => ['required'],
             'remember' => 'boolean'
         ]);
@@ -162,9 +194,9 @@ class AdminController extends Controller
             ], 403);
         }
 
-        $userCheck = User::where('userName', $request->userName)->count();
+        $userCheck = User::where('username', $request->username)->count();
         if ($userCheck > 0) {
-            $user = User::where('userName', $request->userName)->first();
+            $user = User::where('username', $request->username)->first();
 
             // check if account has not been disabled
 
@@ -227,7 +259,7 @@ class AdminController extends Controller
             ]);
         } else {
             return response()->json([
-                "message" => "Please Login First",
+                "message" => "Please you are not  Login",
                 "code" => 403,
 
             ], 403);
