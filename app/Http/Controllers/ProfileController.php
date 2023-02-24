@@ -20,9 +20,9 @@ class ProfileController extends Controller
 
             $image = $request->file('image');
             $img = 'profile' . '.' . $image->getClientOriginalExtension();
-            $location = 'images/profile/' . $img;
+            $location = 'images/profiles/' . $img;
 
-            @unlink('images/profile/' . auth()->user()->profile->image);
+            @unlink('images/profiles/' . auth()->user()->profile->image);
             Image::make($image)->save($location);
         }
 
