@@ -134,7 +134,7 @@ const AboutMessage = () => {
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
-                                        src="images/homePage/integrity.png"
+                                        src="images/homePage/search.png"
                                         alt="Integrity"
                                         className="object-contain -translate-y-3 -translate-x-1 "
                                     />
