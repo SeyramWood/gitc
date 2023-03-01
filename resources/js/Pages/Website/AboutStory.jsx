@@ -65,8 +65,8 @@ const AboutMessage = () => {
                 </div>
 
                 {/* values */}
-                <div className="mt-32" style={{ backgroundImage: "url('images/contact/contactbanner.jpg')" }}>
-                    <div className="py-10 md:flex justify-center bg-white/20 ">
+                <div className="mt-32" style={{ backgroundImage: "url('images/bg.jpg')",objectFit:"cover" }}>
+                    <div className="p-10 md:flex justify-center bg-white/70 ">
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%]">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
@@ -111,7 +111,7 @@ const AboutMessage = () => {
                             </div>
                         </div>
 
-                        <div className="flex p-2 my-5">
+                        <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[35%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
@@ -239,7 +239,7 @@ const AboutMessage = () => {
                                     <h4 className="text-left font-bold text-white pt-6">
                                         Vission
                                     </h4>
-                                    <p className=" text-[1.5rem] text-white">
+                                    <p className=" text-[1.1rem] text-white">
                                         To become world-class fair trade regulatory agency.
                                     </p>
                                   
