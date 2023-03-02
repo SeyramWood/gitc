@@ -332,8 +332,8 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
-                <div className=" ">
-                    <div className=" sm:px-[5rem] ">
+                <div className="sm:px-20 overflow-hidden ">
+                    <div className="  ">
                         <div className="">
                             <div className="justify-center bg-black sm:flex block">
                                 <div
