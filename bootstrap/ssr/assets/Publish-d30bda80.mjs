@@ -1,5 +1,5 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
-import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-e1c37850.mjs";
 import { Link } from "@inertiajs/inertia-react";
 import "react/jsx-runtime";
 import "react-dom/server";

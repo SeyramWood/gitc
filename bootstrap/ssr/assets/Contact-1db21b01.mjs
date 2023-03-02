@@ -1,8 +1,7 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
 import { B as Button } from "./Button-c608a26e.mjs";
-import { H as HeadingSecondary } from "./HeadingSecondary-b4f9f193.mjs";
-import { P as Paragraph } from "./Paragraph-8ec8d723.mjs";
-import { W as WebsiteLayout } from "./WebsiteLayout-b0121945.mjs";
+import { H as HeadingSecondary, P as Paragraph } from "./HeadingSecondary-7080f354.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-e1c37850.mjs";
 import "react/jsx-runtime";
 import "react-dom/server";
 import "@inertiajs/inertia-react";

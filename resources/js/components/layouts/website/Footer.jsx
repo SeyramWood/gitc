@@ -5,7 +5,7 @@ import { SlCallIn, SlEnvelopeOpen, SlPaperPlane } from "react-icons/sl";
 const Footer = () => {
     return (
         <footer className="w-[100%] text-white">
-            <nav className="w-[100%] h-[auto] lg:h-[80vh] flex flex-col md:flex-row md:flex-wrap bg-footer px-web-s lg:px-web-l justify-start items-start py-[5rem]">
+            <nav className="w-[100%] h-[auto] lg:h-[60vh] flex flex-col md:flex-row md:flex-wrap bg-footer px-web-s lg:px-web-l justify-start items-start py-[3rem]">
                 <section className="w-[100%] md:w-[50%] lg:w-[30%] mt-web-l pr-2">
                     {/* <div className="w-[100%] mb-web-xs md:mb-web-l md:mt-[-4rem]">
                         <a href="/">
@@ -17,7 +17,7 @@ const Footer = () => {
                             />
                         </a>
                     </div> */}
-                    <div className="w-[100%] mb-web-xs md:mb-web-xl">
+                    <div className="w-[100%] mb-web-xs md:mb-web-l">
                         <h5 className="text-xl font-bold capitalize">
                             Contacts
                         </h5>
@@ -77,7 +77,7 @@ const Footer = () => {
                     </ul>
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[20%] mt-web-l">
-                    <div className="w-[100%] mb-web-xs md:mb-web-xl">
+                    <div className="w-[100%] mb-web-xs md:mb-web-l">
                         <h5 className="text-xl font-bold capitalize">
                             Useful Links
                         </h5>
@@ -101,7 +101,7 @@ const Footer = () => {
                     </ul>
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l">
-                    <div className="w-[100%] mb-web-xs md:mb-web-xl">
+                    <div className="w-[100%] mb-web-xs md:mb-web-l">
                         <h5 className="text-xl font-bold capitalize">
                             External Links
                         </h5>
@@ -172,7 +172,7 @@ const Footer = () => {
             </nav>
 
             <section className="w-[100%] h-[5rem] bg-tertiary flex items-center text-web-xs md:text-text-[1rem]  px-web-xs lg:px-web-l">
-                <p>
+                <p className="text-white opacity-60">
                     &copy;Copyright {new Date().getUTCFullYear()}, All Rights
                     Reserved, Ghana International Trade Commission.
                 </p>
