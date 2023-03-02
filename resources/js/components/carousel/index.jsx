@@ -1,3 +1,4 @@
 import Carousel from "./Carousel";
 import CarouselItem from "./CarouselItem";
-export { Carousel, CarouselItem };
+import FooterCarousel from "./FooterCarousel";
+export { Carousel, CarouselItem, FooterCarousel };

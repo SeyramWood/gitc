@@ -1,6 +1,7 @@
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 import { SlCallIn, SlEnvelopeOpen, SlPaperPlane } from "react-icons/sl";
+import { FooterCarousel } from "../../carousel";
 
 const Footer = () => {
     return (
@@ -17,13 +18,13 @@ const Footer = () => {
                             />
                         </a>
                     </div> */}
-                    <div className="w-[100%] mb-web-xs md:mb-web-l">
+                    <div className="w-[100%] mb-web-xs md:mb-web-md">
                         <h5 className="text-xl font-bold capitalize">
                             Contacts
                         </h5>
                     </div>
 
-                    <ul className="text-[1rem]">
+                    <ul className="text-[1rem] [&>li>a]:font-thin [&>li>span]:font-thin [&>li>address>span]:font-thin">
                         <li className="flex items-center mb-3 text-center">
                             <span className="mr-3 opacity-60">
                                 <SlPaperPlane />
@@ -32,13 +33,17 @@ const Footer = () => {
                                 className="pl-2 font-normal text-left font-"
                                 style={{ fontStyle: "normal" }}
                             >
-                                <p className="text-white opacity-60">
+                                <span className="text-white opacity-60">
                                     2nd Floor (West Wing),
-                                </p>
-                                <p className="text-white opacity-60">
-                                    East Cantonments near US Embassy, 5th Link
-                                    Road, Accra.
-                                </p>
+                                </span>
+                                <br />
+                                <span className="text-white opacity-60">
+                                    East Cantonments near US Embassy,
+                                </span>
+                                <br />
+                                <span className="text-white opacity-60">
+                                    5th Link Road, Accra.
+                                </span>
 
                                 {/* <p className="text-white opacity-60"></p> */}
                             </address>
@@ -47,7 +52,10 @@ const Footer = () => {
                             <span className="mr-3 opacity-60">
                                 <SlCallIn />
                             </span>
-                            <a href="tel:+233302960298" className="opacity-60">
+                            <a
+                                href="tel:+233302960298"
+                                className="pl-2 opacity-60"
+                            >
                                 <span>+233(0) 30 296 0298</span>
                             </a>
                         </li>
@@ -57,7 +65,7 @@ const Footer = () => {
                             </span>
                             <a
                                 href="mailto:info@gitc.gov.gh"
-                                className="opacity-60"
+                                className="pl-2 opacity-60"
                             >
                                 <span>info@gitc.gov.gh</span>
                             </a>
@@ -69,25 +77,25 @@ const Footer = () => {
                                     src="/images/location.png"
                                     alt="icon"
                                     srcSet=""
-                                    className="w-[1.5rem]"
+                                    className="w-[1.2rem]"
                                 />
                             </span>
-                            <span className="opacity-60">GL-040-2630</span>
+                            <span className="pl-1 opacity-60">GL-040-2630</span>
                         </li>
                     </ul>
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[20%] mt-web-l">
-                    <div className="w-[100%] mb-web-xs md:mb-web-l">
+                    <div className="w-[100%] mb-web-xs md:mb-web-md">
                         <h5 className="text-xl font-bold capitalize">
                             Useful Links
                         </h5>
                     </div>
-                    <ul className="w-[100%] text-[1rem] opacity-60">
+                    <ul className="w-[100%] text-[1rem] opacity-60 [&>li>a]:font-thin">
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/team">About us</Link>
+                            <Link href="/about">About us</Link>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/story">Our team</Link>
+                            <Link href="/about">Our team</Link>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/services">Our service</Link>
@@ -101,72 +109,113 @@ const Footer = () => {
                     </ul>
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l">
-                    <div className="w-[100%] mb-web-xs md:mb-web-l">
+                    <div className="w-[100%] mb-web-xs md:mb-web-md">
                         <h5 className="text-xl font-bold capitalize">
                             External Links
                         </h5>
                     </div>
 
-                    <ul className="w-[100%] text-[1rem] opacity-60">
+                    <ul className="w-[100%] text-[1rem] opacity-60 [&>li>a]:font-thin">
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/about">
+                            <a
+                                href="https://moti.gov.gh/v2"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Ministry of Trade and Industry
-                            </Link>
+                            </a>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/team">Ghana Free Zone Authority</Link>
+                            <a
+                                href="https://gfza.gov.gh"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Ghana Free Zone Authority
+                            </a>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/services">
+                            <a
+                                href="https://gra.gov.gh"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Ghana Revenue Authority
-                            </Link>
+                            </a>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/resources">
+                            <a
+                                href="https://gsa.gov.gh"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 Ghana Standard Authority
-                            </Link>
+                            </a>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/publications">World Trade Center</Link>
+                            <a
+                                href="https://www.wtcaccra.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                World Trade Center
+                            </a>
                         </li>
                     </ul>
                 </section>
                 <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l">
-                    <div className="w-[100%] mb-web-xs md:mb-web-xl">
+                    <div className="w-[100%] mb-web-xs md:mb-web-md">
                         <h5 className="text-xl font-bold capitalize">
                             Gallery
                         </h5>
                     </div>
 
-                    <section className="grid grid-cols-2 gap-4">
-                        <div>
-                            <img
-                                src="/images/footer/footer.jpg"
-                                alt=""
-                                srcSet=""
+                    <section className="grid grid-cols-2 gap-2">
+                        <Link href="/gallery">
+                            <FooterCarousel
+                                images={[
+                                    "/images/footer/footer2.jpg",
+                                    "/images/footer/footer1.jpg",
+                                    "/images/footer/footer.jpg",
+                                ]}
+                                duration={2000}
                             />
-                        </div>
-                        <div>
-                            <img
-                                src="/images/footer/footer1.jpg"
-                                alt=""
-                                srcSet=""
+                        </Link>
+                        <Link href="/gallery">
+                            <FooterCarousel
+                                images={[
+                                    "/images/footer/footer3.jpg",
+                                    "/images/footer/footer2.jpg",
+                                    "/images/footer/footer1.jpg",
+                                    "/images/footer/footer.jpg",
+                                ]}
+                                duration={2000}
+                                axis="y"
                             />
-                        </div>
-                        <div>
-                            <img
-                                src="/images/footer/footer2.jpg"
-                                alt=""
-                                srcSet=""
+                        </Link>
+                        <Link href="/gallery">
+                            <FooterCarousel
+                                images={[
+                                    "/images/footer/footer2.jpg",
+                                    "/images/footer/footer1.jpg",
+                                    "/images/footer/footer3.jpg",
+                                    "/images/footer/footer.jpg",
+                                ]}
+                                duration={2000}
+                                axis="y"
                             />
-                        </div>
-                        <div>
-                            <img
-                                src="/images/footer/footer3.jpg"
-                                alt=""
-                                srcSet=""
+                        </Link>
+                        <Link href="/gallery">
+                            <FooterCarousel
+                                images={[
+                                    "/images/footer/footer2.jpg",
+                                    "/images/footer/footer1.jpg",
+                                    "/images/footer/footer.jpg",
+                                    "/images/footer/footer3.jpg",
+                                ]}
+                                duration={2000}
                             />
-                        </div>
+                        </Link>
                     </section>
                 </section>
             </nav>

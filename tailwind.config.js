@@ -26,6 +26,7 @@ module.exports = {
             },
             spacing: {
                 "web-l": "3rem",
+                "web-md": "2rem",
                 "web-xl": "4rem",
                 "web-2xl": "5rem",
                 "web-s": "1.5rem",

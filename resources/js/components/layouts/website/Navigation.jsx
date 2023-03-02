@@ -120,12 +120,12 @@ const Navigation = () => {
                         <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
                             <li>
                                 <Link href="/service/subsidy">
-                                    Subsidy And Counter
+                                    Subsidy and Counter
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/service/safeguard">
-                                    SafeGuards Measures
+                                    Safeguards Measures
                                 </Link>
                             </li>
                             <li>
@@ -151,6 +151,9 @@ const Navigation = () => {
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/publications">Publications</Link>
+                    </li>
+                    <li className="hover:opacity-100">
+                        <Link href="/publications">Gallery</Link>
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/contact">Contact Us</Link>
@@ -180,7 +183,7 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
                                     <li>
                                         <Link href="/about">Our Team</Link>
                                     </li>
@@ -201,15 +204,15 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list">
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
                                     <li>
                                         <Link href="/service/subsidy">
-                                            Subsidy And Counter
+                                            Subsidy and Counter
                                         </Link>
                                     </li>
                                     <li>
                                         <Link href="/service/safeguard">
-                                            SafeGuards Measures
+                                            Safeguards Measures
                                         </Link>
                                     </li>
                                     <li>
@@ -242,6 +245,9 @@ const Navigation = () => {
                             <Link href="/publications">Publications</Link>
                         </li>
                         <li className="[&:hover>a]:opacity-100">
+                            <Link href="/galleries">Gallery</Link>
+                        </li>
+                        <li className="[&:hover>a]:opacity-100">
                             <Link href="/contact">Contact Us</Link>
                         </li>
                     </ul>
@@ -251,7 +257,7 @@ const Navigation = () => {
                             setSearchToggle((state) => (state = !state))
                         }
                     >
-                        <SlMagnifier className="text-3xl font-extrabold " />
+                        <SlMagnifier className="text-2xl font-extrabold " />
                     </button>
                 </nav>
 
