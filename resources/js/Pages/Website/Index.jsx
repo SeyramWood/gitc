@@ -10,6 +10,8 @@ import ButtonOutline from "../../components/layouts/website/ButtonOutline";
 import "aos/dist/aos.css";
 import "keen-slider/keen-slider.min.css";
 
+import { BiSearchAlt } from "react-icons/bi";
+
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
@@ -72,13 +74,13 @@ const Index = () => {
         <WebsiteLayout page="home">
             <div className="text-lg bg-white ">
                 {/* values section */}
-                <div className="mb-32  sm:py-10 px-4 bg-faded ">
+                <div className="mb-32  sm:py-10 px-2 bg-faded ">
                     <div
-                        className="justify-center gap-5 w-[100%] gap-4 pb-4 md:flex"
+                        className="justify-center w-[100%] gap-3 pb-4 md:flex"
                         data-aos="fade-up"
                         data-aos-duration="2000"
                     >
-                        <div className="flex p-2 w-[25%] my-5">
+                        <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%]">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
@@ -99,7 +101,7 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex w-[25%] p-2 my-5">
+                        <div className="flex  p-2 my-5 ">
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
@@ -113,48 +115,48 @@ const Index = () => {
                             <div className="w-[70%] sm:pl-2">
                                 <h2 className="">Professionalism</h2>
 
-                                <p>
+                                <p className="">
                                     To ensure a high level of competence and efficiency in
                                     applying
                                     international trade rules
-                                    and regulations as under the World Trade Organization (WTO)
+                                    and regulations as under the World Trade Organization
                                     provisions.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex p-2 w-[25%] my-5">
-                            <div className="p-3 w-[30%] sm:pl-2">
+                        <div className="flex p-2  my-5 ">
+                            <div className="p-3 w-[30%] sm:pl-1">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
                                         // src="images/homePage/objectivity.png"
                                         src="images/homePage/integrity.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-5 -translate-x-1"
+                                        className="object-contain -translate-y-5 -translate-x-1  "
                                     />
                                 </div>
                             </div>
                             <div className="w-[70%] ">
                                 <h2 className="">Integrity</h2>
-                                <p>
+                                <p className="">
                                     To ensure absolute neutrality and consistency in the
                                     execution of the mandate of the Commission.
                                 </p>
                             </div>
                         </div>
 
-                        <div className="flex w-[25%] p-2 my-5">
+                        <div className="flex  p-2 my-5 ">
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                    {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
                                     <img
-                                        src="images/homePage/integrity.png"
-                                        // src="images/homePage/objectivity.png"
+                                        src="images/homePage/search.png"
                                         alt="Integrity"
                                         className="object-contain -translate-y-5 -translate-x-1 "
                                     />
                                 </div>
                             </div>
-                            <div className="w-[70%] sm:pl-2">
+                            <div className="w-[70%] ">
                                 <h2 className="">Transparency</h2>
                                 <p>
                                     To ensure that the commission operates on an
@@ -167,7 +169,7 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="pb-28 px-16">
+                <div className="pb-28 px-2 sm:px-16">
                     <div className="justify-center md:flex gap-6">
                         <div
                             className="sm:w-[25%]"
@@ -256,7 +258,7 @@ const Index = () => {
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
                                         <Link
-                                            href="/services"
+                                            href="/service/tariff"
                                             className="text-white"
                                         >
                                             View More
@@ -277,7 +279,7 @@ const Index = () => {
                                     producer or domestic industry
                                 </p>
                                 <Link
-                                    href="/services"
+                                    href="/service/tariff"
                                     className="text-primary hover:text-red-300 sm:pl-1"
                                 >
                                     Read More . . .
@@ -324,18 +326,18 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                    <Link href="/service" className="">
-                        <Button className="mt-8"> View More </Button>
+                    <Link href="/services" className="">
+                        <Button className="mt-8 "> View More </Button>
                     </Link>
                 </div>
 
                 {/* story section*/}
                 <div className=" ">
-                    <div className=" px-[5rem]">
+                    <div className=" sm:px-[5rem] ">
                         <div className="">
-                            <div className="justify-center bg-black sm:flex">
+                            <div className="justify-center bg-black sm:flex block">
                                 <div
-                                    className="sm:w-[80rem] opacity-60"
+                                    className="sm:w-[80rem] sm:h-[32rem] h-52 opacity-60"
                                     style={{
                                         backgroundImage:
                                             "url('images/homePage/storyOne.jpg')",
@@ -344,29 +346,29 @@ const Index = () => {
                                     }}
                                 >
                                     {/* <div className="sm:h-[35rem] bg-red-700" >
-
-                                    <img
-                                        className="sm:w-[80rem] sm:h-[35rem] opacity-90"
+*/}
+                                    {/* <img
+                                        className="sm:hidden opacity-90"
                                         src="images/homePage/storyOne.jpg"
                                         alt=""
                                         style={{}}
-                                    /> */}
+                                    />  */}
                                 </div>
-                                <div className="bg-white">
+                                <div className="bg-white  ">
                                     <div
-                                        className="container sm:pt-12 sm:px-20"
+                                        className="container sm:pt-12 pt-6 px-4  sm:px-20"
                                         data-aos="fade-left"
                                         data-aos-duration="2000"
                                     >
-                                        <p className="text-center text-red-700 sm:text-left sm:text-2lx">
+                                        <p className=" text-red-700 sm:text-left sm:text-2lx">
                                             DID YOU KNOW THAT
                                         </p>
-                                        <h2 className=" font-bold text-center text-red-600 sm:text-left sm:text-3xl">
+                                        <h2 className=" font-bold  text-red-600 sm:text-left sm:text-3xl">
                                             GITC is among seven trade remedy
                                             institutions and investigating
                                             authorities in Africa.
                                         </h2>
-                                        <p className="mb-5 text-center sm:text-left">
+                                        <p className="mb-5 sm:text-left">
                                             These other African countries are:
                                             Egypt, South Africa, Morocco,
                                             Tunisia, Mauritius, and Madagascar.
@@ -374,9 +376,9 @@ const Index = () => {
                                             Egypt,South Africa, Morocco,
                                             Tunisia, Mauritius, and Madagascar.
                                         </p>
-                                        <div className="">
+                                        <div className="px-4">
                                            <Link href="/story">
-                                            <ButtonOutline className="sm:w-[14rem] my-12">
+                                                <ButtonOutline className="sm:w-[14rem]  my-12 border-primary/40 text-black hover:border-primary">
                                                 Read Our Story
                                             </ButtonOutline>
                                         </Link> 
@@ -389,14 +391,14 @@ const Index = () => {
                             <div className="flex flex-col-reverse justify-center bg-black sm:flex sm:flex-row ">
                                 <div className="text-white bg-red-700">
                                     <div
-                                        className="container sm:px-20 "
+                                        className="container sm:px-20 px-4 pt-4 "
                                         data-aos="fade-right"
                                         data-aos-duration="2000"
                                     >
                                         <h2 className="text-[3rem] text-white sm:pt-10 pb-6 font-bold">
                                             We ensure:
                                         </h2>
-                                        <ul className="sm:text-[1.1rem] list-disc  pl-4 ">
+                                        <ul className="sm:text-[1.1rem] list-disc px-4 sm:pl-4 ">
                                             <li className="py-4">
                                                 Ghana’s compliance with
                                                 international trade rules and
@@ -432,7 +434,7 @@ const Index = () => {
                                 </div>
 
                                 <div
-                                    className="sm:w-[80rem] opacity-60"
+                                    className="sm:w-[80rem] sm:h-[40rem] h-52  opacity-60"
                                     style={{
                                         backgroundImage:
                                             "url('images/homePage/storyTwo.jpg')",
@@ -553,12 +555,12 @@ const Index = () => {
                                         former. The inability of developing
                                         counties ...
                                     </p>
-                                    <h2 className="pl-5 text-red-400 cursor-pointer hover:text-red-300 ">
+                                    <h2 className="pl-5 text-red-500 cursor-pointer hover:text-red-300 ">
                                         Read More
                                     </h2>
                                     <div className="pl-5 ">
                                         <h1 className="pt-8 text-2xl text-primary">
-                                            Frank Agyakum
+                                            Frank Agyekum
                                         </h1>
                                         <p className="pt-1 font-light text-primary">
                                             Executive Secretary

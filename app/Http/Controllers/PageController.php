@@ -42,6 +42,11 @@ class PageController extends Controller
         return Inertia::render('Website/ServiceDumping');
     }
 
+     public function ServiceTariff()
+    {
+        return Inertia::render('Website/ServiceTariff');
+    }
+
     public function about()
     {
         return Inertia::render('Website/About');

@@ -8,7 +8,7 @@ const About = () => {
         <WebsiteLayout page="about">
             <main className="">
                 {/* Governing Board */}
-                <h2 className="my-[4rem] sm:text-[4rem] text-center uppercase text-red-600">
+                <h2 className="my-[4rem] sm:text-[4rem] text-center text-red-600">
                     Governing Board
                 </h2>
                 <div className="sm:px-[8rem] mb-32">
@@ -36,6 +36,25 @@ const About = () => {
                         <div className="shadow-lg ">
                             <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
+                                    src="images/about/our_team/Paul Kuruk.jpeg"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="p-4 bg-slate-100">
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                         Prof. Paul Kuruk
+                                    </h2>
+                                    <p className="">
+                                        Deputy Chairman, Board
+                                    </p>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className=" shadow-lg">
+                            <div className="bg-black overflow-hidden cursor-pointer">
+                                <img
                                     src="images/about/our_team/Mr. Philip Jude Mensah_ALT.jpg"
                                     className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
@@ -52,7 +71,7 @@ const About = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className=" shadow-lg">
+                        <div className="shadow-lg ">
                             <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Mr. Arnold Okai.jpg"
@@ -60,7 +79,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-4 bg-slate-100">
+                            <div className="p-3 bg-slate-100">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Mr. Arnold Tetteh Okai
@@ -71,7 +90,7 @@ const About = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className="shadow-lg ">
+                        <div className=" shadow-lg">
                             <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Ms. Sophia Kokor.jpg"
@@ -90,7 +109,7 @@ const About = () => {
                                 </Link>
                             </div>
                         </div>
-                        <div className=" shadow-lg">
+                        <div className="shadow-lg ">
                             <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Mr. Frank Agyekum.jpg"
@@ -103,26 +122,7 @@ const About = () => {
                                     <h2 className="text-primary">
                                         Mr. Frank Agyekum
                                     </h2>
-                                    <p className="">
-                                        Executive Secretary
-                                    </p>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="shadow-lg ">
-                            <div className="bg-black overflow-hidden cursor-pointer">
-                                <img
-                                    src="images/about/our_team/Mr. Arnold Okai.jpg"
-                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="p-3 bg-slate-100">
-                                <Link href="/">
-                                    <h2 className="text-primary">
-                                        Personality Name
-                                    </h2>
-                                    <p className="">Lorem ipsum</p>
+                                    <p className=""> Executive Secretary</p>
                                 </Link>
                             </div>
                         </div>
@@ -132,10 +132,10 @@ const About = () => {
                 {/* team */}
                 <div className="mb-32  text-black sm:mx-20">
                     <div className="pb-[2rem]  text-center ">
-                        <h2 className="uppercase text-red-600 text-center sm:text-[4rem]">
+                        <h2 className="mb-0 pb-0 text-red-600 text-center sm:text-[4rem]">
                             Our Team
                         </h2>
-                        <p className="text-black">Meet The Heads Of Departments</p>
+                        <p className="text-black uppercase">Meet The Heads Of Departments</p>
                     </div>
                     <div className="p-4 gap-7 sm:flex">
                         <div className="sm:w-[25%] mx-2 mb-4 transition duration-700 ease-in-out shadow-lg hover:scale-110">

@@ -17,66 +17,72 @@ function Resources() {
         <WebsiteLayout page="service" >
             <div className="bg-white">
                 {/* files */}
-                <div className=" sm:mx-24 py-10 mb-32">
+                <div className=" sm:mx-24 py-10 mb-10">
                     <div className="text-center mb-7">
-                        <h2 className="text-red-600 sm:text-[4rem] pb-0 mb-0">
+                        <h2 className="text-red-600 mb-0 pb-0 sm:text-[4rem] ">
                             Resources
                         </h2>
-                        <p className="pt-0 mt-0">Our Files</p>
+                        <p className="pt-0 mt-0 uppercase">Our Files</p>
                     </div>
-                    <div className="grid grid-cols-5 p-6 gap-2 bg-slate-100/10 shadow-lg">
-                        <div className="p-4 duration-500 ease-in-out hover:scale-110">
-                            <div className=" ">
-                                <AiOutlineFilePdf className="w-[6rem] h-[7rem] text-red-700 " />
-                            </div>
-                            <div className="">
-                                <p>Name of File</p>
-                                <div className=""> File descriptoin </div>
-                            </div>
-                        </div>
-                        <div className="p-4 duration-500 ease-in-out hover:scale-110">
-                            <div className=" ">
-                                <AiOutlineFileWord className="w-[6rem] h-[7rem] text-blue-700 " />
-                            </div>
-                            <div className="">
-                                <p>Name of File</p>
-                                <div className=""> File descriptoin </div>
+                    <div className="grid grid-cols-2 p-6 gap-14  pb-20">
+                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+
+                            <div className="sm:flex py-5">
+                                <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " />
+                                <div className="pt-2">
+                                    <p>Name of File</p>
+                                    <div className=""> File description </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-4 duration-500 ease-in-out hover:scale-110">
-                            <div className=" ">
-                                <AiOutlineFilePdf className="w-[6rem] h-[7rem] text-red-700 " />
-                            </div>
-                            <div className="">
-                                <p>Name of File</p>
-                                <div className=""> File descriptoin </div>
-                            </div>
-                        </div>
-                        <div className="p-4 duration-500 ease-in-out hover:scale-110">
-                            <div className=" ">
-                                <AiOutlineFilePdf className="w-[6rem] h-[7rem] text-red-700 " />
-                            </div>
-                            <div className="">
-                                <p>Name of File</p>
-                                <div className=""> File descriptoin </div>
+                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+
+                            <div className="sm:flex py-5">
+                                <AiOutlineFileWord className="text-[4rem] text-blue-700 " />
+                                <div className="pt-2">
+                                    <p>Name of File</p>
+                                    <div className=""> File description </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-4 duration-500 ease-in-out hover:scale-110">
-                            <div className=" ">
-                                <AiOutlineFileWord className="w-[6rem] h-[7rem] text-blue-700 " />
-                            </div>
-                            <div className="">
-                                <p>Name of File</p>
-                                <div className=""> File descriptoin </div>
+                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+
+                            <div className="sm:flex py-5">
+                                <AiOutlineFilePdf className="w-[7rem] h-[4rem] text-red-700 " />
+                                <div className="pt-2">
+                                    <p>Name of File</p>
+                                    <div className=""> File description </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-4 duration-500 ease-in-out hover:scale-110">
-                            <div className=" ">
-                                <AiOutlineFilePdf className="w-[6rem] h-[7rem] text-red-700 " />
+                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+
+                            <div className="sm:flex py-5">
+                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                <div className="pt-2">
+                                    <p>Name of File</p>
+                                    <div className=""> File description </div>
+                                </div>
                             </div>
-                            <div className="">
-                                <p>Name of File</p>
-                                <div className=""> File descriptoin </div>
+                        </div>
+                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+
+                            <div className="sm:flex py-5">
+                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                <div className="pt-2">
+                                    <p>Name of File</p>
+                                    <div className=""> File description </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="px-4 flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+
+                            <div className="sm:flex py-5">
+                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                <div className="pt-2">
+                                    <p>Name of File</p>
+                                    <div className=""> File description </div>
+                                </div>
                             </div>
                         </div>
 
@@ -88,7 +94,7 @@ function Resources() {
                     {/* gallery */}
                     <div className="">
                         <div className="text-center mb-7">
-                            <h2 className="text-red-600 sm:text-[4rem]">
+                            <h2 className="text-red-600 pb-0 mb-0 sm:text-[4rem]">
                                 Our Gallery
                             </h2>
                             <p>MEETINGS, WORSHSHOPS, COURTESY CALLS</p>

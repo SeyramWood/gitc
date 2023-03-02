@@ -7,13 +7,13 @@ import ServiceLinks from "../../components/layouts/website/ServiceLinks";
 function ServiceDumping() {
     return (
         <WebsiteLayout page="service">
-           <ServiceLinks />
+           {/* <ServiceLinks /> */}
             <div className="bg-white">
-                <div className="sm:flex ">
+                <div className="sm:flex px-4 pt-16">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
                         <div className="text-black sm:pl-2">
-                            <h2 className="text-primary text-[4rem] pb-0 pt-16">Anti-Dumping</h2>
+                            <h2 className="text-primary text-[4rem] pb-0 ">Trad Remedies</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
                             </p>
@@ -66,7 +66,7 @@ function ServiceDumping() {
                             <div className="sm:pr-4">
                                 <h2 className="text-4xl text-primary">Related Downloads</h2>
                                 <i>Downloadable Legislative Instrument and Questionnaire</i>
-                                <div className="my-2 shadow-lg p-5  rounded flex  transition duration-500 ease-in-out hover:scale-110 ">
+                                <div className="my-2 shadow-lg p-5 cursor-pointer rounded flex  transition duration-500 ease-in-out hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">  GITC ( Anti-Dumping ) Regulations, 2019 ( L.I 2380 ) </span>
                                 </div>

@@ -92,13 +92,13 @@ const Publication = () => {
             <div className="bg-white ">
                 <div className="text-center ">
                     <h2 className="py-16 sm:text-[3rem] text-center text-red-600">
-                        PRESS RELEASES & SPEECHES
+                        Press Releases And Speeches
                     </h2>
                 </div>
 
                 {/* publicatation */}
-                <div className=" sm:px-[6rem] sm:mb-28 ">
-                    <div className="relative">
+                <div className=" sm:px-[6rem]  ">
+                    <div className="relative sm:pb-28">
                         <div ref={sliderRef} className="gap-4 keen-slider">
                             <div className="keen-slider__slide number-slide1 ">
                                 <Link href="">
