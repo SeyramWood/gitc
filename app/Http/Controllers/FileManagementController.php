@@ -165,5 +165,33 @@ class FileManagementController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+
+        if (request()->user('sanctum')) {
+            $data['file'] = FileManagement::where('title', 'LIKE', "%{$request->title}%")->get();
+
+            //checking if request exit
+            if ($data) {
+                return response()->json([
+                    'data' => $data,
+                    'message' => "Record found",
+                    'code' => 200,
+                ], 200);
+            } else {
+                return response()->json([
+                    'message' => "No record found",
+                    'code' => 404,
+                ], 404);
+            }
+        } else {
+            return response()->json([
+                "message" => "Please Login First",
+                "code" => 403,
+
+            ], 403);
+        }
+    }
+
 
 }

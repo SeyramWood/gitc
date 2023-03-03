@@ -101,4 +101,50 @@ class EnquiryController extends Controller
             ],400);
         }
     }
+
+    public function search(Request $request)
+    {
+
+        if (request()->user('sanctum')) {
+            $data['enguiries'] = Enquiry::where('subject', 'LIKE', "%{$request->subject}%")->get();
+
+            //checking if request exit
+            if ($data) {
+                return response()->json([
+                    'data' => $data,
+                    'message' => "Record found",
+                    'code' => 200,
+                ], 200);
+            } else {
+                return response()->json([
+                    'message' => "No record found",
+                    'code' => 404,
+                ], 404);
+            }
+        } else {
+            return response()->json([
+                "message" => "Please Login First",
+                "code" => 403,
+
+            ], 403);
+        }
+    }
+
+
+    // incomplete end point
+    public function reply(Enquiry $enquiry){
+//            dd(\request()->all());
+        try {
+            $this->validate(request(), [
+                'message' => 'required',
+            ]);
+        } catch (ValidationException $e) {
+        }
+
+        Mail::to("info@gitc.gov.gh")
+            ->send(new EnquiryMail(request()->first_name,request()->last_name,request()->subject,request()->industry,request()->email,request()->phone,request()->company,request()->message));
+        return response()->json(array(
+            'message'=>"Message successfully sent. A representative will attend to you shortly !!!",
+        ));
+    }
 }
