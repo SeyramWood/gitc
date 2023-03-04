@@ -83,4 +83,9 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Resources');
     }
+
+     public function gallery()
+    {
+        return Inertia::render('Website/Gallery');
+    }
 }

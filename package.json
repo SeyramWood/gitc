@@ -24,11 +24,17 @@
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-react": "^0.8.1",
         "@n8tb1t/use-scroll-position": "^2.0.3",
+        "@react-pdf-viewer/core": "3.11.0",
+        "@react-pdf-viewer/get-file": "^3.11.0",
         "animate.css": "^4.1.1",
         "aos": "^2.3.4",
         "keen-slider": "^6.8.5",
+        "pdfjs-dist": "3.3.122",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-read-pdf": "^2.0.9",
+        "react-responsive-modal": "^6.4.1",
+        "worker-loader": "^3.0.8",
         "yet-another-react-lightbox": "^2.2.7"
     }
 }

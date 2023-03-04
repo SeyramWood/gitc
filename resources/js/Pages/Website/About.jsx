@@ -6,23 +6,34 @@ import Paragraph from "../../components/layouts/website/Paragraph";
 const About = () => {
     return (
         <WebsiteLayout page="about">
-            <main className="">
+            <div className="bg-white">
                 {/* Governing Board */}
-                <h2 className="my-[4rem] sm:text-[4rem] text-center text-red-600">
-                    Governing Board
-                </h2>
+                <div className="h-[15rem] ">
+                    <div className=" " >
+                        <img src="images/homePage/headings/GOVERNING BOARD.jpg" className=" object-contain mx-auto" alt="" />
+                        <div className="-translate-y-[13rem]">
+                            <div className="text-center mb-7">
+                                <h1 className=" mb-0 pb-0 text-[4rem] ">
+                                    Governing Board
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
                 <div className="sm:px-[8rem] mb-32">
                     {/* cards container */}
                     <div class="sm:grid grid-cols-3 gap-16 sm:m-0 m-4 ">
                         <div className="shadow-lg ">
                             <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
-                                    src="images/about/our_team/Dr. Nana Adu Gyamfi.jpg"
+                                    src="images/about/our_team/Dr. Prempeh.jpg"
                                     className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
                                 />
                             </div>
-                            <div className="p-4 cursor-pointer bg-slate-100">
+                            <div className="p-4 cursor-pointer ">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Dr. Edmumd Prempeh
@@ -130,12 +141,26 @@ const About = () => {
                 </div>
 
                 {/* team */}
-                <div className="mb-32  text-black sm:mx-20">
+                <div className="mb-32  sm:mx-20">
                     <div className="pb-[2rem]  text-center ">
-                        <h2 className="mb-0 pb-0 text-red-600 text-center sm:text-[4rem]">
+                        <div className="h-[15rem] ">
+                            <div className=" " >
+                                <img src="images/homePage/headings/OUR TEAM.jpg" className=" object-contain mx-auto" alt="" />
+                                <div className="-translate-y-[13rem]">
+                                    <div className="text-center mb-7">
+                                        <h1 className=" mb-0 pb-0 text-[4rem] ">
+                                            Our Team
+                                        </h1>
+                                        <p className="text-black sm:text-[16px] uppercase">Meet The Heads Of Departments</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {/* <h2 className="mb-0 pb-0 text-red-600 text-center sm:text-[4rem]">
                             Our Team
                         </h2>
-                        <p className="text-black uppercase">Meet The Heads Of Departments</p>
+                        <p className="text-black uppercase">Meet The Heads Of Departments</p> */}
                     </div>
                     <div className="p-4 gap-7 sm:flex">
                         <div className="sm:w-[25%] mx-2 mb-4 transition duration-700 ease-in-out shadow-lg hover:scale-110">
@@ -215,7 +240,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
         </WebsiteLayout>
     );
 };

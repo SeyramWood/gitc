@@ -169,160 +169,167 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="pb-28 px-2 sm:px-16">
-                    <div className="justify-center md:flex gap-6">
-                        <div
-                            className="sm:w-[25%]"
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom"
-                            data-aos-duration="700"
-                        >
-                            <div className="h-[45%] relative">
-                                <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className="text-center translate-y-[6rem]">
-                                        <Link
-                                            href="/services"
-                                            className="text-white"
-                                        >
-                                            View More
-                                        </Link>
-                                    </div>
-                                </div>
-                                <img
-                                    src="images/homePage/serviceOne.jpg"
-                                    className="w-full object-cover h-[15rem] "
-                                />
-                            </div>
+                <div className=" pb-28 px-2 sm:px-16 overflow-hidden" >
+                    <div className="pb-40" >
 
-                            <div className="my-2 ">
-                                <h2 className="py-5">Trade Remedies</h2>
-                                <p className="mb-3">
-                                    To ensure equality and fairness in the
-                                    application of measures affecting
-                                    international trade and the use of world
-                                    trade regulations.
-                                </p>
-                                <Link
-                                    href="/services"
-                                    className="text-primary hover:text-red-300"
-                                >
-                                    Read More . . .
-                                </Link>
-                            </div>
+                        <div className="h-[17rem] w-full" style={{ backgroundImage: "url('images/homePage/headings/SERVICES.jpg')", backgroundRepeat: "no-repeat", backgroundPositionX: "center", backgroundAttachment: "fixed" }}>
+                            <h1 className="text-center translate-y-[7rem] text-primary" >Services</h1>
                         </div>
-                        <div
-                            className="sm:w-[25%] "
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom"
-                            data-aos-duration="1000"
-                        >
-                            <div className="h-[45%] relative">
-                                <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className="text-center translate-y-[6rem]">
-                                        <Link
-                                            href="/service/dispute"
-                                            className="text-white"
-                                        >
-                                            View More
-                                        </Link>
+
+                        <div className="justify-center md:flex gap-6 sm:mt-13 ">
+                            <div
+                                className="sm:w-[25%]"
+                                data-aos="fade-up"
+                                data-aos-anchor-placement="center-bottom"
+                                data-aos-duration="700"
+                            >
+                                <div className="h-[45%] relative">
+                                    <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
+                                        <div className="text-center translate-y-[6rem]">
+                                            <Link
+                                                href="/services"
+                                                className="text-white"
+                                            >
+                                                View More
+                                            </Link>
+                                        </div>
                                     </div>
+                                    <img
+                                        src="images/homePage/serviceOne.jpg"
+                                        className="w-full object-cover h-[15rem] "
+                                    />
                                 </div>
-                                <img
-                                    src="images/homePage/serviceTwo.jpg"
-                                    className="w-full object-cover h-[15rem] "
-                                />
+
+                                <div className="my-2 ">
+                                    <h2 className="py-5">Trade Remedies</h2>
+                                    <p className="mb-3">
+                                        To ensure equality and fairness in the
+                                        application of measures affecting
+                                        international trade and the use of world
+                                        trade regulations.
+                                    </p>
+                                    <Link
+                                        href="/services"
+                                        className="text-primary hover:text-red-300"
+                                    >
+                                        Read More . . .
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="my-2 ">
-                                <h2 className="py-5 ">Dispute Settlement</h2>
-                                <p className="mb-3">
-                                    Providing actions to resolve issues arising
-                                    out of a member-state violating the rules
-                                    and regulationso f the World Trade
-                                    Organization.
-                                </p>
-                                <Link
-                                    href="/service/dispute"
-                                    className="text-primary hover:text-red-300"
-                                >
-                                    Read More . . .
-                                </Link>
-                            </div>
-                        </div>
-                        <div
-                            className="sm:w-[25%]  "
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom"
-                            data-aos-duration="2000"
-                        >
-                            <div className="h-[45%] relative">
-                                <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className="text-center translate-y-[6rem]">
-                                        <Link
-                                            href="/service/tariff"
-                                            className="text-white"
-                                        >
-                                            View More
-                                        </Link>
+                            <div
+                                className="sm:w-[25%] "
+                                data-aos="fade-up"
+                                data-aos-anchor-placement="center-bottom"
+                                data-aos-duration="1000"
+                            >
+                                <div className="h-[45%] relative">
+                                    <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
+                                        <div className="text-center translate-y-[6rem]">
+                                            <Link
+                                                href="/service/dispute"
+                                                className="text-white"
+                                            >
+                                                View More
+                                            </Link>
+                                        </div>
                                     </div>
+                                    <img
+                                        src="images/homePage/serviceTwo.jpg"
+                                        className="w-full object-cover h-[15rem] "
+                                    />
                                 </div>
-                                <img
-                                    src="images/homePage/serviceThree.jpg"
-                                    className="w-full object-cover h-[15rem] "
-                                />
+                                <div className="my-2 ">
+                                    <h2 className="py-5 ">Dispute Settlement</h2>
+                                    <p className="mb-3">
+                                        Providing actions to resolve issues arising
+                                        out of a member-state violating the rules
+                                        and regulationso f the World Trade
+                                        Organization.
+                                    </p>
+                                    <Link
+                                        href="/service/dispute"
+                                        className="text-primary hover:text-red-300"
+                                    >
+                                        Read More . . .
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="my-2 ">
-                                <h2 className="py-5">Tarrif Review</h2>
-                                <p className="mb-3">
-                                    Providing a review of customs duty that
-                                    affects the production and competitiveness
-                                    of goods in relation to the domestic
-                                    producer or domestic industry
-                                </p>
-                                <Link
-                                    href="/service/tariff"
-                                    className="text-primary hover:text-red-300 sm:pl-1"
-                                >
-                                    Read More . . .
-                                </Link>
-                            </div>
-                        </div>
-                        <div
-                            className="sm:w-[25%] "
-                            data-aos="fade-up"
-                            data-aos-anchor-placement="center-bottom"
-                            data-aos-duration="3000"
-                        >
-                            <div className="h-[45%] relative">
-                                <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                    <div className="text-center translate-y-[6rem]">
-                                        <Link
-                                            href="/service/research"
-                                            className="text-white"
-                                        >
-                                            View More
-                                        </Link>
+                            <div
+                                className="sm:w-[25%]  "
+                                data-aos="fade-up"
+                                data-aos-anchor-placement="center-bottom"
+                                data-aos-duration="2000"
+                            >
+                                <div className="h-[45%] relative">
+                                    <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
+                                        <div className="text-center translate-y-[6rem]">
+                                            <Link
+                                                href="/service/tariff"
+                                                className="text-white"
+                                            >
+                                                View More
+                                            </Link>
+                                        </div>
                                     </div>
+                                    <img
+                                        src="images/homePage/serviceThree.jpg"
+                                        className="w-full object-cover h-[15rem] "
+                                    />
                                 </div>
-                                <img
-                                    src="images/homePage/serviceFour.jpg"
-                                    className="w-full object-cover h-[15rem] "
-                                />
+                                <div className="my-2 ">
+                                    <h2 className="py-5">Tarrif Review</h2>
+                                    <p className="mb-3">
+                                        Providing a review of customs duty that
+                                        affects the production and competitiveness
+                                        of goods in relation to the domestic
+                                        producer or domestic industry
+                                    </p>
+                                    <Link
+                                        href="/service/tariff"
+                                        className="text-primary hover:text-red-300 sm:pl-1"
+                                    >
+                                        Read More . . .
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="my-2 ">
-                                <h2 className="py-4">Research</h2>
-                                <p className="mb-3">
-                                    The Commission is to study, identify, and
-                                    recommend to the Minister of Trade and
-                                    Industry tariff levels for specific sectors
-                                    of the economy with due regard to the
-                                    effective rate of protection.
-                                </p>
-                                <Link
-                                    href="/service/research"
-                                    className="text-primary hover:text-red-300"
-                                >
-                                    Read More . . .
-                                </Link>
+                            <div
+                                className="sm:w-[25%] "
+                                data-aos="fade-up"
+                                data-aos-anchor-placement="center-bottom"
+                                data-aos-duration="3000"
+                            >
+                                <div className="h-[45%] relative">
+                                    <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
+                                        <div className="text-center translate-y-[6rem]">
+                                            <Link
+                                                href="/service/research"
+                                                className="text-white"
+                                            >
+                                                View More
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="images/homePage/serviceFour.jpg"
+                                        className="w-full object-cover h-[15rem] "
+                                    />
+                                </div>
+                                <div className="my-2 ">
+                                    <h2 className="py-4">Research</h2>
+                                    <p className="mb-3">
+                                        The Commission is to study, identify, and
+                                        recommend to the Minister of Trade and
+                                        Industry tariff levels for specific sectors
+                                        of the economy with due regard to the
+                                        effective rate of protection.
+                                    </p>
+                                    <Link
+                                        href="/service/research"
+                                        className="text-primary hover:text-red-300"
+                                    >
+                                        Read More . . .
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -377,14 +384,14 @@ const Index = () => {
                                             Tunisia, Mauritius, and Madagascar.
                                         </p>
                                         <div className="px-4">
-                                           <Link href="/story">
-                                                <ButtonOutline className="sm:w-[14rem]  my-12 border-primary/40 text-black hover:border-primary">
-                                                Read Our Story
-                                            </ButtonOutline>
-                                        </Link> 
+                                            <Link href="/story">
+                                                <ButtonOutline className="sm:w-[14rem] bg-primary my-12 border-primary/40 text-white hover:bg-red-400/80 hover:text-white">
+                                                    Read Our Story
+                                                </ButtonOutline>
+                                            </Link>
                                         </div>
 
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -426,7 +433,7 @@ const Index = () => {
                                         </ul>
 
                                         <Link href="/story">
-                                            <ButtonOutline className="sm:w-[14rem] my-12 border-white/40 hover:border-white ">
+                                            <ButtonOutline className="sm:w-[14rem] my-12 bg-white text-primary border-white/40 hover:bg-red-100/40 hover:text-white ">
                                                 Read Our Story
                                             </ButtonOutline>
                                         </Link>
@@ -575,16 +582,19 @@ const Index = () => {
                 {/* contact section*/}
                 <div className="w-full px-2 text-center md:flex">
                     <div className="md:w-[50%] px-5 ">
-                        <div className="pt-10 mx-auto ">
-                            <h4 className="font-bold text-red-600 custom">
-                                Connect with us
-                            </h4>
-                            <p className="text-[1.3rem]  pt-8">
-                                Please fill out the form and press the submit
-                                button. We will get back to you with 1-2
-                                business days.
-                            </p>
+                        <div className="sm:px-16">
+                            <div className="pt-10 mx-auto ">
+                                <h4 className="font-bold text-red-600 custom ">
+                                    Connect with us
+                                </h4>
+                                <p className="text-[1.3rem] pt-8">
+                                    Please fill out the form and press the submit
+                                    button. We will get back to you with 1-2
+                                    business days.
+                                </p>
+                            </div>
                         </div>
+
                     </div>
                     <div className="md:w-[50%]  ">
                         <div className="">

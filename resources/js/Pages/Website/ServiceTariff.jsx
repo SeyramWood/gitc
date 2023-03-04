@@ -7,18 +7,21 @@ import ServicesNav from "../../components/layouts/website/ServicesNav";
 function ServiceTarrif() {
     return ( 
         <WebsiteLayout page="service">
-            {/* <ServiceLinks /> */}
             <div className="bg-white">
-                <div className="sm:flex px-4 pt-16">
+                <div className="sm:flex px-4 pt-16 pb-16">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
+                        <div className="h-[15rem]">
+                            <div className=" " >
+                                <img src="/../images/homePage/headings/SERVICE PAGE.jpg" className=" object-contain" alt="" />
+                                <div className="">
+                                    <h1 className="text-center -translate-y-[14rem] text-red-200/ " >Services</h1>
+                                </div>
+                            </div>
+
+                        </div>
                         <div className="text-black px-6">
                             <h2 className="text-primary text-[4rem] pb-0 ">Tariff Review</h2>
-                            {/* <p className="text-xl"> Subsidy & Countervailing Duties;
-                                Anti-Dumping Duties and Safeguard Measures
-                            </p> */}
-
-                            {/* <h2 className="text-red-500 text-4xl font-bold mt-20"> Tariff Review</h2> */}
                             <div className=" my-10 ">
                                 <img src="/../images/service.jpg" className="overflow-hidden w-full h-[28rem]" alt="" />
                                 {/* <img src="i" className="overflow-hidden" alt="image" /> */}

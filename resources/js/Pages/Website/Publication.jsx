@@ -90,9 +90,22 @@ const Publication = () => {
     return (
         <WebsiteLayout page="publication">
             <div className="bg-white ">
+                <div className="h-[15rem]">
+                    <div className="pl-12" >
+                        <img src="images/homePage/headings/PUBLICATIONS.jpg" className=" object-contain" alt="" />
+                        <div className="-translate-y-[13rem]">
+                            <div className="text-center mb-7">
+                                <h1 className=" mb-0 pb-0 text-[4rem] ">
+                                    Publications
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
                 <div className="text-center ">
-                    <h2 className="py-16 sm:text-[3rem] text-center text-red-600">
-                        Press Releases And Speeches
+                    <h2 className="pb-16 sm:text-[3rem] text-center text-red-600">
+                        Press Releases and Speeches
                     </h2>
                 </div>
 
@@ -109,7 +122,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block text-center font-bold text-white uppercase">
                                                 <div>June</div>
                                                 <div>10</div>
                                                 <div>2022</div>
@@ -117,7 +130,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase text-primary font-bold">
                                             <Link href="">
                                                 GITC dismisses petition to ban
                                                 iron, steels import
@@ -141,7 +154,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block font-bold text-center text-white uppercase">
                                                 <div>March</div>
                                                 <div>2</div>
                                                 <div>2021</div>
@@ -149,7 +162,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase font-bold text-primary">
                                             <Link href="">
                                                 Interim Ghana-UK Trade
                                                 Partnership Agreement
@@ -173,7 +186,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block font-bold text-center text-white uppercase">
                                                 <div>Nov</div>
                                                 <div>7</div>
                                                 <div>2019</div>
@@ -181,7 +194,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase font-bold text-primary">
                                             <Link href="">
                                                 Notice of Initiation and Request
                                                 for Information Aluminium Coils
@@ -205,7 +218,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block font-bold text-center text-white uppercase">
                                                 <div>Nov</div>
                                                 <div>7</div>
                                                 <div>2019</div>
@@ -213,7 +226,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase font-bold text-primary">
                                             <Link href="">
                                                 Notice of Initiation and Request
                                                 for Information Aluminium Coils
