@@ -54,14 +54,14 @@ function Header() {
             </header>
             <section className="justify-center w-full h-[4.5rem] md:flex z-10 hidden justify-items-center bg-white">
                 <div className=" left-0 h-[100%] items-center md:flex justify-between w-[85%]">
-                    <div>
+                    <Link href="/">
                         <img
                             src="/images/logo.png"
                             alt=""
                             srcSet=""
                             className="h-[4.5rem]"
                         />
-                    </div>
+                    </Link>
                     <div>
                         <Link
                             href="/faq"

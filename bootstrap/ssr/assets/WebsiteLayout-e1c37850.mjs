@@ -1,13 +1,12 @@
 import { a as jsxs, j as jsx, F as Fragment } from "../ssr.mjs";
 import React from "react";
-import { SlArrowLeft, SlArrowRight, SlClock, SlCallIn, SlEnvelopeOpen, SlLocationPin, SlPaperPlane, SlArrowDown, SlMagnifier } from "react-icons/sl";
+import { SlArrowLeft, SlArrowRight, SlPaperPlane, SlCallIn, SlEnvelopeOpen, SlClock, SlLocationPin, SlArrowDown, SlMagnifier } from "react-icons/sl";
 import { Link } from "@inertiajs/inertia-react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { RxCross1 } from "react-icons/rx";
 const animate = "";
 const banner = "";
-const main = "";
-const Carousel = ({ children, styles }) => {
+const Carousel = ({ children }) => {
   const [index, setIndex] = React.useState(0);
   const length = children.length;
   const handlePrevious = () => {
@@ -24,7 +23,7 @@ const Carousel = ({ children, styles }) => {
     }, 12e3);
     return () => clearInterval(interval);
   }, [index]);
-  return /* @__PURE__ */ jsxs("div", { className: "carousel__container h-[100vh]", style: styles, children: [
+  return /* @__PURE__ */ jsxs("div", { className: "carousel__container h-[inherit]", children: [
     /* @__PURE__ */ jsx(Fragment, { children: React.Children.map(children, (child, i) => {
       return React.cloneElement(child, {
         status: i === index ? "active" : "inactive"
@@ -46,7 +45,9 @@ const Carousel = ({ children, styles }) => {
 const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
   const styles = {
     animation: "growOut 18s ease-out infinite backwards",
-    backgroundImage: `linear-gradient(to bottom, rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074),rgba(17, 17, 17, 0.074)), url(${src})`
+    backgroundImage: `linear-gradient(to bottom,
+            rgba(17, 17, 17, 0.775),
+            rgba(17, 17, 17, 0.775)), url(${src})`
   };
   return /* @__PURE__ */ jsx("div", { className: `carousel__container__item ${status}`, children: /* @__PURE__ */ jsxs("div", { className: "carousel__container__item__wrapper", children: [
     /* @__PURE__ */ jsx(
@@ -56,7 +57,7 @@ const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
         style: styles
       }
     ),
-    /* @__PURE__ */ jsxs("div", { className: "carousel__container__item__wrapper__content w-[85%] mt-[5rem]", children: [
+    /* @__PURE__ */ jsxs("div", { className: "carousel__container__item__wrapper__content w-[85%] mt-[2rem]", children: [
       /* @__PURE__ */ jsx(
         "h1",
         {
@@ -67,52 +68,23 @@ const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
       /* @__PURE__ */ jsx("div", { className: "w-[60%]", children: /* @__PURE__ */ jsx(
         "p",
         {
-          className: `text-xl text-white ${status === "active" ? "animate__animated animate__fadeInUp animate__delay-1s" : ""}`,
+          className: ` text-3xl text-white font-light ${status === "active" ? "animate__animated animate__fadeInUp animate__delay-1s" : ""}`,
           children: paragraph
         }
       ) }),
-      /* @__PURE__ */ jsx("section", { className: "w-[100%]  mt-12 banner__buttons", children: buttons.map((btn, index) => /* @__PURE__ */ jsx(React.Fragment, { children: btn }, index.toString())) })
+      /* @__PURE__ */ jsx("section", { className: "w-[100%]  mt-14 banner__buttons", children: buttons.map((btn, index) => /* @__PURE__ */ jsx(
+        "button",
+        {
+          className: `banner__buttons__btn banner__buttons--transparent ${status === "active" ? "animate__animated animate__fadeInUp animate__delay-2s" : ""}`,
+          children: btn
+        },
+        index.toString()
+      )) })
     ] })
   ] }) });
 };
 const Banner = ({ page }) => {
-  return /* @__PURE__ */ jsxs("section", { className: "w-full", children: [
-    /* @__PURE__ */ jsxs("header", { className: "w-full h-[4rem] bg-white hidden md:flex justify-between items-center px-web-l text-secondary", children: [
-      /* @__PURE__ */ jsxs("ul", { className: "flex self-stretch", children: [
-        /* @__PURE__ */ jsxs("li", { className: "flex items-center pr-4 mr-5 text-center border-r-2 border-gray-100", children: [
-          /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlClock, {}) }),
-          /* @__PURE__ */ jsx("span", { className: "", children: "Mon-Fri 08:00 - 17:00" })
-        ] }),
-        /* @__PURE__ */ jsx("li", { className: "flex items-center text-center hover:text-primary", children: /* @__PURE__ */ jsxs(
-          "a",
-          {
-            href: "tel:+233302960298",
-            className: "flex items-center text-center",
-            children: [
-              /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlCallIn, {}) }),
-              /* @__PURE__ */ jsx("span", { children: "+233(0) 30 296 0298" })
-            ]
-          }
-        ) })
-      ] }),
-      /* @__PURE__ */ jsxs("ul", { className: "flex self-stretch", children: [
-        /* @__PURE__ */ jsx("li", { className: "pr-4 border-r-2 border-gray-100 hover:text-primary", children: /* @__PURE__ */ jsxs(
-          "a",
-          {
-            href: "mailto:info@gitc.gov.gh",
-            className: "h-[100%] flex items-center text-center",
-            children: [
-              /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlEnvelopeOpen, {}) }),
-              /* @__PURE__ */ jsx("span", { children: "info@gitc.gov.gh" })
-            ]
-          }
-        ) }),
-        /* @__PURE__ */ jsxs("li", { className: "flex items-center ml-5 text-center", children: [
-          /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlLocationPin, {}) }),
-          /* @__PURE__ */ jsx("span", { children: "GL-040-2630" })
-        ] })
-      ] })
-    ] }),
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
     page === "home" && /* @__PURE__ */ jsx(BannerHome, {}),
     page === "about" && /* @__PURE__ */ jsx(BannerAbout, {}),
     page === "service" && /* @__PURE__ */ jsx(BannerServices, {}),
@@ -131,10 +103,7 @@ const BannerHome = () => {
         h1: "Subsidy & countervailing",
         p: `We provide action where imposed subsidy is specified an causes material injury to a domestic industry.`
       },
-      buttons: [
-        /* @__PURE__ */ jsx("button", { className: "banner__buttons__btn banner__buttons--transparent", children: "Learn More" }),
-        /* @__PURE__ */ jsx("button", { className: "banner__buttons__btn banner__buttons--solid", children: "Contact Us" })
-      ]
+      buttons: ["Learn More"]
     },
     {
       image: "/images/homePage/storyTwo.jpg",
@@ -142,9 +111,7 @@ const BannerHome = () => {
         h1: "Safeguard Measures",
         p: `We provide measures that ensure domestic producers in Ghana are not adversely  affected by the influx of imports.`
       },
-      buttons: [
-        /* @__PURE__ */ jsx("button", { className: "banner__buttons__btn banner__buttons--solid", children: "Contact Us" })
-      ]
+      buttons: ["Learn More"]
     },
     {
       image: "/images/homePage/serviceThree.jpg",
@@ -152,12 +119,10 @@ const BannerHome = () => {
         h1: "Anti-Dumping",
         p: `We provide actions that counteract the import dumping of goods in Ghana.`
       },
-      buttons: [
-        /* @__PURE__ */ jsx("button", { className: "banner__buttons__btn banner__buttons--solid", children: "Contact Us" })
-      ]
+      buttons: ["Learn More"]
     }
   ];
-  return /* @__PURE__ */ jsx("section", { className: "w-full h-[calc(100vh)] overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "h-full carousel-wrapper", children: /* @__PURE__ */ jsx(Carousel, { children: sliders.map((slider, index) => /* @__PURE__ */ jsx(
+  return /* @__PURE__ */ jsx("section", { className: "w-full h-[var(--banner-height)] overflow-hidden", children: /* @__PURE__ */ jsx("div", { className: "w-full h-full carousel-wrapper", children: /* @__PURE__ */ jsx(Carousel, { children: sliders.map((slider, index) => /* @__PURE__ */ jsx(
     CarouselItem,
     {
       src: slider.image,
@@ -203,40 +168,38 @@ const Faq = () => {
 };
 const Footer = () => {
   return /* @__PURE__ */ jsxs("footer", { className: "w-[100%] text-white", children: [
-    /* @__PURE__ */ jsxs("nav", { className: "w-[100%] h-[auto] lg:h-[80vh] flex flex-col md:flex-row md:flex-wrap bg-footer px-web-s lg:px-web-l justify-start items-start py-[5rem]", children: [
-      /* @__PURE__ */ jsxs("section", { className: "w-[100%] md:w-[50%] lg:w-[25%]", children: [
-        /* @__PURE__ */ jsx("div", { className: "w-[100%] mb-web-xs md:mb-web-l md:mt-[-4rem]", children: /* @__PURE__ */ jsx("a", { href: "/", children: /* @__PURE__ */ jsx(
-          "img",
-          {
-            src: "images/logo.png",
-            alt: "",
-            srcSet: "",
-            className: "w-[8rem] mt-9"
-          }
-        ) }) }),
+    /* @__PURE__ */ jsxs("nav", { className: "w-[100%] h-[auto] lg:h-[60vh] flex flex-col md:flex-row md:flex-wrap bg-footer px-web-s lg:px-web-l justify-start items-start py-[3rem]", children: [
+      /* @__PURE__ */ jsxs("section", { className: "w-[100%] md:w-[50%] lg:w-[30%] mt-web-l pr-2", children: [
+        /* @__PURE__ */ jsx("div", { className: "w-[100%] mb-web-xs md:mb-web-l", children: /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold capitalize", children: "Contacts" }) }),
         /* @__PURE__ */ jsxs("ul", { className: "text-[1rem]", children: [
           /* @__PURE__ */ jsxs("li", { className: "flex items-center mb-3 text-center", children: [
-            /* @__PURE__ */ jsx("span", { className: "mr-3", children: /* @__PURE__ */ jsx(SlPaperPlane, {}) }),
+            /* @__PURE__ */ jsx("span", { className: "mr-3 opacity-60", children: /* @__PURE__ */ jsx(SlPaperPlane, {}) }),
             /* @__PURE__ */ jsxs(
               "address",
               {
                 className: "pl-2 font-normal text-left font-",
                 style: { fontStyle: "normal" },
                 children: [
-                  /* @__PURE__ */ jsx("p", { className: "text-white", children: "2nd Floor (West Wing)," }),
-                  /* @__PURE__ */ jsx("p", { className: "text-white", children: "East Cantonments near US Embassy, 5th Link Road," }),
-                  /* @__PURE__ */ jsx("p", { className: "text-white", children: "Accra" })
+                  /* @__PURE__ */ jsx("p", { className: "text-white opacity-60", children: "2nd Floor (West Wing)," }),
+                  /* @__PURE__ */ jsx("p", { className: "text-white opacity-60", children: "East Cantonments near US Embassy, 5th Link Road, Accra." })
                 ]
               }
             )
           ] }),
           /* @__PURE__ */ jsxs("li", { className: "flex items-center mb-3 text-center", children: [
-            /* @__PURE__ */ jsx("span", { className: "mr-3", children: /* @__PURE__ */ jsx(SlCallIn, {}) }),
-            /* @__PURE__ */ jsx("a", { href: "tel:+233302960298", className: "", children: /* @__PURE__ */ jsx("span", { children: "+233(0) 30 296 0298" }) })
+            /* @__PURE__ */ jsx("span", { className: "mr-3 opacity-60", children: /* @__PURE__ */ jsx(SlCallIn, {}) }),
+            /* @__PURE__ */ jsx("a", { href: "tel:+233302960298", className: "opacity-60", children: /* @__PURE__ */ jsx("span", { children: "+233(0) 30 296 0298" }) })
           ] }),
           /* @__PURE__ */ jsxs("li", { className: "flex items-center mb-3 text-center", children: [
-            /* @__PURE__ */ jsx("span", { className: "mr-3", children: /* @__PURE__ */ jsx(SlEnvelopeOpen, {}) }),
-            /* @__PURE__ */ jsx("a", { href: "mailto:info@gitc.gov.gh", className: "", children: /* @__PURE__ */ jsx("span", { children: "info@gitc.gov.gh" }) })
+            /* @__PURE__ */ jsx("span", { className: "mr-3 opacity-60", children: /* @__PURE__ */ jsx(SlEnvelopeOpen, {}) }),
+            /* @__PURE__ */ jsx(
+              "a",
+              {
+                href: "mailto:info@gitc.gov.gh",
+                className: "opacity-60",
+                children: /* @__PURE__ */ jsx("span", { children: "info@gitc.gov.gh" })
+              }
+            )
           ] }),
           /* @__PURE__ */ jsxs("li", { className: "flex items-center mb-3 text-center", children: [
             /* @__PURE__ */ jsx("span", { className: "mr-3", children: /* @__PURE__ */ jsx(
@@ -248,28 +211,28 @@ const Footer = () => {
                 className: "w-[1.5rem]"
               }
             ) }),
-            /* @__PURE__ */ jsx("span", { children: "GL-040-2630" })
+            /* @__PURE__ */ jsx("span", { className: "opacity-60", children: "GL-040-2630" })
           ] })
         ] })
       ] }),
-      /* @__PURE__ */ jsxs("section", { className: "w-[100%] md:w-[50%] lg:w-[25%] mt-web-l", children: [
-        /* @__PURE__ */ jsx("div", { className: "w-[100%] mb-web-xs md:mb-web-xl", children: /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold capitalize", children: "Useful Links" }) }),
-        /* @__PURE__ */ jsxs("ul", { className: "w-[100%] text-[1rem]", children: [
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/team", children: "About us" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/story", children: "Our team" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/services", children: "Our service" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/resources", children: "Resources" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/publications", children: "Publications" }) })
+      /* @__PURE__ */ jsxs("section", { className: "w-[100%] md:w-[50%] lg:w-[20%] mt-web-l", children: [
+        /* @__PURE__ */ jsx("div", { className: "w-[100%] mb-web-xs md:mb-web-l", children: /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold capitalize", children: "Useful Links" }) }),
+        /* @__PURE__ */ jsxs("ul", { className: "w-[100%] text-[1rem] opacity-60", children: [
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/team", children: "About us" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/story", children: "Our team" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/services", children: "Our service" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/resources", children: "Resources" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/publications", children: "Publications" }) })
         ] })
       ] }),
       /* @__PURE__ */ jsxs("section", { className: "w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l", children: [
-        /* @__PURE__ */ jsx("div", { className: "w-[100%] mb-web-xs md:mb-web-xl", children: /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold capitalize", children: "External Links" }) }),
-        /* @__PURE__ */ jsxs("ul", { className: "w-[100%] text-[1rem]", children: [
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/about", children: "Ministry of Trade and Industry" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/team", children: "Ghana Free Zone Authority" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/services", children: "Ghana Revenue Authority" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/resources", children: "Ghana Standard Authority" }) }),
-          /* @__PURE__ */ jsx("li", { className: "mb-2 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/publications", children: "World Trade Center" }) })
+        /* @__PURE__ */ jsx("div", { className: "w-[100%] mb-web-xs md:mb-web-l", children: /* @__PURE__ */ jsx("h5", { className: "text-xl font-bold capitalize", children: "External Links" }) }),
+        /* @__PURE__ */ jsxs("ul", { className: "w-[100%] text-[1rem] opacity-60", children: [
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/about", children: "Ministry of Trade and Industry" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/team", children: "Ghana Free Zone Authority" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/services", children: "Ghana Revenue Authority" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/resources", children: "Ghana Standard Authority" }) }),
+          /* @__PURE__ */ jsx("li", { className: "mb-3 text-[1rem] capitalize transform hover:text-primary", children: /* @__PURE__ */ jsx(Link, { href: "/publications", children: "World Trade Center" }) })
         ] })
       ] }),
       /* @__PURE__ */ jsxs("section", { className: "w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l", children: [
@@ -310,13 +273,89 @@ const Footer = () => {
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ jsx("section", { className: "w-[100%] h-[5rem] bg-tertiary flex items-center text-web-s md:text-text-[1rem]  px-web-xs lg:px-web-l", children: /* @__PURE__ */ jsxs("strong", { children: [
+    /* @__PURE__ */ jsx("section", { className: "w-[100%] h-[5rem] bg-tertiary flex items-center text-web-xs md:text-text-[1rem]  px-web-xs lg:px-web-l", children: /* @__PURE__ */ jsxs("p", { className: "text-white opacity-60", children: [
       "©Copyright ",
       new Date().getUTCFullYear(),
       ", All Rights Reserved, Ghana International Trade Commission."
     ] }) })
   ] });
 };
+let dateOptions = {
+  weekday: "long",
+  year: "numeric",
+  month: "short",
+  day: "numeric"
+  // hour: "numeric",
+  // minute: "numeric",
+  // second: "numeric",
+};
+function formatDateTimeShort(string) {
+  const date = string ? new Date(string) : void 0;
+  return (date == null ? void 0 : date.toLocaleDateString("en-GH", dateOptions)) || "";
+}
+function getDateTimeShort() {
+  return formatDateTimeShort(new Date().toJSON());
+}
+function Header() {
+  return /* @__PURE__ */ jsxs(Fragment, { children: [
+    /* @__PURE__ */ jsxs("header", { className: "w-full h-[3.5rem] bg-white hidden md:flex justify-between items-center px-web-l text-secondary", children: [
+      /* @__PURE__ */ jsxs("ul", { className: "flex self-stretch", children: [
+        /* @__PURE__ */ jsxs("li", { className: "flex items-center pr-4 mr-5 text-center border-r-2 border-gray-100", children: [
+          /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlClock, {}) }),
+          /* @__PURE__ */ jsx("span", { className: "", children: getDateTimeShort() })
+        ] }),
+        /* @__PURE__ */ jsx("li", { className: "flex items-center text-center hover:text-primary", children: /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: "tel:+233302960298",
+            className: "flex items-center text-center",
+            children: [
+              /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlCallIn, {}) }),
+              /* @__PURE__ */ jsx("span", { children: "+233(0) 30 296 0298" })
+            ]
+          }
+        ) })
+      ] }),
+      /* @__PURE__ */ jsxs("ul", { className: "flex self-stretch", children: [
+        /* @__PURE__ */ jsx("li", { className: "pr-4 border-r-2 border-gray-100 hover:text-primary", children: /* @__PURE__ */ jsxs(
+          "a",
+          {
+            href: "mailto:info@gitc.gov.gh",
+            className: "h-[100%] flex items-center text-center",
+            children: [
+              /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlEnvelopeOpen, {}) }),
+              /* @__PURE__ */ jsx("span", { children: "info@gitc.gov.gh" })
+            ]
+          }
+        ) }),
+        /* @__PURE__ */ jsxs("li", { className: "flex items-center ml-5 text-center", children: [
+          /* @__PURE__ */ jsx("span", { className: "mr-2", children: /* @__PURE__ */ jsx(SlLocationPin, {}) }),
+          /* @__PURE__ */ jsx("span", { children: "GL-040-2630" })
+        ] })
+      ] })
+    ] }),
+    /* @__PURE__ */ jsx("section", { className: "justify-center w-full h-[4.5rem] md:flex z-10 hidden justify-items-center bg-white", children: /* @__PURE__ */ jsxs("div", { className: " left-0 h-[100%] items-center md:flex justify-between w-[85%]", children: [
+      /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
+        "img",
+        {
+          src: "/images/logo.png",
+          alt: "",
+          srcSet: "",
+          className: "h-[4.5rem]"
+        }
+      ) }),
+      /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
+        Link,
+        {
+          href: "/faq",
+          as: "button",
+          className: `block  py-2 w-[6rem] rounded-md text-white text-bold text-lg bg-primary`,
+          children: "FAQ"
+        }
+      ) })
+    ] }) })
+  ] });
+}
 const navigation = "";
 const Navigation = () => {
   const [searchToggle, setSearchToggle] = React.useState(false);
@@ -339,7 +378,7 @@ const Navigation = () => {
         transform: isSticky ? "none" : "translate(100)",
         transformOrigin: "center",
         borderRadius: `${isSticky ? "0" : ".2rem"}`,
-        backgroundColor: `${isSticky ? "#F9443E" : "rgba(249, 68, 62, 0.637)"}`
+        backgroundColor: `${isSticky ? "#F90004" : "rgba(250, 0, 4, 0.899)"}`
       };
       const shouldBeStyle = {
         position: isSticky ? "sticky" : "absolute",
@@ -423,26 +462,6 @@ const Navigation = () => {
         ]
       }
     ),
-    /* @__PURE__ */ jsx("section", { className: "absolute justify-center w-full h-[4rem] md:flex top-[5rem] z-10 hidden justify-items-center", children: /* @__PURE__ */ jsxs("div", { className: " left-0 h-[100%] items-center md:flex justify-between w-[85%]", children: [
-      /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
-        "img",
-        {
-          src: "/images/logo.png",
-          alt: "",
-          srcSet: "",
-          className: "h-[6rem]"
-        }
-      ) }),
-      /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx(
-        Link,
-        {
-          href: "/faq",
-          as: "button",
-          className: `block  py-2 w-[6rem] rounded-md text-white text-bold text-lg bg-primary`,
-          children: "FAQ"
-        }
-      ) })
-    ] }) }),
     /* @__PURE__ */ jsxs(
       "section",
       {
@@ -455,7 +474,7 @@ const Navigation = () => {
               className: "w-[85%] h-[100%] text-white md:px-web-l flex justify-between items-center rounded-sm bg-primary-light shadow-md",
               style: { ...navStyle },
               children: [
-                /* @__PURE__ */ jsxs("ul", { className: "flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-70 text-lg font-bold relative navigation", children: [
+                /* @__PURE__ */ jsxs("ul", { className: "flex items-center justify-start h-full [&>li:not(:last-child)]:pr-8 [&>li>a]:opacity-85 text-lg font-bold relative navigation", children: [
                   /* @__PURE__ */ jsx("li", { className: "[&:hover>a]:opacity-100", children: /* @__PURE__ */ jsx(Link, { href: "/", children: "Home" }) }),
                   /* @__PURE__ */ jsxs("li", { className: "relative [&:hover>a]:opacity-100", children: [
                     /* @__PURE__ */ jsxs(Link, { href: "/about", children: [
@@ -527,7 +546,7 @@ const Navigation = () => {
                     )
                   ] })
                 ] }),
-                /* @__PURE__ */ jsx("section", { className: "search__overlay__dropdown", children: "dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdowndropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown dropdown" })
+                /* @__PURE__ */ jsx("section", { className: "search__overlay__dropdown", children: "Nothing found for your search!" })
               ] })
             }
           )
@@ -538,6 +557,7 @@ const Navigation = () => {
 };
 const WebsiteLayout = ({ children, page }) => {
   return /* @__PURE__ */ jsxs("main", { className: "w-full", children: [
+    /* @__PURE__ */ jsx(Header, {}),
     /* @__PURE__ */ jsx(Navigation, {}),
     /* @__PURE__ */ jsx(Banner, { page }),
     /* @__PURE__ */ jsx("main", { children }),
