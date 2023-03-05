@@ -21,8 +21,9 @@ import 'react-responsive-modal/styles.css';
 
 function Resources() {
     // modal
-    const [open1, setOpen1] = useState(false);
+    const [open, setOpen] = useState(false);
     const [open2, setOpen2] = useState(false);
+    const [modalItem,setItem]=useState([]);
 
 
     // pdf viewer
@@ -30,12 +31,13 @@ function Resources() {
     const { DownloadButton } = getFilePluginInstance;
     return (
 
-        <WebsiteLayout page="service" >
-            {data.map((item, index) => (
+        <WebsiteLayout page="resource" >
+            {/* {data.map((item, index) => (
                 <h1 key={index}>
-                    {/* {item.nameFirst} */}
+                    {item.pdf}
+                   
                 </h1>
-            ))}
+            ))} */}
 
             <div className="bg-white">
                 {/* files */}
@@ -65,108 +67,185 @@ function Resources() {
                                 </span>
                             </label>
 
-                            <div className="content bg-white overflow-hidden">
-                                <div className="grid grid-cols-1 p-6 gap-5  pb-20">
-                                    <div className="px-4 sm:flex ">
+                            <div className="content bg-white overflow-auto">
+                                <div className="grid grid-cols-1 p-6 pb-20">
+                                    {/* <div >
+                                        <div className="px-4 sm:flex cursor-pointer ">
 
-                                        <div className="sm:flex py-5">
-                                            <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                            <div className="pt-2">
-                                                <p>Name of File</p>
-                                                <button className="button rounded-lg border px-2 cursor-pointer duration-500 ease-in-out hover:scale-110" onClick={() => setOpen1(true)}>
-                                                    Read
-                                                </button>
-                                                <Modal classNames="p-20" open={open1} onClose={() => setOpen1(false)} center>
+                                            <div className="sm:flex py-5">
+                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                                <div className="pt-2">
                                                     <div className="">
-                                                        <div
-                                                            className="rpv-core__viewer pt-20"
-                                                            style={{
-                                                                border: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                display: 'flex',
-                                                                flexDirection: 'column',
-                                                                height: '100%',
-                                                            }}
-                                                        >
+                                                        <p className="">hh</p>
+                                                    </div>
+                                                    <div className="w-[30%] pt-2">
+                                                        <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
+                                                            onClick={() => setOpen(true)}>
+                                                            Read
+                                                        </button>
+                                                    </div>
+                                                    <Modal key="index" classNames="p-20" open={open} onClose={() => setOpen(false)} center>
+                                                        <div className="" >
                                                             <div
+                                                                className="rpv-core__viewer pt-20"
                                                                 style={{
-                                                                    alignItems: 'center',
-                                                                    backgroundColor: '#eeeeee',
-                                                                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                    border: '1px solid rgba(0, 0, 0, 0.3)',
                                                                     display: 'flex',
-                                                                    padding: '4px',
+                                                                    flexDirection: 'column',
+                                                                    height: '100%',
                                                                 }}
                                                             >
-                                                                <DownloadButton />
-                                                            </div>
-                                                            <div
-                                                                style={{
-                                                                    flex: 1,
-                                                                    overflow: 'hidden',
-                                                                }}
-                                                            >
-                                                                <div className="w-[40rem] ">
-                                                                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                                        <Viewer fileUrl="images\3.pdf" plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
-                                                                    </Worker>;
+                                                                <div
+                                                                    style={{
+                                                                        alignItems: 'center',
+                                                                        backgroundColor: '#eeeeee',
+                                                                        borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                        display: 'flex',
+                                                                        padding: '4px',
+                                                                    }}
+                                                                >
+                                                                    <DownloadButton />
+                                                                </div>
+                                                                <div
+                                                                    style={{
+                                                                        flex: 1,
+                                                                        overflow: 'hidden',
+                                                                    }}
+                                                                >
+                                                                    <div className="w-[40rem] ">
+                                                                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                                                            <Viewer fileUrl="images/11.pdf" plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
+                                                                        </Worker>;
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </Modal>
+                                                    </Modal>
+                                                </div>
                                             </div>
+
                                         </div>
-
                                     </div>
-                                    <div className="px-4 sm:flex cursor-pointer ">
+                                    <div >
+                                        <div className="px-4 sm:flex cursor-pointer ">
 
-                                        <div className="sm:flex py-5">
-                                            <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                            <div className="pt-2">
-                                                <p>Name of File</p>
-                                                <button className="button rounded-lg border px-2 cursor-pointer duration-500 ease-in-out hover:scale-110" onClick={() => setOpen1(true)}>
-                                                    Read
-                                                </button>
-                                                <Modal classNames="p-20" open={open1} onClose={() => setOpen1(false)} center>
+                                            <div className="sm:flex py-5">
+                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                                <div className="pt-2">
                                                     <div className="">
-                                                        <div
-                                                            className="rpv-core__viewer pt-20"
-                                                            style={{
-                                                                border: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                display: 'flex',
-                                                                flexDirection: 'column',
-                                                                height: '100%',
-                                                            }}
-                                                        >
+                                                        <p className="">=</p>
+                                                    </div>
+                                                    <div className="w-[30%] pt-2">
+                                                        <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
+                                                            onClick={() => setOpen2(true)}>
+                                                            Read
+                                                        </button>
+                                                    </div>
+                                                    <Modal key="index" classNames="p-20" open={open2} onClose={() => setOpen2(false)} center>
+                                                        <div className="">
                                                             <div
+                                                                className="rpv-core__viewer pt-20"
                                                                 style={{
-                                                                    alignItems: 'center',
-                                                                    backgroundColor: '#eeeeee',
-                                                                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                    border: '1px solid rgba(0, 0, 0, 0.3)',
                                                                     display: 'flex',
-                                                                    padding: '4px',
+                                                                    flexDirection: 'column',
+                                                                    height: '100%',
                                                                 }}
                                                             >
-                                                                <DownloadButton />
-                                                            </div>
-                                                            <div
-                                                                style={{
-                                                                    flex: 1,
-                                                                    overflow: 'hidden',
-                                                                }}
-                                                            >
-                                                                <div className="w-[40rem] ">
-                                                                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                                        <Viewer fileUrl="images\11.pdf" plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
-                                                                    </Worker>;
+                                                                <div
+                                                                    style={{
+                                                                        alignItems: 'center',
+                                                                        backgroundColor: '#eeeeee',
+                                                                        borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                        display: 'flex',
+                                                                        padding: '4px',
+                                                                    }}
+                                                                >
+                                                                    <DownloadButton />
+                                                                </div>
+                                                                <div
+                                                                    style={{
+                                                                        flex: 1,
+                                                                        overflow: 'hidden',
+                                                                    }}
+                                                                >
+                                                                    <div className="w-[40rem] ">
+                                                                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                                                            <Viewer fileUrl="images/3.pdf" plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
+                                                                        </Worker>;
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </Modal>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div> */}
+                                    {data.map((item, index) => (
+                                        <div key={item.id}>
+                                            <div className="px-4 sm:flex cursor-pointer ">
+
+                                                <div className="sm:flex py-5">
+                                                    <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                                    <div className="pt-2">
+                                                        <div className="">
+                                                            <p className="">{item.name}</p>
+                                                        </div>
+                                                        <div className="w-[30%] pt-2">
+                                                            <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
+                                                                onClick={() => {
+                                                                
+                                                                    setOpen(true);
+                                                                }}
+                                                            >
+                                                                Read
+                                                            </button>
+                                                        </div>
+                                                        <Modal key="index" classNames="p-20" open={open} onClose={() => setOpen(false)} center>
+                                                            <div className="">
+                                                                <div
+                                                                    className="rpv-core__viewer pt-20"
+                                                                    style={{
+                                                                        border: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                        display: 'flex',
+                                                                        flexDirection: 'column',
+                                                                        height: '100%',
+                                                                    }}
+                                                                >
+                                                                    <div
+                                                                        style={{
+                                                                            alignItems: 'center',
+                                                                            backgroundColor: '#eeeeee',
+                                                                            borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                            display: 'flex',
+                                                                            padding: '4px',
+                                                                        }}
+                                                                    >
+                                                                        <DownloadButton />
+                                                                    </div>
+                                                                    <div
+                                                                        style={{
+                                                                            flex: 1,
+                                                                            overflow: 'hidden',
+                                                                        }}
+                                                                    >
+                                                                        <div className="w-[40rem] ">
+                                                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                                                                <Viewer fileUrl={item.pdf} plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
+                                                                            </Worker>;
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </Modal>
                                                     </div>
-                                                </Modal>
+                                                </div>
+
                                             </div>
                                         </div>
-
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

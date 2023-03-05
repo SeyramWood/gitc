@@ -10,8 +10,8 @@ function Gallery() {
     const [openThree, setOpenThree] = useState(false);
     const [openFour, setOpenFour] = useState(false);
     const [openFive, setOpenFive] = useState(false);
-    return ( 
-        <WebsiteLayout page="service">
+    return (
+        <WebsiteLayout page="gallery">
             <div className="bg-white pb-10">
                 {/* gallery */}
                 <div className="">
@@ -29,46 +29,9 @@ function Gallery() {
                         </div>
 
                     </div>
-                    {/* <div className="text-center mb-7">
-                        <h2 className="text-red-600 pb-0 mb-0 sm:text-[4rem]">
-                            Our Gallery
-                        </h2>
-                        <p>MEETINGS, WORSHSHOPS, COURTESY CALLS</p>
-                    </div> */}
+
                     <div className="justify-center sm:flex pt-7">
                         <div className="grid-cols-3 sm:grid">
-                            {/*
-                         {
-                            releases.map((data) => (
-                            // console.log(data.gallery.img)
-                            // <div className="">{data.date}</div>
-                            <div className="relative sm:w-[20rem] mx-3 mb-10" >
-                                <div className="overflow-hidden bg-black " onClick={() => setOpen(true)}>
-                                    <img src={data.main_img} className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
-                                </div>
-                                <div className="absolute bg-black/40 insect-0"></div>
-                                <Lightbox
-                                    open={open}
-                                    close={() => setOpen(false)}
-                                    slides={[
-                                        { src: "/images/homepage/serviceOne.jpg"},
-                                        { src: "/images/homepage/serviceTwo.jpg"},
-                                        { src: "/images/homepage/serviceThree.jpg"},
-                                    ]}
-                                />
-                                <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <Paragraph className="uppercase text-primary ">
-                                        COURTESY CALL TO
-                                        GHANA STATISTICAL SERVICE
-                                    </Paragraph>
-                                    <Paragraph>
-                                        19th May 2022
-                                    </Paragraph>
-                                </div>
-                            </div>
-                        ))
-                        }
-                        */}
                             <div className="relative sm:w-[20rem] mx-3 mb-10">
                                 <div
                                     className="overflow-hidden bg-black cursor-pointer "
@@ -229,7 +192,7 @@ function Gallery() {
                 </div>
             </div>
         </WebsiteLayout>
-     );
+    );
 }
 
 export default Gallery;
