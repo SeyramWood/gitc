@@ -78,8 +78,12 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Faq');
     }
-    
+
     public function resources()
+    {
+        return Inertia::render('Website/Resources');
+    }
+    public function dashboard()
     {
         return Inertia::render('Website/Resources');
     }

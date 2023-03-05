@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -26,8 +27,8 @@ Route::get('/config', function ()
 
 });
 
-Route::get('/', [PageController::class, 'index']);
-Route::get('/services', [PageController::class, 'service']);
+Route::get('/', [PageController::class, 'index'])->name('home');
+Route::get('/services', [PageController::class, 'service'])->name('services');
 Route::get('/service/subsidy', [PageController::class, 'ServiceSubsidy']);
 Route::get('/service/safeguard', [PageController::class, 'ServiceSafeguard']);
 Route::get('/service/research', [PageController::class, 'ServiceResearch']);
@@ -41,5 +42,8 @@ Route::get('/publish', [PageController::class, 'publish']);
 Route::get('/contact', [PageController::class, 'contact']);
 Route::get('/publications', [PageController::class, 'publication']);
 Route::get('/faq', [PageController::class, 'Faq']);
-Route::get('/resources', [PageController::class, 'resources']);
+Route::get('/resources', [PageController::class, 'resources'])->name("resources");
+
+
+
 

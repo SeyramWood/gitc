@@ -1,0 +1,229 @@
+.cart {
+  width: 100%;
+  padding: 5rem $container-padding;
+  @include respond-down(sm) {
+    padding: 5rem $container-padding-sm;
+  }
+  & > h4 {
+    color: $main;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    & > span {
+      text-transform: lowercase;
+      color: $text-2;
+    }
+  }
+  &__container {
+  }
+  &__header {
+    width: 100%;
+    display: block;
+    @include flexbox;
+    justify-content: flex-start;
+    align-items: center;
+    & > h3 {
+      width: 50%;
+    }
+    &__meta {
+      width: 50%;
+      @include flexbox;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include respond-down(xs) {
+      display: none;
+    }
+  }
+  &__body {
+    padding: 3rem 0;
+    &__item {
+      @include flexbox;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      @include respond-down(xs) {
+        flex-direction: column;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+        &::after {
+          position: absolute;
+          left: 0;
+          bottom: -1rem;
+          display: block;
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: antiquewhite;
+        }
+      }
+      &__details {
+        width: 50%;
+        @include flexbox;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include respond-down(xs) {
+          width: 100%;
+        }
+        &__image {
+          width: 8.5rem;
+          height: 9rem;
+          border-radius: $border-radius;
+          overflow: hidden;
+          position: relative;
+          @include resize-image;
+          @include respond-down(xs) {
+            height: 9.5rem;
+          }
+        }
+        &__detail {
+          height: 9rem;
+          @include flexbox;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          padding: 0.3rem 1rem;
+          @include respond-down(xs) {
+            height: 9.5rem;
+          }
+          &__info {
+            & > h4,
+            & > strong {
+              line-height: 0;
+            }
+            & > h4 {
+              margin-bottom: 0.5rem;
+              margin-top: 0.5rem;
+            }
+
+            &__list {
+              color: $text-2;
+              & > span:not(:last-child) {
+                &::after {
+                  content: " | ";
+                }
+              }
+            }
+          }
+          &__price {
+            & > strong {
+              & > span {
+                color: $text;
+                text-decoration: line-through;
+                margin-left: 0.5rem;
+                font-weight: 300;
+              }
+            }
+            &__rating {
+              // margin-top: 1rem;
+              & > span > svg {
+                stroke: $secondary;
+                fill: $secondary;
+              }
+            }
+          }
+        }
+      }
+      &__meta {
+        width: 50%;
+        @include flexbox;
+        justify-content: space-between;
+        align-items: center;
+        @include respond-down(xs) {
+          width: 100%;
+          flex-direction: row-reverse;
+          margin: 1rem 0;
+        }
+      }
+      &__quantity {
+        width: 100%;
+        @include flexbox;
+        justify-content: flex-start;
+        align-items: center;
+        @include respond-down(xs) {
+          justify-content: flex-end;
+        }
+        & > span {
+          padding: 0 1rem;
+        }
+      }
+      &__action {
+        width: 100%;
+        @include flexbox;
+        justify-content: flex-end;
+        @include respond-down(xs) {
+          justify-content: flex-start;
+        }
+        & > button {
+          cursor: pointer;
+          user-select: none;
+          touch-action: manipulation;
+          border: none;
+          outline: none;
+          transition: all 0.3s ease-in;
+          & > span {
+            color: tomato;
+            & > svg {
+              stroke: tomato;
+              fill: tomato;
+              width: 1.2rem;
+              height: 1.2rem;
+            }
+
+            &:last-child {
+              margin-left: 0.2rem;
+            }
+          }
+          &:hover {
+            background-color: tomato;
+            & > span {
+              color: $white;
+              & > svg {
+                stroke: $white;
+                fill: $white;
+              }
+              &:last-child {
+                margin-left: 0.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    margin-top: 1rem;
+    & > h3 {
+      font-weight: 400;
+    }
+    &__total {
+      @include flexbox;
+      justify-content: flex-start;
+      align-items: center;
+      &__price {
+        width: 50%;
+        color: $main;
+        font-size: 1.6rem;
+        @include respond-down(xs) {
+          width: 33.33%;
+        }
+      }
+      &__quantity {
+        width: 25%;
+        @include flexbox;
+        justify-content: flex-start;
+        @include respond-down(xs) {
+          width: 33.33%;
+        }
+      }
+      &__action {
+        width: 25%;
+        @include flexbox;
+        justify-content: flex-end;
+        @include respond-down(xs) {
+          width: 33.33%;
+        }
+      }
+    }
+  }
+}
