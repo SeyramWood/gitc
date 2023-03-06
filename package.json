@@ -18,7 +18,9 @@
         "react-multi-carousel": "^2.8.2",
         "sass": "^1.57.1",
         "tailwindcss": "^3.2.4",
-        "vite": "^4.0.4"
+        "vite": "^4.0.4",
+        "primeicons": "^6.0.1",
+        "primereact": "^8.7.3"
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
@@ -29,6 +31,8 @@
         "keen-slider": "^6.8.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "yet-another-react-lightbox": "^2.2.7"
+        "yet-another-react-lightbox": "^2.2.7",
+        "chart.js": "^3.7.1",
+        "react-svg-spinner": "^1.0.4"
     }
 }

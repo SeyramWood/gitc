@@ -169,6 +169,7 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
+<<<<<<< HEAD
                 <div className="pb-28 px-2 sm:px-16">
                     <div className="justify-center md:flex gap-6">
                         <div
@@ -178,6 +179,25 @@ const Index = () => {
                             data-aos-duration="700"
                         >
                             <div className="h-[45%] relative">
+=======
+                <div className=" mb-32 ">
+                    <div className="pb-10 text-center relative">
+                        <HeadingPrimary className="underline" >
+                            Services We Provide
+                        </HeadingPrimary>
+                        <Paragraph className="pt-3 font-bold">
+                            COVERED IN THESE AREAS
+                        </Paragraph>
+                        {/*<div className="-z-10 text-[grey] uppercase text-[15rem] absolute z-10 mx-auto">services</div>*/}
+                    </div>
+                    <div
+                        className="justify-center md:flex"
+                        data-aos="fade-up"
+                        data-aos-duration="2000"
+                    >
+                        <div className="sm:w-[25%]" >
+                            <div className="h-[45%] relative" >
+>>>>>>> shadrack-dev
                                 <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                     <div className="text-center translate-y-[6rem]">
                                         <Link
@@ -194,9 +214,17 @@ const Index = () => {
                                 />
                             </div>
 
+<<<<<<< HEAD
                             <div className="my-2 ">
                                 <h2 className="py-5">Trade Remedies</h2>
                                 <p className="mb-3">
+=======
+                            <div className="my-3  sm:px-8">
+                                <h1 className=" py-5 text-3xl text-primary">
+                                    Trade Remedies
+                                </h1>
+                                <p className="mb-3 ">
+>>>>>>> shadrack-dev
                                     To ensure equality and fairness in the
                                     application of measures affecting
                                     international trade and the use of world
@@ -345,6 +373,7 @@ const Index = () => {
                                         backgroundSize: "cover",
                                     }}
                                 >
+<<<<<<< HEAD
                                     {/* <div className="sm:h-[35rem] bg-red-700" >
 */}
                                     {/* <img
@@ -386,6 +415,35 @@ const Index = () => {
 
                                         
                                     </div>
+=======
+                                    <p className="text-center sm:text-left sm:text-3lx">
+                                        DID YOU KNOW THAT
+                                    </p>
+                                    <p className="my-5 font-bold text-center sm:text-left sm:text-3xl text-primary">
+                                        GITC is among seven trade remedy
+                                        institutions and investigating
+                                        authorities in Africa.
+                                    </p>
+                                    <p className="mb-5 text-center sm:mb-14 sm:text-left sm:text-2xl">
+                                        These other African countries are:
+                                        Egypt, South Africa, Morocco,
+                                        Tunisia, Mauritius, and Madagascar. These
+                                        other African countries are: Egypt,South
+                                        Africa, Morocco, Tunisia, Mauritius, and
+                                        Madagascar.
+                                    </p>
+
+
+                                    {/*<Link hre="/">*/}
+                                        {/*<ButtonOutline className="block p-4  border rounded-full border-primary hover:border-2">*/}
+
+                                    <Link hre="/story">
+                                        <ButtonOutline className="block p-4 mx-auto border rounded-full border-primary hover:border-2">
+
+                                            Read Our Story
+                                        </ButtonOutline>
+                                    </Link>
+>>>>>>> shadrack-dev
                                 </div>
                             </div>
                             <div className="flex flex-col-reverse justify-center bg-black sm:flex sm:flex-row ">
@@ -443,6 +501,7 @@ const Index = () => {
                                         backgroundRepeat: "round",
                                     }}
                                 >
+<<<<<<< HEAD
                                     {/* <div className="sm:h-[35rem] ">
                                         <img
                                             className="sm:w-[80rem] sm:h-[35rem]"
@@ -451,6 +510,50 @@ const Index = () => {
                                         /> */}
                                 </div>
                             </div>
+=======
+                                    <h1 className="text-[3rem] sm:pt-10 pb-6 font-bold">We ensure:</h1>
+                                    <ul className="sm:text-[1.3rem] list-disc ">
+                                        <li className="py-4">
+                                            Ghana’s compliance with
+                                            international trade rules and
+                                            regulations;
+                                        </li>
+                                        <li className="py-3">
+                                            Fairness, efficiency,
+                                            transparency and objectivity in the
+                                            application of measures affecting
+                                            international trade rules and the
+                                            use of world trade regulations;
+                                        </li>
+                                        <li className="py-3">
+                                            Fair ompetition for persons
+                                            engaged in domestic production and
+                                            international trade.
+                                        </li>
+                                        <li className="pt-3">
+                                            Protection of the domestic market
+                                            from the impact of unfair trade
+                                            practices in the course of
+                                            international trade.
+
+                                        </li>
+                                    </ul>
+
+                                    <Link href="/story">
+                                        <ButtonOutline className="block p-4 mx-auto mt-3 border border-white rounded-full hover:border-2 mb-7">
+                                            Read Our Story
+                                        </ButtonOutline>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="sm:h-[35rem] ">
+                                <img
+                                    className="sm:w-[80rem] sm:h-[40rem]"
+                                    src="images/homePage/storyTwo.jpg"
+                                    alt=""
+                                />
+                            </div>
+>>>>>>> shadrack-dev
                         </div>
                     </div>
                 </div>
