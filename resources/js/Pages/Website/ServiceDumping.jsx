@@ -1,8 +1,67 @@
 import { WebsiteLayout } from "../../components/layouts";
 
+<<<<<<< HEAD
 import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 import ServiceLinks from "../../components/layouts/website/ServiceLinks";
+=======
+    return (
+        <WebsiteLayout page="home">
+     <div className="bg-white ">
+         <div className="bg-gray-300  p-3">
+             <span>GITC . Our Services . Trade Remedies . Antidumping Duties</span>
+         </div>
+
+
+         <div className="hero min-h-screen bg-accent-content">
+             <div className="hero-content flex-col md:flex-row-reverse">
+                 <div className="  max-h-4xl mt-40">
+                     <HeadingSecondary>
+                         Trade Remedies
+                     </HeadingSecondary>
+
+                     <Paragraph>
+                         Subsidy & controvailing duties; antidumping duties, safeguard and measures
+                     </Paragraph>
+
+                     <HeadingSecondary>
+                         Ant-Dumping
+                     </HeadingSecondary>
+
+                         <img className="w-screen" src="/images/dump.jpg" alt="Album"/>
+
+                 </div>
+                 <div className="card h-46  text-dark  w-full shadow-2sm bg-white  ">
+                     <div className="card-body">
+                         <HeadingSecondary>
+                             Our Services
+                         </HeadingSecondary>
+                         <Paragraph>
+
+                             <Link href="/service">  Anti - Dumping Duties</Link>
+                         </Paragraph>
+                         <Paragraph>
+
+
+                             <Link href="/service/dumping">  Anti - Dumping Duties</Link>
+                         </Paragraph>
+                         <Paragraph>
+
+                             <Link href="/service/subsidy">    Subsidy and Countervailing Duties</Link>
+
+
+                         </Paragraph>
+                         <Paragraph>
+
+                             <Link href="/service/safeguard">  Safeguards Measures</Link>
+
+
+                         </Paragraph>
+                         <Paragraph>
+
+
+                             <Link href="/service/dispute">Dispute Settlement</Link>
+>>>>>>> shadrack-dev
 
 function ServiceDumping() {
     return (
