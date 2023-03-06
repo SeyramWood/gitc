@@ -10,18 +10,18 @@ const Contact = () => {
         <div className="bg-white">
             {/* contacts */}
             <div className="pt-16">
-                <div class="sm:grid grid-cols-3 px-[6rem] gap-4 ">
+                <div class="sm:grid grid-cols-3 px-[10rem] gap-4 ">
                     <div className=" mb-14 mt-7">
                         <div className="mb-5 sm:block flex justify-center">
                             <img src="images/contact/phone.png" className="w-[3rem]" alt="" />
                         </div>
                         <div className="">
-                            <HeadingSecondary>
+                            <h2>
                                 Phone
-                            </HeadingSecondary>
-                            <Paragraph>
+                            </h2>
+                            <p>
                                 +233 030 296 0298
-                            </Paragraph>
+                            </p>
                         </div>
                     </div>
                     <div className=" mb-14 mt-7">
@@ -29,35 +29,35 @@ const Contact = () => {
                             <img src="images/contact/email.png" className="w-[3rem]" alt="" />
                         </div>
                         <div className="">
-                            <HeadingSecondary>
+                            <h2>
                                 Email
-                            </HeadingSecondary>
-                            <Paragraph>
+                            </h2>
+                            <p>
                                 info@gitc.gov.gh
-                            </Paragraph>
+                            </p>
                         </div>
                     </div>
-                    <div className=" mb-14 mt-7">
+                    <div className="  mt-7">
                         <div className="mb-5 sm:block flex justify-center">
                             <img src="images/contact/location.png" className="w-[3rem]" alt="" />
                         </div>
                         <div className="">
-                            <HeadingSecondary>
+                            <h2>
                                 Lcoation
-                            </HeadingSecondary>
-                            <Paragraph>
+                            </h2>
+                            <p>
                                 2nd Floor (West Wing),
                                 5th Link Road,
                                 East Cantonments
                                 near US Embassy, Accra
-                            </Paragraph>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* Form */}
-            <div className="sm:p-32">
+            <div className="px-32 py-20 ">
                 <div className="text-center pb-6">
                     <HeadingPrimary >
                         Contact Us

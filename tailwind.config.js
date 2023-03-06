@@ -7,24 +7,26 @@ module.exports = {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.jsx",
-        "./node_modules/flowbite/**/*.js"
+        "./node_modules/flowbite/**/*.js",
     ],
 
     theme: {
         extend: {
             fontFamily: {
-                // sans: ["Nunito", ...defaultTheme.fontFamily.sans],
                 sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                primary: "#F9443E",
-                primary_light: "rgba(249, 68, 62, 0.637)",
-                secondary: "#111111",
+                primary: "#F90004",
+                "primary-light": "rgba(250, 0, 4, 0.899)",
+                secondary: "#000000",
                 tertiary: "#272727",
-                grey:"rgb(126,125,125)",
+                grey: "rgb(126,125,125)",
+                footer: "#1F1F1F",
+                faded: "#F5F5F5",
             },
             spacing: {
                 "web-l": "3rem",
+                "web-md": "2rem",
                 "web-xl": "4rem",
                 "web-2xl": "5rem",
                 "web-s": "1.5rem",
@@ -77,6 +79,9 @@ module.exports = {
         },
     },
 
+<<<<<<< HEAD
+    plugins: [require("@tailwindcss/forms")],
+=======
     plugins: [require("@tailwindcss/forms"),
         require('flowbite/plugin'),
         [require("daisyui")]
@@ -85,4 +90,5 @@ module.exports = {
 
 
 
+>>>>>>> shadrack-dev
 };

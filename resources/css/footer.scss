@@ -1,0 +1,17 @@
+.footer__carousel {
+    width: 100%;
+    height: 6.8rem;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    border-radius: 5px;
+    &__item {
+        width: 12rem;
+        height: 6.8rem;
+        transition: all 0.8s ease-in;
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

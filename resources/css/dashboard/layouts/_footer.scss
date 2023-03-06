@@ -1,0 +1,16 @@
+.asinyo__footer {
+  width: 100%;
+  height: 6rem;
+  &__copyright {
+    width: 100%;
+    height: 6rem;
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    text-transform: capitalize;
+    & > strong {
+      color: $text-2;
+    }
+  }
+}

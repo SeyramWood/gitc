@@ -11,25 +11,28 @@
         "@vitejs/plugin-react": "^3.0.1",
         "autoprefixer": "^10.4.13",
         "axios": "^1.1.2",
-        "flowbite": "^1.6.2",
-        "keen-slider": "^6.8.5",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "react-icons": "^4.7.1",
+        "react-multi-carousel": "^2.8.2",
         "sass": "^1.57.1",
         "tailwindcss": "^3.2.4",
-        "vite": "^4.0.4"
+        "vite": "^4.0.4",
+        "primeicons": "^6.0.1",
+        "primereact": "^8.7.3"
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-react": "^0.8.1",
         "@n8tb1t/use-scroll-position": "^2.0.3",
+        "animate.css": "^4.1.1",
         "aos": "^2.3.4",
-        "daisyui": "^2.47.0",
+        "keen-slider": "^6.8.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "yet-another-react-lightbox": "^2.2.7"
-
+        "yet-another-react-lightbox": "^2.2.7",
+        "chart.js": "^3.7.1",
+        "react-svg-spinner": "^1.0.4"
     }
 }

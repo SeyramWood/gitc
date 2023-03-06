@@ -1,6 +1,6 @@
 const Button = (prop) => {
     return ( 
-        <button className={`block border p-4 w-[20rem] rounded-full mx-auto hover:text-white hover:bg-[rgb(255,35,34)] ${prop.className}`}>
+        <button className={`block border p-4 sm:w-[20rem] rounded-full mx-auto text-white bg-[rgb(255,35,34)] hover:scale-110 transition ease-in-out ${prop.className}`}>
            {prop.children}
         </button>
      );

@@ -1,6 +1,6 @@
 const ButtonOutline = (props) => {
     return ( 
-        <button className={props.className}>
+       <button className={`block p-4 border rounded-full  ${props.className}`}>
            {props.children}
         </button>
      );

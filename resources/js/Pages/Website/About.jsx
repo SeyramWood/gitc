@@ -1,135 +1,143 @@
-import { WebsiteLayout } from "../../components/layouts";
 import { Link } from "@inertiajs/inertia-react";
+
+import { WebsiteLayout } from "../../components/layouts";
 import Paragraph from "../../components/layouts/website/Paragraph";
 
 const About = () => {
     return (
         <WebsiteLayout page="about">
-            <main className="text-lg text-grey bg-white">
+            <main className="">
                 {/* Governing Board */}
-                <p className="my-10 text-5xl font-bold text-center text-primary">
+                <h2 className="my-[4rem] sm:text-[4rem] text-center text-red-600">
                     Governing Board
-                </p>
+                </h2>
                 <div className="sm:px-[8rem] mb-32">
                     {/* cards container */}
-                    <div class="sm:grid grid-cols-3 gap-8 sm:m-0 m-4 ">
-                        <div className="transition duration-700 ease-in-out shadow-lg hover:scale-110">
-                            <div className="bg-black cursor-pointer">
+                    <div class="sm:grid grid-cols-3 gap-16 sm:m-0 m-4 ">
+                        <div className="shadow-lg ">
+                            <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Dr. Nana Adu Gyamfi.jpg"
-                                    className="w-full h-[20rem] hover:opacity-75 bg-black/20"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
                                 />
                             </div>
-                            <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary">
-                                    Dr. Edmumd Prempeh
-                                </Paragraph>
-                                <Paragraph className="mt-2">
-                                    Chairman, Board
-
-                                </Paragraph>
+                            <div className="p-4 cursor-pointer bg-slate-100">
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                        Dr. Edmumd Prempeh
+                                    </h2>
+                                    <p className="">
+                                        Chairman, Board
+                                    </p>
+                                </Link>
                             </div>
                         </div>
-                        <div className="transition duration-700 ease-in-out shadow-lg hover:scale-110">
-                            <div className="bg-black cursor-pointer">
+                        <div className="shadow-lg ">
+                            <div className="bg-black overflow-hidden cursor-pointer">
+                                <img
+                                    src="images/about/our_team/Paul Kuruk.jpeg"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
+                                    alt=""
+                                />
+                            </div>
+                            <div className="p-4 bg-slate-100">
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                         Prof. Paul Kuruk
+                                    </h2>
+                                    <p className="">
+                                        Deputy Chairman, Board
+                                    </p>
+                                </Link>
+                            </div>
+                        </div>
+                        <div className=" shadow-lg">
+                            <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Mr. Philip Jude Mensah_ALT.jpg"
-                                    className="w-full h-[20rem] hover:opacity-75 bg-black/20"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
                                 />
                             </div>
-                            <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
-                                    Mr. Philip Mensah
-                                </Paragraph>
-                                <Paragraph className="mt-2">
-                                    Member, Board
-                                </Paragraph>
+                            <div className="p-4 bg-slate-100">
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                        Mr. Philip Mensah
+                                    </h2>
+                                    <p className="">
+                                        Member, Board
+                                    </p>
+                                </Link>
                             </div>
                         </div>
-                        <div className="transition duration-700 ease-in-out shadow-lg hover:scale-110">
-                            <div className="bg-black cursor-pointer">
+                        <div className="shadow-lg ">
+                            <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Mr. Arnold Okai.jpg"
-                                    className="w-full h-[20rem] hover:opacity-75 bg-black/20"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
-                                    Mr. Arnold Tetteh Okai
-                                </Paragraph>
-                                <Paragraph className="mt-2">
-                                    Member, Board
-                                </Paragraph>
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                        Mr. Arnold Tetteh Okai
+                                    </h2>
+                                    <p className="">
+                                        Member, Board
+                                    </p>
+                                </Link>
                             </div>
                         </div>
-                        <div className="transition duration-700 ease-in-out shadow-lg hover:scale-110">
-                            <div className="bg-black cursor-pointer">
+                        <div className=" shadow-lg">
+                            <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Ms. Sophia Kokor.jpg"
-                                    className="w-full h-[20rem] hover:opacity-75 bg-black/20"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
-                                    Ms. Sophia Kokor
-                                </Paragraph>
-                                <Paragraph className="mt-2">
-                                    Member, Board
-                                </Paragraph>
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                        Ms. Sophia Kokor
+                                    </h2>
+                                    <p className="">
+                                        Member, Board
+                                    </p>
+                                </Link>
                             </div>
                         </div>
-                        <div className="transition duration-700 ease-in-out shadow-lg hover:scale-110">
-                            <div className="bg-black cursor-pointer">
+                        <div className="shadow-lg ">
+                            <div className="bg-black overflow-hidden cursor-pointer">
                                 <img
                                     src="images/about/our_team/Mr. Frank Agyekum.jpg"
-                                    className="w-full h-[20rem] hover:opacity-75 bg-black/20"
+                                    className="w-full transition duration-700 ease-in-out h-[20rem] hover:opacity-75 bg-black/20 hover:scale-110"
                                     alt=""
                                 />
                             </div>
                             <div className="p-3 bg-slate-100">
-                                <Paragraph className="text-primary cursor-pointer">
-                                    Mr. Frank Agyekum
-                                </Paragraph>
-                                <Paragraph className="mt-2">
-                                    Executive Secretary
-                                </Paragraph>
-                            </div>
-                        </div>
-                        <div className="transition duration-700 ease-in-out shadow-lg hover:scale-110">
-                            <div className="bg-black cursor-pointer">
-                                <img
-                                    src="images/about/our_team/Mr. Arnold Okai.jpg"
-                                    className="w-full h-[20rem] hover:opacity-75 bg-black/20"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="p-3 bg-slate-100">
-                                <p className="text-[1.3rem] text-[rgb(255,35,24)] cursor-pointer">
-                                    Personality Name
-                                </p>
-                                <p className="mt-2">
-                                    Lorem ipsum
-                                </p>
+                                <Link href="/">
+                                    <h2 className="text-primary">
+                                        Mr. Frank Agyekum
+                                    </h2>
+                                    <p className=""> Executive Secretary</p>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* team */}
-                <div className="mb-32 text-black sm:mx-20">
-                    <div className="pb-10 text-center ">
-                        <h3 className="text-5xl font-bold text-primary ">
+                <div className="mb-32  text-black sm:mx-20">
+                    <div className="pb-[2rem]  text-center ">
+                        <h2 className="mb-0 pb-0 text-red-600 text-center sm:text-[4rem]">
                             Our Team
-                        </h3>
-                        <p className="">
-                            Meet The Head Of Departments
-                        </p>
+                        </h2>
+                        <p className="text-black uppercase">Meet The Heads Of Departments</p>
                     </div>
-                    <div className="p-4 sm:flex">
+                    <div className="p-4 gap-7 sm:flex">
                         <div className="sm:w-[25%] mx-2 mb-4 transition duration-700 ease-in-out shadow-lg hover:scale-110">
                             <Link href="/">
                                 <div className="sm:h-[15rem]">
@@ -140,13 +148,12 @@ const About = () => {
                                     />
                                 </div>
                                 <div className="p-3 text-center bg-slate-100 sm:h-[7rem]">
-                                    <Paragraph className="text-primary">
+                                    <p className="font-semibold">
                                         Linda Adomako - Kwabia
-
-                                    </Paragraph>
-                                    <Paragraph>
+                                    </p>
+                                    <p>
                                         Human Resource & Administration
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </Link>
                         </div>
@@ -160,13 +167,13 @@ const About = () => {
                                     />
                                 </div>
                                 <div className="p-3 text-center bg-slate-100 sm:h-[7rem]">
-                                    <Paragraph className="text-primary">
+                                    <p className="font-semibold">
                                         Bernard Manu Afreh
-                                    </Paragraph>
-                                    <Paragraph className="text-[14tatrpx]">
+                                    </p>
+                                    <p className="text-[16px]">
                                         Planning, Research, Monitoring &
                                         Evaluation
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </Link>
                         </div>
@@ -180,12 +187,10 @@ const About = () => {
                                     />
                                 </div>
                                 <div className="p-3 text-center bg-slate-100 sm:h-[7rem]">
-                                    <Paragraph className="text-primary">
+                                    <p className="font-semibold">
                                         Paa Kwesi Fynn
-                                    </Paragraph>
-                                    <Paragraph>
-                                        Trade Investigation
-                                    </Paragraph>
+                                    </p>
+                                    <p>Trade Investigation</p>
                                 </div>
                             </Link>
                         </div>
@@ -199,13 +204,12 @@ const About = () => {
                                     />
                                 </div>
                                 <div className="p-3 text-center bg-slate-100 sm:h-[7rem]">
-                                    <Paragraph className="text-primary">
+                                    <p className="font-semibold">
                                         Nathan Lartey
-                                    </Paragraph>
-                                    <Paragraph>
-
+                                    </p>
+                                    <p>
                                         Management Information System
-                                    </Paragraph>
+                                    </p>
                                 </div>
                             </Link>
                         </div>

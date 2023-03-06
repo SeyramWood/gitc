@@ -6,16 +6,18 @@ import HeadingSecondary from "../../components/layouts/website/HeadingSecondary"
 const Faq = () => {
     return (
         <WebsiteLayout page="faq">
+           
             <main className="text-lg bg-white">
-                <div className="w-10/12 mx-auto mt-8 text-oscuro">
+               
+                <div className="px-14 mx-auto py-20 ">
 
-                    <div className="flex flex-col justify-center w-full drop-shadow-md hover:drop-shadow-xl">
+                    <div className=" justify-center w-full ">
 
-                        <div>
-                            <div className="relative mb-4">
+                        <div className="sm:grid grid-cols-2 gap-8">
+                            <div className=" drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle1" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle1">
-                                    1.	What is the purpose of the Ghana International Trade Commission?
+                                    <p className="text-primary"> 1.	What is the purpose of the Ghana International Trade Commission?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -24,10 +26,10 @@ const Faq = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className=" drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle2" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle2">
-                                    2.	What services does the GITC provide?
+                                    <p className="text-primary"> 2.	What services does the GITC provide?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -38,10 +40,10 @@ const Faq = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className=" drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle3" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle3">
-                                    3.	What does margin of Dumping mean?
+                                    <p className="text-primary"> 3.	What does margin of Dumping mean?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -49,10 +51,10 @@ const Faq = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className=" drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle4" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle4">
-                                    4.	What is Dumping?
+                                    <p className="text-primary"> 4.	What is Dumping?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -61,10 +63,10 @@ const Faq = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className=" drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle5" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle5">
-                                    5.	What is Subsidy?
+                                    <p className="text-primary"> 5.	What is Subsidy?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -73,10 +75,10 @@ const Faq = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className=" drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle6" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle6">
-                                    6.	How are investigations conducted?
+                                    <p className="text-primary"> 6.	How are investigations conducted?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -84,10 +86,10 @@ const Faq = () => {
                                         process. Where necessary, the Commission engages international sources and authorities for relevant data to aid investigation into a petition.    </p>
                                 </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle7" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle7">
-                                    7.	Where and when are hearings held? Are they open to the public?
+                                    <p className="text-primary">  7.	Where and when are hearings held? Are they open to the public?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -97,10 +99,10 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle8" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle8">
-                                    8.	How does one file a petition?
+                                    <p className="text-primary">8.	How does one file a petition?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -109,10 +111,10 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle9" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle9">
-                                    9.	What documents need to be attached when filing a petition?
+                                    <p className="text-primary"> 9.	What documents need to be attached when filing a petition?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -120,10 +122,10 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle10" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle10">
-                                    10.	How do I obtain information about the status of a filed petition?
+                                    <p className="text-primary"> 10.	How do I obtain information about the status of a filed petition?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -132,10 +134,10 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle11" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle11">
-                                  11.  Is preliminary relief available?
+                                    <p className="text-primary"> 11.  Is preliminary relief available?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -144,10 +146,10 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle12" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle12">
-                                    12.	How long do investigations last?
+                                    <p className="text-primary">  12.	How long do investigations last?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -155,10 +157,10 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle13" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle13">
-                                    13.	Can the decisions of the Commission be appealed in court?
+                                    <p className="text-primary">  13.	Can the decisions of the Commission be appealed in court?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
@@ -170,12 +172,12 @@ const Faq = () => {
                                     </p>
                                     </div>
                             </div>
-                            <div className="relative mb-4">
+                            <div className="  drop-shadow-md hover:drop-shadow-xl">
                                 <input type="checkbox" id="toggle14" className="toggle hidden"/>
                                 <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle14">
 
-                                    14.	What are the fees and charges associated with filing a petition?
-                                    urt?
+                                    <p className="text-primary">  14.	What are the fees and charges associated with filing a petition?
+                                    urt?</p>
                                 </label>
                                 <div className="content bg-white overflow-hidden">
                                     <p className="p-4">
