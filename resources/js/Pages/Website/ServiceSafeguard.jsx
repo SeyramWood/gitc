@@ -11,7 +11,7 @@ function ServiceSafeguard() {
                 <div className="sm:flex px-4 pt-16 pb-16">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
-                        <div className="h-[15rem]">
+                        {/* <div className="h-[15rem]">
                             <div className=" " >
                                 <img src="/../images/homePage/headings/SERVICE PAGE.jpg" className=" object-contain" alt="" />
                                 <div className="">
@@ -19,7 +19,7 @@ function ServiceSafeguard() {
                                 </div>
                             </div>
 
-                        </div>
+                        </div> */}
                         <div className="text-black px-6">
                             <h2 className="text-primary text-[4rem] pb-0">Trade Remedies</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;

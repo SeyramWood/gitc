@@ -2,6 +2,12 @@ import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
 
 import { useState } from "react";
 
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
+
+// Import styles
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+
 import { WebsiteLayout } from "../../components/layouts";
 import { Worker } from '@react-pdf-viewer/core';
 
@@ -16,15 +22,19 @@ import { getFilePlugin } from '@react-pdf-viewer/get-file';
 import { Modal } from 'react-responsive-modal';
 
 // data
-import data from './file';
+import data from '../../files/resourceFile';
 import 'react-responsive-modal/styles.css';
 
 function Resources() {
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
     // modal
     const [open, setOpen] = useState(false);
-    const [open2, setOpen2] = useState(false);
-    const [modalItem,setItem]=useState([]);
+    const [currentFile, setCurrentFile] = useState();
 
+    function opneFile(filePath) {
+        setCurrentFile(filePath);
+        setOpen(true);
+    }
 
     // pdf viewer
     const getFilePluginInstance = getFilePlugin();
@@ -42,7 +52,7 @@ function Resources() {
             <div className="bg-white">
                 {/* files */}
                 <div className=" sm:mx-24 py-10 mb-10">
-                    <div className="h-[15rem]">
+                    {/* <div className="h-[15rem]">
                         <div className=" " >
                             <img src="images/homePage/headings/RESOURCES.jpg" className=" object-contain" alt="" />
                             <div className="-translate-y-[13rem]">
@@ -55,9 +65,9 @@ function Resources() {
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
 
-                    <div className="grid grid-cols-2 p-6 gap-14  pb-20">
+                    <div className="grid grid-cols-2 pt-10 px-6 gap-14  pb-20">
                         <div className="drop-shadow-md hover:drop-shadow-xl">
                             <input type="checkbox" id="toggle1" className="toggle hidden" />
                             <label className="title flex font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle1">
@@ -69,6 +79,8 @@ function Resources() {
 
                             <div className="content bg-white overflow-auto">
                                 <div className="grid grid-cols-1 p-6 pb-20">
+                                   
+                                    
                                     {/* <div >
                                         <div className="px-4 sm:flex cursor-pointer ">
 
@@ -184,31 +196,30 @@ function Resources() {
                                         </div>
                                     </div> */}
                                     {data.map((item, index) => (
-                                        <div key={item.id}>
+                                        <div key={index}>
                                             <div className="px-4 sm:flex cursor-pointer ">
 
                                                 <div className="sm:flex py-5">
                                                     <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
                                                     <div className="pt-2">
-                                                        <div className="">
+                                                        <div className="lowercase">
                                                             <p className="">{item.name}</p>
                                                         </div>
                                                         <div className="w-[30%] pt-2">
                                                             <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
-                                                                onClick={() => {
-                                                                
-                                                                    setOpen(true);
-                                                                }}
+                                                                onClick={() => opneFile(item.pdf)}
                                                             >
                                                                 Read
                                                             </button>
                                                         </div>
-                                                        <Modal key="index" classNames="p-20" open={open} onClose={() => setOpen(false)} center>
+                                                        <Modal key="index" classNames="mt-[40rem] " open={open}
+                                                            onClose={() => setOpen(false)}
+                                                        >
                                                             <div className="">
                                                                 <div
-                                                                    className="rpv-core__viewer pt-20"
+                                                                    className="rpv-core__viewer mt-10 mx-auto "
                                                                     style={{
-                                                                        border: '1px solid rgba(0, 0, 0, 0.3)',
+                                                                        border: 'rgba(0, 0, 0, 0.3)',
                                                                         display: 'flex',
                                                                         flexDirection: 'column',
                                                                         height: '100%',
@@ -217,13 +228,14 @@ function Resources() {
                                                                     <div
                                                                         style={{
                                                                             alignItems: 'center',
-                                                                            backgroundColor: '#eeeeee',
+                                                                            backgroundColor: 'eeeee',
                                                                             borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
                                                                             display: 'flex',
-                                                                            padding: '4px',
                                                                         }}
                                                                     >
-                                                                        <DownloadButton />
+                                                                        <div className="pl-2 p-1 bg-red-100">
+                                                                            <DownloadButton />
+                                                                        </div>
                                                                     </div>
                                                                     <div
                                                                         style={{
@@ -231,9 +243,11 @@ function Resources() {
                                                                             overflow: 'hidden',
                                                                         }}
                                                                     >
-                                                                        <div className="w-[40rem] ">
+                                                                        <div className="w-[50rem] ">
                                                                             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                                                <Viewer fileUrl={item.pdf} plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
+                                                                                <Viewer fileUrl={currentFile} plugins={[
+                                                                                    // defaultLayoutPluginInstance,
+                                                                                     getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
                                                                             </Worker>;
                                                                         </div>
                                                                     </div>

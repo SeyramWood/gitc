@@ -3,19 +3,28 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+import albums from '../../files/imageFiles'
+// import { values } from "lodash";
+
+
+import PhotoAlbum from "react-photo-album";
+
 function Gallery() {
     const [open, setOpen] = useState(false);
-    const [openOne, setOpenOne] = useState(false);
-    const [openTwo, setOpenTwo] = useState(false);
-    const [openThree, setOpenThree] = useState(false);
-    const [openFour, setOpenFour] = useState(false);
-    const [openFive, setOpenFive] = useState(false);
+    const [currentGallery, setCurrentGallery] = useState();
+
+    function openGallery(fileName) {
+        setCurrentGallery(fileName);
+        setOpen(true);
+    }
+    const [index, setIndex] = useState(-1);
+ 
     return (
         <WebsiteLayout page="gallery">
             <div className="bg-white pb-10">
                 {/* gallery */}
                 <div className="">
-                    <div className="h-[15rem] ">
+                    {/* <div className="h-[15rem] ">
                         <div className=" " >
                             <img src="images/homePage/headings/GALLERY.jpg" className=" object-contain mx-auto" alt="" />
                             <div className="-translate-y-[13rem]">
@@ -28,12 +37,77 @@ function Gallery() {
                             </div>
                         </div>
 
-                    </div>
+                    </div> */}
 
-                    <div className="justify-center sm:flex pt-7">
+                    <div className="justify-center sm:flex pt-16">
                         <div className="grid-cols-3 sm:grid">
                             {/*  */}
-                            <div className="relative sm:w-[20rem] mx-3 mb-10">
+                            {albums.map((item, index) => (
+                                <div key={index} className="relative sm:w-[20rem] mx-3 mb-10">
+                                    {console.log(index)}
+                                    <div
+                                        className="overflow-hidden bg-black cursor-pointer "
+                                        onClick={() => openGallery(item.id)}
+                                    >
+                                        <div className=" w-full bg-white/90">
+                                         
+                                            {/*  */}
+                                             <div className="h-[15rem] ">
+                                                <div className=" overflow-hidden p-3 justify-between  h-[50%]">
+                                                    <div className="overflow-hidden ">
+                                                        <img
+                                                            src={item.nn[0]}
+                                                            className="object-cover hover:opacity-75 bg-black/40 transition ease-in-out duration-700 hover:scale-110"
+                                                            alt=""
+                                                             onClick={({ index }) => setIndex(index)}
+                                                        />
+                                                    </div>
+                                                 
+                                                </div>
+                                                <div className="flex p-3 justify-between gap-4  h-[50%]">
+                                                    <div className="overflow-hidden ">
+                                                        <img
+                                                            src={item.nn[1]}
+                                                            className="object-cover hover:opacity-75 bg-black/40 transition ease-in-out duration-700 hover:scale-110"
+                                                            alt=""
+                                                             onClick={({ index }) => setIndex(index)}
+                                                            
+                                                        />
+                                                    </div>
+                                                    <div className="overflow-hidden">
+                                                        <img
+                                                            src={item.nn[2]}
+                                                            className="object-cover hover:opacity-75 bg-black/40 transition ease-in-out duration-700 hover:scale-110"
+                                                            alt=""
+                                                             onClick={({ index }) => setIndex(index)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        {/* <img
+                                            src={item.imagePath}
+                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
+                                            alt=""
+                                        /> */}
+                                    </div>
+                                    <div className="absolute bg-black/40 insect-0"></div>
+                                    <Lightbox open={index >= 0 && currentGallery === item.id ? true : false } close={() => setCurrentGallery()}
+                                        slides={
+                                            item.nn.map((i, d) => ({ src: i }))
+                                        }
+                                    />
+                                    <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
+                                        <p className="uppercase text-primary ">
+                                            {item.title}
+                                        </p>
+                                        <p>{item.date}</p>
+                                    </div>
+                                </div>
+                            ))}
+                            {/*  */}
+                            {/*
+                             <div className="relative sm:w-[20rem] mx-3 mb-10">
                                 <div
                                     className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpen(true)}
@@ -45,7 +119,7 @@ function Gallery() {
                                     />
                                 </div>
                                 <div className="absolute bg-black/40 insect-0"></div>
-                                <Lightbox open={open} close={() => setOpen(false)}
+                                <Lightbox open={open} 
                                     slides={[
                                         { src: "/images/publish/publish.jpg" },
                                     ]}
@@ -56,8 +130,9 @@ function Gallery() {
                                     </p>
                                     <p>First Gallery Date</p>
                                 </div>
-                            </div>
+                            </div>  */}
                             {/*  */}
+                            {/* 
                             <div className="relative sm:w-[20rem] mx-3 mb-10">
                                 <div
                                     className="overflow-hidden bg-black cursor-pointer "
@@ -77,14 +152,13 @@ function Gallery() {
                                 />
                                 <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
                                     <p className="uppercase text-primary ">
-                                        COURTESY CALL TO GHANA STATISTICAL
-                                        SERVICE
+                                        COURTESY CALL TO GHANA STATISTICAL SERVICE
                                     </p>
                                     <p>19th May 2022</p>
                                 </div>
-                            </div>
+                            </div> */}
                             {/*  */}
-                            <div className=" sm:w-[20rem]  mx-3 mb-10">
+                            {/* <div className=" sm:w-[20rem]  mx-3 mb-10">
                                 <div
                                     className="overflow-hidden bg-black cursor-pointer "
                                     onClick={() => setOpen(true)}
@@ -211,7 +285,7 @@ function Gallery() {
                                     </p>
                                     <p>17th - 18th March 2022</p>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

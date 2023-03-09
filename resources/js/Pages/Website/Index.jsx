@@ -170,7 +170,11 @@ const Index = () => {
 
                 {/* services section*/}
                 <div className=" pb-28 px-2 sm:px-16 overflow-hidden" >
-                    <div className="pb-40" >
+                    <div className="pb-40"
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom"
+                        data-aos-duration="700"
+                    >
 
                         <div className="h-[17rem] w-full" style={{ backgroundImage: "url('images/homePage/headings/SERVICES.jpg')", backgroundRepeat: "no-repeat", backgroundPositionX: "center", backgroundAttachment: "fixed" }}>
                             <h1 className="text-center translate-y-[7rem] text-primary" >Services</h1>
@@ -179,9 +183,7 @@ const Index = () => {
                         <div className="justify-center md:flex gap-6 sm:mt-13 ">
                             <div
                                 className="sm:w-[25%]"
-                                data-aos="fade-up"
-                                data-aos-anchor-placement="center-bottom"
-                                data-aos-duration="700"
+                               
                             >
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">

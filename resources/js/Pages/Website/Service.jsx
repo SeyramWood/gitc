@@ -12,7 +12,7 @@ function Service() {
                     <ServicesNav />
                     <div className="sm:w-[70%]">
 
-                        <div className="h-[15rem]" style={{ backgroundImage: "", backgroundRepeat: "no-repeat", backgroundPositionX: "" }}>
+                        {/* <div className="h-[15rem]" style={{ backgroundImage: "", backgroundRepeat: "no-repeat", backgroundPositionX: "" }}>
                             <div className=" " >
                                 <img src="images/homePage/headings/SERVICE PAGE.jpg" className=" object-contain" alt="" />
                                 <div className="">
@@ -20,7 +20,7 @@ function Service() {
                                 </div>
                             </div>
 
-                        </div>
+                        </div> */}
                         <div className="text-black ">
                             <h2 className="text-primary text-[4rem] pb-0 ">Trade Remedies</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;

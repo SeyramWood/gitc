@@ -90,7 +90,7 @@ const Publication = () => {
     return (
         <WebsiteLayout page="publication">
             <div className="bg-white ">
-                <div className="h-[15rem]">
+                {/* <div className="h-[15rem]">
                     <div className="pl-12" >
                         <img src="images/homePage/headings/PUBLICATIONS.jpg" className=" object-contain" alt="" />
                         <div className="-translate-y-[13rem]">
@@ -102,8 +102,8 @@ const Publication = () => {
                         </div>
                     </div>
 
-                </div>
-                <div className="text-center ">
+                </div> */}
+                <div className="text-center pt-10">
                     <h2 className="pb-16 sm:text-[3rem] text-center text-red-600">
                         Press Releases and Speeches
                     </h2>

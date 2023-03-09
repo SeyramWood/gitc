@@ -33,7 +33,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-4 cursor-pointer ">
+                            <div className="p-4 cursor-pointer bg-slate-100">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Dr. Edmumd Prempeh
@@ -141,7 +141,7 @@ const About = () => {
                 </div>
 
                 {/* team */}
-                <div className="mb-32  sm:mx-20">
+                <div className="pb-32  sm:mx-20">
                     <div className="pb-[2rem]  text-center ">
                         <div className="h-[15rem] ">
                             <div className=" " >
