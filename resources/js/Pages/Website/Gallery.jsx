@@ -7,7 +7,7 @@ import albums from '../../files/imageFiles'
 // import { values } from "lodash";
 
 
-import PhotoAlbum from "react-photo-album";
+// import PhotoAlbum from "react-photo-album";
 
 function Gallery() {
     const [open, setOpen] = useState(false);

@@ -4340,6 +4340,14 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+pdf-viewer-reactjs@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/pdf-viewer-reactjs/-/pdf-viewer-reactjs-2.2.3.tgz#63e1c90d9575a87ba801b0564558138972733db7"
+  integrity sha512-HM6ngxxnbztd/N/3dB+of3jSZtzS8CjcAoIfSWe7OY9Aqwb6cXLHbluCWc//cySXDdj3hhe8Wj5Wjg7T1ktxUA==
+  dependencies:
+    pdfjs-dist "^2.6.347"
+    prop-types "^15.7.2"
+
 pdfjs-dist@3.3.122:
   version "3.3.122"
   resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-3.3.122.tgz#750047cb347a8124092180fc4399d4f31f1de37b"
@@ -4350,7 +4358,7 @@ pdfjs-dist@3.3.122:
   optionalDependencies:
     canvas "^2.11.0"
 
-pdfjs-dist@^2.0.197, pdfjs-dist@^2.0.550:
+pdfjs-dist@^2.0.197, pdfjs-dist@^2.0.550, pdfjs-dist@^2.6.347:
   version "2.16.105"
   resolved "https://registry.yarnpkg.com/pdfjs-dist/-/pdfjs-dist-2.16.105.tgz#937b9c4a918f03f3979c88209d84c1ce90122c2a"
   integrity sha512-J4dn41spsAwUxCpEoVf6GVoz908IAA3mYiLmNxg8J9kfRXc2jxpbUepcP0ocp0alVNLFthTAM8DZ1RaHh8sU0A==
@@ -4479,7 +4487,7 @@ process@^0.11.10:
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
   integrity sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==
 
-prop-types@^15.6.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==

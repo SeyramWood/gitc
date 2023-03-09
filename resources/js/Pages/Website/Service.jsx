@@ -2,10 +2,10 @@ import { WebsiteLayout } from "../../components/layouts";
 import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
 import ServiceLinks from "../../components/layouts/website/ServiceLinks";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
-
 function Service() {
     return (
         <WebsiteLayout page="service">
+           
             {/* <ServiceLinks /> */}
             <div className="bg-white">
                 <div className="sm:flex px-4 pt-16 pb-16 overflow-hidden">
