@@ -1,442 +1,236 @@
-import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
-
-import { useState } from "react";
-
-import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
-
-// Import styles
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Worker } from "@react-pdf-viewer/core";
+// Import the main component
+import { SpecialZoomLevel, Viewer } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { getFilePlugin } from "@react-pdf-viewer/get-file";
+import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
+import React, { useState } from "react";
+import { AiOutlineFilePdf } from "react-icons/ai";
+// modal
+import { Modal } from "react-responsive-modal";
 
 import { WebsiteLayout } from "../../components/layouts";
-import { Worker } from '@react-pdf-viewer/core';
+import data from "../../files/resourceFile";
 
-// Import the main component
-import { Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
-
+// Import styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
 // Import the styles
-import '@react-pdf-viewer/core/lib/styles/index.css';
-import '@react-pdf-viewer/page-navigation/lib/styles/index.css';
-import { pageNavigationPlugin } from '@react-pdf-viewer/page-navigation';
-import { getFilePlugin } from '@react-pdf-viewer/get-file';
-
-// modal
-import { Modal } from 'react-responsive-modal';
-
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+// Import styles
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 // data
-import data from '../../files/resourceFile';
-import 'react-responsive-modal/styles.css';
+import "react-responsive-modal/styles.css";
+
+// Import styles
+import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
+
+const pageLayout = {
+    transformSize: ({ size }) => ({
+        height: size.height + 20,
+        width: size.width + 20,
+    }),
+};
 
 function Resources() {
-    const pageNavigationPluginInstance = pageNavigationPlugin();
-
-    const { CurrentPageInput, GoToFirstPageButton, GoToLastPageButton, GoToNextPageButton, GoToPreviousPage } = pageNavigationPluginInstance;
-
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const pageNavigationPluginInstance = pageNavigationPlugin();
     // modal
     const [open, setOpen] = useState(false);
     const [currentFile, setCurrentFile] = useState();
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
 
     function opneFile(filePath) {
         setCurrentFile(filePath);
         setOpen(true);
     }
-
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
     // pdf viewer
     const getFilePluginInstance = getFilePlugin();
     const { DownloadButton } = getFilePluginInstance;
-    return (
 
-        <WebsiteLayout page="resource" >
-            <div
-                style={{
-                    border: '1px solid rgba(0, 0, 0, 0.3)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                }}
-            >
-                <div
-                    style={{
-                        alignItems: 'center',
-                        backgroundColor: '#eeeeee',
-                        borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        padding: '4px',
-                    }}
-                >
-                    <div style={{ padding: '0px 2px' }}>
-                        <GoToFirstPageButton />
-                    </div>
-                    <div style={{ padding: '0px 2px' }}>
-                        <GoToPreviousPage />
-                    </div>
-                    <div style={{ padding: '0px 2px' }}>
-                        <CurrentPageInput />
-                    </div>
-                    <div style={{ padding: '0px 2px' }}>
-                        <GoToNextPageButton />
-                    </div>
-                    <div style={{ padding: '0px 2px' }}>
-                        <GoToLastPageButton />
-                    </div>
-                </div>
-                <div
-                    style={{
-                        flex: 1,
-                        overflow: 'hidden',
-                    }}
-                >
-                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                        <Viewer fileUrl="images/11.pdf" plugins={[pageNavigationPluginInstance]} />
-                    </Worker>;
-                </div>
-            </div>
-            {/* {data.map((item, index) => (
-                <h1 key={index}>
-                    {item.pdf}
-                   
-                </h1>
-            ))} */}
+    return (
+        <WebsiteLayout page="resource">
+       
 
             <div className="bg-white">
                 {/* files */}
-                <div className=" sm:mx-24 py-10 mb-10">
-                    {/* <div className="h-[15rem]">
-                        <div className=" " >
-                            <img src="images/homePage/headings/RESOURCES.jpg" className=" object-contain" alt="" />
-                            <div className="-translate-y-[13rem]">
-                                <div className="text-center mb-7">
-                                    <h1 className=" mb-0 pb-0 text-[4rem] ">
-                                        Resources
-                                    </h1>
-                                    <p className="pt-0 mt-0 text-black/75 uppercase">Our Files</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> */}
-
-                    <div className="grid grid-cols-2 pt-10 px-6 gap-14  pb-20">
+                <div className="py-10 pb-10 sm:mx-24">
+          
+                    <div className="grid grid-cols-2 px-6 pt-10 pb-20 gap-14">
                         <div className="drop-shadow-md hover:drop-shadow-xl">
-                            <input type="checkbox" id="toggle1" className="toggle hidden" />
-                            <label className="title flex font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle1">
-                                {/* <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " /> */}
+                            <input
+                                type="checkbox"
+                                id="toggle1"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle1"
+                            >
                                 <span className="pt-2">
-                                    <p className="font-bold">Legislative Instruments</p>
+                                    <p className="font-bold">
+                                        Legislative Instruments
+                                    </p>
                                 </span>
                             </label>
 
-                            <div className="content bg-white overflow-auto">
+                            <div className="overflow-auto bg-white content">
                                 <div className="grid grid-cols-1 p-6 pb-20">
-                                   
-                                    
-                                    {/* <div >
-                                        <div className="px-4 sm:flex cursor-pointer ">
 
-                                            <div className="sm:flex py-5">
-                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                                <div className="pt-2">
-                                                    <div className="">
-                                                        <p className="">hh</p>
-                                                    </div>
-                                                    <div className="w-[30%] pt-2">
-                                                        <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
-                                                            onClick={() => setOpen(true)}>
-                                                            Read
-                                                        </button>
-                                                    </div>
-                                                    <Modal key="index" classNames="p-20" open={open} onClose={() => setOpen(false)} center>
-                                                        <div className="" >
-                                                            <div
-                                                                className="rpv-core__viewer pt-20"
-                                                                style={{
-                                                                    border: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                    display: 'flex',
-                                                                    flexDirection: 'column',
-                                                                    height: '100%',
-                                                                }}
-                                                            >
-                                                                <div
-                                                                    style={{
-                                                                        alignItems: 'center',
-                                                                        backgroundColor: '#eeeeee',
-                                                                        borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                        display: 'flex',
-                                                                        padding: '4px',
-                                                                    }}
-                                                                >
-                                                                    <DownloadButton />
-                                                                </div>
-                                                                <div
-                                                                    style={{
-                                                                        flex: 1,
-                                                                        overflow: 'hidden',
-                                                                    }}
-                                                                >
-                                                                    <div className="w-[40rem] ">
-                                                                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                                            <Viewer fileUrl="images/11.pdf" plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
-                                                                        </Worker>;
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Modal>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div >
-                                        <div className="px-4 sm:flex cursor-pointer ">
-
-                                            <div className="sm:flex py-5">
-                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                                <div className="pt-2">
-                                                    <div className="">
-                                                        <p className="">=</p>
-                                                    </div>
-                                                    <div className="w-[30%] pt-2">
-                                                        <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
-                                                            onClick={() => setOpen2(true)}>
-                                                            Read
-                                                        </button>
-                                                    </div>
-                                                    <Modal key="index" classNames="p-20" open={open2} onClose={() => setOpen2(false)} center>
-                                                        <div className="">
-                                                            <div
-                                                                className="rpv-core__viewer pt-20"
-                                                                style={{
-                                                                    border: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                    display: 'flex',
-                                                                    flexDirection: 'column',
-                                                                    height: '100%',
-                                                                }}
-                                                            >
-                                                                <div
-                                                                    style={{
-                                                                        alignItems: 'center',
-                                                                        backgroundColor: '#eeeeee',
-                                                                        borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                        display: 'flex',
-                                                                        padding: '4px',
-                                                                    }}
-                                                                >
-                                                                    <DownloadButton />
-                                                                </div>
-                                                                <div
-                                                                    style={{
-                                                                        flex: 1,
-                                                                        overflow: 'hidden',
-                                                                    }}
-                                                                >
-                                                                    <div className="w-[40rem] ">
-                                                                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                                            <Viewer fileUrl="images/3.pdf" plugins={[getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
-                                                                        </Worker>;
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </Modal>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div> */}
                                     {data.map((item, index) => (
-                                        <div key={index}>
-                                            <div className="px-4 sm:flex cursor-pointer ">
-
-                                                <div className="sm:flex py-5">
-                                                    <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                                    <div className="pt-2">
-                                                        <div className="lowercase">
-                                                            <p className="">{item.name}</p>
-                                                        </div>
-                                                        <div className="w-[30%] pt-2">
-                                                            <button className=" px-3 text-center border rounded-lg hover:bg-red-600 hover:text-white hover:scale-110 duration-200 ease-in-out"
-                                                                onClick={() => opneFile(item.pdf)}
-                                                            >
-                                                                Read
-                                                            </button>
-                                                        </div>
-                                                        <Modal key="index" classNames="mt-[40rem] " open={open}
-                                                            onClose={() => setOpen(false)}
-                                                        >
-                                                            <div className="">
-                                                                <div
-                                                                    className="rpv-core__viewer mt-10 mx-auto "
-                                                                    style={{
-                                                                        border: 'rgba(0, 0, 0, 0.3)',
-                                                                        display: 'flex',
-                                                                        flexDirection: 'column',
-                                                                        height: '100%',
-                                                                    }}
-                                                                >
-                                                                    <div
-                                                                        style={{
-                                                                            alignItems: 'center',
-                                                                            backgroundColor: 'eeeee',
-                                                                            borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
-                                                                            display: 'flex',
-                                                                        }}
-                                                                    >
-                                                                        <div className="pl-2 p-1 bg-red-100">
-                                                                            <DownloadButton />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        style={{
-                                                                            flex: 1,
-                                                                            overflow: 'hidden',
-                                                                        }}
-                                                                    >
-                                                                        <div className="w-[50rem] ">
-                                                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                                                <Viewer fileUrl={currentFile} plugins={[
-                                                                                    // defaultLayoutPluginInstance,
-                                                                                     getFilePluginInstance]} defaultScale={SpecialZoomLevel.PageFit} />
-                                                                            </Worker>;
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </Modal>
+                                        <div
+                                            className="px-1 cursor-pointer sm:flex"
+                                            key={index}
+                                        >
+                                            <div
+                                                className="py-5 sm:flex"
+                                                onClick={() =>
+                                                    opneFile(item.pdf)
+                                                }
+                                            >
+                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                                <div className="pt-2">
+                                                    <div className="w-full lowercase [&>p]:hover:text-primary">
+                                                        <p className="">
+                                                            {item.name}
+                                                        </p>
                                                     </div>
+                                                    
                                                 </div>
-
                                             </div>
                                         </div>
                                     ))}
+                                    <Modal
+                                        key="pdf__modal"
+                                        classNames={{
+                                            modal: "pdf__modal",
+                                        }}
+                                        open={open}
+                                        onClose={() => setOpen(false)}
+                                    >
+                                        <div className="w-[50rem] h-[60rem] mt-10">
+                                            {open && (
+                                                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                                    <Viewer
+                                                        fileUrl={currentFile}
+                                                        plugins={[
+                                                            defaultLayoutPluginInstance,
+                                                            getFilePluginInstance,
+                                                            pageNavigationPluginInstance,
+                                                        ]}
+                                                        defaultScale={
+                                                            SpecialZoomLevel.PageFit
+                                                        }
+                                                        pageLayout={pageLayout}
+                                                    />
+                                                </Worker>
+                                            )}
+                                        </div>
+                                    </Modal>
                                 </div>
                             </div>
                         </div>
                         <div className="drop-shadow-md hover:drop-shadow-xl">
-                            <input type="checkbox" id="toggle2" className="toggle hidden" />
-                            <label className="title flex font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle2">
-                                {/* <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " /> */}
+                            <input
+                                type="checkbox"
+                                id="toggle2"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle2"
+                            >
                                 <span className="pt-2">
-                                    <p className="font-bold">GITC (Anti-Dumping) Regulations, 2019 (L.I 2380)</p>
+                                    <p className="font-bold">
+                                        GITC (Anti-Dumping) Regulations, 2019
+                                        (L.I 2380)
+                                    </p>
                                 </span>
                             </label>
 
-                            <div className="content bg-white overflow-hidden">
-                                <div className="grid grid-cols-1 p-6 gap-14  pb-20">
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-1 p-6 pb-20 gap-14">
                                     <h2 className="text-center">No files</h2>
                                 </div>
                             </div>
                         </div>
                         <div className="drop-shadow-md hover:drop-shadow-xl">
-                            <input type="checkbox" id="toggle3" className="toggle hidden" />
-                            <label className="title flex font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle3">
-                                {/* <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " /> */}
+                            <input
+                                type="checkbox"
+                                id="toggle3"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle3"
+                            >
                                 <span className="pt-2">
-                                    <p className="font-bold ">GITC (Customs Valuation) (Dispute Settlement) Regulations, 2019 (L.I 2382)</p>
+                                    <p className="font-bold ">
+                                        GITC (Customs Valuation) (Dispute
+                                        Settlement) Regulations, 2019 (L.I 2382)
+                                    </p>
                                 </span>
                             </label>
-                            <div className="content bg-white overflow-hidden">
-                                <div className="grid grid-cols-2 p-6 gap-14  pb-20">
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-2 p-6 pb-20 gap-14">
                                     <h2 className="text-center">No files</h2>
                                 </div>
                             </div>
                         </div>
                         <div className=" drop-shadow-md hover:drop-shadow-xl">
-                            <input type="checkbox" id="toggle4" className="toggle hidden" />
-                            <label className="title flex font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle4">
-                                {/* <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " /> */}
+                            <input
+                                type="checkbox"
+                                id="toggle4"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle4"
+                            >
                                 <span className="pt-2">
-                                    <p className="font-bold pr-5">GITC (Subsidy and Countervailing Measures) Regulations, 2020 (L.I 2425)</p>
+                                    <p className="pr-5 font-bold">
+                                        GITC (Subsidy and Countervailing
+                                        Measures) Regulations, 2020 (L.I 2425)
+                                    </p>
                                 </span>
                             </label>
-                            <div className="content bg-white overflow-hidden">
-                                <div className="grid grid-cols-2 p-6 gap-14  pb-20">
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-2 p-6 pb-20 gap-14">
                                     <h2 className="text-center">No files</h2>
                                 </div>
                             </div>
                         </div>
                         <div className=" drop-shadow-md hover:drop-shadow-xl">
-                            <input type="checkbox" id="toggle5" className="toggle hidden" />
-                            <label className="title block font-bold bg-white p-4 cursor-pointer lg:text-2xl text-red-500" htmlFor="toggle5">
+                            <input
+                                type="checkbox"
+                                id="toggle5"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="block p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle5"
+                            >
                                 <span className="pt-2">
-                                    <p className="font-bold ">GITC (Safeguards Measures) Regulations, 2020 (L.I 2426)</p>
+                                    <p className="font-bold ">
+                                        GITC (Safeguards Measures) Regulations,
+                                        2020 (L.I 2426)
+                                    </p>
                                 </span>
                             </label>
-                            <div className="content bg-white overflow-hidden">
-                                <div className="grid grid-cols-2 p-6 gap-14  pb-20">
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-2 p-6 pb-20 gap-14">
                                     <h2 className="text-center">No files</h2>
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFileWord className="text-[4rem] text-blue-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="w-[7rem] h-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div> */}
-
-
+                       
                     </div>
                 </div>
             </div>
-
         </WebsiteLayout>
     );
 }

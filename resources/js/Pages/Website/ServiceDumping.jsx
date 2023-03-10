@@ -21,7 +21,7 @@ function ServiceDumping() {
 
                         </div> */}
                         <div className="text-black sm:pl-2">
-                            <h2 className="text-primary text-[4rem] pb-0 ">Trad Remedies</h2>
+                            <h2 className="text-primary text-[4rem] pb-0 ">Trade Remedies</h2>
                             <p className="text-xl"> Subsidy & Countervailing Duties;
                                 Anti-Dumping Duties and Safeguard Measures
                             </p>
