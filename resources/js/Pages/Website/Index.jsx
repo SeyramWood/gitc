@@ -169,8 +169,8 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className=" pb-28 px-2 sm:px-16 overflow-hidden" >
-                    <div className="pb-40"
+                <div className=" px-2 sm:px-16 overflow-hidden" >
+                    <div className=" pb-32"
                         data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         data-aos-duration="700"
@@ -181,10 +181,7 @@ const Index = () => {
                         </div>
 
                         <div className="justify-center md:flex gap-6 sm:mt-13 ">
-                            <div
-                                className="sm:w-[25%]"
-                               
-                            >
+                            <div className="sm:w-[25%]">
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
@@ -334,10 +331,10 @@ const Index = () => {
                                 </div>
                             </div>
                         </div>
+                        <Link href="/services" className="">
+                            <Button className="mt-2 "> View More </Button>
+                        </Link>
                     </div>
-                    <Link href="/services" className="">
-                        <Button className="mt-8 "> View More </Button>
-                    </Link>
                 </div>
 
                 {/* story section*/}

@@ -26,9 +26,13 @@ const Publication = () => {
         breakpoints: {
             "(min-width: 400px)": {
                 slides: { perView: 1, spacing: 1 },
+                loop: true,
+                mode: "free-snap",
             },
             "(min-width: 1000px)": {
-                slides: { perView: 3, spacing: 2 },
+                slides: { perView: 3, spacing: 20 },
+                loop: true,
+                mode: "free-snap",
             },
         },
 
@@ -41,68 +45,9 @@ const Publication = () => {
         },
     });
 
-    const releases = [
-        {
-            main_img: "images/about/bg.jpg",
-            gallery: [
-                "/images/homepage/serviceOne.jpg",
-                "/images/homepage/serviceTwo.jpg",
-                "/images/homepage/serviceTwo.jpg",
-            ],
-            title: " COURTESY CALL TO GHANA STATISTICAL SERVICE",
-            date: " 19th May 2022",
-        },
-        {
-            main_img: "",
-            gallery: [
-                "/images/homepage/serviceTwo.jpg",
-                "/images/homepage/serviceTwo.jpg",
-            ],
-            title: " COURTESY CALL TO GHANA Revenue Authority",
-            date: "2nd June 2022",
-        },
-        {
-            main_img: "",
-            gallery: ["", "", ""],
-            title: "  ASSOCIATION OF GHANA INDUSTRIES COURTESY CALL TO GITC",
-            date: "27th May 2022",
-        },
-        {
-            main_img: "",
-            gallery: ["", "", ""],
-            title: "HON.DEPUTY MINISTER (TRADE) COURTESY CALL TO GITC",
-            date: "19th May,2022",
-        },
-        {
-            main_img: "",
-            gallery: ["", "", ""],
-            title: "TRAINING SESSION WITH BMWK",
-            date: "19th -29th April 2022",
-        },
-        {
-            main_img: "",
-            gallery: ["images/homepage/serviceTwo.jpg", "", ""],
-            title: " GITC RETREAT WITH STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD",
-            date: "17th - 18th March 2022",
-        },
-    ];
-
     return (
         <WebsiteLayout page="publication">
             <div className="bg-white ">
-                {/* <div className="h-[15rem]">
-                    <div className="pl-12" >
-                        <img src="images/homePage/headings/PUBLICATIONS.jpg" className=" object-contain" alt="" />
-                        <div className="-translate-y-[13rem]">
-                            <div className="text-center mb-7">
-                                <h1 className=" mb-0 pb-0 text-[4rem] ">
-                                    Publications
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> */}
                 <div className="text-center pt-10">
                     <h2 className="pb-16 sm:text-[3rem] text-center text-red-600">
                         Press Releases and Speeches
@@ -112,7 +57,7 @@ const Publication = () => {
                 {/* publicatation */}
                 <div className=" sm:px-[6rem]  ">
                     <div className="relative sm:pb-28">
-                        <div ref={sliderRef} className="gap-4 keen-slider">
+                        <div ref={sliderRef} className=" keen-slider">
                             <div className="keen-slider__slide number-slide1 ">
                                 <Link href="">
                                     <div className="relative">
@@ -208,38 +153,6 @@ const Publication = () => {
                                     </div>
                                 </Link>
                             </div>
-
-                            <div className="keen-slider__slide number-slide4">
-                                <Link href="">
-                                    <div className="relative">
-                                        <img
-                                            src="images/publication/pub3.jpg"
-                                            className="object-cover h-[20rem]"
-                                            alt=""
-                                        />
-                                        <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block font-bold text-center text-white uppercase">
-                                                <div>Nov</div>
-                                                <div>7</div>
-                                                <div>2019</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase font-bold text-primary">
-                                            <Link href="">
-                                                Notice of Initiation and Request
-                                                for Information Aluminium Coils
-                                                and Circles
-                                            </Link>
-                                        </p>
-                                        <p>
-                                            Agency:Ghana InternationalTrade
-                                            Commission
-                                        </p>
-                                    </div>
-                                </Link>
-                            </div>
                         </div>
                         {loaded && instanceRef.current && (
                             <>
@@ -265,6 +178,23 @@ const Publication = () => {
                                     }
                                 />
                             </>
+                        )}
+                        {loaded && instanceRef.current && (
+                            <div className="text-center pt-6">
+                                {[
+                                    ...Array(instanceRef.current.track.details.slides.length).keys(),
+                                ].map((idx) => {
+                                    return (
+                                        <button
+                                            key={idx}
+                                            onClick={() => {
+                                                instanceRef.current?.moveToIdx(idx)
+                                            }}
+                                            className={"dot" + (currentSlide === idx ? " active" : "")}
+                                        ></button>
+                                    )
+                                })}
+                            </div>
                         )}
                     </div>
                 </div>
