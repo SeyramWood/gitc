@@ -153,7 +153,7 @@ const Navigation = () => {
                         <Link href="/publications">Publications</Link>
                     </li>
                     <li className="hover:opacity-100">
-                        <Link href="/publications">Gallery</Link>
+                        <Link href="/gallery">Gallery</Link>
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/contact">Contact Us</Link>
@@ -245,7 +245,7 @@ const Navigation = () => {
                             <Link href="/publications">Publications</Link>
                         </li>
                         <li className="[&:hover>a]:opacity-100">
-                            <Link href="/galleries">Gallery</Link>
+                            <Link href="/gallery">Gallery</Link>
                         </li>
                         <li className="[&:hover>a]:opacity-100">
                             <Link href="/contact">Contact Us</Link>

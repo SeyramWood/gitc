@@ -98,7 +98,7 @@ const BannerServices = () => {
 };
 const BannerResources = () => {
     return (
-        <section className="banner__static resource">
+        <section className="banner__static resources">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl text-bold">Resources</h1>
                 <p className="mt-8 text-3xl font-light text-white"></p>
