@@ -332,7 +332,7 @@ const Index = () => {
                             </div>
                         </div>
                         <Link href="/services" className="">
-                            <Button className="mt-2 "> View More </Button>
+                            <Button className="mt-14 "> View More </Button>
                         </Link>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ const About = () => {
                         <img src="images/homePage/headings/GOVERNING BOARD.jpg" className=" object-contain mx-auto" alt="" />
                         <div className="-translate-y-[13rem]">
                             <div className="text-center mb-7">
-                                <h1 className=" mb-0 pb-0 text-[4rem] ">
+                                <h1 className="text-primary mb-0 pb-0 text-[4rem] ">
                                     Governing Board
                                 </h1>
                             </div>
@@ -148,7 +148,7 @@ const About = () => {
                                 <img src="images/homePage/headings/OUR TEAM.jpg" className=" object-contain mx-auto" alt="" />
                                 <div className="-translate-y-[13rem]">
                                     <div className="text-center mb-7">
-                                        <h1 className=" mb-0 pb-0 text-[4rem] ">
+                                        <h1 className="text-primary mb-0 pb-0 text-[4rem] ">
                                             Our Team
                                         </h1>
                                         <p className="text-black sm:text-[16px] uppercase">Meet The Heads Of Departments</p>
