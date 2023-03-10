@@ -128,3 +128,8 @@
         bottom: -5px;
     }
 }
+
+.pdf__modal {
+    /* width: 70% !important; */
+    max-width: 100% !important;
+}

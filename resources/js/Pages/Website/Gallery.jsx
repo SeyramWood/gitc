@@ -1,13 +1,10 @@
-import { WebsiteLayout } from "../../components/layouts";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { WebsiteLayout } from "../../components/layouts";
 
-import albums from '../../files/imageFiles'
+import albums from "../../files/imageFiles";
 // import { values } from "lodash";
-
-
-import PhotoAlbum from "react-photo-album";
 
 function Gallery() {
     const [open, setOpen] = useState(false);
@@ -18,15 +15,15 @@ function Gallery() {
         setOpen(true);
     }
     const [index, setIndex] = useState(-1);
- 
+
     return (
         <WebsiteLayout page="gallery">
-            <div className="bg-white pb-10">
+            <div className="pb-10 bg-white">
                 {/* gallery */}
                 <div className="">
                     {/* <div className="h-[15rem] ">
-                        <div className=" " >
-                            <img src="images/homePage/headings/GALLERY.jpg" className=" object-contain mx-auto" alt="" />
+                        <div className="" >
+                            <img src="images/homePage/headings/GALLERY.jpg" className="object-contain mx-auto " alt="" />
                             <div className="-translate-y-[13rem]">
                                 <div className="text-center mb-7">
                                     <h1 className=" mb-0 pb-0 text-[4rem] ">
@@ -39,51 +36,62 @@ function Gallery() {
 
                     </div> */}
 
-                    <div className="justify-center sm:flex pt-16">
+                    <div className="justify-center pt-16 sm:flex">
                         <div className="grid-cols-3 sm:grid">
                             {/*  */}
                             {albums.map((item, index) => (
-                                <div key={index} className="relative sm:w-[20rem] mx-3 mb-10">
-                                    {console.log(index)}
+                                <div
+                                    key={index}
+                                    className="relative sm:w-[20rem] mx-3 mb-10"
+                                >
                                     <div
                                         className="overflow-hidden bg-black cursor-pointer "
                                         onClick={() => openGallery(item.id)}
                                     >
-                                        <div className=" w-full bg-white/90">
-                                         
+                                        <div className="w-full  bg-white/90">
                                             {/*  */}
-                                             <div className="h-[15rem] ">
+                                            <div className="h-[15rem] ">
                                                 <div className=" overflow-hidden p-3 justify-between  h-[50%]">
                                                     <div className="overflow-hidden ">
                                                         <img
                                                             src={item.nn[0]}
-                                                            className="object-cover hover:opacity-75 bg-black/40 transition ease-in-out duration-700 hover:scale-110"
+                                                            className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
                                                             alt=""
-                                                             onClick={({ index }) => setIndex(index)}
+                                                            onClick={({
+                                                                index,
+                                                            }) =>
+                                                                setIndex(index)
+                                                            }
                                                         />
                                                     </div>
-                                                 
                                                 </div>
                                                 <div className="flex p-3 justify-between gap-4  h-[50%]">
                                                     <div className="overflow-hidden ">
                                                         <img
                                                             src={item.nn[1]}
-                                                            className="object-cover hover:opacity-75 bg-black/40 transition ease-in-out duration-700 hover:scale-110"
+                                                            className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
                                                             alt=""
-                                                             onClick={({ index }) => setIndex(index)}
-                                                            
+                                                            onClick={({
+                                                                index,
+                                                            }) =>
+                                                                setIndex(index)
+                                                            }
                                                         />
                                                     </div>
                                                     <div className="overflow-hidden">
                                                         <img
                                                             src={item.nn[2]}
-                                                            className="object-cover hover:opacity-75 bg-black/40 transition ease-in-out duration-700 hover:scale-110"
+                                                            className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
                                                             alt=""
-                                                             onClick={({ index }) => setIndex(index)}
+                                                            onClick={({
+                                                                index,
+                                                            }) =>
+                                                                setIndex(index)
+                                                            }
                                                         />
                                                     </div>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </div>
                                         {/* <img
                                             src={item.imagePath}
@@ -92,10 +100,17 @@ function Gallery() {
                                         /> */}
                                     </div>
                                     <div className="absolute bg-black/40 insect-0"></div>
-                                    <Lightbox open={index >= 0 && currentGallery === item.id ? true : false } close={() => setCurrentGallery()}
-                                        slides={
-                                            item.nn.map((i, d) => ({ src: i }))
+                                    <Lightbox
+                                        open={
+                                            index >= 0 &&
+                                            currentGallery === item.id
+                                                ? true
+                                                : false
                                         }
+                                        close={() => setCurrentGallery()}
+                                        slides={item.nn.map((i, d) => ({
+                                            src: i,
+                                        }))}
                                     />
                                     <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
                                         <p className="uppercase text-primary ">
@@ -119,7 +134,7 @@ function Gallery() {
                                     />
                                 </div>
                                 <div className="absolute bg-black/40 insect-0"></div>
-                                <Lightbox open={open} 
+                                <Lightbox open={open}
                                     slides={[
                                         { src: "/images/publish/publish.jpg" },
                                     ]}
@@ -132,7 +147,7 @@ function Gallery() {
                                 </div>
                             </div>  */}
                             {/*  */}
-                            {/* 
+                            {/*
                             <div className="relative sm:w-[20rem] mx-3 mb-10">
                                 <div
                                     className="overflow-hidden bg-black cursor-pointer "
