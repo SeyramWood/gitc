@@ -10,7 +10,6 @@ import ButtonOutline from "../../components/layouts/website/ButtonOutline";
 import "aos/dist/aos.css";
 import "keen-slider/keen-slider.min.css";
 
-import { BiSearchAlt } from "react-icons/bi";
 
 const animation = { duration: 40000, easing: (t) => t };
 
@@ -74,7 +73,7 @@ const Index = () => {
         <WebsiteLayout page="home">
             <div className="text-lg bg-white ">
                 {/* values section */}
-                <div className="mb-32  sm:py-10 px-2 bg-faded ">
+                <div className="px-2 mb-32 sm:py-10 bg-faded ">
                     <div
                         className="justify-center w-[100%] gap-3 pb-4 md:flex"
                         data-aos="fade-up"
@@ -86,7 +85,7 @@ const Index = () => {
                                     <img
                                         src="images/homePage/objectivity.png"
                                         alt="Objectivity"
-                                        className="object-contain -translate-y-5 -translate-x-1"
+                                        className="object-contain -translate-x-1 -translate-y-5"
                                     />
                                 </div>
                             </div>
@@ -101,14 +100,14 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex  p-2 my-5 ">
+                        <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
                                         // src="images/homePage/objectivity.png"
                                         src="images/homePage/professionalism.png"
                                         alt="professional"
-                                        className="object-contain -translate-y-5 -translate-x-1"
+                                        className="object-contain -translate-x-1 -translate-y-5"
                                     />
                                 </div>
                             </div>
@@ -125,14 +124,14 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex p-2  my-5 ">
+                        <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%] sm:pl-1">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
                                         // src="images/homePage/objectivity.png"
                                         src="images/homePage/integrity.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-5 -translate-x-1  "
+                                        className="object-contain -translate-x-1 -translate-y-5 "
                                     />
                                 </div>
                             </div>
@@ -145,14 +144,14 @@ const Index = () => {
                             </div>
                         </div>
 
-                        <div className="flex  p-2 my-5 ">
+                        <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
                                     <img
                                         src="images/homePage/search.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-5 -translate-x-1 "
+                                        className="object-contain -translate-x-1 -translate-y-5 "
                                     />
                                 </div>
                             </div>
@@ -169,20 +168,19 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className=" pb-28 px-2 sm:px-16 overflow-hidden" >
-                    <div className="pb-40" >
+                <div className="px-2 overflow-hidden  sm:px-16" >
+                    <div className="pb-32 "
+                        data-aos="fade-up"
+                        data-aos-anchor-placement="center-bottom"
+                        data-aos-duration="700"
+                    >
 
                         <div className="h-[17rem] w-full" style={{ backgroundImage: "url('images/homePage/headings/SERVICES.jpg')", backgroundRepeat: "no-repeat", backgroundPositionX: "center", backgroundAttachment: "fixed" }}>
                             <h1 className="text-center translate-y-[7rem] text-primary" >Services</h1>
                         </div>
 
-                        <div className="justify-center md:flex gap-6 sm:mt-13 ">
-                            <div
-                                className="sm:w-[25%]"
-                                data-aos="fade-up"
-                                data-aos-anchor-placement="center-bottom"
-                                data-aos-duration="700"
-                            >
+                        <div className="justify-center gap-6 md:flex sm:mt-13 ">
+                            <div className="sm:w-[25%]">
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
@@ -332,17 +330,17 @@ const Index = () => {
                                 </div>
                             </div>
                         </div>
+                        <Link href="/services" className="">
+                            <Button className="mt-14 "> View More </Button>
+                        </Link>
                     </div>
-                    <Link href="/services" className="">
-                        <Button className="mt-8 "> View More </Button>
-                    </Link>
                 </div>
 
                 {/* story section*/}
-                <div className="sm:px-20 overflow-hidden ">
-                    <div className="  ">
+                <div className="overflow-hidden sm:px-20 ">
+                    <div className="">
                         <div className="">
-                            <div className="justify-center bg-black sm:flex block">
+                            <div className="justify-center block bg-black sm:flex">
                                 <div
                                     className="sm:w-[80rem] sm:h-[32rem] h-52 opacity-60"
                                     style={{
@@ -361,16 +359,16 @@ const Index = () => {
                                         style={{}}
                                     />  */}
                                 </div>
-                                <div className="bg-white  ">
+                                <div className="bg-white ">
                                     <div
-                                        className="container sm:pt-12 pt-6 px-4  sm:px-20"
+                                        className="container px-4 pt-6 sm:pt-12 sm:px-20"
                                         data-aos="fade-left"
                                         data-aos-duration="2000"
                                     >
-                                        <p className=" text-red-700 sm:text-left sm:text-2lx">
+                                        <p className="text-red-700  sm:text-left sm:text-2lx">
                                             DID YOU KNOW THAT
                                         </p>
-                                        <h2 className=" font-bold  text-red-600 sm:text-left sm:text-3xl">
+                                        <h2 className="font-bold text-red-600  sm:text-left sm:text-3xl">
                                             GITC is among seven trade remedy
                                             institutions and investigating
                                             authorities in Africa.
@@ -398,7 +396,7 @@ const Index = () => {
                             <div className="flex flex-col-reverse justify-center bg-black sm:flex sm:flex-row ">
                                 <div className="text-white bg-red-700">
                                     <div
-                                        className="container sm:px-20 px-4 pt-4 "
+                                        className="container px-4 pt-4 sm:px-20 "
                                         data-aos="fade-right"
                                         data-aos-duration="2000"
                                     >
@@ -463,7 +461,7 @@ const Index = () => {
                 </div>
 
                 {/* partners section */}
-                <div className="py-10 mb-20 mt-20 bg-gray-100">
+                <div className="py-10 mt-20 mb-20 bg-gray-100">
                     <div className="">
                         <div className="flex justify-center gap-1 h-10rem]">
                             <div ref={sliderRef} className="keen-slider">
@@ -543,7 +541,7 @@ const Index = () => {
                             <div className="sm:w-[50%] ">
                                 {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                                 <img
-                                    className="  "
+                                    className=""
                                     src="/images/homePage/Min.jpg"
                                     alt=""
                                 />

@@ -1,17 +1,24 @@
 import React from "react";
 import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
 import { WebsiteLayout } from "../../components/layouts";
-import ServiceLinks from "../../components/layouts/website/ServiceLinks";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 
 function ServiceDispute() {
     return (
         <WebsiteLayout page="service">
-            <ServiceLinks />
             <div className="bg-white">
-                <div className="sm:flex px-4 pt-16">
-                    <ServicesNav />
+                <div className="sm:flex px-4 pt-16 pb-16">
+                   <ServicesNav />
                     <div className="sm:w-[70%]">
+                        {/* <div className="h-[15rem]">
+                            <div className=" " >
+                                <img src="/../images/homePage/headings/SERVICE PAGE.jpg" className=" object-contain" alt="" />
+                                <div className="">
+                                    <h1 className="text-center -translate-y-[14rem] text-red-200/ " >Services</h1>
+                                </div>
+                            </div>
+
+                        </div> */}
                         <div className="text-black px-6">
                             <h2 className="text-primary text-[4rem] pb-0 ">
                                 Dispute Settlement

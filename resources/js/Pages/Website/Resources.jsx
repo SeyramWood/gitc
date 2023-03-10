@@ -1,299 +1,236 @@
-import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
+import { Worker } from "@react-pdf-viewer/core";
+// Import the main component
+import { SpecialZoomLevel, Viewer } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { getFilePlugin } from "@react-pdf-viewer/get-file";
+import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
+import React, { useState } from "react";
+import { AiOutlineFilePdf } from "react-icons/ai";
+// modal
+import { Modal } from "react-responsive-modal";
 
 import { WebsiteLayout } from "../../components/layouts";
-import { useState } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
+import data from "../../files/resourceFile";
 
+// Import styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
+// Import the styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+// Import styles
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+// data
+import "react-responsive-modal/styles.css";
+
+// Import styles
+import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
+
+const pageLayout = {
+    transformSize: ({ size }) => ({
+        height: size.height + 20,
+        width: size.width + 20,
+    }),
+};
 
 function Resources() {
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const pageNavigationPluginInstance = pageNavigationPlugin();
+    // modal
     const [open, setOpen] = useState(false);
-    const [openOne, setOpenOne] = useState(false);
-    const [openTwo, setOpenTwo] = useState(false);
-    const [openThree, setOpenThree] = useState(false);
-    const [openFour, setOpenFour] = useState(false);
-    const [openFive, setOpenFive] = useState(false);
+    const [currentFile, setCurrentFile] = useState();
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    function opneFile(filePath) {
+        setCurrentFile(filePath);
+        setOpen(true);
+    }
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+    // pdf viewer
+    const getFilePluginInstance = getFilePlugin();
+    const { DownloadButton } = getFilePluginInstance;
+
     return (
-        <WebsiteLayout page="service" >
+        <WebsiteLayout page="resource">
+       
+
             <div className="bg-white">
                 {/* files */}
-                <div className=" sm:mx-24 py-10 mb-10">
-                    <div className="text-center mb-7">
-                        <h2 className="text-red-600 mb-0 pb-0 sm:text-[4rem] ">
-                            Resources
-                        </h2>
-                        <p className="pt-0 mt-0 uppercase">Our Files</p>
-                    </div>
-                    <div className="grid grid-cols-2 p-6 gap-14  pb-20">
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+                <div className="py-10 pb-10 sm:mx-24">
+          
+                    <div className="grid grid-cols-2 px-6 pt-10 pb-20 gap-14">
+                        <div className="drop-shadow-md hover:drop-shadow-xl">
+                            <input
+                                type="checkbox"
+                                id="toggle1"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle1"
+                            >
+                                <span className="pt-2">
+                                    <p className="font-bold">
+                                        Legislative Instruments
+                                    </p>
+                                </span>
+                            </label>
 
-                            <div className="sm:flex py-5">
-                                <AiOutlineFileWord className="text-[4rem] text-center text-blue-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
+                            <div className="overflow-auto bg-white content">
+                                <div className="grid grid-cols-1 p-6 pb-20">
 
-                            <div className="sm:flex py-5">
-                                <AiOutlineFileWord className="text-[4rem] text-blue-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="w-[7rem] h-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 sm:flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="px-4 flex shadow-lg cursor-pointer duration-500 ease-in-out hover:scale-110">
-
-                            <div className="sm:flex py-5">
-                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                <div className="pt-2">
-                                    <p>Name of File</p>
-                                    <div className=""> File description </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div className="">
-                    {/* gallery */}
-                    <div className="">
-                        <div className="text-center mb-7">
-                            <h2 className="text-red-600 pb-0 mb-0 sm:text-[4rem]">
-                                Our Gallery
-                            </h2>
-                            <p>MEETINGS, WORSHSHOPS, COURTESY CALLS</p>
-                        </div>
-                        <div className="justify-center sm:flex">
-                            <div className="grid-cols-3 sm:grid">
-                                {/*
-                         {
-                            releases.map((data) => (
-                            // console.log(data.gallery.img)
-                            // <div className="">{data.date}</div>
-                            <div className="relative sm:w-[20rem] mx-3 mb-10" >
-                                <div className="overflow-hidden bg-black " onClick={() => setOpen(true)}>
-                                    <img src={data.main_img} className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40" alt="" />
-                                </div>
-                                <div className="absolute bg-black/40 insect-0"></div>
-                                <Lightbox
-                                    open={open}
-                                    close={() => setOpen(false)}
-                                    slides={[
-                                        { src: "/images/homepage/serviceOne.jpg"},
-                                        { src: "/images/homepage/serviceTwo.jpg"},
-                                        { src: "/images/homepage/serviceThree.jpg"},
-                                    ]}
-                                />
-                                <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                    <Paragraph className="uppercase text-primary ">
-                                        COURTESY CALL TO
-                                        GHANA STATISTICAL SERVICE
-                                    </Paragraph>
-                                    <Paragraph>
-                                        19th May 2022
-                                    </Paragraph>
-                                </div>
-                            </div>
-                        ))
-                        }
-                        */}
-                                <div className="relative sm:w-[20rem] mx-3 mb-10">
-                                    <div
-                                        className="overflow-hidden bg-black cursor-pointer "
-                                        onClick={() => setOpen(true)}
-                                    >
-                                        <img
-                                            src="images/publish/publish.jpg"
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="absolute bg-black/40 insect-0"></div>
-                                    <Lightbox
+                                    {data.map((item, index) => (
+                                        <div
+                                            className="px-1 cursor-pointer sm:flex"
+                                            key={index}
+                                        >
+                                            <div
+                                                className="py-5 sm:flex"
+                                                onClick={() =>
+                                                    opneFile(item.pdf)
+                                                }
+                                            >
+                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                                <div className="pt-2">
+                                                    <div className="w-full lowercase [&>p]:hover:text-primary">
+                                                        <p className="">
+                                                            {item.name}
+                                                        </p>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                    <Modal
+                                        key="pdf__modal"
+                                        classNames={{
+                                            modal: "pdf__modal",
+                                        }}
                                         open={open}
-                                        close={() => setOpen(false)}
-                                        slides={[
-                                            { src: "/images/publish/publish.jpg" },
-                                        ]}
-                                    />
-                                    <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                        <p className="uppercase text-primary ">
-                                            COURTESY CALL TO GHANA STATISTICAL
-                                            SERVICE
-                                        </p>
-                                        <p>19th May 2022</p>
-                                    </div>
-                                </div>
-                                <div className=" sm:w-[20rem]  mx-3 mb-10">
-                                    <div
-                                        className="overflow-hidden bg-black cursor-pointer "
-                                        onClick={() => setOpen(true)}
+                                        onClose={() => setOpen(false)}
                                     >
-                                        <img
-                                            src="images/publish/publish1.jpg"
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <Lightbox
-                                        open={openOne}
-                                        close={() => setOpenOne(false)}
-                                        slides={[
-                                            { src: "/images/publish/publish1.jpg" },
-                                        ]}
-                                    />
-                                    <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                        <p className="uppercase text-primary ">
-                                            COURTESY CALL TO GHANA Revenue Authority
-                                        </p>
-                                        <p>2nd June 2022</p>
-                                    </div>
-                                </div>
-                                <div className=" sm:w-[20rem]  mx-3 mb-10">
-                                    <div
-                                        className="overflow-hidden bg-black cursor-pointer "
-                                        onClick={() => setOpenTwo(true)}
-                                    >
-                                        <img
-                                            src="images/publish/publish2.jpg"
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <Lightbox
-                                        open={openTwo}
-                                        close={() => setOpenTwo(false)}
-                                        slides={[
-                                            { src: "/images/publish/publish2.jpg" },
-                                        ]}
-                                    />
-                                    <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                        <p className="uppercase text-primary ">
-                                            ASSOCIATION OF GHANA INDUSTRIES COURTESY
-                                            CALL TO GITC
-                                        </p>
-                                        <p>27th May 2022</p>
-                                    </div>
-                                </div>
-                                <div className="sm:w-[20rem]  mx-3 mb-10">
-                                    <div
-                                        className="overflow-hidden bg-black cursor-pointer "
-                                        onClick={() => setOpenThree(true)}
-                                    >
-                                        <img
-                                            src="images/publish/publish3.jpg"
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <Lightbox
-                                        open={openThree}
-                                        close={() => setOpenThree(false)}
-                                        slides={[
-                                            { src: "/images/publish/publish3.jpg" },
-                                        ]}
-                                    />
-                                    <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                        <p className="uppercase text-primary ">
-                                            HON.DEPUTY MINISTER (TRADE) COURTESY
-                                            CALL TO GITC
-                                        </p>
-                                        <p>19th May,2022</p>
-                                    </div>
-                                </div>
-                                <div className=" sm:w-[20rem]  mx-3 mb-10">
-                                    <div
-                                        className="overflow-hidden bg-black cursor-pointer "
-                                        onClick={() => setOpenFour(true)}
-                                    >
-                                        <img
-                                            src="images/publish/publish4.jpg"
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <Lightbox
-                                        open={openFour}
-                                        close={() => setOpenFour(false)}
-                                        slides={[
-                                            { src: "/images/publish/publish4.jpg" },
-                                        ]}
-                                    />
-                                    <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
-                                        <p className="uppercase text-primary ">
-                                            TRAINING SESSION WITH BMWK
-                                        </p>
-                                        <p>19th -29th April 2022</p>
-                                    </div>
-                                </div>
-                                <div className=" sm:w-[20rem]  mx-3 mb-10">
-                                    <div
-                                        className="overflow-hidden bg-black cursor-pointer "
-                                        onClick={() => setOpenFive(true)}
-                                    >
-                                        <img
-                                            src="images/publish/publish5.jpg"
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <Lightbox
-                                        open={openFive}
-                                        close={() => setOpenFive(false)}
-                                        slides={[
-                                            { src: "/images/publish/publish5.jpg" },
-                                        ]}
-                                    />
-                                    <div className="text-center bg-slate-100 p-5 sm:h-[35%]">
-                                        <p className="uppercase text-primary ">
-                                            GITC RETREAT WITH STAFF,TECHNICAL
-                                            COMMITTEE AND GOVERNING BOARD
-                                        </p>
-                                        <p>17th - 18th March 2022</p>
-                                    </div>
+                                        <div className="w-[50rem] h-[60rem] mt-10">
+                                            {open && (
+                                                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                                    <Viewer
+                                                        fileUrl={currentFile}
+                                                        plugins={[
+                                                            defaultLayoutPluginInstance,
+                                                            getFilePluginInstance,
+                                                            pageNavigationPluginInstance,
+                                                        ]}
+                                                        defaultScale={
+                                                            SpecialZoomLevel.PageFit
+                                                        }
+                                                        pageLayout={pageLayout}
+                                                    />
+                                                </Worker>
+                                            )}
+                                        </div>
+                                    </Modal>
                                 </div>
                             </div>
                         </div>
+                        <div className="drop-shadow-md hover:drop-shadow-xl">
+                            <input
+                                type="checkbox"
+                                id="toggle2"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle2"
+                            >
+                                <span className="pt-2">
+                                    <p className="font-bold">
+                                        GITC (Anti-Dumping) Regulations, 2019
+                                        (L.I 2380)
+                                    </p>
+                                </span>
+                            </label>
+
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-1 p-6 pb-20 gap-14">
+                                    <h2 className="text-center">No files</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="drop-shadow-md hover:drop-shadow-xl">
+                            <input
+                                type="checkbox"
+                                id="toggle3"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle3"
+                            >
+                                <span className="pt-2">
+                                    <p className="font-bold ">
+                                        GITC (Customs Valuation) (Dispute
+                                        Settlement) Regulations, 2019 (L.I 2382)
+                                    </p>
+                                </span>
+                            </label>
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-2 p-6 pb-20 gap-14">
+                                    <h2 className="text-center">No files</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div className=" drop-shadow-md hover:drop-shadow-xl">
+                            <input
+                                type="checkbox"
+                                id="toggle4"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="flex p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle4"
+                            >
+                                <span className="pt-2">
+                                    <p className="pr-5 font-bold">
+                                        GITC (Subsidy and Countervailing
+                                        Measures) Regulations, 2020 (L.I 2425)
+                                    </p>
+                                </span>
+                            </label>
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-2 p-6 pb-20 gap-14">
+                                    <h2 className="text-center">No files</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div className=" drop-shadow-md hover:drop-shadow-xl">
+                            <input
+                                type="checkbox"
+                                id="toggle5"
+                                className="hidden toggle"
+                            />
+                            <label
+                                className="block p-4 font-bold text-red-500 bg-white cursor-pointer title lg:text-2xl"
+                                htmlFor="toggle5"
+                            >
+                                <span className="pt-2">
+                                    <p className="font-bold ">
+                                        GITC (Safeguards Measures) Regulations,
+                                        2020 (L.I 2426)
+                                    </p>
+                                </span>
+                            </label>
+                            <div className="overflow-hidden bg-white content">
+                                <div className="grid grid-cols-2 p-6 pb-20 gap-14">
+                                    <h2 className="text-center">No files</h2>
+                                </div>
+                            </div>
+                        </div>
+                       
                     </div>
                 </div>
             </div>
-
         </WebsiteLayout>
     );
 }

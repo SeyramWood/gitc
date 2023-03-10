@@ -42,8 +42,6 @@ Route::get('/publish', [PageController::class, 'publish']);
 Route::get('/contact', [PageController::class, 'contact']);
 Route::get('/publications', [PageController::class, 'publication']);
 Route::get('/faq', [PageController::class, 'Faq']);
-Route::get('/resources', [PageController::class, 'resources'])->name("resources");
-
-
-
+Route::get('/resources', [PageController::class, 'resources']);
+Route::get('/gallery', [PageController::class, 'gallery']);
 

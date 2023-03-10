@@ -17,13 +17,13 @@ const AboutMessage = () => {
         <WebsiteLayout page="story">
             <div className="bg-white">
 
-                <div className="sm:flex text-center sm:text-left p-4 pt-14 bg-faded">
-                    <div className="sm:w-[20%]  sm:mx-3">
-                        <h4 className="text-5xl text-red-600">
+                <div className="sm:flex text-center sm:px-6 sm:text-left pt-14 ">
+                    <div className="sm:w-[20%]  ">
+                        <h4 className="text-5xl  text-red-600">
                             Our Story
                         </h4>
                     </div>
-                    <div className="my-4 sm:w-[80%]  ">
+                    <div className="mt-4 sm:pr-6 sm:w-[80%]  ">
                         <p className="mb-6 text-black">
                             Ghana International Trade Commission (GITC), was
                             established in September 2016 under
@@ -52,7 +52,7 @@ const AboutMessage = () => {
                             protect domestic industries from such harmful effects of
                             international trade.
                         </p>
-                        <p className="mb-6 text-black">
+                        <p className=" text-black">
                             However, in Africa the trade remedy laws and
                             Investigating authorities are in Egypt, SouthAfrica,
                             Morocco, Tunisia, Mauritius and Madagascar. In the
@@ -77,7 +77,7 @@ const AboutMessage = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="w-[70%] sm:pl-5">
+                            <div className="w-[70%] ">
                                 <h2 className="">Objectivity</h2>
                                 <p className="">
                                     To ensure equality and fairness in
@@ -89,7 +89,7 @@ const AboutMessage = () => {
                         </div>
 
                         <div className="flex p-2 my-5">
-                            <div className="p-3 w-[30%] ">
+                            <div className="p-3 sm:ml-3 w-[30%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
                                         src="images/homePage/professionalism.png"
@@ -117,7 +117,7 @@ const AboutMessage = () => {
                                     <img
                                         src="images/homePage/integrity.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                        className="object-contain -translate-y-3 -translate-x-5 "
                                     />
                                 </div>
                             </div>
@@ -154,8 +154,8 @@ const AboutMessage = () => {
                 </div>
 
                 {/* story */}
-                <div className="my-32">
-                    <div className="mb-16">
+                <div className="mt-32">
+                    <div className="">
                         <div className="flex flex-col-reverse justify-center sm:flex-row ">
                             <div className="text-white  bg-black sm:w-[50%]">
                                 <div

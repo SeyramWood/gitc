@@ -6,14 +6,22 @@ import ServicesNav from "../../components/layouts/website/ServicesNav";
 function ServiceDumping() {
     return (
         <WebsiteLayout page="service">
-            {/* <ServiceLinks /> */}
             <div className="bg-white">
-                <div className="sm:flex px-4 pt-16">
+                <div className="px-4 pt-16 pb-16 sm:flex">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
+                        {/* <div className="h-[15rem]">
+                            <div className="" >
+                                <img src="/../images/homePage/headings/SERVICE PAGE.jpg" className="object-contain " alt="" />
+                                <div className="">
+                                    <h1 className="text-center -translate-y-[14rem] text-red-200/ " >Services</h1>
+                                </div>
+                            </div>
+
+                        </div> */}
                         <div className="text-black sm:pl-2">
                             <h2 className="text-primary text-[4rem] pb-0 ">
-                                Trad Remedies
+                                Trade Remedies
                             </h2>
                             <p className="text-xl">
                                 {" "}
@@ -21,10 +29,10 @@ function ServiceDumping() {
                                 Duties and Safeguard Measures
                             </p>
 
-                            <h2 className="text-red-500 text-4xl font-bold mt-20">
+                            <h2 className="mt-10 text-4xl font-bold text-red-500">
                                 Anti Dumping Duties
                             </h2>
-                            <div className=" my-10 ">
+                            <div className="my-10 ">
                                 <img
                                     src="/../images/dump.jpg"
                                     className="overflow-hidden w-full h-[28rem]"
@@ -85,7 +93,7 @@ function ServiceDumping() {
                                     Downloadable Legislative Instrument and
                                     Questionnaire
                                 </i>
-                                <div className="my-2 shadow-lg p-5 cursor-pointer rounded flex  transition duration-500 ease-in-out hover:scale-110 ">
+                                <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
                                         {" "}
@@ -93,7 +101,7 @@ function ServiceDumping() {
                                         ( L.I 2380 ){" "}
                                     </span>
                                 </div>
-                                <div className="my-2 shadow-lg p-5 mb-5 rounded flex cursor-pointer transition duration-500 ease-in-out hover:scale-110 ">
+                                <div className="flex p-5 my-2 mb-5 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700" />{" "}
                                     <span className="pt-6">
                                         {" "}

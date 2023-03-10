@@ -12,13 +12,64 @@ import "keen-slider/keen-slider.min.css";
 // import "../../../css/style.css";
 import "yet-another-react-lightbox/styles.css";
 
+
+// pdf
+import { Worker } from "@react-pdf-viewer/core";
+// Import the main component
+import { SpecialZoomLevel, Viewer } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { getFilePlugin } from "@react-pdf-viewer/get-file";
+import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
+// import React, { useState } from "react";
+import { AiOutlineFilePdf } from "react-icons/ai";
+// modal
+import { Modal } from "react-responsive-modal";
+
+// import { WebsiteLayout } from "../../components/layouts";
+import publications from "../../files/publicationsFiles";
+
+// Import styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
+// Import the styles
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+// Import styles
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+// data
+import "react-responsive-modal/styles.css";
+
+// Import styles
+import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
+
+const pageLayout = {
+    transformSize: ({ size }) => ({
+        height: size.height + 20,
+        width: size.width + 20,
+    }),
+};
+// end pdf 
+
 const Publication = () => {
+    // 
+    const defaultLayoutPluginInstance = defaultLayoutPlugin();
+    const pageNavigationPluginInstance = pageNavigationPlugin();
+    // modal
     const [open, setOpen] = useState(false);
-    const [openOne, setOpenOne] = useState(false);
-    const [openTwo, setOpenTwo] = useState(false);
-    const [openThree, setOpenThree] = useState(false);
-    const [openFour, setOpenFour] = useState(false);
-    const [openFive, setOpenFive] = useState(false);
+    const [currentFile, setCurrentFile] = useState();
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    function opneFile(filePath) {
+        setCurrentFile(filePath);
+        setOpen(true);
+    }
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+    }
+    // pdf viewer
+    const getFilePluginInstance = getFilePlugin();
+    const { DownloadButton } = getFilePluginInstance;
+    // 
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
@@ -26,9 +77,13 @@ const Publication = () => {
         breakpoints: {
             "(min-width: 400px)": {
                 slides: { perView: 1, spacing: 1 },
+                loop: true,
+                mode: "free-snap",
             },
             "(min-width: 1000px)": {
-                slides: { perView: 3, spacing: 2 },
+                slides: { perView: 3, spacing: 20 },
+                loop: true,
+                mode: "free-snap",
             },
         },
 
@@ -41,66 +96,79 @@ const Publication = () => {
         },
     });
 
-    const releases = [
-        {
-            main_img: "images/about/bg.jpg",
-            gallery: [
-                "/images/homepage/serviceOne.jpg",
-                "/images/homepage/serviceTwo.jpg",
-                "/images/homepage/serviceTwo.jpg",
-            ],
-            title: " COURTESY CALL TO GHANA STATISTICAL SERVICE",
-            date: " 19th May 2022",
-        },
-        {
-            main_img: "",
-            gallery: [
-                "/images/homepage/serviceTwo.jpg",
-                "/images/homepage/serviceTwo.jpg",
-            ],
-            title: " COURTESY CALL TO GHANA Revenue Authority",
-            date: "2nd June 2022",
-        },
-        {
-            main_img: "",
-            gallery: ["", "", ""],
-            title: "  ASSOCIATION OF GHANA INDUSTRIES COURTESY CALL TO GITC",
-            date: "27th May 2022",
-        },
-        {
-            main_img: "",
-            gallery: ["", "", ""],
-            title: "HON.DEPUTY MINISTER (TRADE) COURTESY CALL TO GITC",
-            date: "19th May,2022",
-        },
-        {
-            main_img: "",
-            gallery: ["", "", ""],
-            title: "TRAINING SESSION WITH BMWK",
-            date: "19th -29th April 2022",
-        },
-        {
-            main_img: "",
-            gallery: ["images/homepage/serviceTwo.jpg", "", ""],
-            title: " GITC RETREAT WITH STAFF,TECHNICAL COMMITTEE AND GOVERNING BOARD",
-            date: "17th - 18th March 2022",
-        },
-    ];
-
     return (
         <WebsiteLayout page="publication">
             <div className="bg-white ">
-                <div className="text-center ">
-                    <h2 className="py-16 sm:text-[3rem] text-center text-red-600">
-                        Press Releases And Speeches
+                <div className="text-center pt-10">
+                    <h2 className="pb-16 sm:text-[3rem] text-center text-red-600">
+                        Press Releases and Speeches
                     </h2>
                 </div>
 
                 {/* publicatation */}
                 <div className=" sm:px-[6rem]  ">
                     <div className="relative sm:pb-28">
-                        <div ref={sliderRef} className="gap-4 keen-slider">
-                            <div className="keen-slider__slide number-slide1 ">
+                        <div ref={sliderRef} className=" keen-slider">
+                          {publications.map((items,index)=>(
+                              <div className={`keen-slider__slide number-slide${index} `}>
+                                  <div className="cursor-pointer"  onClick={() =>
+                                      opneFile(items.file)
+                                  }>
+                                      <div className="relative">
+                                          <img
+                                              src={items.image}
+                                              className="object-cover sm:h-[20rem]"
+                                              alt=""
+                                          />
+                                          <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
+                                              <div className="block text-center font-bold text-white uppercase">
+                                                  <div>{items.month}</div>
+                                                  <div>{items.day}</div>
+                                                  <div>{items.year}</div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
+                                          <p className="uppercase text-primary font-bold">
+                                              <Link href="">
+                                                  {items.title}
+                                              </Link>
+                                          </p>
+                                          <p>
+                                              {items.desc}
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          ))}
+                            <Modal
+                                key="pdf__modal"
+                                classNames={{
+                                    modal: "pdf__modal",
+                                }}
+                                open={open}
+                                onClose={() => setOpen(false)}
+                            >
+                                <div className="w-[50rem] h-[60rem] mt-10">
+                                    {open && (
+                                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                            <Viewer
+                                                fileUrl={currentFile}
+                                                plugins={[
+                                                    defaultLayoutPluginInstance,
+                                                    getFilePluginInstance,
+                                                    pageNavigationPluginInstance,
+                                                ]}
+                                                defaultScale={
+                                                    SpecialZoomLevel.PageFit
+                                                }
+                                                pageLayout={pageLayout}
+                                            />
+                                        </Worker>
+                                    )}
+                                </div>
+                            </Modal>
+                            {/* <div className="keen-slider__slide number-slide1 ">
                                 <Link href="">
                                     <div className="relative">
                                         <img
@@ -109,7 +177,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block text-center font-bold text-white uppercase">
                                                 <div>June</div>
                                                 <div>10</div>
                                                 <div>2022</div>
@@ -117,7 +185,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase text-primary font-bold">
                                             <Link href="">
                                                 GITC dismisses petition to ban
                                                 iron, steels import
@@ -141,7 +209,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block font-bold text-center text-white uppercase">
                                                 <div>March</div>
                                                 <div>2</div>
                                                 <div>2021</div>
@@ -149,7 +217,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase font-bold text-primary">
                                             <Link href="">
                                                 Interim Ghana-UK Trade
                                                 Partnership Agreement
@@ -173,7 +241,7 @@ const Publication = () => {
                                             alt=""
                                         />
                                         <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
+                                            <div className="block font-bold text-center text-white uppercase">
                                                 <div>Nov</div>
                                                 <div>7</div>
                                                 <div>2019</div>
@@ -181,7 +249,7 @@ const Publication = () => {
                                         </div>
                                     </div>
                                     <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
+                                        <p className="uppercase font-bold text-primary">
                                             <Link href="">
                                                 Notice of Initiation and Request
                                                 for Information Aluminium Coils
@@ -194,39 +262,7 @@ const Publication = () => {
                                         </p>
                                     </div>
                                 </Link>
-                            </div>
-
-                            <div className="keen-slider__slide number-slide4">
-                                <Link href="">
-                                    <div className="relative">
-                                        <img
-                                            src="images/publication/pub3.jpg"
-                                            className="object-cover h-[20rem]"
-                                            alt=""
-                                        />
-                                        <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
-                                            <div className="block text-center text-white uppercase">
-                                                <div>Nov</div>
-                                                <div>7</div>
-                                                <div>2019</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="bg-slate-100 p-3 overflow-hidden h-[60%]">
-                                        <p className="uppercase text-primary">
-                                            <Link href="">
-                                                Notice of Initiation and Request
-                                                for Information Aluminium Coils
-                                                and Circles
-                                            </Link>
-                                        </p>
-                                        <p>
-                                            Agency:Ghana InternationalTrade
-                                            Commission
-                                        </p>
-                                    </div>
-                                </Link>
-                            </div>
+                            </div> */}
                         </div>
                         {loaded && instanceRef.current && (
                             <>
@@ -252,6 +288,23 @@ const Publication = () => {
                                     }
                                 />
                             </>
+                        )}
+                        {loaded && instanceRef.current && (
+                            <div className="text-center pt-6">
+                                {[
+                                    ...Array(instanceRef.current.track.details.slides.length).keys(),
+                                ].map((idx) => {
+                                    return (
+                                        <button
+                                            key={idx}
+                                            onClick={() => {
+                                                instanceRef.current?.moveToIdx(idx)
+                                            }}
+                                            className={"dot" + (currentSlide === idx ? " active" : "")}
+                                        ></button>
+                                    )
+                                })}
+                            </div>
                         )}
                     </div>
                 </div>
