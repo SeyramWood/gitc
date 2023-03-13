@@ -88,4 +88,23 @@ class PageController extends Controller
     {
         return Inertia::render('Website/Gallery');
     }
+
+    // resources
+    public function customsFiles()
+    {
+        return Inertia::render('Website/CustomsFiles');
+    }
+    public function disputesFiles()
+    {
+        return Inertia::render('Website/DisputeFiles');
+    }
+    public function subsidyFiles()
+    {
+        return Inertia::render('Website/SubsidyFiles');
+    }
+    public function measuresFiles()
+    {
+        return Inertia::render('Website/MeasuresFiles');
+    }
+
 }

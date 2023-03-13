@@ -57,8 +57,61 @@ function Resources() {
        
 
             <div className="bg-white">
+                    <div className="grid grid-cols-2 px-6 pb-20">
+
+                        {data.map((item, index) => (
+                            <div
+                                className="px-1 cursor-pointer sm:flex"
+                                key={index}
+                            >
+                                <div
+                                    className="py-5 sm:flex"
+                                    onClick={() =>
+                                        opneFile(item.pdf)
+                                    }
+                                >
+                                    <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
+                                    <div className="pt-2">
+                                        <div className="w-full lowercase [&>p]:hover:text-primary">
+                                            <p className="">
+                                                {item.name}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                        <Modal
+                            key="pdf__modal"
+                            classNames={{
+                                modal: "pdf__modal",
+                            }}
+                            open={open}
+                            onClose={() => setOpen(false)}
+                        >
+                            <div className="w-[50rem] h-[60rem] mt-10">
+                                {open && (
+                                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                                        <Viewer
+                                            fileUrl={currentFile}
+                                            plugins={[
+                                                defaultLayoutPluginInstance,
+                                                getFilePluginInstance,
+                                                pageNavigationPluginInstance,
+                                            ]}
+                                            defaultScale={
+                                                SpecialZoomLevel.PageFit
+                                            }
+                                            pageLayout={pageLayout}
+                                        />
+                                    </Worker>
+                                )}
+                            </div>
+                        </Modal>
+                    </div>
                 {/* files */}
-                <div className="py-10 pb-10 sm:mx-24">
+                {/* <div className="py-10 pb-10 sm:mx-24">
           
                     <div className="grid grid-cols-2 px-6 pt-10 pb-20 gap-14">
                         <div className="drop-shadow-md hover:drop-shadow-xl">
@@ -79,59 +132,7 @@ function Resources() {
                             </label>
 
                             <div className="overflow-auto bg-white content">
-                                <div className="grid grid-cols-1 p-6 pb-20">
-
-                                    {data.map((item, index) => (
-                                        <div
-                                            className="px-1 cursor-pointer sm:flex"
-                                            key={index}
-                                        >
-                                            <div
-                                                className="py-5 sm:flex"
-                                                onClick={() =>
-                                                    opneFile(item.pdf)
-                                                }
-                                            >
-                                                <AiOutlineFilePdf className="text-[4rem] text-red-700 " />
-                                                <div className="pt-2">
-                                                    <div className="w-full lowercase [&>p]:hover:text-primary">
-                                                        <p className="">
-                                                            {item.name}
-                                                        </p>
-                                                    </div>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                    <Modal
-                                        key="pdf__modal"
-                                        classNames={{
-                                            modal: "pdf__modal",
-                                        }}
-                                        open={open}
-                                        onClose={() => setOpen(false)}
-                                    >
-                                        <div className="w-[50rem] h-[60rem] mt-10">
-                                            {open && (
-                                                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                    <Viewer
-                                                        fileUrl={currentFile}
-                                                        plugins={[
-                                                            defaultLayoutPluginInstance,
-                                                            getFilePluginInstance,
-                                                            pageNavigationPluginInstance,
-                                                        ]}
-                                                        defaultScale={
-                                                            SpecialZoomLevel.PageFit
-                                                        }
-                                                        pageLayout={pageLayout}
-                                                    />
-                                                </Worker>
-                                            )}
-                                        </div>
-                                    </Modal>
-                                </div>
+                                
                             </div>
                         </div>
                         <div className="drop-shadow-md hover:drop-shadow-xl">
@@ -229,7 +230,7 @@ function Resources() {
                         </div>
                        
                     </div>
-                </div>
+                </div> */}
             </div>
         </WebsiteLayout>
     );
