@@ -44,4 +44,9 @@ Route::get('/publications', [PageController::class, 'publication']);
 Route::get('/faq', [PageController::class, 'Faq']);
 Route::get('/resources', [PageController::class, 'resources']);
 Route::get('/gallery', [PageController::class, 'gallery']);
+// resources
+Route::get('/customscases', [PageController::class, 'customsFiles']);
+Route::get('/measurescases', [PageController::class, 'measuresFiles']);
+Route::get('/subsidycases', [PageController::class, 'subsidyFiles']);
+Route::get('/disputescases', [PageController::class, 'disputesFiles']);
 
