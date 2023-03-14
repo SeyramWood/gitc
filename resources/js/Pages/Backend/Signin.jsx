@@ -1,8 +1,22 @@
 import React, { useState } from "react";
 import {Link} from "@inertiajs/inertia-react";
+import { useForm } from '@inertiajs/inertia-react'
+import {Dashboard} from "../../components/layouts/dashboard";
 
 function Signin() {
+
+  const { data, setData, post, processing, errors } = useForm({
+    username: '',
+    password: '',
+    remember: false,
+  })
+
+  function submit(e) {
+    e.preventDefault()
+    post('/users/login')
+  }
   return (
+
     <main className="bg-white">
 
       <div className="relative md:flex">
@@ -39,22 +53,24 @@ function Signin() {
             <div className="max-w-sm mx-auto px-4 py-8">
               <h1 className="text-3xl text-slate-800 font-bold mb-6">Welcome back! ✨</h1>
               {/* Form */}
-              <form>
+              <form onSubmit={submit}>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="email">Email Address</label>
-                    <input id="email" className="form-input w-full" type="email" />
+                    <label className="block text-sm font-medium mb-1" htmlFor="email">UserName</label>
+                    <input id="username" className="form-input w-full" value={data.username} onChange={e => setData('username', e.target.value)} />
+                    {errors.username && <div>{errors.username}</div>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="password">Password</label>
-                    <input id="password" className="form-input w-full" type="password" autoComplete="on" />
+                    <label className="block text-sm font-medium mb-1" htmlFor="password" >Password</label>
+                    <input id="password" className="form-input w-full" type="password" value={data.password} onChange={e => setData('password', e.target.value)} autoComplete="on" />
+                    {errors.password && <div>{errors.password}</div>}
                   </div>
                 </div>
                 <div className="flex items-center justify-between mt-6">
                   <div className="mr-1">
                     <Link className="text-sm underline hover:no-underline" to="/reset-password">Forgot Password?</Link>
                   </div>
-                  <Link className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3" href="/sign">Sign In</Link>
+                  <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3" type="submit" disabled={processing}  >Sign In</button>
                 </div>
               </form>
               {/* Footer */}
@@ -88,6 +104,7 @@ function Signin() {
       </div>
 
     </main>
+
   );
 }
 

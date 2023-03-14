@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('file_managements', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('description')->nullable();
-            $table->string('files');
-            $table->integer('user_id')->nullable();
+            $table->string('description')->nullable();
+            $table->string('file');
+//            $table->foreignId('user_id');
+//            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file_managents');
+        Schema::dropIfExists('files');
     }
 };

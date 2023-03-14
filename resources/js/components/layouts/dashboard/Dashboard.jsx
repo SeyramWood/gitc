@@ -40,17 +40,28 @@ const links = [
             },
         ],
     },
+
     {
-        label: "Products",
+        label: "Albums",
         icon: "gift",
         dropdown: [
             {
-                label: "View Products",
-                link: "/dashboard/products",
+                label: "View Albums",
+                link: "/albums",
             },
             {
-                label: "Categories",
-                link: "/dashboard/products/categories",
+                label: "View Gallaries",
+                link: "/gallaries",
+            },
+        ],
+    },
+    {
+        label: "PDF Files",
+        icon: "gift",
+        dropdown: [
+            {
+                label: "View Files",
+                link: "/files",
             },
         ],
     },
@@ -60,11 +71,7 @@ const links = [
         dropdown: [
             {
                 label: "View Users",
-                link: "/dashboard/users",
-            },
-            {
-                label: "Roles & Permissions",
-                link: "/dashboard/users/roles-and-permissions",
+                link: "/users",
             },
         ],
     },

@@ -11,4 +11,6 @@ class DashboardController extends Controller
     {
         return Inertia::render('Backend/Dashboard/Index');
     }
+
+
 }

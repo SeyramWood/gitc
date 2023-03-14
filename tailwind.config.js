@@ -79,16 +79,8 @@ module.exports = {
         },
     },
 
-<<<<<<< HEAD
+
     plugins: [require("@tailwindcss/forms")],
-=======
-    plugins: [require("@tailwindcss/forms"),
-        require('flowbite/plugin'),
-        [require("daisyui")]
-    ],
 
 
-
-
->>>>>>> shadrack-dev
 };

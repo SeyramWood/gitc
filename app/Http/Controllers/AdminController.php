@@ -6,13 +6,13 @@ use App\Models\Profile;
 use App\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 use Image;
 use App\Models\User;
-use App\Rules\MatchOldPassword;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-
+use Inertia\Inertia;
 
 
 class AdminController extends Controller
@@ -21,18 +21,15 @@ class AdminController extends Controller
 
     public function index()
     {
-        $data['users'] = User::with('profile')->orderByDesc('create_at')->get();
-        if ($data) {
-            return response()->json([
-                'message' => "Record found successful",
-                'data' => $data,
-                'code' => 200
-            ],200);
+        $users = User::with('profile')->orderByDesc('created_at')->get();
+        if ($users) {
+            return Inertia::render('Backend/User', [
+                'users' => $users
+            ]);
+
         } else {
-            return response()->json([
-                'message' => "No record found",
-                'code'=>404
-            ],404);
+            return redirect()->route('user.dashboard')->with('success', 'Success, your store have been updated.');
+
         }
     }
 
@@ -41,17 +38,19 @@ class AdminController extends Controller
 
                 $request->validate([
                     'username' => 'required|string|min:3,max:10|unique:users,username',
-                    'password' => ['required', Password::min(8)->mixedCase()],
-                    'email' => ['required|email'],
-                    'contact' => ['required|number']
+                    'password' => 'required',
+                    'email' => 'required|unique:users,email',
+                    'contact' => 'required',
+                    'role' => 'required'
                 ]);
-                try {
+
                     DB::transaction(function () use ($request) {
 
                         $data['user'] = User::create([
-                            'role_id' => Role::where('name', 'admin')->first()->id,
+                            'role' =>$request->role,
                             'username' => $request->username,
                             'email' => $request->email,
+                            'contact' => $request->contact,
                             'password' => Hash::make($request->password),
                         ]);
 
@@ -59,29 +58,10 @@ class AdminController extends Controller
                             'user_id' => $data['user']->id,
 
                         ]);
-                        $token = $data['user']->createToken('main')->plainTextToken;
-                        if ($data) {
-                            return response()->json([
-                                'message' => "User Created ",
-                                'data' => $data,
-                                'token' => $token,
-                                'code' => 200
-                            ],200);
-                        } else {
-                            return response()->json([
-                                'message' => "Request  unsuccessful ",
-                                'code'=>400
-                            ],400);
-                        }
+
                     });
 
-                } catch (\Throwable $th) {
 
-                    return response()->json([
-                        'message' => "We couldn't create your account, please try again."
-                    ]);
-
-                }
         }
 
 
@@ -228,12 +208,7 @@ class AdminController extends Controller
                 $token = $user->createToken('main')->plainTextToken;
 
                 $user = User::whereId($user->id)->with('profile')->first();
-                return response([
-                    'user' => $user,
-                    'token' => $token,
-                    'message' => 'Login successful',
-                    'code' => 200
-                ], 200);
+                return Redirect::route('user.dashboard');
             }
         } else {
 

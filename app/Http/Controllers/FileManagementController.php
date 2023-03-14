@@ -2,31 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\Enquiry;
 use App\Models\FileManagement;
+use App\Models\Files;
+use App\Models\Gallary;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Inertia\Inertia;
 use Intervention\Image\Facades\Image;
+
 
 class FileManagementController extends Controller
 {
+
+    private $file_path;
+
+
+    public function __construct()
+    {
+        $this->file_path = public_path('uploads/');
+
+    }
+
     // Get all files
     public function index()
     {
-        $data ['files'] = FileManagement::with('user')->orderBy('created_at','DESC')->paginate(15);
+        $files = Files::orderBy('created_at','DESC')->paginate(15);
 
-        if ($data) {
-            return response()->json([
-                'message' => "Request successfully  ",
-                'data' => $data,
-                'code' => 200
-            ],200);
-        } else {
-            return response()->json([
-                'message' => "Request  unsuccessful ",
-                'code'=>400
-            ],400);
+        if ($files) {
+            return Inertia::render('Backend/FileUpload', [
+                'files' => $files
+            ]);
         }
 
     }
@@ -35,79 +45,60 @@ class FileManagementController extends Controller
     public function store(Request $request)
     {
 
-//        dd($request->file);
         $request->validate([
-            'file' => 'required',
-            'title' => 'required'
+            'avatar' => 'required',
+            'title' => 'required',
+            'description' => 'nullable'
         ]);
-
-        try {
             DB::transaction(function () use ($request) {
 
-                $photo = request()->file('file');
+                    $file = $request->file('avatar');
 
-                if(request()->file('file')){
-//                dd('has file');
-                    $path = 'images/files/';
-                    if (!is_dir($path)) {
-                        mkdir($path, 0777);
+                    if (!is_dir($this->file_path)) {
+                        mkdir($this->file_path, 0777);
                     }
-                    $name = sha1(date('YmdHis').str_random(30));
-                    $save_name = $name. '.' .$photo->getClientOriginalExtension();
+                    $name = sha1(date('YmdHis') . Str::random(30));
+
+                    $save_name = $name . '.' . $file->getClientOriginalExtension();
+
 
                     // this saves the actual image
-                    $photo->move($path, $save_name);
-//
+                    $file->move($this->file_path, $save_name);
 
-                }
 
-                $data['files'] = Enquiry::create([
+
+//             dd($save_name);
+                $data['files'] = Files::create([
                     'file' => $save_name ?? null,
                     'title' => $request->title,
-                    'user_id' => auth()->id(),
                     'description' => $request->description,
                 ]);
 
 
-                if ($data) {
-                    return response()->json([
-                        'message' => "Request created  successfully  ",
-                        'data' => $data,
-                        'code' => 200
-                    ],200);
-                } else {
-                    return response()->json([
-                        'message' => "Request  unsuccessful ",
-                        'code'=>400
-                    ],400);
-                }
+//
             });
 
-        } catch (\Throwable $th) {
-
-            return response()->json([
-                'message' => "We couldn't process your request, please try again."
-            ]);
 
         }
-
-    }
-
-    public function UpdateFile($request, FileManagement $fileManagement)
+// update file
+    public function updateFile($request, Files $fileManagement)
     {
         $request->validate([
-            'file' => 'nullable',
+            'avatar' => 'nullable',
             'title' => 'nullable'
         ]);
-        if ($request->hasFile('file')) {
-
-            $image = $request->file('file');
-            $img = 'profile' . '.' . $image->getClientOriginalExtension();
-            $location = 'images/files/' . $img;
-
-            @unlink('images/profiles/' . Auth::user()->image);
-            Image::make($image)->save($location);
+        if (!is_dir($this->file_path)) {
+            mkdir($this->file_path, 0777);
         }
+
+        $file = $request->file('avatar');
+        $name = sha1(date('YmdHis') . Str::random(30));
+
+        $save_name = $name . '.' . $file->getClientOriginalExtension();
+
+
+        // this saves the actual image
+        $file->move($this->file_path, $save_name);
         $data['files'] = $fileManagement->update([
             'file' => $save_name ?? $fileManagement->file,
             'title' => $request->title ?? $fileManagement->title,
@@ -117,81 +108,230 @@ class FileManagementController extends Controller
 
 
         if ($data) {
-            return response()->json([
-                'message' => "Request created  successfully  ",
-                'data' => $data,
-                'code' => 200
-            ],200);
+            return redirect()->route('user.files')->with('success', 'Success, Created.');
         } else {
-            return response()->json([
-                'message' => "Request  unsuccessful ",
-                'code'=>400
-            ],400);
+            return redirect()->route('user.files')->with('Error', 'Error, Process unsuccesful.');
+
         }
     }
 
     // Delete file file fom db
-    public function destroy(FileManagement $file)
+    public function destroy(Files $file)
     {
         $file = FileManagement::findOrFail($file);
-        $file_path = "images/files/{$file->files}";
+        $file_path = "uploads/{$file->file}";
 
      // Remove the file from storage if exist
-        if (FileManagement::exists($file_path)) {
+        if (Files::exists($file_path)) {
             @unlink($file_path);
         }
-        else{
-            return response()->json([
-                'message' => "File not exists ",
-                'code' => 404
-            ],404);
 
-        }
-
-      $data['file']  = FileManagement::destroy($file);
+      $data['file']  = Files::destroy($file);
 
         if ($data) {
-            return response()->json([
-                'message' => "File deleted successfully  ",
-                'data' => $data,
-                'code' => 200
-            ],200);
+            return redirect()->route('user.files')->with('success', 'Success, Created.');
         } else {
-            return response()->json([
-                'message' => "Request  unsuccessful ",
-                'code'=>400
-            ],400);
+            return redirect()->route('user.files')->with('Error', 'Error, Process unsuccesful.');
+
         }
     }
 
-
+// search for a file
     public function search(Request $request)
     {
 
         if (request()->user('sanctum')) {
-            $data['file'] = FileManagement::where('title', 'LIKE', "%{$request->title}%")->get();
+            $data['file'] = Files::where('title', 'LIKE', "%{$request->title}%")->get();
 
             //checking if request exit
             if ($data) {
-                return response()->json([
-                    'data' => $data,
-                    'message' => "Record found",
-                    'code' => 200,
-                ], 200);
+                return Inertia::render('Backend/File', [
+                    'data' => $data
+                ]);
             } else {
-                return response()->json([
-                    'message' => "No record found",
-                    'code' => 404,
-                ], 404);
-            }
-        } else {
-            return response()->json([
-                "message" => "Please Login First",
-                "code" => 403,
+                return redirect()->route('user.files')->with('Error', 'Error, Process unsuccesful.');
 
-            ], 403);
+            }
         }
     }
 
+
+// Save albums
+    public function album(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|unique:albums,name',
+            'description' => 'nullable',
+            'images' => 'nullable',
+
+        ]);
+
+
+        DB::transaction(function () use ($request) {
+            // // Create files
+            $data['album'] = Album::create([
+                'name' => $request->name,
+                'description' => $request->description,
+            ]);
+//
+                $file = $request->file('images');
+
+                if (!is_dir($this->file_path)) {
+                    mkdir($this->file_path, 0777);
+                }
+                $name = sha1(date('YmdHis') . Str::random(30));
+
+                $save_name = $name . '.' .$file->getClientOriginalExtension();
+
+
+                // this saves the actual image
+                $file->move($this->file_path, $save_name);
+
+
+            $data['album']->gallary()->create([
+                'images' => $save_name,
+                'album_id' => $data['album']->id
+            ]);
+        });
+    }
+
+    // Get all albums
+    public function getAlbum()
+    {
+        $albums = Album::orderBy('created_at','DESC')->paginate(15);
+
+        if ($albums) {
+            return Inertia::render('Backend/Album', [
+                'albums' => $albums
+            ]);
+
+        }
+
+
+}
+
+    public function getAlbumGallary(Album $album)
+    {
+        $data ['albums'] = Album::with('gallary')->orderBy('created_at','DESC')->paginate(15);
+
+        if ($data) {
+            return Inertia::render('Backend/AlbumGallary', [
+                'data' => $data
+            ]);
+
+        } else {
+            return redirect()->route('user.albums')->with('error', 'Error, Process unsuccesful.');
+
+        }
+
+
+}
+
+// get all image / photos
+    public function allgallary()
+    {
+        $gallaries = Gallary::orderBy('create_at','DESC')->paginate(15);
+
+        if ($gallaries) {
+            return Inertia::render('Backend/Gallary', [
+                'gallaries' => $gallaries
+            ]);
+
+        }
+
+
+}
+
+// store photos
+
+    public function gallary(Request $request)
+    {
+        $request->validate([
+            'documents' => 'required',
+            'album_id' => 'required',
+            'documents.*' => 'required|mimes:png,jpeg,jpg|max:2048',
+        ]);
+
+        if ($request->avatar){
+            foreach($request->avatar as $files) {
+
+                if (!is_dir($this->file_path)) {
+                    mkdir($this->file_path, 0777);
+                }
+
+                $file = $files;
+                $name = sha1(date('YmdHis') . Str::random(30));
+
+                $save_name = $name . '.' . $file->getClientOriginalExtension();
+
+                // // Create files
+              $data['gallary'] = Gallary::create([
+                    'file' => $save_name,
+                    'album_id' => $request->album_id
+                ]);
+            }
+
+            if ($data) {
+                return redirect()->route('user.gallary')->with('success', 'Success, Created.');
+            } else {
+                return redirect()->route('user.gallary')->with('Error', 'Error, Process unsuccesful.');
+
+            }
+        }
+
+    }
+
+    // Delete file  fom db
+    public function destroyAlbum(Album $album)
+    {
+        $album = FileManagement::findOrFail($album);
+
+        $data['album']  = FileManagement::destroy($album);
+
+        if ($data) {
+            return redirect()->route('user.albums')->with('success', 'Success, deleted.');
+        } else {
+            return redirect()->route('user.albums')->with('Error', 'Error, Process unsuccesful.');
+
+        }
+    }
+
+    //update album
+    public function updateAlbum($request, Album $album)
+    {
+        $request->validate([
+            'name' => 'nullable',
+            'description' => 'nullable'
+        ]);
+
+        $data['files'] = $album->update([
+            'name' => $request->name ?? $album->name,
+            'user_id' => auth()->id(),
+            'description' => $request->description ?? $album->description,
+        ]);
+
+
+        if ($data) {
+            return redirect()->route('user.albums')->with('success', 'Success, updated.');
+        } else {
+            return redirect()->route('user.albums')->with('Error', 'Error, Process unsuccesful.');
+
+        }
+    }
+
+    // Delete file  fom db
+    public function destroyGallary(Gallary $gallary)
+    {
+        $gallary = FileManagement::findOrFail($gallary);
+
+        $data['gallary']  = FileManagement::destroy($gallary);
+
+        if ($data) {
+            return redirect()->route('user.gallaries')->with('success', 'Success, deleted.');
+        } else {
+            return redirect()->route('user.gallaries')->with('Error', 'Error, Process unsuccesful.');
+
+        }
+    }
 
 }
