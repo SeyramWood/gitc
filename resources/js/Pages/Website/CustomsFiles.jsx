@@ -68,7 +68,7 @@ function CustomsFiles() {
                         </p>
                         <div className="border">
                             <table className="table-fixed  w-[100%] ">
-                                <thead className="text-left ">
+                                <thead className="text-left bg-red-100/30">
                                     <tr className="border-b">
                                         <th className="p-3">Investitation No</th>
                                         <th className="p-3">Title</th>
@@ -76,15 +76,15 @@ function CustomsFiles() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {customsPdf.map((item,index)=>(
+                                    {customsPdf.map((item, index) => (
                                         <tr className="border-b" key={index}>
-                                        <td className="p-3 hover:text-primary/60 cursor-pointer"
-                                            onClick={() => opneFile(item.pdfPath)}
-                                        >{item.name}
-                                        </td>
-                                        <td className="p-3">Malcolm Lockyer</td>
-                                        <td className="p-3">1961</td>
-                                    </tr>
+                                            <td className="p-3 hover:text-primary/60 cursor-pointer"
+                                                onClick={() => opneFile(item.pdfPath)}
+                                            >{item.name}
+                                            </td>
+                                            <td className="p-3">Malcolm Lockyer</td>
+                                            <td className="p-3">1961</td>
+                                        </tr>
 
                                     ))}
                                     <Modal
@@ -114,9 +114,27 @@ function CustomsFiles() {
                                             )}
                                         </div>
                                     </Modal>
-                                 
+
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="flex  gap-2 pt-3 justify-center">
+                            <a href="#" class="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white">
+                                Previous
+                            </a>
+
+                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                                1
+                            </a>
+                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                                2
+                            </a>
+                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                                3
+                            </a>
+                            <a href="#" class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white">
+                                Next
+                            </a>
                         </div>
 
                     </div>

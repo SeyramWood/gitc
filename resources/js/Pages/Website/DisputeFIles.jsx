@@ -68,11 +68,11 @@ function DisputeFiles() {
                         </p>
                         <div className="border">
                             <table className="table-fixed  w-[100%] ">
-                                <thead className="text-left ">
+                                <thead className="text-left bg-red-100/30 ">
                                     <tr className="border-b">
-                                        <th className="p-3">Song</th>
-                                        <th className="p-3">Artist</th>
-                                        <th className="p-3">Year</th>
+                                        <th className="p-3">Investitation No</th>
+                                        <th className="p-3">Title</th>
+                                        <th className="p-3">Date Issued</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -118,7 +118,24 @@ function DisputeFiles() {
                                 </tbody>
                             </table>
                         </div>
+                        <div class="flex  gap-2 pt-3 justify-center">
+                            <a href="#" class="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white">
+                                Previous
+                            </a>
 
+                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                                1
+                            </a>
+                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                                2
+                            </a>
+                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                                3
+                            </a>
+                            <a href="#" class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white">
+                                Next
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
