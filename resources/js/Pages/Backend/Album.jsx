@@ -36,7 +36,7 @@ const Album = ({ albums })=> {
                 <Button className="m-3"  label="Add Album" icon="pi pi-external-link" onClick={() => setVisible(true)} />
 
                 <div className="card">
-                    <DataTable value={albums}   header={header} footer={footer} tableStyle={{ minWidth: '100%' }}  >
+                    <DataTable value={albums.data}   header={header} footer={footer} tableStyle={{ minWidth: '100%' }}  >
                     <Column field="name" header="Album name"  ></Column>
                     <Column field="description"  header="Description"></Column>
                     <Column   header="Action"></Column>

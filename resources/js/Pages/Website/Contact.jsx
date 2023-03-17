@@ -3,8 +3,22 @@ import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
 import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 import Paragraph from "../../components/layouts/website/Paragraph";
 import {WebsiteLayout} from "../../components/layouts";
+import {useForm} from "@inertiajs/inertia-react";
+import React from "react";
 
 const Contact = () => {
+
+    const { data, setData, post, processing, errors } = useForm({
+        username: '',
+        password: '',
+        email: '',
+        contact: '',
+    })
+
+    function submit(e) {
+        e.preventDefault()
+        post('/users')
+    }
     return (
         <WebsiteLayout page="contactUs">
         <div className="bg-white">
@@ -71,7 +85,7 @@ const Contact = () => {
                                 <input type="text" placeholder="Last Name*" required="required" className="m-1 w-screen  h-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
                             </div>
                             <div className="sm:flex  justify-center gap-3 p-3">
-                                <input type="email" placeholder="Email*" required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="email" placeholder="Email*" required="required"  value={data.username} onChange={e => setData('username', e.target.value)} className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
                                 <input type="text" placeholder="Phone Number*" required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
                             </div>
                             <div className="sm:flex  justify-center gap-3 p-3">

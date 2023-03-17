@@ -230,11 +230,13 @@ class FileManagementController extends Controller
 // get all image / photos
     public function allgallary()
     {
-        $gallaries = Gallary::orderBy('create_at','DESC')->paginate(15);
+        $gallaries = Gallary::orderBy('created_at','DESC')->paginate(15);
+        $albums = Album::select('id','name')->orderBy('created_at','DESC')->get();
 
         if ($gallaries) {
             return Inertia::render('Backend/Gallary', [
-                'gallaries' => $gallaries
+                'gallaries' => $gallaries,
+                'albums' => $albums
             ]);
 
         }

@@ -7,8 +7,8 @@ import {Button} from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 
 
-const Gallary = ({ gallaries })=> {
-
+const Gallary = (props)=> {
+    const {data: gallaries, link, meta} = props.gallaries;
     const { data, setData, post, processing, errors } = useForm({
         images: '',
         album_id: '',
@@ -33,13 +33,30 @@ const Gallary = ({ gallaries })=> {
         return (
             <Dashboard page="Gallaries">
                 <Button className="m-3"  label="Add To Gallary" icon="pi pi-external-link" onClick={() => setVisible(true)} />
+                <div>
+                    {gallaries.map((gallary, index) => (
+                        <div className="card p-3 flex justify-center ] " style={{width: "20rem",float: "left" }}>
 
-                <div className="card">
-                    <DataTable    header={header} footer={footer} tableStyle={{ minWidth: '100%' }}  >
+                            <div key={gallary.id} className="">
+                                <div >
+                                    <div className="" style={{ borderRadius: "100%"}}>
+                                        <img
+                                            src={window.location.origin + '/uploads/' + gallary.images }
+                                            alt="Objectivity" style={{width: "25rem",  height: "100px"}}
 
-                </DataTable>
+                                        />
+                                    </div>
+                                </div>
 
+                            </div>
+
+
+
+
+                        </div>
+                    ))}
                 </div>
+
                 <div className="card flex justify-content-center ml-2">
 
                     <Dialog header="Add To Gallary" visible={visible} maximizable style={{ width: '50%' }} onHide={() => setVisible(false)}>
@@ -55,7 +72,7 @@ const Gallary = ({ gallaries })=> {
 
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium mb-1" htmlFor="album_idd"> Role <span className="text-rose-500">*</span></label>
+                                            <label className="block text-sm font-medium mb-1" htmlFor="album_idd"> Album <span className="text-rose-500">*</span></label>
                                             <select id="album_id" className="form-select w-full" value={data.album_id} onChange={e => setData('album', e.target.value)} >
 
                                                 <option>Designer</option>

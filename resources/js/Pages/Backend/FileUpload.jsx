@@ -6,14 +6,14 @@ import { Dialog } from "primereact/dialog";
 import React, { useState } from "react";
 import { Dashboard } from "../../components/layouts/dashboard";
 
-const FileUpload = ({ files }) => {
+const FileUpload = ( props ) => {
+    const {data: files, link, meta} = props.files;
     const [visible, setVisible] = useState(false);
     const { data, setData, post, progress, processing, errors } = useForm({
         title: "",
         avatar: "",
         description: "",
     });
-
     function submit(e) {
         e.preventDefault();
         post("/files");
@@ -36,21 +36,43 @@ const FileUpload = ({ files }) => {
                 onClick={() => setVisible(true)}
             />
 
-            <div className="card">
-                <DataTable
-                    value={files.data}
-                    header={header}
-                    footer={footer}
-                    tableStyle={{ minWidth: "100%" }}
-                >
-                    <Column field="title" header="File Title"></Column>
-                    <Column
-                        field="description"
-                        header="File Description"
-                    ></Column>
-                    {/*<Column field="file"   header="User files"></Column>*/}
-                    <Column header="Action"></Column>
-                </DataTable>
+            <div className="card ">
+                <div className="card-body px-0 pt-0 pb-2">
+                    <div className="table-responsive-xxl p-0" width="100%">
+                        <table className=" table align-items-center justify-content-center mb-0 bg-slate-100" width="100%">
+                            <thead className="bg-slate-100">
+                            <tr className="" >
+
+                                <th className="text-uppercase text-white text-xl font-weight-bolder opacity-7 ps-2 text-left">File</th>
+                                <th className="text-uppercase  text-white text-xl font-weight-bolder opacity-7 ps-2 text-left">Name</th>
+                                <th className="text-uppercase text-white text-xl font-weight-bolder opacity-7 ps-2 text-left">Description</th>
+                                <th className="text-uppercase text-white text-xl font-weight-bolder text-center opacity-7 ps-2">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {files.map((file, index) => (
+                                <tr key={file.id}>
+                                    <td className='text-left'>
+
+                                                <embed
+                                                    src={window.location.origin + '/uploads/' + file.file }
+                                                    alt="Objectivity" style={{width: "25rem"}}
+
+                                                />
+
+                                    </td>
+                                    <td className='text-left'>
+                                        <p className="text-lg capitalize text-white font-weight-bold mb-0">{file.title}</p>
+                                    </td>
+                                    <td className='text-left'>
+                                        <p className="text-lg capitalize text-white font-weight-bold mb-0">{file.description}</p>
+                                    </td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
             <div className="flex ml-2 card justify-content-center">
                 <Dialog

@@ -5,9 +5,10 @@ import {DataTable} from 'primereact/datatable';
 import {Column} from 'primereact/column';
 import {Button} from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
+import { EditUser } from '../Backend/EditUser'
 
 
-const User = ({ users })=> {
+const User = ({users})=> {
 
     const { data, setData, post, processing, errors } = useForm({
         username: '',
