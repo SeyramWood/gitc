@@ -42,7 +42,6 @@ class EnquiryController extends Controller
                 'phone' => 'required|numeric',
                 'email' => 'required|email',
                 'subject' => 'required|string',
-                'company' => 'required|string',
                 'industry' => 'required|string',
                 'message' => 'required',
             ]);
@@ -58,7 +57,6 @@ class EnquiryController extends Controller
                     'subject' => $request->subject,
                     'message' => $request->message,
                     'phone' => $request->phone,
-                    'company' => $request->company,
                     'industry' => $request->industry,
                 ]);
 

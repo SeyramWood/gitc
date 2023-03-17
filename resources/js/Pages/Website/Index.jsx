@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import AOS from "aos";
 import { useKeenSlider } from "keen-slider/react";
 import React, { useEffect, useState } from "react";
@@ -15,6 +15,26 @@ import { BiSearchAlt } from "react-icons/bi";
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
+    const { data, setData, post,progress, processing, reset, errors } = useForm({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        industry: '',
+    })
+
+    function submit(e) {
+        e.preventDefault()
+        post(route('contact.store'), {
+            data,
+            onSuccess: () => {
+                reset()
+            },
+        });
+    }
+
     useEffect(() => {
         AOS.init();
     }, []);
@@ -598,20 +618,32 @@ const Index = () => {
                     </div>
                     <div className="md:w-[50%]  ">
                         <div className="">
-                            <form action="" className="px-3">
+                            <form onSubmit={submit} className="px-3">
                                 <div className="grid grid-cols-2">
                                     {/* <div className=""> */}
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Full Name *"
+                                        placeholder="First Name *"
                                         required="required"
                                         type="text"
+                                        value={data.first_name}
+                                        onChange={e => setData('first_name', e.target.value)}
+                                    />
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Last Name *"
+                                        required="required"
+                                        type="text"
+                                        value={data.last_name}
+                                        onChange={e => setData('last_name', e.target.value)}
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Email *"
                                         required="required"
                                         type="Email"
+                                        value={data.email}
+                                        onChange={e => setData('email', e.target.value)}
                                     />
                                     {/* </div> */}
                                     {/* <div className=""> */}
@@ -620,11 +652,23 @@ const Index = () => {
                                         placeholder="Subject *"
                                         required="required"
                                         type="text"
+                                        value={data.subject}
+                                        onChange={e => setData('subject', e.target.value)}
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Phone Number"
                                         type="text"
+                                        value={data.phone}
+                                        onChange={e => setData('phone', e.target.value)}
+                                    />
+
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Industry"
+                                        type="text"
+                                        value={data.industry}
+                                        onChange={e => setData('industry', e.target.value)}
                                     />
                                     {/* </div> */}
                                     {/* <div className="pt-2 m-3"> */}
@@ -636,13 +680,27 @@ const Index = () => {
                                         placeholder="Message"
                                         required="required"
                                         name=""
+                                        value={data.message}
+                                        onChange={e => setData('message', e.target.value)}
                                     />
                                 </div>
                                 {/* </div> */}
 
-                                <Button className="mt-[2rem] mb-[3rem]">
-                                    Submit
-                                </Button>
+                                <div className="mb-4">
+                                    {/*<Button className=" w-80 mt-[2rem] mb-[3rem]"  >*/}
+                                    {/*Submit Now*/}
+                                    {/*</Button>*/}
+                                    {progress && (
+                                        <progress value={progress.percentage} max="100">
+                                            {progress.percentage}%
+                                        </progress>
+                                    )}
+                                    <button className={`block border p-4 sm:w-[20rem] rounded-full mx-auto
+         text-white bg-[rgb(255,35,34)] hover:scale-110 transition ease-in-out`}
+                                            type="submit" disabled={processing}>Submit Now
+
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>
