@@ -3,21 +3,30 @@ import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
 import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 import Paragraph from "../../components/layouts/website/Paragraph";
 import {WebsiteLayout} from "../../components/layouts";
-import {useForm} from "@inertiajs/inertia-react";
+import {useForm, usePage} from "@inertiajs/inertia-react";
 import React from "react";
 
 const Contact = () => {
-
-    const { data, setData, post, processing, errors } = useForm({
-        username: '',
-        password: '',
+  const {flash} = usePage()
+    const { data, setData, post,progress, processing, reset, errors } = useForm({
+        first_name: '',
+        last_name: '',
         email: '',
-        contact: '',
+        phone: '',
+        subject: '',
+        message: '',
+        company: '',
+        industry: '',
     })
 
     function submit(e) {
         e.preventDefault()
-        post('/users')
+        post(route('contact.store'), {
+            data,
+            onSuccess: () => {
+                reset()
+            },
+        });
     }
     return (
         <WebsiteLayout page="contactUs">
@@ -78,31 +87,41 @@ const Contact = () => {
                     </HeadingPrimary>
                 </div>
                 <div className="mx-2 pr-2">
-                    <form action="" className="flex justify-center ">
+                    <form onSubmit={submit} className="flex justify-center ">
                         <div className="grid grid-cols-1 ">
                             <div className="lg:flex  justify-center gap-3 p-3 ">
-                                <input type="text" placeholder="First Name*" required="required" className="m-1 w-screen  h-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
-                                <input type="text" placeholder="Last Name*" required="required" className="m-1 w-screen  h-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="text" placeholder="First Name*" required="required" value={data.first_name} onChange={e => setData('first_name', e.target.value)} className="m-1 w-screen  h-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="text" placeholder="Last Name*" required="required" value={data.last_name} onChange={e => setData('last_name', e.target.value)} className="m-1 w-screen  h-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
                             </div>
                             <div className="sm:flex  justify-center gap-3 p-3">
-                                <input type="email" placeholder="Email*" required="required"  value={data.username} onChange={e => setData('username', e.target.value)} className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
-                                <input type="text" placeholder="Phone Number*" required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="email" placeholder="Email*" required="required"  value={data.email} onChange={e => setData('email', e.target.value)} className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="text" placeholder="Phone Number*" value={data.phone} onChange={e => setData('phone', e.target.value)} required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
                             </div>
                             <div className="sm:flex  justify-center gap-3 p-3">
-                                <input type="text" placeholder="Company Name*" required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
-                                <input type="text" placeholder="Industry*" required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="text" placeholder="Company Name*" value={data.company} onChange={e => setData('company', e.target.value)} required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="text" placeholder="Industry*" value={data.industry} onChange={e => setData('industry', e.target.value)} required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
                             </div>
                             <div className="flex  justify-center gap-3 p-3 mb-2">
-                                <input type="text" placeholder="Subject*" required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
+                                <input type="text" placeholder="Subject*" value={data.subject} onChange={e => setData('subject', e.target.value)} required="required" className="m-1 w-screen  h-full  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" id="" />
 
                             </div>
                             <div className="flex justify-center gap-3 p-3">
-                                <textarea name="" id="" placeholder="Message" className="m-1 w-screen  h-80  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" rows="0"></textarea>
+                                <textarea name="" id="" placeholder="Message" value={data.message} onChange={e => setData('message', e.target.value)} className="m-1 w-screen  h-80  bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20" rows="0"></textarea>
                             </div>
                             <div className="">
-                                <Button className=" w-80 mt-[2rem] mb-[3rem]">
-                                    Submit Now
-                                </Button>
+                                {/*<Button className=" w-80 mt-[2rem] mb-[3rem]"  >*/}
+                                    {/*Submit Now*/}
+                                {/*</Button>*/}
+                                {progress && (
+                                    <progress value={progress.percentage} max="100">
+                                        {progress.percentage}%
+                                    </progress>
+                                )}
+                                <button className={`block border p-4 sm:w-[20rem] rounded-full mx-auto
+         text-white bg-[rgb(255,35,34)] hover:scale-110 transition ease-in-out`}
+                                        type="submit"  disabled={processing}>Submit Now
+
+                                </button>
                             </div>
                         </div>
 

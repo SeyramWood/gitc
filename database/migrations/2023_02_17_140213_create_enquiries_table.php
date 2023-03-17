@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('company');
             $table->string('industry');
             $table->string('subject');
+            $table->string('phone');
             $table->string('message');
             $table->string('email');
             $table->timestamps();

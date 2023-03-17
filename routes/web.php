@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\FileManagementController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
@@ -91,6 +92,12 @@ Route::controller(FileManagementController::class)->group(function () {
     Route::post('/gallaries', 'gallary')->name('user.gallaries');
     Route::get('/gallaries', 'allgallary');
     Route::post('/gallaries/{gallary}', 'destroyGallary');
+});
+
+// Enquiries  route
+Route::controller(EnquiryController::class)->group(function () {
+    Route::get('/files', 'index')->name('users.files');
+    Route::post('/contacts', 'store')->name('contact.store');
 });
 
 

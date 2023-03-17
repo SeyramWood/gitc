@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\EnquiryMail;
 use App\Models\Enquiry;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 
@@ -33,7 +34,7 @@ class EnquiryController extends Controller
         ));
     }
     public function store(Request $request){
-//            dd(\request()->all());
+
 
         $request->validate([
                 'first_name' => 'required',
@@ -46,8 +47,8 @@ class EnquiryController extends Controller
                 'message' => 'required',
             ]);
 
+//        dd(\request()->all());
 
-        try {
             DB::transaction(function () use ($request) {
 
                 $data['enquiries'] = Enquiry::create([
@@ -61,28 +62,13 @@ class EnquiryController extends Controller
                     'industry' => $request->industry,
                 ]);
 
-
-                if ($data) {
-                    return response()->json([
-                        'message' => "Request successfully sent ",
-                        'data' => $data,
-                        'code' => 200
-                    ],200);
-                } else {
-                    return response()->json([
-                        'message' => "Request  unsuccessful ",
-                        'code'=>400
-                    ],400);
-                }
             });
 
-        } catch (\Throwable $th) {
+        return back()->with([
+            'success' => 'User has been created',
+        ]);
 
-            return response()->json([
-                'message' => "We couldn't process your request, please try again."
-            ]);
 
-        }
     }
 
     public function deleteEnquiries(Enquiry $enquiry)
