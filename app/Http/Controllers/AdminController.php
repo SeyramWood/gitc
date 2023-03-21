@@ -91,6 +91,7 @@ class AdminController extends Controller
             'username' => $user->username,
             'email' => $user->email,
             'contact' => $user->contact
+
         ]);
 
     }

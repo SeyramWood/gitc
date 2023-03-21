@@ -63,7 +63,7 @@ const User = ({users})=> {
                                         </td>
                                         <td className="align-middle text-center" width="10%">
                                                 <div>
-                                                        <Link   href={`/view/users/${user.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                        <Link   href={`/users/${user.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
                                                             View
                                                         </Link >
                                                     <Link   href={`/edit/users/${user.id}`}  className="text-slate-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
@@ -117,7 +117,7 @@ const User = ({users})=> {
 
                                     </div>
                                     <div className="flex items-center justify-between mt-6">
-                                        <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" type="submit" disabled={processing}>Sign Up</button>
+                                        <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" type="submit" disabled={processing}>Save</button>
                                     </div>
                                 </form>
                                 {/* Footer */}

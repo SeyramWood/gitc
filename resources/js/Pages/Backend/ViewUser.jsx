@@ -49,9 +49,7 @@ return(
                                 </div>
 
                             </div>
-                            <div className="flex items-center justify-between mt-6">
-                                <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" type="submit" >Sign Up</button>
-                            </div>
+
                         </form>
                         {/* Footer */}
 

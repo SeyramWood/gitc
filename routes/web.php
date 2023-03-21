@@ -83,12 +83,13 @@ Route::controller(ProfileController::class)->group(function () {
 
 // FileManagement  route
 Route::controller(FileManagementController::class)->group(function () {
-    Route::get('/pdf/files', 'index')->name('users.files');
+    Route::get('/pdf/files', 'index')->name('pdf.files.index');
     Route::post('/files', 'store');
     Route::get('/edit/files/{file}', 'getFileEditForm');
-    Route::patch('/files/{file}', 'updateFile');
+    Route::patch('/files/{file}', 'updateFile')->name('file.update');
     Route::get('/view/files/{file}', 'fileDetails');
-    Route::delete('/files/{file}', 'destroy');
+    Route::get('/delete/files/{file}', 'getFileDeleteForm');
+    Route::delete('/files/{file}', 'destroy')->name('file.delete');
     Route::post('/albums', 'album')->name('user.albums');
     Route::get('/albums', 'getAlbum');
     Route::get('/albums/{album}', 'getAlbumGallary')->name('user.album.gallaries');

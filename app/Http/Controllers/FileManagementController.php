@@ -103,10 +103,12 @@ class FileManagementController extends Controller
         $file = Files::findOrFail($file->id);
 
         return Inertia::render('Backend/EditFile', [
-            'id' => $file->id,
-            'title' => $file->title,
-            'description' => $file->description,
-            'avatar' => $file->file,
+          'file'=>[
+              'id' => $file->id,
+              'title' => $file->title,
+              'description' => $file->description,
+              'avatar' => $file->file,
+          ]
         ]);
 
 
@@ -120,7 +122,7 @@ class FileManagementController extends Controller
 
         $files = $request->file('avatar');
 
-        dd($files);
+
         $name = sha1(date('YmdHis') . Str::random(30));
 
         $save_name = $name . '.' . $files->getClientOriginalExtension();
@@ -143,10 +145,28 @@ class FileManagementController extends Controller
         }
     }
 
+
+    public function getFileDeleteForm(Files $file)
+    {
+
+        $file = Files::findOrFail($file->id);
+
+        return Inertia::render('Backend/DeleteFile', [
+            'file'=>[
+                'id' => $file->id,
+                'title' => $file->title,
+                'description' => $file->description,
+                'avatar' => $file->file,
+            ]
+        ]);
+
+
+
+    }
     // Delete file file fom db
     public function destroy(Files $file)
     {
-        $file = FileManagement::findOrFail($file);
+        $file = Files::findOrFail($file->id);
         $file_path = "uploads/{$file->file}";
 
      // Remove the file from storage if exist
@@ -154,14 +174,9 @@ class FileManagementController extends Controller
             @unlink($file_path);
         }
 
-      $data['file']  = Files::destroy($file);
+      $file->delete();
 
-        if ($data) {
-            return redirect()->route('user.files')->with('success', 'Success, Created.');
-        } else {
-            return redirect()->route('user.files')->with('Error', 'Error, Process unsuccesful.');
-
-        }
+       return redirect()->route('pdf.files.index');
     }
 
 // search for a file
