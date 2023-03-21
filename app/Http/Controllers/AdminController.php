@@ -33,6 +33,7 @@ class AdminController extends Controller
         }
     }
 
+
     public function store(Request $request)
     {
 
@@ -41,13 +42,11 @@ class AdminController extends Controller
                     'password' => 'required',
                     'email' => 'required|unique:users,email',
                     'contact' => 'required',
-                    'role' => 'required'
                 ]);
 
                     DB::transaction(function () use ($request) {
 
                         $data['user'] = User::create([
-                            'role' =>$request->role,
                             'username' => $request->username,
                             'email' => $request->email,
                             'contact' => $request->contact,
@@ -67,8 +66,7 @@ class AdminController extends Controller
 
     public function updateUserRole(User $user)
     {
-        $new_role = Role::whereNotIn('id', [request()->role])->first();
-        $user->role_id = $new_role->id ?? $user->role_id;
+        $new_role = Role::whereNotIn('id', $user->id)->first();
         $user->update();
         if ($user) {
             return response()->json([
@@ -84,8 +82,37 @@ class AdminController extends Controller
         }
     }
 
+    public function getUpdateForm(User $user)
+    {
 
-    public function AdminUpdateUserProfile($request, User $user)
+        $user = User::findOrFail($user->id);
+        return Inertia::render('Backend/EditUser', [
+            'id' => $user->id,
+            'username' => $user->username,
+            'email' => $user->email,
+            'contact' => $user->contact
+        ]);
+
+    }
+
+
+    public function update(Request $request, User $user)
+    {
+        $this->validate($request, [
+            'username' => 'required|max:35',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'contact' => 'required'
+        ]);
+
+        User::findOrFail($user->id)->update([
+            'username' => $request->username,
+            'email' => $request->email,
+            'contact' => $request->contact,
+        ]);
+        return redirect()->route('dashboard.users');
+
+    }
+    public function AdminUpdateUserProfile(Request $request, User $user)
     {
         $request->validate([
             'first_name' => 'nullable|string',
@@ -96,7 +123,6 @@ class AdminController extends Controller
         ]);
 
         $data['user'] = $user->update([
-            'role_id' => Role::where('name', 'admin')->first()->id,
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -124,37 +150,40 @@ class AdminController extends Controller
     public function userDetails(User $user)
     {
 
-        $data['user'] = User::with('profile')->whereId($user->id)->first();
-        if ($data) {
-            return response()->json([
-                'message' => "User found  ",
-                'data' => $data,
-                'code' => 200
-            ],200);
-        } else {
-            return response()->json([
-                'message' => "Request  unsuccessful ",
-                'code'=>400
-            ],400);
-        }
+        $user = User::with('profile')->whereId($user->id)->first();
+
+            return Inertia::render('Backend/ViewUser', [
+                'id' => $user->id,
+                'username' => $user->username,
+                'email' => $user->email,
+                'contact' => $user->contact,
+                'first_name' => $user->profile->first_name,
+                'last_name' => $user->profile->last_name,
+                'photo' => $user->profile->image,
+            ]);
+
+
+
     }
 
-
-    public function deleteUser(User $user)
+    public function getDeleteForm(User $user)
     {
+
+        $user = User::findOrFail($user->id);
+        return Inertia::render('Backend/DeleteUser', [
+            'id' => $user->id,
+            'username' => $user->username,
+            'email' => $user->email,
+            'contact' => $user->contact
+        ]);
+
+    }
+    public function destroy(User $user)
+    {
+        $user = User::findOrFail($user->id);
+
         $user->delete();
-        if ($user) {
-            return response()->json([
-                'message' => "User deleted ",
-                'data' => $user,
-                'code' => 200
-            ],200);
-        } else {
-            return response()->json([
-                'message' => "Request  unsuccessful ",
-                'code'=>400
-            ],400);
-        }
+        return redirect()->route('dashboard.users');
     }
 
     public function login(Request $request)
@@ -228,16 +257,7 @@ class AdminController extends Controller
             // Revoke the token that was used to authenticate the current request...
             $user->currentAccessToken()->delete();
             // response to this message if successful logout
-            return response([
-                'message' => 'Logout Successfully',
-                'code' => 499
-            ]);
-        } else {
-            return response()->json([
-                "message" => "Please you are not  Login",
-                "code" => 403,
-
-            ], 403);
+            return redirect()->route('home');
         }
     }
 

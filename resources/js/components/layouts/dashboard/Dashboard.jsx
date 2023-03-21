@@ -2,8 +2,9 @@ import { Avatar } from "primereact/avatar";
 import { Badge } from "primereact/badge";
 import React, { useState } from "react";
 
-import { Link } from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import "../../../../css/dashboard/app.scss";
+import {Inertia} from "@inertiajs/inertia";
 
 const links = [
     {
@@ -27,12 +28,12 @@ const links = [
         icon: "id-card",
     },
     {
-        label: "Merchants",
+        label: "Enquiries",
         icon: "verified",
         dropdown: [
             {
-                label: "View Merchants",
-                link: "/dashboard/merchants",
+                label: "View Enquiries",
+                link: "/enquiries",
             },
             {
                 label: "Storefronts",
@@ -61,7 +62,7 @@ const links = [
         dropdown: [
             {
                 label: "View Files",
-                link: "/files",
+                link: "/pdf/files",
             },
         ],
     },
@@ -121,6 +122,12 @@ const Dashboard = ({ page, children }) => {
 
     if (!asideNavSize) {
         return <p>loading</p>;
+    }
+
+    function submit(e) {
+        e.preventDefault()
+        Inertia.post('/users/logout');
+
     }
     return (
         <div className="asinyo__dashboard">
@@ -380,12 +387,13 @@ const Dashboard = ({ page, children }) => {
                                         </li>
                                         <div className="separator"></div>
                                         <li className="profile">
-                                            <button type="button">
-                                                <span>
+
+                                                <Link as="button"  replace method="POST" data={{_method:'POST'}} href={`/users/logout` }>
+                                                       <span>
                                                     <i className="pi pi-sign-out"></i>
                                                 </span>
-                                                <span>Sign Out</span>
-                                            </button>
+                                                    <span>Sign Out</span>
+                                                </Link>
                                         </li>
                                     </ul>
                                 </div>

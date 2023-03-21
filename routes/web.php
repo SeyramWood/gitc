@@ -60,12 +60,15 @@ Route::get('/resources', [PageController::class, 'resources'])->name("resources"
 Route::controller(AdminController::class)->group(function () {
     Route::get('/users', 'index')->name("dashboard.users");
     Route::post('/users', 'store');
-    Route::get('/users/{user}', 'userDetails');
-    Route::delete('/users/{user}', 'deleteUser');
+    Route::get('/view/users/{user}', 'userDetails');
+    Route::patch('/users/{user}', 'update');
+    Route::delete('/users/{user}', 'destroy');
     Route::post('/users/login', 'login');
     Route::post('/users/logout', 'logout');
-    Route::patch('/users/role/{user}', 'updateUserRole');
-    Route::patch('/admins/user/{user}', 'adminUpdateUserProfile');
+    Route::get('/users/role/{user}', 'updateUserRole');
+    Route::get('/edit/users/{user}', 'getUpdateForm');
+    Route::get('/delete/users/{user}', 'getDeleteForm');
+    Route::get('/admins/user/{user}', 'adminUpdateUserProfile');
 
 
 });
@@ -80,9 +83,11 @@ Route::controller(ProfileController::class)->group(function () {
 
 // FileManagement  route
 Route::controller(FileManagementController::class)->group(function () {
-    Route::get('/files', 'index')->name('users.files');
+    Route::get('/pdf/files', 'index')->name('users.files');
     Route::post('/files', 'store');
+    Route::get('/edit/files/{file}', 'getFileEditForm');
     Route::patch('/files/{file}', 'updateFile');
+    Route::get('/view/files/{file}', 'fileDetails');
     Route::delete('/files/{file}', 'destroy');
     Route::post('/albums', 'album')->name('user.albums');
     Route::get('/albums', 'getAlbum');
@@ -97,7 +102,8 @@ Route::controller(FileManagementController::class)->group(function () {
 // Enquiries  route
 Route::controller(EnquiryController::class)->group(function () {
     Route::get('/files', 'index')->name('users.files');
-    Route::post('/contacts', 'store')->name('contact.store');
+    Route::post('/enquiries', 'store')->name('contact.store');
+    Route::get('/enquiries', 'getAllEnquiries')->name('contact.store');
 });
 
 

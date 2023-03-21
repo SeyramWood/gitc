@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
+use Inertia\Inertia;
 
 class EnquiryController extends Controller
 {
@@ -130,5 +131,15 @@ class EnquiryController extends Controller
         return response()->json(array(
             'message'=>"Message successfully sent. A representative will attend to you shortly !!!",
         ));
+    }
+    public function getAllEnquiries(){
+//            dd(\request()->all());
+        $contacts = Enquiry::orderByDesc('created_at')->get();
+        if ($contacts) {
+            return Inertia::render('Backend/Enquiry', [
+                'contacts' => $contacts
+            ]);
+
+        }
     }
 }

@@ -1,13 +1,11 @@
-import { useForm } from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import { Button } from "primereact/button";
-import { Column } from "primereact/column";
-import { DataTable } from "primereact/datatable";
 import { Dialog } from "primereact/dialog";
 import React, { useState } from "react";
 import { Dashboard } from "../../components/layouts/dashboard";
 
 const FileUpload = ( props ) => {
-    const {data: files, link, meta} = props.files;
+    const {data: files} = props.files;
     const [visible, setVisible] = useState(false);
     const { data, setData, post, progress, processing, errors } = useForm({
         title: "",
@@ -66,6 +64,22 @@ const FileUpload = ( props ) => {
                                     </td>
                                     <td className='text-left'>
                                         <p className="text-lg capitalize text-white font-weight-bold mb-0">{file.description}</p>
+                                    </td>
+
+                                    <td className="align-middle text-center" width="10%">
+                                        <div>
+                                            <Link   href={`/view/files/${file.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                View
+                                            </Link >
+                                            <Link   href={`/edit/files/${file.id}`}  className="text-slate-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                edit
+                                            </Link >
+                                            <Link  href={`/delete/files/${file.id}`}  className="text-red-600 capitalize mr-2 p-3   text-blue-500 cursor-pointer text-red-300">
+                                                <span className="capitalize"></span>  Delete
+                                            </Link>
+                                        </div>
+
+
                                     </td>
                                 </tr>
                             ))}

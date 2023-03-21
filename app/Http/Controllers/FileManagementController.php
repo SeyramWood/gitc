@@ -80,30 +80,58 @@ class FileManagementController extends Controller
 
 
         }
-// update file
-    public function updateFile($request, Files $fileManagement)
-    {
-        $request->validate([
-            'avatar' => 'nullable',
-            'title' => 'nullable'
-        ]);
-        if (!is_dir($this->file_path)) {
-            mkdir($this->file_path, 0777);
-        }
 
-        $file = $request->file('avatar');
+    public function fileDetails(Files $file)
+    {
+
+        $file = Files::whereId($file->id)->first();
+
+        return Inertia::render('Backend/ViewFile', [
+            'id' => $file->id,
+            'title' => $file->title,
+            'description' => $file->description,
+            'file' => $file->file,
+        ]);
+
+
+
+    }
+
+    public function getFileEditForm(Files $file)
+    {
+
+        $file = Files::findOrFail($file->id);
+
+        return Inertia::render('Backend/EditFile', [
+            'id' => $file->id,
+            'title' => $file->title,
+            'description' => $file->description,
+            'avatar' => $file->file,
+        ]);
+
+
+
+    }
+
+    // update file
+    public function updateFile(Request $request, Files $file)
+    {
+
+
+        $files = $request->file('avatar');
+
+        dd($files);
         $name = sha1(date('YmdHis') . Str::random(30));
 
-        $save_name = $name . '.' . $file->getClientOriginalExtension();
-
+        $save_name = $name . '.' . $files->getClientOriginalExtension();
 
         // this saves the actual image
-        $file->move($this->file_path, $save_name);
-        $data['files'] = $fileManagement->update([
-            'file' => $save_name ?? $fileManagement->file,
-            'title' => $request->title ?? $fileManagement->title,
+        $files->move($this->file_path, $save_name);
+        $data['files'] = Files::findOrFail($file->id)->update([
+            'file' => $save_name ?? $file->file,
+            'title' => $request->title ?? $file->title,
             'user_id' => auth()->id(),
-            'description' => $request->description ?? $fileManagement->description,
+            'description' => $request->description ?? $file->description,
         ]);
 
 
