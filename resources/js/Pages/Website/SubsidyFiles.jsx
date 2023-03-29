@@ -95,7 +95,7 @@ function SubsidyFiles() {
                                         open={open}
                                         onClose={() => setOpen(false)}
                                     >
-                                        <div className="w-[50rem] h-[60rem] mt-10">
+                                        <div className="sm:w-[50rem] sm:h-[60rem] w-[19rem] h-[30rem]">
                                             {open && (
                                                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
                                                     <Viewer

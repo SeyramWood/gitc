@@ -8,7 +8,12 @@ const About = () => {
         <WebsiteLayout page="about">
             <div className="bg-white">
                 {/* Governing Board */}
-                <div className="h-[15rem] ">
+                <div className="sm:hidden">
+                    <h1 className="text-primary pt-14 mb-0 text-center pb-0 text-[2.5rem] ">
+                        Governing Board
+                    </h1>
+                </div>
+                <div className="sm:h-[15rem] sm:block hidden ">
                     <div className=" " >
                         <img src="images/homePage/headings/GOVERNING BOARD.jpg" className=" object-contain mx-auto" alt="" />
                         <div className="-translate-y-[13rem]">
@@ -22,7 +27,7 @@ const About = () => {
 
                 </div>
                 
-                <div className="sm:px-[8rem] mb-32">
+                <div className="sm:px-[8rem] sm:mb-32 mb-14">
                     {/* cards container */}
                     <div class="sm:grid grid-cols-3 gap-16 sm:m-0 m-4 ">
                         <div className="shadow-lg ">
@@ -142,8 +147,13 @@ const About = () => {
 
                 {/* team */}
                 <div className="pb-32  sm:mx-20">
-                    <div className="pb-[2rem]  text-center ">
-                        <div className="h-[15rem] ">
+                    <div className="sm:hidden">
+                        <h1 className="text-primary pt-9 mb-0 text-center pb-0 text-[4rem] ">
+                            Our Team
+                        </h1>
+                    </div>
+                    <div className="pb-[2rem]  text-center sm:block hidden">
+                        <div className="sm:h-[15rem] ">
                             <div className=" " >
                                 <img src="images/homePage/headings/OUR TEAM.jpg" className=" object-contain mx-auto" alt="" />
                                 <div className="-translate-y-[13rem]">

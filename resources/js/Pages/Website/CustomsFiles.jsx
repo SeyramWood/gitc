@@ -55,11 +55,11 @@ function CustomsFiles() {
         <WebsiteLayout page="resource">
 
             <div className="w-[100%]   bg-white">
-                <div className="flex px-10 py-16">
-                    <div className="w-[40%]">
+                <div className="sm:flex px-10 py-16">
+                    <div className="sm:w-[40%] sm:block hidden">
                         <CasesNav />
                     </div>
-                    <div className=" w-[60%]">
+                    <div className=" sm:w-[60%]">
                         <p className="pb-12">
                             Lorem ipsum dolor sit amet consectetur
                             adipisicing elit. Id, suscipit reiciendis porro laborum

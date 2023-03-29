@@ -23,7 +23,7 @@ const AboutMessage = () => {
                             Our Story
                         </h4>
                     </div>
-                    <div className="mt-4 sm:pr-6 sm:w-[80%]  ">
+                    <div className="mt-4 sm:pr-6 sm:w-[80%] px-3  ">
                         <p className="mb-6 text-black">
                             Ghana International Trade Commission (GITC), was
                             established in September 2016 under
@@ -66,7 +66,7 @@ const AboutMessage = () => {
 
                 {/* values */}
                 <div className="mt-32" style={{ backgroundImage: "url('images/bg.jpg')",objectFit:"cover" }}>
-                    <div className="p-10 md:flex justify-center bg-white/70 ">
+                    <div className="sm:p-10 p-4 md:flex justify-center bg-white/70 ">
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%]">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
@@ -112,7 +112,7 @@ const AboutMessage = () => {
                         </div>
 
                         <div className="flex p-2 my-5 ">
-                            <div className="p-3 w-[35%] ">
+                            <div className="p-3 w-[30%] sm:w-[35%] ">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
                                     <img
                                         src="images/homePage/integrity.png"
@@ -121,7 +121,7 @@ const AboutMessage = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="w-[65%] ">
+                            <div className="w-[70%] sm:w-[65%]">
                                 <h2 className="">Integrity</h2>
                                 <p>
                                     To ensure absolute neutrality and consistency in the
@@ -136,7 +136,7 @@ const AboutMessage = () => {
                                     <img
                                         src="images/homePage/search.png"
                                         alt="Integrity"
-                                        className="object-contain -translate-y-3 -translate-x-1 "
+                                        className="object-contain -translate-y-3 -translate-x-5 "
                                     />
                                 </div>
                             </div>
@@ -159,7 +159,7 @@ const AboutMessage = () => {
                         <div className="flex flex-col-reverse justify-center sm:flex-row ">
                             <div className="text-white  bg-black sm:w-[50%]">
                                 <div
-                                    className="container pt-7 pb-14  sm:px-20 "
+                                    className="container pt-7 pb-14  sm:px-20 px-10"
                                     data-aos="fade-up"
                                     data-aos-duration="2000"
                                 >
@@ -192,12 +192,6 @@ const AboutMessage = () => {
                                             international trade.
                                         </li>
                                     </ul>
-
-                                    {/* <Link href="/story">
-                                        <ButtonOutline className="sm:w-[14rem] mb-8">
-                                            Read Our Story
-                                        </ButtonOutline>
-                                    </Link> */}
                                 </div>
                             </div>
                             <div className="sm:w-[50%]">
@@ -239,7 +233,7 @@ const AboutMessage = () => {
                                     <h4 className="text-left font-bold text-white pt-6">
                                         Vission
                                     </h4>
-                                    <p className=" text-[1.1rem] text-white">
+                                    <p className=" text-[1.1rem] text-white pb-5 sm:pb-0">
                                         To become world-class fair trade regulatory agency.
                                     </p>
                                   
