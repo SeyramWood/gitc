@@ -1,14 +1,13 @@
 import React,  {useState, useEffect}from "react";
 import {Link, useForm} from "@inertiajs/inertia-react";
 import {Dashboard} from "../../components/layouts/dashboard";
-import {DataTable} from 'primereact/datatable';
-import {Column} from 'primereact/column';
+
 import {Button} from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 
 
-const Album = ({ albums })=> {
-
+const Album = (props)=> {
+    const {data: albums} = props.albums;
     const { data, setData, post,progress, processing, errors } = useForm({
         name: '',
         description: '',
@@ -23,24 +22,55 @@ const Album = ({ albums })=> {
       const [visible, setVisible] = useState(false);
 
 
-        const header = (
-            <div className="flex flex-wrap align-items-center justify-content-between gap-2">
-                <span className="text-xl text-900 font-bold">Albums</span>
-                <Button icon="pi pi-refresh" rounded raised/>
-            </div>
-        );
-        const footer = `In total there are ${albums ? albums.length : 0} albums.`;
-
-        return (
+    return (
             <Dashboard page="Albums">
                 <Button className="m-3"  label="Add Album" icon="pi pi-external-link" onClick={() => setVisible(true)} />
 
                 <div className="card">
-                    <DataTable value={albums.data}   header={header} footer={footer} tableStyle={{ minWidth: '100%' }}  >
-                    <Column field="name" header="Album name"  ></Column>
-                    <Column field="description"  header="Description"></Column>
-                    <Column   header="Action"></Column>
-                </DataTable>
+                    <div className="card">
+                        <div className="card-body px-0 pt-0 pb-2">
+                            <div className="table-responsive-xxl p-0" width="100%">
+                                <table className=" table align-items-center justify-content-center mb-0 bg-slate-100" width="100%">
+                                    <thead className="bg-slate-100">
+                                    <tr className="" >
+                                        <th className="text-uppercase  text-white text-xl font-weight-bolder opacity-7 ps-2 text-left">Name</th>
+                                        <th className="text-uppercase text-white text-xl font-weight-bolder opacity-7 ps-2 text-left">Description</th>
+                                        <th className="text-uppercase text-white text-xl font-weight-bolder text-center opacity-7 ps-2">Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {albums.map((album, index) => (
+                                        <tr key={album.id}>
+                                            <td className='text-left'>
+                                                <p className="text-lg capitalize text-white font-weight-bold mb-0">{album.name}</p>
+                                            </td>
+                                            <td className='text-left'>
+                                                <p className="text-lg capitalize text-white font-weight-bold mb-0">{album.description}</p>
+                                            </td>
+                                            <td className="align-middle text-center" width="10%">
+                                                <div>
+                                                    <Link   href={`/album/${album.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                        View
+                                                    </Link >
+                                                    <Link   href={`/edit/album/${album.id}`}  className="text-slate-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                        edit
+                                                    </Link >
+                                                    <Link  href={`/delete/album/${album.id}`}  className="text-red-600 capitalize mr-2 p-3   text-blue-500 cursor-pointer text-red-300">
+                                                        <span className="capitalize"></span>  Delete
+                                                    </Link>
+                                                </div>
+
+
+                                            </td>
+
+                                        </tr>
+                                    ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
                 <div className="card flex justify-content-center ml-2">
@@ -74,7 +104,11 @@ const Album = ({ albums })=> {
                                         </progress>
                                     )}
                                     <div className="flex items-center justify-between mt-6">
-                                        <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" type="submit" disabled={processing}>Save</button>
+                                        <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3
+                                         whitespace-nowrap" type="submit"
+                                                disabled={processing}
+                                        >
+                                            Publish</button>
                                     </div>
                                 </form>
                                 {/* Footer */}

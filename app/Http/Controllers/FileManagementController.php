@@ -7,6 +7,7 @@ use App\Models\Enquiry;
 use App\Models\FileManagement;
 use App\Models\Files;
 use App\Models\Gallary;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -45,32 +46,40 @@ class FileManagementController extends Controller
     public function store(Request $request)
     {
 
+//        dd($request);
         $request->validate([
-            'avatar' => 'required',
+            'pdf' => 'required',
             'title' => 'required',
-            'description' => 'nullable'
+            'description' => 'nullable',
+            'published_date' => 'required',
+            'image' => 'required'
         ]);
             DB::transaction(function () use ($request) {
 
-                    $file = $request->file('avatar');
+                    $pdf = $request->file('pdf');
+                    $image = $request->file('image');
 
                     if (!is_dir($this->file_path)) {
                         mkdir($this->file_path, 0777);
                     }
                     $name = sha1(date('YmdHis') . Str::random(30));
 
-                    $save_name = $name . '.' . $file->getClientOriginalExtension();
+                    $pdf_name = $name . '.' . $pdf->getClientOriginalExtension();
+                    $image_name = $name . '.' . $image->getClientOriginalExtension();
 
 
                     // this saves the actual image
-                    $file->move($this->file_path, $save_name);
+                    $pdf->move($this->file_path, $pdf_name);
+                    $image->move($this->file_path, $image_name);
 
 
 
 //             dd($save_name);
                 $data['files'] = Files::create([
-                    'file' => $save_name ?? null,
+                    'pdf' => $pdf_name ?? null,
+                    'image' => $image_name ?? null,
                     'title' => $request->title,
+                    'published_date' => $request->published_date,
                     'description' => $request->description,
                 ]);
 
@@ -90,7 +99,9 @@ class FileManagementController extends Controller
             'id' => $file->id,
             'title' => $file->title,
             'description' => $file->description,
-            'file' => $file->file,
+            'pdf' => $file->pdf,
+            'image' => $file->image,
+            'published_date' => $file->published_date,
         ]);
 
 
@@ -107,7 +118,9 @@ class FileManagementController extends Controller
               'id' => $file->id,
               'title' => $file->title,
               'description' => $file->description,
-              'avatar' => $file->file,
+//              'pdf' => $file->pdf,
+//              'image' => $file->image,
+              'published_date' => $file->published_date,
           ]
         ]);
 
@@ -119,30 +132,36 @@ class FileManagementController extends Controller
     public function updateFile(Request $request, Files $file)
     {
 
+//        dd($request);
 
-        $files = $request->file('avatar');
+            $pdf = $request->file('pdf');
+            $image = $request->file('image');
+
+            $name = sha1(date('YmdHis') . Str::random(30));
+
+            $pdf_name = $name . '.' . $pdf->getClientOriginalExtension();
+            $image_name = $name . '.' . $image->getClientOriginalExtension();
 
 
-        $name = sha1(date('YmdHis') . Str::random(30));
+            // this saves the actual image
+            $pdf->move($this->file_path, $pdf_name);
+            $image->move($this->file_path, $image_name);
 
-        $save_name = $name . '.' . $files->getClientOriginalExtension();
 
-        // this saves the actual image
-        $files->move($this->file_path, $save_name);
+
+
         $data['files'] = Files::findOrFail($file->id)->update([
-            'file' => $save_name ?? $file->file,
+            'pdf' => $pdf_name ?? $file->pdf,
+            'image' => $image_name ?? $file->image,
             'title' => $request->title ?? $file->title,
-            'user_id' => auth()->id(),
             'description' => $request->description ?? $file->description,
+            'published_date' => $request->published_date ?? $file->published_date,
         ]);
 
 
-        if ($data) {
-            return redirect()->route('user.files')->with('success', 'Success, Created.');
-        } else {
-            return redirect()->route('user.files')->with('Error', 'Error, Process unsuccesful.');
 
-        }
+            return redirect()->route('pdf.files.index');
+
     }
 
 
@@ -156,7 +175,9 @@ class FileManagementController extends Controller
                 'id' => $file->id,
                 'title' => $file->title,
                 'description' => $file->description,
-                'avatar' => $file->file,
+                'pdf' => $file->pdf,
+                'image' => $file->image,
+                'published_date' => $file->published_date,
             ]
         ]);
 
@@ -167,7 +188,7 @@ class FileManagementController extends Controller
     public function destroy(Files $file)
     {
         $file = Files::findOrFail($file->id);
-        $file_path = "uploads/{$file->file}";
+        $file_path = "uploads/{$file->pdf}";
 
      // Remove the file from storage if exist
         if (Files::exists($file_path)) {
@@ -199,81 +220,14 @@ class FileManagementController extends Controller
     }
 
 
-// Save albums
-    public function album(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|unique:albums,name',
-            'description' => 'nullable',
-            'images' => 'nullable',
-
-        ]);
 
 
-        DB::transaction(function () use ($request) {
-            // // Create files
-            $data['album'] = Album::create([
-                'name' => $request->name,
-                'description' => $request->description,
-            ]);
-//
-                $file = $request->file('images');
 
-                if (!is_dir($this->file_path)) {
-                    mkdir($this->file_path, 0777);
-                }
-                $name = sha1(date('YmdHis') . Str::random(30));
-
-                $save_name = $name . '.' .$file->getClientOriginalExtension();
-
-
-                // this saves the actual image
-                $file->move($this->file_path, $save_name);
-
-
-            $data['album']->gallary()->create([
-                'images' => $save_name,
-                'album_id' => $data['album']->id
-            ]);
-        });
-    }
-
-    // Get all albums
-    public function getAlbum()
-    {
-        $albums = Album::orderBy('created_at','DESC')->paginate(15);
-
-        if ($albums) {
-            return Inertia::render('Backend/Album', [
-                'albums' => $albums
-            ]);
-
-        }
-
-
-}
-
-    public function getAlbumGallary(Album $album)
-    {
-        $data ['albums'] = Album::with('gallary')->orderBy('created_at','DESC')->paginate(15);
-
-        if ($data) {
-            return Inertia::render('Backend/AlbumGallary', [
-                'data' => $data
-            ]);
-
-        } else {
-            return redirect()->route('user.albums')->with('error', 'Error, Process unsuccesful.');
-
-        }
-
-
-}
 
 // get all image / photos
     public function allgallary()
     {
-        $gallaries = Gallary::orderBy('created_at','DESC')->paginate(15);
+        $gallaries = Gallary::with('albums')->orderBy('created_at','DESC')->paginate(15);
         $albums = Album::select('id','name')->orderBy('created_at','DESC')->get();
 
         if ($gallaries) {

@@ -57,12 +57,22 @@ const links = [
         ],
     },
     {
-        label: "PDF Files",
+        label: "Publications",
         icon: "gift",
         dropdown: [
             {
                 label: "View Files",
                 link: "/pdf/files",
+            },
+        ],
+    },
+    {
+        label: "Cases",
+        icon: "gift",
+        dropdown: [
+            {
+                label: "View cases",
+                link: "/ourcases",
             },
         ],
     },

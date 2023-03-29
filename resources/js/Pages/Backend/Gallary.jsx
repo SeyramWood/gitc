@@ -45,6 +45,7 @@ const Gallary = (props)=> {
                                             alt="Objectivity" style={{width: "25rem",  height: "100px"}}
 
                                         />
+                                        <span>{gallary.albums}</span>
                                     </div>
                                 </div>
 

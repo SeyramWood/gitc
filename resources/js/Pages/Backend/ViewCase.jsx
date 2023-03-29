@@ -4,28 +4,21 @@ import {Link, usePage} from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 const ViewFile = () => {
 
-    const { id, title,description,pdf,image ,published_date} = usePage().props
-    const [values] = useState({id,image, title,description,pdf,published_date });
+    const { id, title,description,pdf ,issue_date} = usePage().props
+    const [values] = useState({id, title,description,pdf,issue_date });
     // console.log(values);
 
 
 return(
 
-    <Dashboard page="View File Information">
+    <Dashboard page="View Case Information">
 
         <div className="card flex justify-content-center ml-2">
                 <p className="m-0">
                     <div className="max-w-lg mx-auto px-4 py-8">
-                        <h1 className="text-3xl text-slate-800 font-bold mb-6">  User Details Information </h1>
+                        <h1 className="text-3xl text-slate-800 font-bold mb-6">  Case Details Information </h1>
                         {/* Form */}
 
-                        <div className="" style={{ borderRadius: "100%"}}>
-                            <img className="m-2"
-                                 src={window.location.origin + '/uploads/' + values.image }
-                                 alt="Objectivity" style={{width: "20rem"}}
-
-                            />
-                        </div>
                         <form >
                             <div className="space-y-4">
 
@@ -40,8 +33,8 @@ return(
                                     {/*{errors.username && <div className="text-rose-500">{errors.username}</div>}*/}
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium mb-1" htmlFor="name">Date Published <span className="text-rose-500">*</span></label>
-                                    <input id="name" className="form-input w-full" type="text"  value={values.published_date}  readOnly />
+                                    <label className="block text-sm font-medium mb-1" htmlFor="name">Date Issued <span className="text-rose-500">*</span></label>
+                                    <input id="name" className="form-input w-full" type="text"  value={values.issue_date}  readOnly />
                                     {/*{errors.username && <div className="text-rose-500">{errors.username}</div>}*/}
                                 </div>
 

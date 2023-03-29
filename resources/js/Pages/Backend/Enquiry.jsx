@@ -1,4 +1,4 @@
-import { useForm } from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import { Button } from "primereact/button";
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
@@ -46,6 +46,22 @@ const Enquiry = ({contacts}) => {
                                     </td>
                                     <td className='text-left'>
                                         <p className="text-lg capitalize text-white font-weight-bold mb-0">{contact.message}</p>
+                                    </td>
+
+                                    <td className="align-middle text-center" width="10%">
+                                        <div>
+                                            <Link   href={`/view/enquiry/${contact.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                View
+                                            </Link >
+                                            <Link   href={`/edit/enquiry/${contact.id}`}  className="text-slate-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                edit
+                                            </Link >
+                                            <Link  href={`/delete/enquiry/${contact.id}`}  className="text-red-600 capitalize mr-2 p-3   text-blue-500 cursor-pointer text-red-300">
+                                                <span className="capitalize"></span>  Delete
+                                            </Link>
+                                        </div>
+
+
                                     </td>
                                 </tr>
                             ))}

@@ -4,30 +4,30 @@ import {usePage,useForm} from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 const DeleteFile = () => {
 
-    const { file } = usePage().props;
+    const { ourcase } = usePage().props;
     const { data, setData,delete: destroy} = useForm({
-        title: file.title,
-        description: file.description,
-        pdf: file.pdf,
+        title: ourcase.title,
+        description: ourcase.description,
+        avatar: ourcase.pdf,
     });
 
     const submit = (e) => {
         e.preventDefault();
 
-        destroy(route('file.delete', file.id));
+        destroy(route('case.delete', ourcase.id));
     };
 
 return(
 
-    <Dashboard page="Delete Publication">
+    <Dashboard page="Edit PDF File">
         <div className="card flex justify-content-center ml-2">
                 <p className="m-0">
                     <div className="max-w-sm mx-auto px-4 py-8">
-                        <h1 className="text-3xl text-slate-800 font-bold mb-6">Delete Publication  </h1>
+                        <h1 className="text-3xl text-slate-800 font-bold mb-6">Delete PDF File </h1>
                         {/* Form */}
                         <div className="" style={{ borderRadius: "100%"}}>
                             <embed
-                                src={window.location.origin + '/uploads/' + file.pdf }
+                                src={window.location.origin + '/uploads/' + ourcase.pdf }
                                 alt="PDF file here" style={{width: "100%",  height: "800px"}}
 
                             />
