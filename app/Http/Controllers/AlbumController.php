@@ -56,6 +56,8 @@ class AlbumController extends Controller
                 'images' => $save_name,
                 'album_id' => $data['album']->id
             ]);
+
+            return redirect()->route('album.index')->with('message', 'Success, Created Sucussfully.');
         });
     }
 
@@ -165,7 +167,7 @@ class AlbumController extends Controller
 
         $album->delete();
 
-        return redirect()->route('album.index');
+        return redirect()->route('album.index')->with('message', 'Success, Deleted Sucussfully.');
     }
 
 
@@ -186,6 +188,55 @@ class AlbumController extends Controller
                 'images' => $gallary->images,
 
             ]);
+
+        }
+
+    }
+
+    public function getAddToGallaryForm(Album $album)
+    {
+
+        $album = Album::findOrFail($album->id);
+
+        return Inertia::render('Backend/AddGallary', [
+            'album'=>[
+                'id' => $album->id,
+                'name' => $album->name,
+                'description' => $album->description,
+            ]
+        ]);
+
+
+
+    }
+
+    // store photos
+
+    public function adToGallary(Request $request, Album $album)
+    {
+        $img = [];
+
+        $img = $request->file('images');
+//
+      dd($img);
+//
+//        dd($request);
+        if ($request->file('images')){
+//            foreach($request->avatar as $files) {
+
+                if (!is_dir($this->file_path)) {
+                    mkdir($this->file_path, 0777);
+                }
+                  $file = $request->file('images');
+//                $file = $files;
+                $name = sha1(date('YmdHis') . Str::random(30));
+
+                $save_name = $name . '.' . $file->getClientOriginalExtension();
+
+                // // Create files
+                $album->gallary()->create([
+                    'images' => $save_name,
+                ]);
 
         }
 

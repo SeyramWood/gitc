@@ -49,6 +49,9 @@ const Album = (props)=> {
                                             </td>
                                             <td className="align-middle text-center" width="10%">
                                                 <div>
+                                                    <Link   href={`/add/gallaries/${album.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
+                                                        add Image
+                                                    </Link >
                                                     <Link   href={`/album/${album.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
                                                         View
                                                     </Link >

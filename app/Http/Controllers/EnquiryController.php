@@ -12,28 +12,28 @@ use Inertia\Inertia;
 
 class EnquiryController extends Controller
 {
-    public function enguiry(){
-//            dd(\request()->all());
-        try {
-            $this->validate(request(), [
-                'first_name' => 'required',
-                'last_name' => 'required',
-                'phone' => 'required|numeric',
-                'email' => 'required|email',
-                'subject' => 'required|string',
-                'company' => 'required|string',
-                'industry' => 'required|string',
-                'message' => 'required',
-            ]);
-        } catch (ValidationException $e) {
-        }
-
-        Mail::to("info@gitc.gov.gh")
-            ->send(new EnquiryMail(request()->first_name,request()->last_name,request()->subject,request()->industry,request()->email,request()->phone,request()->company,request()->message));
-        return response()->json(array(
-            'message'=>"Message successfully sent. A representative will attend to you shortly !!!",
-        ));
-    }
+//    public function enguiry(){
+////            dd(\request()->all());
+//        try {
+//            $this->validate(request(), [
+//                'first_name' => 'required',
+//                'last_name' => 'required',
+//                'phone' => 'required|numeric',
+//                'email' => 'required|email',
+//                'subject' => 'required|string',
+//                'company' => 'required|string',
+//                'industry' => 'required|string',
+//                'message' => 'required',
+//            ]);
+//        } catch (ValidationException $e) {
+//        }
+//
+//        Mail::to("info@gitc.gov.gh")
+//            ->send(new EnquiryMail(request()->first_name,request()->last_name,request()->subject,request()->industry,request()->email,request()->phone,request()->company,request()->message));
+//        return response()->json(array(
+//            'message'=>"Message successfully sent. A representative will attend to you shortly !!!",
+//        ));
+//    }
     public function store(Request $request){
 
 
@@ -64,7 +64,7 @@ class EnquiryController extends Controller
             });
 
         return back()->with([
-            'success' => 'User has been created',
+            'message' => 'Your Request is recieved , Support team will be with you soon',
         ]);
 
 
@@ -87,51 +87,24 @@ class EnquiryController extends Controller
         }
     }
 
-    public function search(Request $request)
-    {
-
-        if (request()->user('sanctum')) {
-            $data['enguiries'] = Enquiry::where('subject', 'LIKE', "%{$request->subject}%")->get();
-
-            //checking if request exit
-            if ($data) {
-                return response()->json([
-                    'data' => $data,
-                    'message' => "Record found",
-                    'code' => 200,
-                ], 200);
-            } else {
-                return response()->json([
-                    'message' => "No record found",
-                    'code' => 404,
-                ], 404);
-            }
-        } else {
-            return response()->json([
-                "message" => "Please Login First",
-                "code" => 403,
-
-            ], 403);
-        }
-    }
-
-
-    // incomplete end point
-    public function reply(Enquiry $enquiry){
-//            dd(\request()->all());
-        try {
-            $this->validate(request(), [
-                'message' => 'required',
-            ]);
-        } catch (ValidationException $e) {
-        }
-
-        Mail::to("info@gitc.gov.gh")
-            ->send(new EnquiryMail(request()->first_name,request()->last_name,request()->subject,request()->industry,request()->email,request()->phone,request()->company,request()->message));
-        return response()->json(array(
-            'message'=>"Message successfully sent. A representative will attend to you shortly !!!",
-        ));
-    }
+//
+//
+//    // incomplete end point
+//    public function reply(Enquiry $enquiry){
+////            dd(\request()->all());
+//        try {
+//            $this->validate(request(), [
+//                'message' => 'required',
+//            ]);
+//        } catch (ValidationException $e) {
+//        }
+//
+//        Mail::to("info@gitc.gov.gh")
+//            ->send(new EnquiryMail(request()->first_name,request()->last_name,request()->subject,request()->industry,request()->email,request()->phone,request()->company,request()->message));
+//        return response()->json(array(
+//            'message'=>"Message successfully sent. A representative will attend to you shortly !!!",
+//        ));
+//    }
     public function getAllEnquiries(){
 //            dd(\request()->all());
         $contacts = Enquiry::orderByDesc('created_at')->get();

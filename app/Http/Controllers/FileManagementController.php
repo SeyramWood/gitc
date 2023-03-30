@@ -200,25 +200,6 @@ class FileManagementController extends Controller
        return redirect()->route('pdf.files.index');
     }
 
-// search for a file
-    public function search(Request $request)
-    {
-
-        if (request()->user('sanctum')) {
-            $data['file'] = Files::where('title', 'LIKE', "%{$request->title}%")->get();
-
-            //checking if request exit
-            if ($data) {
-                return Inertia::render('Backend/File', [
-                    'data' => $data
-                ]);
-            } else {
-                return redirect()->route('user.files')->with('Error', 'Error, Process unsuccesful.');
-
-            }
-        }
-    }
-
 
 
 
@@ -228,7 +209,6 @@ class FileManagementController extends Controller
     public function allgallary()
     {
         $gallaries = Gallary::with('albums')->orderBy('created_at','DESC')->paginate(15);
-        $albums = Album::select('id','name')->orderBy('created_at','DESC')->get();
 
         if ($gallaries) {
             return Inertia::render('Backend/Gallary', [
@@ -241,44 +221,7 @@ class FileManagementController extends Controller
 
 }
 
-// store photos
 
-    public function gallary(Request $request)
-    {
-        $request->validate([
-            'documents' => 'required',
-            'album_id' => 'required',
-            'documents.*' => 'required|mimes:png,jpeg,jpg|max:2048',
-        ]);
-
-        if ($request->avatar){
-            foreach($request->avatar as $files) {
-
-                if (!is_dir($this->file_path)) {
-                    mkdir($this->file_path, 0777);
-                }
-
-                $file = $files;
-                $name = sha1(date('YmdHis') . Str::random(30));
-
-                $save_name = $name . '.' . $file->getClientOriginalExtension();
-
-                // // Create files
-              $data['gallary'] = Gallary::create([
-                    'file' => $save_name,
-                    'album_id' => $request->album_id
-                ]);
-            }
-
-            if ($data) {
-                return redirect()->route('user.gallary')->with('success', 'Success, Created.');
-            } else {
-                return redirect()->route('user.gallary')->with('Error', 'Error, Process unsuccesful.');
-
-            }
-        }
-
-    }
 
     // Delete file  fom db
     public function destroyAlbum(Album $album)

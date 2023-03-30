@@ -45,7 +45,7 @@ Route::get('/service/tariff', [PageController::class, 'ServiceTariff']);
 
 Route::get('/service/dispute', [PageController::class, 'ServiceDispute']);
 Route::get('/login', [PageController::class, 'sign']);
-Route::get('/signup', [PageController::class, 'signup']);
+//Route::get('/signup', [PageController::class, 'signup']);
 //Route::get('/dashboard', [PageController::class, 'dashboard'])->name('user.dashboard');
 Route::post('/create', [AdminController::class, 'store']);
 
@@ -65,8 +65,8 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/view/users/{user}', 'userDetails');
     Route::post('/users/{user}', 'update')->name('user.update');
     Route::delete('/users/{user}', 'destroy');
-    Route::post('/users/login', 'login');
-    Route::post('/users/logout', 'logout');
+    Route::post('/login', 'login')->name('user.login');
+    Route::post('/logout', 'logout');
     Route::get('/users/role/{user}', 'updateUserRole');
     Route::get('/edit/users/{user}', 'getUpdateForm');
     Route::get('/delete/users/{user}', 'getDeleteForm');
@@ -108,7 +108,6 @@ Route::controller(FileManagementController::class)->group(function () {
     Route::get('/albums', 'getAlbum');
     Route::delete('/albums/{album}', 'destroyAlbum');
     Route::patch('/albums/{album}', 'updateAlbum');
-    Route::post('/gallaries', 'gallary')->name('user.gallaries');
     Route::get('/gallaries', 'allgallary');
     Route::post('/gallaries/{gallary}', 'destroyGallary');
 });
@@ -125,6 +124,8 @@ Route::controller(AlbumController::class)->group(function () {
     Route::delete('/album/{album}', 'destroy')->name('album.delete');
     Route::delete('/albums/{album}', 'destroyAlbum');
     Route::get('/album/{album}', 'getAlbumGallary')->name('album.gallaries');
+    Route::get('/add/gallaries/{album}', 'getAddToGallaryForm');
+    Route::post('/add/gallaries/{album}', 'adToGallary')->name('album.gallaries');
 
 
 });
@@ -135,5 +136,6 @@ Route::controller(EnquiryController::class)->group(function () {
     Route::post('/enquiries', 'store')->name('contact.store');
     Route::get('/enquiries', 'getAllEnquiries')->name('contact.store');
 });
+
 
 

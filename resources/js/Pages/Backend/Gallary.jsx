@@ -1,16 +1,14 @@
 import React,  {useState, useEffect}from "react";
 import {Link, useForm} from "@inertiajs/inertia-react";
 import {Dashboard} from "../../components/layouts/dashboard";
-import {DataTable} from 'primereact/datatable';
-import {Column} from 'primereact/column';
 import {Button} from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 
 
 const Gallary = (props)=> {
-    const {data: gallaries, link, meta} = props.gallaries;
-    const { data, setData, post, processing, errors } = useForm({
-        images: '',
+    const {data: gallaries} = props.gallaries;
+    const { data, setData, post, processing } = useForm({
+        images: [],
         album_id: '',
     })
 
@@ -22,13 +20,6 @@ const Gallary = (props)=> {
       const [visible, setVisible] = useState(false);
 
 
-        const header = (
-            <div className="flex flex-wrap align-items-center justify-content-between gap-2">
-                <span className="text-xl text-900 font-bold">Gallaries</span>
-                <Button icon="pi pi-refresh" rounded raised/>
-            </div>
-        );
-        const footer = `In total there are ${gallaries ? gallaries.length : 0} gallaries.`;
 
         return (
             <Dashboard page="Gallaries">
@@ -74,12 +65,14 @@ const Gallary = (props)=> {
                                         </div>
                                         <div>
                                             <label className="block text-sm font-medium mb-1" htmlFor="album_idd"> Album <span className="text-rose-500">*</span></label>
-                                            <select id="album_id" className="form-select w-full" value={data.album_id} onChange={e => setData('album', e.target.value)} >
 
-                                                <option>Designer</option>
-                                                <option>Developer</option>
-                                                <option>Accountant</option>
+                                            <select id="album_id" className="form-select w-full" value={data.album_id} onChange={e => setData('album', e.target.value)} >
+                                                {/*{albums.map((album, index) => (*/}
+                                                <option>jghfdjhgj</option>
+
+                                                    {/*))}*/}
                                             </select>
+
                                         </div>
 
 

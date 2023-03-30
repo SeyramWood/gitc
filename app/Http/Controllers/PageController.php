@@ -98,7 +98,12 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        return Inertia::render('Backend/Dashboard');
+        if (auth()->user()){
+            return Inertia::render('Backend/Dashboard');
+        }else{
+            return redirect()->route('home')->with('error', 'fail, Not Authenticated.');
+        }
+
 
     }
 }
