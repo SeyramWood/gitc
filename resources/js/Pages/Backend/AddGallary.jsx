@@ -1,15 +1,12 @@
 import {Dashboard} from "../../components/layouts/dashboard";
 import React, { useState } from "react";
 import {usePage, useForm, Link} from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
-import {Button} from "primereact/button";
-import {Dialog} from "primereact/dialog";
+import {array} from "prop-types";
 const AddGallary = () => {
 
     const { album } = usePage().props;
     const { data, setData, post, errors, progress, processing} = useForm({
-
-        images: [],
+        images:  array,
     });
 
     const submit = (e) => {
@@ -18,7 +15,7 @@ const AddGallary = () => {
     };
 
     return (
-        <Dashboard page="Add Images To Albums">
+        <Dashboard page="Edit Albums">
 
 
             <div className="card flex justify-content-center ml-2">
@@ -26,10 +23,10 @@ const AddGallary = () => {
 
                     <p className="m-0">
                         <div className="max-w-sm mx-auto px-4 py-8">
-                            <h1 className="text-3xl text-slate-800 font-bold mb-6">Add Images To Albums </h1>
-                            <p className="mb-5">
+                            <h1 className="text-3xl text-slate-800 font-bold mb-6">Edit Album </h1>
+                            <p className="m-0">
 
-                                <span className="capitalize font-bold">Name: {album.name} Description: {album.description}</span>
+                                <span className="capitalize">Name: {album.name} Description: {album.description}</span>
                             </p>
                             <form onSubmit={submit}>
                                 <div className="space-y-4">

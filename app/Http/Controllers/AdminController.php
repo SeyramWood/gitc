@@ -231,7 +231,7 @@ if (auth()->user()){
             Auth::logout();
             request()->session()->invalidate();
             // response to this message if successful logout
-            return redirect()->route('home')->with('message', 'Success, User Logout Successfully.');
+            return redirect()->route('home');
         }
     }
 

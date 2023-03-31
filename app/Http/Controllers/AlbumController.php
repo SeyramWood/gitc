@@ -72,19 +72,19 @@ class AlbumController extends Controller
 
     }
 
-    public function Details(Album $album)
-    {
+//    public function Details(Album $album)
+//    {
+//
+//        $album = Album::with('gallary')->whereId($album->id)->first();
+//
+//        return Inertia::render('Backend/ViewAlbum', [
+//            'id' => $album->id,
+//            'name' => $album->name,
+//        ]);
 
-        $album = Album::with('gallary')->whereId($album->id)->first();
-
-        return Inertia::render('Backend/ViewAlbum', [
-            'id' => $album->id,
-            'name' => $album->name,
-        ]);
 
 
-
-    }
+//    }
 
     public function getEditForm(Album $album)
     {
@@ -173,23 +173,14 @@ class AlbumController extends Controller
 
     public function getAlbumGallary(Album $album)
     {
-        $albumGallary= Album::with('gallary')->whereId($album->id)->orderBy('created_at','DESC')->get();
+        $albumGallaries = Gallary::whereAlbum_id($album->id)->orderBy('created_at','DESC')->paginate(15);
 
-        foreach ($albumGallary as $album)
+      if ($albumGallaries){
+          return Inertia::render('Backend/ViewAlbum', [
+              'albumGallaries' =>$albumGallaries,
+          ]);
+      }
 
-            foreach ($album->gallary as $gallary)
-
-
-        if ($albumGallary) {
-            return Inertia::render('Backend/ViewAlbum', [
-                'id' => $album->id,
-                'name' => $album->name,
-                'description' => $album->description,
-                'images' => $gallary->images,
-
-            ]);
-
-        }
 
     }
 
@@ -214,31 +205,34 @@ class AlbumController extends Controller
 
     public function adToGallary(Request $request, Album $album)
     {
-        $img = [];
 
-        $img = $request->file('images');
-//
-      dd($img);
+//        $img = $request->file('images');
+////
+//      dd($img);
 //
 //        dd($request);
-        if ($request->file('images')){
-//            foreach($request->avatar as $files) {
+        if ($request->file('images')) {
+//            foreach ($request->file('images') as $files) {
+
+
 
                 if (!is_dir($this->file_path)) {
                     mkdir($this->file_path, 0777);
                 }
-                  $file = $request->file('images');
+                  $files = $request->file('images');
+
+//                dd($files);
 //                $file = $files;
                 $name = sha1(date('YmdHis') . Str::random(30));
 
-                $save_name = $name . '.' . $file->getClientOriginalExtension();
-
+                $save_name = $name . '.' . $files->getClientOriginalExtension();
+                $files->move($this->file_path, $save_name);
                 // // Create files
                 $album->gallary()->create([
                     'images' => $save_name,
                 ]);
-
-        }
-
+            return redirect()->route('album.index')->with('message', 'Success, Added Sucussfully.');
+            }
+//        }
     }
 }

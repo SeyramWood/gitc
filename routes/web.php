@@ -119,7 +119,7 @@ Route::controller(AlbumController::class)->group(function () {
     Route::get('/albums/{album}', 'getAlbumGallary')->name('user.album.gallaries');
     Route::get('/edit/album/{album}', 'getEditForm');
     Route::post('/albums/{album}', 'update')->name('album.update');
-    Route::get('/view/album/{album}', 'Details');
+//    Route::get('/view/album/{album}', 'Details');
     Route::get('/delete/album/{album}', 'getDeleteForm');
     Route::delete('/album/{album}', 'destroy')->name('album.delete');
     Route::delete('/albums/{album}', 'destroyAlbum');

@@ -1,29 +1,10 @@
 import React,  {useState, useEffect}from "react";
-import {Link, useForm} from "@inertiajs/inertia-react";
 import {Dashboard} from "../../components/layouts/dashboard";
-import {Button} from 'primereact/button';
-import { Dialog } from 'primereact/dialog';
-
-
 const Gallary = (props)=> {
     const {data: gallaries} = props.gallaries;
-    const { data, setData, post, processing } = useForm({
-        images: [],
-        album_id: '',
-    })
-
-    function submit(e) {
-        e.preventDefault()
-        post('/gallaries')
-    }
-
-      const [visible, setVisible] = useState(false);
-
-
 
         return (
             <Dashboard page="Gallaries">
-                <Button className="m-3"  label="Add To Gallary" icon="pi pi-external-link" onClick={() => setVisible(true)} />
                 <div>
                     {gallaries.map((gallary, index) => (
                         <div className="card p-3 flex justify-center ] " style={{width: "20rem",float: "left" }}>
@@ -36,57 +17,16 @@ const Gallary = (props)=> {
                                             alt="Objectivity" style={{width: "25rem",  height: "100px"}}
 
                                         />
-                                        <span>{gallary.albums}</span>
+
                                     </div>
                                 </div>
 
                             </div>
 
-
-
-
                         </div>
                     ))}
                 </div>
 
-                <div className="card flex justify-content-center ml-2">
-
-                    <Dialog header="Add To Gallary" visible={visible} maximizable style={{ width: '50%' }} onHide={() => setVisible(false)}>
-                        <p className="m-0">
-                            <div className="max-w-sm mx-auto px-4 py-8">
-                                <h1 className="text-3xl text-slate-800 font-bold mb-6">Add New Image </h1>
-                                {/* Form */}
-                                <form onSubmit={submit}>
-                                    <div className="space-y-4">
-                                        <div>
-
-                                            <input type="file"  onChange={e => setData('images', e.target.files[0])} multiple={true}/>
-
-                                        </div>
-                                        <div>
-                                            <label className="block text-sm font-medium mb-1" htmlFor="album_idd"> Album <span className="text-rose-500">*</span></label>
-
-                                            <select id="album_id" className="form-select w-full" value={data.album_id} onChange={e => setData('album', e.target.value)} >
-                                                {/*{albums.map((album, index) => (*/}
-                                                <option>jghfdjhgj</option>
-
-                                                    {/*))}*/}
-                                            </select>
-
-                                        </div>
-
-
-                                    </div>
-                                    <div className="flex items-center justify-between mt-6">
-                                        <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" type="submit" disabled={processing}>Upload</button>
-                                    </div>
-                                </form>
-                                {/* Footer */}
-
-                            </div>
-                        </p>
-                    </Dialog>
-                </div>
             </Dashboard>
         );
 

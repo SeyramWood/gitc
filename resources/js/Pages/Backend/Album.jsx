@@ -72,12 +72,9 @@ const Album = (props)=> {
                                 </table>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
                 <div className="card flex justify-content-center ml-2">
-
                     <Dialog header="Create Album" visible={visible} maximizable style={{ width: '50%' }} onHide={() => setVisible(false)}>
                         <p className="m-0">
                             <div className="max-w-sm mx-auto px-4 py-8">

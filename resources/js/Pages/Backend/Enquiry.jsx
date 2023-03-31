@@ -53,9 +53,6 @@ const Enquiry = ({contacts}) => {
                                             <Link   href={`/view/enquiry/${contact.id}`}  className="text-green-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
                                                 View
                                             </Link >
-                                            <Link   href={`/edit/enquiry/${contact.id}`}  className="text-slate-50 capitalize mr-2 p-3  text-blue-500 cursor-pointer text-blue-300">
-                                                edit
-                                            </Link >
                                             <Link  href={`/delete/enquiry/${contact.id}`}  className="text-red-600 capitalize mr-2 p-3   text-blue-500 cursor-pointer text-red-300">
                                                 <span className="capitalize"></span>  Delete
                                             </Link>

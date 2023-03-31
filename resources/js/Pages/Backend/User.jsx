@@ -1,8 +1,6 @@
 import React,  {useState, useEffect}from "react";
 import {Link, useForm} from "@inertiajs/inertia-react";
 import {Dashboard} from "../../components/layouts/dashboard";
-import {DataTable} from 'primereact/datatable';
-import {Column} from 'primereact/column';
 import {Button} from 'primereact/button';
 import { Dialog } from 'primereact/dialog';
 

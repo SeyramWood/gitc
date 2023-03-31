@@ -213,7 +213,6 @@ class FileManagementController extends Controller
         if ($gallaries) {
             return Inertia::render('Backend/Gallary', [
                 'gallaries' => $gallaries,
-                'albums' => $albums
             ]);
 
         }
