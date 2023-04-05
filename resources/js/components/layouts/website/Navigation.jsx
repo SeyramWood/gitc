@@ -147,10 +147,26 @@ const Navigation = () => {
                         </ul>
                     </li>
                     <li className="hover:opacity-100">
-                        <Link href="/resources">Resources</Link>
-                    </li>
-                    <li className="hover:opacity-100">
-                        <Link href="/publications">Publications</Link>
+                        <Link href="/resources"></Link>
+                        <span>
+                            <span>Resources</span>
+                            <span className="ml-2 text-xl text-bolder">
+                                <SlArrowDown />
+                            </span>
+                        </span>
+                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
+                            <li>
+                                <Link href="/resources">
+                                    Legislative Instrument
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/publications">Publications</Link>
+                            </li>
+                            <li>
+                                <Link href="/customscases">Cases</Link>
+                            </li>
+                        </ul>
                     </li>
                     <li className="hover:opacity-100">
                         <Link href="/gallery">Gallery</Link>
@@ -239,10 +255,24 @@ const Navigation = () => {
                             </div>
                         </li>
                         <li className="[&:hover>a]:opacity-100">
-                            <Link href="/resources">Resources</Link>
-                        </li>
-                        <li className="[&:hover>a]:opacity-100">
-                            <Link href="/publications">Publications</Link>
+                            <Link href="/resources">
+                                <span>Resources</span>
+                                <span className="ml-2 text-xl text-bold">
+                                    <SlArrowDown />
+                                </span>
+                            </Link>
+                            <div className="absolute  top-[4rem]  dropdown__wrapper">
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
+                                    <li>
+                                        <Link href="/publications">
+                                            Publications
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/customscases">Cases</Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li className="[&:hover>a]:opacity-100">
                             <Link href="/gallery">Gallery</Link>
