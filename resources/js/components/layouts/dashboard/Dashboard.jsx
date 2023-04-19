@@ -2,9 +2,9 @@ import { Avatar } from "primereact/avatar";
 import { Badge } from "primereact/badge";
 import React, { useState } from "react";
 
-import {Link, usePage} from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import "../../../../css/dashboard/app.scss";
-import {Inertia} from "@inertiajs/inertia";
 
 const links = [
     {
@@ -93,7 +93,7 @@ const Dashboard = ({ page, children }) => {
     const [unreadNotifications, setUnreadNotifications] = useState();
     const [asideNav, setAsideNav] = useState(false);
     const [asideNavSize, setAsideNavSize] = useState("main");
-    const {flash,auth} = usePage().props
+    const { flash, auth } = usePage().props;
     const toggleAside = () => {
         setAsideNav((state) => (state = !state));
 
@@ -136,9 +136,8 @@ const Dashboard = ({ page, children }) => {
     }
 
     function submit(e) {
-        e.preventDefault()
-        Inertia.post('/users/logout');
-
+        e.preventDefault();
+        Inertia.post("/users/logout");
     }
     return (
         <div className="asinyo__dashboard">
@@ -371,7 +370,7 @@ const Dashboard = ({ page, children }) => {
                                     style={{ color: "#ffffff" }}
                                     shape="circle"
                                 />
-                                <span>{auth.user.username}</span>
+                                <span>{auth.user?.username}</span>
                             </div>
                             <div className="dropdown">
                                 <div className="dropdown__content">
@@ -398,13 +397,18 @@ const Dashboard = ({ page, children }) => {
                                         </li>
                                         <div className="separator"></div>
                                         <li className="profile">
-
-                                                <Link as="button"  replace method="POST" data={{_method:'POST'}} href={`/logout` }>
-                                                       <span>
+                                            <Link
+                                                as="button"
+                                                replace
+                                                method="POST"
+                                                data={{ _method: "POST" }}
+                                                href={`/logout`}
+                                            >
+                                                <span>
                                                     <i className="pi pi-sign-out"></i>
                                                 </span>
-                                                    <span>Sign Out</span>
-                                                </Link>
+                                                <span>Sign Out</span>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -415,13 +419,11 @@ const Dashboard = ({ page, children }) => {
                 <section className="asinyo__dashboard__main__content">
                     {page && (
                         <div className="asinyo__dashboard__main__content__page--title">
-                            {
-                                flash.message &&(
-                                    <div className="alert bg-green-300">
-                                        {flash.message}
-                                    </div>
-                                )
-                            }
+                            {flash.message && (
+                                <div className="bg-green-300 alert">
+                                    {flash.message}
+                                </div>
+                            )}
                             <h4>{page}</h4>
                         </div>
                     )}

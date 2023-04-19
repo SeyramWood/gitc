@@ -27,10 +27,9 @@ class AdminController extends Controller
                 return Inertia::render('Backend/User', [
                     'users' => $users
                 ]);
-
             }
         }else{
-            return redirect()->route('home')->with('message', 'error, Not Authenticated.');
+            // return redirect()->route('home')->with('message', 'error, Not Authenticated.');
         }
 
 

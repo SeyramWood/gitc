@@ -18,6 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::controller(DashboardController::class)->prefix("dashboard")->group(function () {
     Route::get('/', 'index')->name("user.dashboard");
 
-
-
 });
