@@ -1594,16 +1594,10 @@ classlist-polyfill@^1.0.3:
   resolved "https://registry.npmjs.org/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz"
   integrity sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ==
 
-<<<<<<< HEAD
 classnames@^2.3.1:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
-
-client-only@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
-  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -1641,8 +1635,6 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
-=======
->>>>>>> feature/backend
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
@@ -4746,21 +4738,22 @@ react-refresh@^0.14.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-<<<<<<< HEAD
 react-responsive-modal@^6.4.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-6.4.1.tgz#017e908e8a6506b44ab550834fafc87b58099c0d"
   integrity sha512-WVSo4S5Gq7jCzhTbggOxfejnwRLzBGmCdb6DuGoCLUinlaly6l867tJCbxuW96rpcirxSHJ9oPE8TE4TFk3y4Q==
-=======
-react-svg-spinner@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/react-svg-spinner/-/react-svg-spinner-1.0.4.tgz"
-  integrity sha512-lpOdpptU5sutxdToI5vffuWAqQDatfz1cbWa1ThEmX5fonmdH8UgoM/iAb6ToKf6iv0z+X4jZxSqDar5EtcEjQ==
->>>>>>> feature/backend
   dependencies:
     "@bedrock-layout/use-forwarded-ref" "^1.3.1"
     body-scroll-lock "^3.1.5"
     classnames "^2.3.1"
+
+react-svg-spinner@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/react-svg-spinner/-/react-svg-spinner-1.0.4.tgz"
+  integrity sha512-lpOdpptU5sutxdToI5vffuWAqQDatfz1cbWa1ThEmX5fonmdH8UgoM/iAb6ToKf6iv0z+X4jZxSqDar5EtcEjQ==
+  dependencies:
+    prop-types "^15.7.2"
+    react "^16.0.0"
 
 react-transition-group@^4.4.1:
   version "4.4.5"

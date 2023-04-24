@@ -1,4 +1,4 @@
-import {Link, useForm} from "@inertiajs/inertia-react";
+import { Link, useForm } from "@inertiajs/inertia-react";
 import AOS from "aos";
 import { useKeenSlider } from "keen-slider/react";
 import React, { useEffect, useState } from "react";
@@ -10,26 +10,26 @@ import ButtonOutline from "../../components/layouts/website/ButtonOutline";
 import "aos/dist/aos.css";
 import "keen-slider/keen-slider.min.css";
 
-
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
-    const { data, setData, post,progress, processing, reset, errors } = useForm({
-        first_name: '',
-        last_name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
-        industry: '',
-    })
+    const { data, setData, post, progress, processing, reset, errors } =
+        useForm({
+            first_name: "",
+            last_name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+            industry: "",
+        });
 
     function submit(e) {
-        e.preventDefault()
-        post(route('contact.store'), {
+        e.preventDefault();
+        post(route("contact.store"), {
             data,
             onSuccess: () => {
-                reset()
+                reset();
             },
         });
     }
@@ -101,7 +101,10 @@ const Index = () => {
                     >
                         <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%]">
-                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                <div
+                                    className="sm:bg-black/5"
+                                    style={{ borderRadius: "100%" }}
+                                >
                                     <img
                                         src="images/homePage/objectivity.png"
                                         alt="Objectivity"
@@ -112,8 +115,8 @@ const Index = () => {
                             <div className="w-[70%] sm:pl-2">
                                 <h2 className="">Objectivity</h2>
                                 <p className="">
-                                    To ensure equality and fairness in
-                                    the application of measures affecting
+                                    To ensure equality and fairness in the
+                                    application of measures affecting
                                     international trade and the use of world
                                     trade measures.
                                 </p>
@@ -122,7 +125,10 @@ const Index = () => {
 
                         <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%] ">
-                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                <div
+                                    className="sm:bg-black/5"
+                                    style={{ borderRadius: "100%" }}
+                                >
                                     <img
                                         // src="images/homePage/objectivity.png"
                                         src="images/homePage/professionalism.png"
@@ -135,18 +141,20 @@ const Index = () => {
                                 <h2 className="">Professionalism</h2>
 
                                 <p className="">
-                                    To ensure a high level of competence and efficiency in
-                                    applying
-                                    international trade rules
-                                    and regulations as under the World Trade Organization
-                                    provisions.
+                                    To ensure a high level of competence and
+                                    efficiency in applying international trade
+                                    rules and regulations as under the World
+                                    Trade Organization provisions.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%] sm:pl-1">
-                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                <div
+                                    className="sm:bg-black/5"
+                                    style={{ borderRadius: "100%" }}
+                                >
                                     <img
                                         // src="images/homePage/objectivity.png"
                                         src="images/homePage/integrity.png"
@@ -158,15 +166,19 @@ const Index = () => {
                             <div className="w-[70%] ">
                                 <h2 className="">Integrity</h2>
                                 <p className="">
-                                    To ensure absolute neutrality and consistency in the
-                                    execution of the mandate of the Commission.
+                                    To ensure absolute neutrality and
+                                    consistency in the execution of the mandate
+                                    of the Commission.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex p-2 my-5 ">
                             <div className="p-3 w-[30%] ">
-                                <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
+                                <div
+                                    className="sm:bg-black/5"
+                                    style={{ borderRadius: "100%" }}
+                                >
                                     {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
                                     <img
                                         src="images/homePage/search.png"
@@ -179,8 +191,9 @@ const Index = () => {
                                 <h2 className="">Transparency</h2>
                                 <p>
                                     To ensure that the commission operates on an
-                                    open and fair terrain by providing a level playing
-                                    field in its dealings with all parties.
+                                    open and fair terrain by providing a level
+                                    playing field in its dealings with all
+                                    parties.
                                 </p>
                             </div>
                         </div>
@@ -188,34 +201,30 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-<<<<<<< HEAD
-                <div className="px-2 overflow-hidden  sm:px-16" >
-                    <div className="pb-32 "
+                <div className="px-2 overflow-hidden sm:px-16">
+                    <div
+                        className="pb-32 "
                         data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         data-aos-duration="700"
                     >
-=======
-                <div className=" pb-28 px-2 sm:px-16 overflow-hidden" >
-                    <div className="pb-40" >
->>>>>>> feature/backend
-
-                        <div className="h-[17rem] w-full" style={{ backgroundImage: "url('images/homePage/headings/SERVICES.jpg')", backgroundRepeat: "no-repeat", backgroundPositionX: "center", backgroundAttachment: "fixed" }}>
-                            <h1 className="text-center translate-y-[7rem] text-primary" >Services</h1>
+                        <div
+                            className="h-[17rem] w-full"
+                            style={{
+                                backgroundImage:
+                                    "url('images/homePage/headings/SERVICES.jpg')",
+                                backgroundRepeat: "no-repeat",
+                                backgroundPositionX: "center",
+                                backgroundAttachment: "fixed",
+                            }}
+                        >
+                            <h1 className="text-center translate-y-[7rem] text-primary">
+                                Services
+                            </h1>
                         </div>
 
-<<<<<<< HEAD
                         <div className="justify-center gap-6 md:flex sm:mt-13 ">
                             <div className="sm:w-[25%]">
-=======
-                        <div className="justify-center md:flex gap-6 sm:mt-13 ">
-                            <div
-                                className="sm:w-[25%]"
-                                data-aos="fade-up"
-                                data-aos-anchor-placement="center-bottom"
-                                data-aos-duration="700"
-                            >
->>>>>>> feature/backend
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
@@ -272,12 +281,14 @@ const Index = () => {
                                     />
                                 </div>
                                 <div className="my-2 ">
-                                    <h2 className="py-5 ">Dispute Settlement</h2>
+                                    <h2 className="py-5 ">
+                                        Dispute Settlement
+                                    </h2>
                                     <p className="mb-3">
-                                        Providing actions to resolve issues arising
-                                        out of a member-state violating the rules
-                                        and regulationso f the World Trade
-                                        Organization.
+                                        Providing actions to resolve issues
+                                        arising out of a member-state violating
+                                        the rules and regulationso f the World
+                                        Trade Organization.
                                     </p>
                                     <Link
                                         href="/service/dispute"
@@ -313,9 +324,10 @@ const Index = () => {
                                     <h2 className="py-5">Tarrif Review</h2>
                                     <p className="mb-3">
                                         Providing a review of customs duty that
-                                        affects the production and competitiveness
-                                        of goods in relation to the domestic
-                                        producer or domestic industry
+                                        affects the production and
+                                        competitiveness of goods in relation to
+                                        the domestic producer or domestic
+                                        industry
                                     </p>
                                     <Link
                                         href="/service/tariff"
@@ -350,11 +362,11 @@ const Index = () => {
                                 <div className="my-2 ">
                                     <h2 className="py-4">Research</h2>
                                     <p className="mb-3">
-                                        The Commission is to study, identify, and
-                                        recommend to the Minister of Trade and
-                                        Industry tariff levels for specific sectors
-                                        of the economy with due regard to the
-                                        effective rate of protection.
+                                        The Commission is to study, identify,
+                                        and recommend to the Minister of Trade
+                                        and Industry tariff levels for specific
+                                        sectors of the economy with due regard
+                                        to the effective rate of protection.
                                     </p>
                                     <Link
                                         href="/service/research"
@@ -372,13 +384,8 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
-<<<<<<< HEAD
                 <div className="overflow-hidden sm:px-20 ">
                     <div className="">
-=======
-                <div className="sm:px-20 overflow-hidden ">
-                    <div className="  ">
->>>>>>> feature/backend
                         <div className="">
                             <div className="justify-center block bg-black sm:flex">
                                 <div
@@ -391,7 +398,7 @@ const Index = () => {
                                     }}
                                 >
                                     {/* <div className="sm:h-[35rem] bg-red-700" >
-*/}
+                                     */}
                                     {/* <img
                                         className="sm:hidden opacity-90"
                                         src="images/homePage/storyOne.jpg"
@@ -405,10 +412,10 @@ const Index = () => {
                                         data-aos="fade-left"
                                         data-aos-duration="2000"
                                     >
-                                        <p className="text-red-700  sm:text-left sm:text-2lx">
+                                        <p className="text-red-700 sm:text-left sm:text-2lx">
                                             DID YOU KNOW THAT
                                         </p>
-                                        <h2 className="font-bold text-red-600  sm:text-left sm:text-3xl">
+                                        <h2 className="font-bold text-red-600 sm:text-left sm:text-3xl">
                                             GITC is among seven trade remedy
                                             institutions and investigating
                                             authorities in Africa.
@@ -428,8 +435,6 @@ const Index = () => {
                                                 </ButtonOutline>
                                             </Link>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
@@ -626,13 +631,12 @@ const Index = () => {
                                     Connect with us
                                 </h4>
                                 <p className="text-[1.3rem] pt-8">
-                                    Please fill out the form and press the submit
-                                    button. We will get back to you with 1-2
-                                    business days.
+                                    Please fill out the form and press the
+                                    submit button. We will get back to you with
+                                    1-2 business days.
                                 </p>
                             </div>
                         </div>
-
                     </div>
                     <div className="md:w-[50%]  ">
                         <div className="">
@@ -645,7 +649,12 @@ const Index = () => {
                                         required="required"
                                         type="text"
                                         value={data.first_name}
-                                        onChange={e => setData('first_name', e.target.value)}
+                                        onChange={(e) =>
+                                            setData(
+                                                "first_name",
+                                                e.target.value
+                                            )
+                                        }
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
@@ -653,7 +662,9 @@ const Index = () => {
                                         required="required"
                                         type="text"
                                         value={data.last_name}
-                                        onChange={e => setData('last_name', e.target.value)}
+                                        onChange={(e) =>
+                                            setData("last_name", e.target.value)
+                                        }
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
@@ -661,7 +672,9 @@ const Index = () => {
                                         required="required"
                                         type="Email"
                                         value={data.email}
-                                        onChange={e => setData('email', e.target.value)}
+                                        onChange={(e) =>
+                                            setData("email", e.target.value)
+                                        }
                                     />
                                     {/* </div> */}
                                     {/* <div className=""> */}
@@ -671,14 +684,18 @@ const Index = () => {
                                         required="required"
                                         type="text"
                                         value={data.subject}
-                                        onChange={e => setData('subject', e.target.value)}
+                                        onChange={(e) =>
+                                            setData("subject", e.target.value)
+                                        }
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Phone Number"
                                         type="text"
                                         value={data.phone}
-                                        onChange={e => setData('phone', e.target.value)}
+                                        onChange={(e) =>
+                                            setData("phone", e.target.value)
+                                        }
                                     />
 
                                     <input
@@ -686,7 +703,9 @@ const Index = () => {
                                         placeholder="Industry"
                                         type="text"
                                         value={data.industry}
-                                        onChange={e => setData('industry', e.target.value)}
+                                        onChange={(e) =>
+                                            setData("industry", e.target.value)
+                                        }
                                     />
                                     {/* </div> */}
                                     {/* <div className="pt-2 m-3"> */}
@@ -699,7 +718,9 @@ const Index = () => {
                                         required="required"
                                         name=""
                                         value={data.message}
-                                        onChange={e => setData('message', e.target.value)}
+                                        onChange={(e) =>
+                                            setData("message", e.target.value)
+                                        }
                                     />
                                 </div>
                                 {/* </div> */}
@@ -709,14 +730,20 @@ const Index = () => {
                                     {/*Submit Now*/}
                                     {/*</Button>*/}
                                     {progress && (
-                                        <progress value={progress.percentage} max="100">
+                                        <progress
+                                            value={progress.percentage}
+                                            max="100"
+                                        >
                                             {progress.percentage}%
                                         </progress>
                                     )}
-                                    <button className={`block border p-4 sm:w-[20rem] rounded-full mx-auto
+                                    <button
+                                        className={`block border p-4 sm:w-[20rem] rounded-full mx-auto
          text-white bg-[rgb(255,35,34)] hover:scale-110 transition ease-in-out`}
-                                            type="submit" disabled={processing}>Submit Now
-
+                                        type="submit"
+                                        disabled={processing}
+                                    >
+                                        Submit Now
                                     </button>
                                 </div>
                             </form>

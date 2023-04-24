@@ -1,11 +1,6 @@
 import { WebsiteLayout } from "../../components/layouts";
 
-<<<<<<< HEAD
 import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
-=======
-
-import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
->>>>>>> feature/backend
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 
 function ServiceResarch() {
@@ -13,7 +8,7 @@ function ServiceResarch() {
         <WebsiteLayout page="service">
             <div className="bg-white">
                 <div className="sm:flex px-4 pt-16 pb-16">
-                   <ServicesNav />
+                    <ServicesNav />
                     <div className="sm:w-[70%]">
                         {/* <div className="h-[15rem]">
                             <div className=" " >

@@ -1,14 +1,7 @@
-import { WebsiteLayout } from "../../components/layouts";
-
-<<<<<<< HEAD
 import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
-import ServicesNav from "../../components/layouts/website/ServicesNav";
-=======
 
-import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
+import { WebsiteLayout } from "../../components/layouts";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
-import ServiceLinks from "../../components/layouts/website/ServiceLinks";
->>>>>>> feature/backend
 
 function ServiceDumping() {
     return (
