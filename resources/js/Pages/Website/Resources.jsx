@@ -54,25 +54,24 @@ function Resources() {
 
     return (
         <WebsiteLayout page="resource">
-
-
-            <div className="bg-white">
-                <div className="grid grid-cols-5 gap-5 mx-auto p-16">
+            <div className="bg-white py-16  overflow-hidden">
+                <div className="grid sm:grid-cols-5 gap-5 mx-auto p-16">
                     {data.map((item, index) => (
-
-                        <div className="border cursor-pointer hover:bg-red-100/30" key={index} onClick={() => opneFile(item.pdf)}>
+                        <div
+                            className="border sm:my-0 my-3 cursor-pointer hover:bg-red-100/30"
+                            key={index}
+                            onClick={() => opneFile(item.pdf)}
+                        >
                             <div className="mx-auto ">
                                 <AiOutlineFilePdf className="text-[10rem] w-[100%] text-red-700 " />
-                                <p className="lowercase text-center px-5 " >
+                                <p className="lowercase text-center px-5 ">
                                     {item.name}
                                 </p>
                             </div>
                         </div>
-
                     ))}
                 </div>
                 <div className="grid grid-cols-5 gap-5 mx-auto px-10">
-
                     <Modal
                         key="pdf__modal"
                         classNames={{
@@ -81,7 +80,7 @@ function Resources() {
                         open={open}
                         onClose={() => setOpen(false)}
                     >
-                        <div className="w-[50rem] h-[60rem] mt-10">
+                        <div className="sm:w-[50rem] sm:h-[60rem] w-[19rem] h-[30rem]  mt-10">
                             {open && (
                                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
                                     <Viewer
@@ -91,9 +90,7 @@ function Resources() {
                                             getFilePluginInstance,
                                             pageNavigationPluginInstance,
                                         ]}
-                                        defaultScale={
-                                            SpecialZoomLevel.PageFit
-                                        }
+                                        defaultScale={SpecialZoomLevel.PageFit}
                                         pageLayout={pageLayout}
                                     />
                                 </Worker>
@@ -101,7 +98,6 @@ function Resources() {
                         </div>
                     </Modal>
                 </div>
-
             </div>
         </WebsiteLayout>
     );

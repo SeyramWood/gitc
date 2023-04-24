@@ -52,16 +52,7 @@ Route::get('/resources', [PageController::class, 'resources']);
 Route::get('/gallery', [PageController::class, 'gallery']);
 // resources
 Route::get('/customscases', [PageController::class, 'customsFiles']);
-Route::get('/measurescases', [PageController::class, 'measuresFiles']);
+Route::get('/anti-dumpingcases', [PageController::class, 'measuresFiles']);
 Route::get('/subsidycases', [PageController::class, 'subsidyFiles']);
-Route::get('/disputescases', [PageController::class, 'disputesFiles']);
-
-// Enquiries  route
-Route::controller(EnquiryController::class)->group(function () {
-    Route::get('/files', 'index')->name('users.files');
-    Route::post('/enquiries', 'store')->name('contact.store');
-    Route::get('/enquiries', 'getAllEnquiries')->name('contact.store');
-});
-
-
+Route::get('/safeguardscases', [PageController::class, 'disputesFiles']);
 

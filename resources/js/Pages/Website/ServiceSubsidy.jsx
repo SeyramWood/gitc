@@ -10,18 +10,9 @@ function ServiceSubsidy() {
                 <div className="px-4 pt-16 sm:flex">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
-                        {/* <div className="h-[15rem]">
-                            <div className="" >
-                                <img src="/../images/homePage/headings/SERVICE PAGE.jpg" className="object-contain " alt="" />
-                                <div className="">
-                                    <h1 className="text-center -translate-y-[14rem] text-red-200/ " >Services</h1>
-                                </div>
-                            </div>
-
-                        </div> */}
-                        <div className="px-6 pb-16 text-black">
+                        <div className="text-black px-6 pb-16">
                             <h2 className="text-primary sm:text-[4rem] pb-0 ">
-                                Trade Remedy
+                                Trade Remedies
                             </h2>
                             <p className="text-xl">
                                 {" "}
@@ -34,10 +25,9 @@ function ServiceSubsidy() {
                                 Subsidy & Countervailing Duties
                             </h2>
                             <div className="my-10 ">
-                                {/* <img src=" images/subsidy.png" alt="img" /> */}
                                 <img
                                     src="/../images/subsidy.png"
-                                    className="overflow-hidden w-full h-[28rem]"
+                                    className="overflow-hidden w-full sm:h-[28rem]"
                                     alt=""
                                 />
                             </div>

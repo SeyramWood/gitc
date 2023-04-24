@@ -201,15 +201,10 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="px-2 overflow-hidden sm:px-16">
-                    <div
-                        className="pb-32 "
-                        data-aos="fade-up"
-                        data-aos-anchor-placement="center-bottom"
-                        data-aos-duration="700"
-                    >
+                <div className="px-2 overflow-hidden  sm:px-16">
+                    <div className="pb-32 ">
                         <div
-                            className="h-[17rem] w-full"
+                            className="sm:h-[17rem] h-[2rem] w-full"
                             style={{
                                 backgroundImage:
                                     "url('images/homePage/headings/SERVICES.jpg')",
@@ -217,6 +212,9 @@ const Index = () => {
                                 backgroundPositionX: "center",
                                 backgroundAttachment: "fixed",
                             }}
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="center-bottom"
+                            data-aos-duration="400"
                         >
                             <h1 className="text-center translate-y-[7rem] text-primary">
                                 Services
@@ -609,10 +607,10 @@ const Index = () => {
                                         Read More
                                     </h2>
                                     <div className="pl-5 ">
-                                        <h1 className="pt-8 text-2xl text-primary">
+                                        <h1 className="text-2xl sm:pt-8 text-primary">
                                             Frank Agyekum
                                         </h1>
-                                        <p className="pt-1 font-light text-primary">
+                                        <p className="py-1 font-light text-primary">
                                             Executive Secretary
                                         </p>
                                     </div>

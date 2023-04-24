@@ -97,9 +97,9 @@ const Publication = () => {
 
     return (
         <WebsiteLayout page="publication">
-            <div className="bg-white ">
+            <div className="bg-white overflow-hidden">
                 <div className="text-center pt-10">
-                    <h2 className="pb-16 sm:text-[3rem] text-center text-red-600">
+                    <h2 className="sm:pb-16 pb-5 sm:text-[3rem] text-[2rem] text-center text-red-600">
                         Press Releases and Speeches
                     </h2>
                 </div>
@@ -146,7 +146,7 @@ const Publication = () => {
                                 open={open}
                                 onClose={() => setOpen(false)}
                             >
-                                <div className="w-[50rem] h-[60rem] mt-10">
+                                <div className="sm:w-[50rem] sm:h-[60rem] w-[19rem] h-[30rem]">
                                     {open && (
                                         <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
                                             <Viewer

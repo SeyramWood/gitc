@@ -1,6 +1,5 @@
-import { Link } from "@inertiajs/inertia-react";
-import { WebsiteLayout } from "../../components/layouts";
 import { useState } from "react";
+import { WebsiteLayout } from "../../components/layouts";
 // files
 import disputePdf from "../../files/customsFiles";
 // modal
@@ -53,7 +52,6 @@ function DisputeFiles() {
     const { DownloadButton } = getFilePluginInstance;
     return (
         <WebsiteLayout page="resource">
-
             <div className="w-[100%]   bg-white">
                 <div className="flex px-10 py-16">
                     <div className="w-[40%]">
@@ -61,16 +59,19 @@ function DisputeFiles() {
                     </div>
                     <div className=" w-[60%]">
                         <p className="pb-12">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Id, suscipit reiciendis porro laborum
-                            inventore beatae pariatur ex omnis? Voluptatem consequatur reprehenderit harum enim blanditiis! Eligendi in
-                            laborum tempora eius doloremque?
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Id, suscipit reiciendis porro laborum
+                            inventore beatae pariatur ex omnis? Voluptatem
+                            consequatur reprehenderit harum enim blanditiis!
+                            Eligendi in laborum tempora eius doloremque?
                         </p>
                         <div className="border">
                             <table className="table-fixed  w-[100%] ">
                                 <thead className="text-left bg-red-100/30 ">
                                     <tr className="border-b">
-                                        <th className="p-3">Investitation No</th>
+                                        <th className="p-3">
+                                            Investitation No
+                                        </th>
                                         <th className="p-3">Title</th>
                                         <th className="p-3">Date Issued</th>
                                     </tr>
@@ -78,14 +79,19 @@ function DisputeFiles() {
                                 <tbody>
                                     {disputePdf.map((item, index) => (
                                         <tr className="border-b" key={index}>
-                                            <td className="p-3 hover:text-primary/60 cursor-pointer"
-                                                onClick={() => opneFile(item.pdfPath)}
-                                            >{item.name}
+                                            <td
+                                                className="p-3 hover:text-primary/60 cursor-pointer"
+                                                onClick={() =>
+                                                    opneFile(item.pdfPath)
+                                                }
+                                            >
+                                                {item.name}
                                             </td>
-                                            <td className="p-3">Malcolm Lockyer</td>
+                                            <td className="p-3">
+                                                Malcolm Lockyer
+                                            </td>
                                             <td className="p-3">1961</td>
                                         </tr>
-
                                     ))}
                                     <Modal
                                         key="pdf__modal"
@@ -95,7 +101,7 @@ function DisputeFiles() {
                                         open={open}
                                         onClose={() => setOpen(false)}
                                     >
-                                        <div className="w-[50rem] h-[60rem] mt-10">
+                                        <div className="sm:w-[50rem] sm:h-[60rem] w-[19rem] h-[30rem]">
                                             {open && (
                                                 <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
                                                     <Viewer
@@ -114,32 +120,45 @@ function DisputeFiles() {
                                             )}
                                         </div>
                                     </Modal>
-
                                 </tbody>
                             </table>
                         </div>
                         <div class="flex  gap-2 pt-3 justify-center">
-                            <a href="#" class="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white">
+                            <a
+                                href="#"
+                                class="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white"
+                            >
                                 Previous
                             </a>
 
-                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                            <a
+                                href="#"
+                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white"
+                            >
                                 1
                             </a>
-                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                            <a
+                                href="#"
+                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white"
+                            >
                                 2
                             </a>
-                            <a href="#" class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white">
+                            <a
+                                href="#"
+                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white"
+                            >
                                 3
                             </a>
-                            <a href="#" class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white">
+                            <a
+                                href="#"
+                                class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white"
+                            >
                                 Next
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-
         </WebsiteLayout>
     );
 }

@@ -9,17 +9,8 @@ function Service() {
                 <div className="sm:flex px-4 pt-16 pb-16 overflow-hidden">
                     <ServicesNav />
                     <div className="sm:w-[70%]">
-                        {/* <div className="h-[15rem]" style={{ backgroundImage: "", backgroundRepeat: "no-repeat", backgroundPositionX: "" }}>
-                            <div className=" " >
-                                <img src="images/homePage/headings/SERVICE PAGE.jpg" className=" object-contain" alt="" />
-                                <div className="">
-                                    <h1 className="text-center -translate-y-[14rem] text-red-200/ " >Services</h1>
-                                </div>
-                            </div>
-
-                        </div> */}
-                        <div className="text-black ">
-                            <h2 className="text-primary text-[4rem] pb-0 ">
+                        <div className="text-black px-6 pb-16">
+                            <h2 className="text-primary sm:text-[4rem] pb-0 ">
                                 Trade Remedies
                             </h2>
                             <p className="text-xl">
@@ -34,7 +25,7 @@ function Service() {
                             <div className="sm:pr-6 my-10 ">
                                 <img
                                     src="images/subsidy.png"
-                                    className="overflow-hidden w-full h-[28rem]"
+                                    className="overflow-hidden w-full sm:h-[28rem] "
                                     alt=""
                                 />
                             </div>
