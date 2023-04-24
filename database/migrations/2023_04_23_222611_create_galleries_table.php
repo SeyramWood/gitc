@@ -13,12 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('file_managements', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description')->nullable();
-            $table->string('files');
-            $table->integer('user_id')->nullable();
+            $table->foreignId('album_id')->nullable()->constrained("albums")->cascadeOnDelete();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file_managents');
+        Schema::dropIfExists('galleries');
     }
 };

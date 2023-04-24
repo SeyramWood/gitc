@@ -1,9 +1,15 @@
-import "primeicons/primeicons.css"; //icons
-import "primereact/resources/primereact.min.css"; //core css
-import "primereact/resources/themes/lara-dark-blue/theme.css"; //theme
-import "primereact/resources/themes/lara-light-blue/theme.css"; //theme
+//theme
 
 import PrimeReact from "primereact/api";
+
+import "primeicons/primeicons.css";
+//icons
+import "primereact/resources/primereact.min.css";
+//core css
+import "primereact/resources/themes/lara-dark-blue/theme.css";
+//theme
+import "primereact/resources/themes/lara-light-blue/theme.css";
+
 PrimeReact.ripple = true;
 PrimeReact.inputStyle = "filled";
 PrimeReact.autoZIndex = true;
@@ -15,7 +21,8 @@ PrimeReact.zIndex = {
     toast: 1200, // toast
 };
 
-import "../css/app.css";
+// import "../css/app.css";
+// import "../css/dashboard/app.scss";
 import "./bootstrap";
 
 import { createInertiaApp } from "@inertiajs/inertia-react";

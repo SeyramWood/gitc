@@ -1,14 +1,9 @@
 import React from "react";
-import { LineChart } from "../../../components/charts";
-import { Card } from "../../../components/common";
-import {
-    BestSellingProduct,
-    Dashboard,
-    DashboardCTACard,
-    RecentSale,
-} from "../../../components/layouts/dashboard/";
 
-const Index = () => {
+import { Card } from "../../../components/common";
+import { Dashboard, DashboardCTACard } from "../../../components/layouts/dashboard/";
+
+const Index = ({ count }) => {
     return (
         <Dashboard page="Dashboard">
             <div className="dashboard__top">
@@ -16,54 +11,54 @@ const Index = () => {
                     <div className="s__col c--3">
                         <Card>
                             <DashboardCTACard
-                                label="Customers"
-                                value="300"
-                                icon="pi-users"
+                                label="Publications"
+                                value={`${count?.publications || 0}`}
+                                icon="pi-globe"
                                 iconColor="blue"
-                                subValue="120"
-                                subText="newly registered"
+                                subValue=""
+                                subText=""
                             />
                         </Card>
                     </div>
                     <div className="s__col c--3">
                         <Card>
                             <DashboardCTACard
-                                label="Supplier Merchants"
-                                value="1522"
-                                icon="pi-users"
+                                label="Cases"
+                                value={`${count?.cases || 0}`}
+                                icon="pi-file"
                                 iconColor="orange"
-                                subValue="20"
-                                subText="newly registered"
+                                subValue=""
+                                subText=""
                             />
                         </Card>
                     </div>
                     <div className="s__col c--3">
                         <Card>
                             <DashboardCTACard
-                                label="Retail Merchants"
-                                value="1000"
-                                icon="pi-users"
+                                label="Albums"
+                                value={`${count?.albums || 0}`}
+                                icon="pi-images"
                                 iconColor="seablue"
-                                subValue="40"
-                                subText="newly registered"
+                                subValue=""
+                                subText=""
                             />
                         </Card>
                     </div>
                     <div className="s__col c--3">
                         <Card>
                             <DashboardCTACard
-                                label="Agents"
-                                value="152"
+                                label="Users"
+                                value={`${count?.users || 0}`}
                                 icon="pi-users"
                                 iconColor="indigo"
-                                subValue="12"
-                                subText="newly registered"
+                                subValue=""
+                                subText=""
                             />
                         </Card>
                     </div>
                 </div>
             </div>
-            <div className="dashboard__main">
+            {/* <div className="dashboard__main">
                 <div className="s__row">
                     <div className="s__col c--6">
                         <div className="s__row">
@@ -169,7 +164,7 @@ const Index = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </Dashboard>
     );
 };

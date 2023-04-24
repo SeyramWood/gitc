@@ -3,6 +3,10 @@ import { WebsiteLayout } from "../../components/layouts";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 function Service() {
     return (
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/backend
         <WebsiteLayout page="service">
 
             {/* <ServiceLinks /> */}
@@ -87,8 +91,13 @@ function Service() {
                                 </div>
                                 <div className="my-2 shadow-lg p-5 mb-5 rounded flex cursor-pointer transition duration-500 ease-in-out hover:scale-110 ">
 
+<<<<<<< HEAD
                                     <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700" />{" "}
                                     <span className="pt-6"> GITC Questionnaire ( Editable )</span>
+=======
+                                        <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700"/>{" "}
+                                  <span className="pt-6"> GITC Questionnaire ( Editable )</span>
+>>>>>>> feature/backend
                                 </div>
                             </div>
                         </div>

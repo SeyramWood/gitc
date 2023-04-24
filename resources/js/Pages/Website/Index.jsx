@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import AOS from "aos";
 import { useKeenSlider } from "keen-slider/react";
 import React, { useEffect, useState } from "react";
@@ -14,6 +14,26 @@ import "keen-slider/keen-slider.min.css";
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
+    const { data, setData, post,progress, processing, reset, errors } = useForm({
+        first_name: '',
+        last_name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        industry: '',
+    })
+
+    function submit(e) {
+        e.preventDefault()
+        post(route('contact.store'), {
+            data,
+            onSuccess: () => {
+                reset()
+            },
+        });
+    }
+
     useEffect(() => {
         AOS.init();
     }, []);
@@ -168,19 +188,34 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
+<<<<<<< HEAD
                 <div className="px-2 overflow-hidden  sm:px-16" >
                     <div className="pb-32 "
                         data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         data-aos-duration="700"
                     >
+=======
+                <div className=" pb-28 px-2 sm:px-16 overflow-hidden" >
+                    <div className="pb-40" >
+>>>>>>> feature/backend
 
                         <div className="h-[17rem] w-full" style={{ backgroundImage: "url('images/homePage/headings/SERVICES.jpg')", backgroundRepeat: "no-repeat", backgroundPositionX: "center", backgroundAttachment: "fixed" }}>
                             <h1 className="text-center translate-y-[7rem] text-primary" >Services</h1>
                         </div>
 
+<<<<<<< HEAD
                         <div className="justify-center gap-6 md:flex sm:mt-13 ">
                             <div className="sm:w-[25%]">
+=======
+                        <div className="justify-center md:flex gap-6 sm:mt-13 ">
+                            <div
+                                className="sm:w-[25%]"
+                                data-aos="fade-up"
+                                data-aos-anchor-placement="center-bottom"
+                                data-aos-duration="700"
+                            >
+>>>>>>> feature/backend
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
@@ -337,8 +372,13 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
+<<<<<<< HEAD
                 <div className="overflow-hidden sm:px-20 ">
                     <div className="">
+=======
+                <div className="sm:px-20 overflow-hidden ">
+                    <div className="  ">
+>>>>>>> feature/backend
                         <div className="">
                             <div className="justify-center block bg-black sm:flex">
                                 <div
@@ -596,20 +636,32 @@ const Index = () => {
                     </div>
                     <div className="md:w-[50%]  ">
                         <div className="">
-                            <form action="" className="px-3">
+                            <form onSubmit={submit} className="px-3">
                                 <div className="grid grid-cols-2">
                                     {/* <div className=""> */}
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Full Name *"
+                                        placeholder="First Name *"
                                         required="required"
                                         type="text"
+                                        value={data.first_name}
+                                        onChange={e => setData('first_name', e.target.value)}
+                                    />
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Last Name *"
+                                        required="required"
+                                        type="text"
+                                        value={data.last_name}
+                                        onChange={e => setData('last_name', e.target.value)}
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Email *"
                                         required="required"
                                         type="Email"
+                                        value={data.email}
+                                        onChange={e => setData('email', e.target.value)}
                                     />
                                     {/* </div> */}
                                     {/* <div className=""> */}
@@ -618,11 +670,23 @@ const Index = () => {
                                         placeholder="Subject *"
                                         required="required"
                                         type="text"
+                                        value={data.subject}
+                                        onChange={e => setData('subject', e.target.value)}
                                     />
                                     <input
                                         className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
                                         placeholder="Phone Number"
                                         type="text"
+                                        value={data.phone}
+                                        onChange={e => setData('phone', e.target.value)}
+                                    />
+
+                                    <input
+                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
+                                        placeholder="Industry"
+                                        type="text"
+                                        value={data.industry}
+                                        onChange={e => setData('industry', e.target.value)}
                                     />
                                     {/* </div> */}
                                     {/* <div className="pt-2 m-3"> */}
@@ -634,13 +698,27 @@ const Index = () => {
                                         placeholder="Message"
                                         required="required"
                                         name=""
+                                        value={data.message}
+                                        onChange={e => setData('message', e.target.value)}
                                     />
                                 </div>
                                 {/* </div> */}
 
-                                <Button className="mt-[2rem] mb-[3rem]">
-                                    Submit
-                                </Button>
+                                <div className="mb-4">
+                                    {/*<Button className=" w-80 mt-[2rem] mb-[3rem]"  >*/}
+                                    {/*Submit Now*/}
+                                    {/*</Button>*/}
+                                    {progress && (
+                                        <progress value={progress.percentage} max="100">
+                                            {progress.percentage}%
+                                        </progress>
+                                    )}
+                                    <button className={`block border p-4 sm:w-[20rem] rounded-full mx-auto
+         text-white bg-[rgb(255,35,34)] hover:scale-110 transition ease-in-out`}
+                                            type="submit" disabled={processing}>Submit Now
+
+                                    </button>
+                                </div>
                             </form>
                         </div>
                     </div>

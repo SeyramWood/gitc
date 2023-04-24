@@ -35,5 +35,12 @@ module.exports = {
         },
     },
 
+<<<<<<< HEAD
     plugins: [require("@tailwindcss/forms")],
+=======
+
+    plugins: [require("@tailwindcss/forms")],
+
+
+>>>>>>> feature/backend
 };

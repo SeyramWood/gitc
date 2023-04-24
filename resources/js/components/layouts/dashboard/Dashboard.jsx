@@ -1,8 +1,9 @@
+import { Inertia } from "@inertiajs/inertia";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import { Avatar } from "primereact/avatar";
 import { Badge } from "primereact/badge";
 import React, { useState } from "react";
 
-import { Link } from "@inertiajs/inertia-react";
 import "../../../../css/dashboard/app.scss";
 
 const links = [
@@ -12,45 +13,27 @@ const links = [
         icon: "home",
     },
     {
-        label: "Orders",
-        link: "/dashboard/orders",
-        icon: "cart-plus",
+        label: "Publications",
+        link: "/dashboard/publications",
+        icon: "globe",
     },
     {
-        label: "Customers",
-        link: "/dashboard/customers",
-        icon: "shopping-bag",
+        label: "Cases",
+        link: "/dashboard/cases",
+        icon: "file",
     },
     {
-        label: "Agents",
-        link: "/dashboard/agents",
-        icon: "id-card",
+        label: "Albums",
+        link: "/dashboard/albums",
+        icon: "images",
     },
     {
-        label: "Merchants",
+        label: "Enquiries",
         icon: "verified",
         dropdown: [
             {
-                label: "View Merchants",
-                link: "/dashboard/merchants",
-            },
-            {
-                label: "Storefronts",
-                link: "/dashboard/merchants/storefronts",
-            },
-        ],
-    },
-    {
-        label: "Products",
-        icon: "gift",
-        dropdown: [
-            {
-                label: "View Products",
-                link: "/dashboard/products",
-            },
-            {
-                label: "Categories",
-                link: "/dashboard/products/categories",
+                label: "View Enquiries",
+                link: "/dashboard/enquiries",
             },
         ],
     },
@@ -62,10 +45,6 @@ const links = [
                 label: "View Users",
                 link: "/dashboard/users",
             },
-            {
-                label: "Roles & Permissions",
-                link: "/dashboard/users/roles-and-permissions",
-            },
         ],
     },
 ];
@@ -75,6 +54,7 @@ const Dashboard = ({ page, children }) => {
     const [unreadNotifications, setUnreadNotifications] = useState();
     const [asideNav, setAsideNav] = useState(false);
     const [asideNavSize, setAsideNavSize] = useState("main");
+    const { flash, authUser } = usePage().props;
     const toggleAside = () => {
         setAsideNav((state) => (state = !state));
 
@@ -105,15 +85,13 @@ const Dashboard = ({ page, children }) => {
         })();
     }, [asideNav]);
 
-    React.useEffect(() => {
-        // getNewNotifications();
-        console.log(Ziggy.routes);
-        console.log(route().params);
-        console.log(location.pathname);
-    }, []);
-
     if (!asideNavSize) {
         return <p>loading</p>;
+    }
+
+    function submit(e) {
+        e.preventDefault();
+        Inertia.post("/users/logout");
     }
     return (
         <div className="asinyo__dashboard">
@@ -346,7 +324,7 @@ const Dashboard = ({ page, children }) => {
                                     style={{ color: "#ffffff" }}
                                     shape="circle"
                                 />
-                                <span>Seyram</span>
+                                <span>{authUser?.name.split(" ")[0]}</span>
                             </div>
                             <div className="dropdown">
                                 <div className="dropdown__content">
@@ -373,12 +351,18 @@ const Dashboard = ({ page, children }) => {
                                         </li>
                                         <div className="separator"></div>
                                         <li className="profile">
-                                            <button type="button">
+                                            <Link
+                                                type="button"
+                                                as="button"
+                                                replace
+                                                method="POST"
+                                                href={`/auth/logout`}
+                                            >
                                                 <span>
                                                     <i className="pi pi-sign-out"></i>
                                                 </span>
                                                 <span>Sign Out</span>
-                                            </button>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -389,6 +373,11 @@ const Dashboard = ({ page, children }) => {
                 <section className="asinyo__dashboard__main__content">
                     {page && (
                         <div className="asinyo__dashboard__main__content__page--title">
+                            {flash.message && (
+                                <div className="bg-green-300 alert">
+                                    {flash.message}
+                                </div>
+                            )}
                             <h4>{page}</h4>
                         </div>
                     )}
@@ -398,8 +387,8 @@ const Dashboard = ({ page, children }) => {
                 <footer className="footer">
                     <div className="asinyo__footer__copyright">
                         <strong>
-                            &copy;{new Date().getUTCFullYear()} Asinyo. All
-                            Rights Reserved
+                            &copy;{new Date().getUTCFullYear()} Ghana
+                            International Trade Commission. All Rights Reserved
                         </strong>
                     </div>
                 </footer>

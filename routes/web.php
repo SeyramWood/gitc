@@ -1,7 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\CasesController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EnquiryController;
+use App\Http\Controllers\FileManagementController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -33,8 +39,16 @@ Route::get('/service/subsidy', [PageController::class, 'ServiceSubsidy']);
 Route::get('/service/safeguard', [PageController::class, 'ServiceSafeguard']);
 Route::get('/service/research', [PageController::class, 'ServiceResearch']);
 Route::get('/service/dispute', [PageController::class, 'ServiceDispute']);
+<<<<<<< HEAD
 Route::get('/service/dumping', [PageController::class, 'ServiceDumping']);
 Route::get('/service/tariff', [PageController::class, 'ServiceTariff']);
+=======
+
+Route::get('/service/dumping', [PageController::class, 'ServiceDumping']);
+Route::get('/service/tariff', [PageController::class, 'ServiceTariff']);
+Route::get('/service/dispute', [PageController::class, 'ServiceDispute']);
+
+>>>>>>> feature/backend
 Route::get('/about', [PageController::class, 'about']);
 Route::get('/message', [PageController::class, 'aboutMessage']);
 Route::get('/story', [PageController::class, 'aboutStory']);
@@ -49,4 +63,13 @@ Route::get('/customscases', [PageController::class, 'customsFiles']);
 Route::get('/measurescases', [PageController::class, 'measuresFiles']);
 Route::get('/subsidycases', [PageController::class, 'subsidyFiles']);
 Route::get('/disputescases', [PageController::class, 'disputesFiles']);
+
+// Enquiries  route
+Route::controller(EnquiryController::class)->group(function () {
+    Route::get('/files', 'index')->name('users.files');
+    Route::post('/enquiries', 'store')->name('contact.store');
+    Route::get('/enquiries', 'getAllEnquiries')->name('contact.store');
+});
+
+
 

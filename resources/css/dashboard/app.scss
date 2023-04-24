@@ -1,26 +1,24 @@
-// Variables
-
-@import "abstracts/variables";
+@import "abstracts/ab_variables";
+@import "abstracts/animations";
 @import "abstracts/function";
 @import "abstracts/mixins";
 @import "abstracts/utilities";
-@import "abstracts/animations";
-
 @import "base/base";
-@import "layouts/grid";
 @import "base/typography";
-@import "components/common";
 @import "components/button";
-@import "components/sidedrawer";
 @import "components/card";
-@import "components/input";
 @import "components/cart";
+@import "components/common";
+@import "components/input";
+@import "components/sidedrawer";
 @import "components/stepper";
 @import "components/toast";
 @import "layouts/dashboard";
+@import "layouts/footer";
+@import "layouts/grid";
 @import "layouts/header";
 @import "layouts/navigation";
-@import "layouts/footer";
 @import "pages/auth";
-@import "pages/order";
 @import "pages/notification";
+@import "pages/order";
+

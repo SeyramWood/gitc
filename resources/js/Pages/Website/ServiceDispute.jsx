@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import { WebsiteLayout } from "../../components/layouts";
+
+>>>>>>> feature/backend
 import React from "react";
 import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
 import { WebsiteLayout } from "../../components/layouts";
@@ -20,9 +25,14 @@ function ServiceDispute() {
 
                         </div> */}
                         <div className="text-black px-6">
+<<<<<<< HEAD
                             <h2 className="text-primary text-[4rem] pb-0 ">
                                 Dispute Settlement
                             </h2>
+=======
+                            <h2 className="text-primary text-[4rem] pb-0 ">Dispute Settlement</h2>
+
+>>>>>>> feature/backend
 
                             {/* <h2 className="text-red-500 text-4xl font-bold mt-20">  Dispute Settlement</h2> */}
                             <div className=" my-10 ">
@@ -63,6 +73,10 @@ function ServiceDispute() {
                                     results of investigation to the parties
                                     involved.
                                 </p>
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/backend
                             </div>
                             <div className="sm:pr-4">
                                 <h2 className="text-4xl text-primary">

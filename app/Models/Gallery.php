@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
+class Gallery extends Model
 {
     use HasFactory;
+    protected $guarded =[];
 
-    protected $guarded = [];
-
-
-
-    public function user()
+    public function gallery()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Gallery::class);
     }
 }
