@@ -326,13 +326,6 @@
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.16.tgz"
   integrity sha512-1YYpoJ39WV/2bnShPwgdzJklc+XS0bysN6Tpnt1cWPdeoKOG4RMEY1g7i534QxXX/rPvNx/NLJQTTCeORYzipg==
 
-"@headlessui/react@^1.7.7":
-  version "1.7.7"
-  resolved "https://registry.npmjs.org/@headlessui/react/-/react-1.7.7.tgz"
-  integrity sha512-BqDOd/tB9u2tA0T3Z0fn18ktw+KbVwMnkxxsGPIH2hzssrQhKB5n/6StZOyvLYP/FsYtvuXfi9I0YowKPv2c1w==
-  dependencies:
-    client-only "^0.0.1"
-
 "@inertiajs/inertia-react@^0.8.1":
   version "0.8.1"
   resolved "https://registry.npmjs.org/@inertiajs/inertia-react/-/inertia-react-0.8.1.tgz"
@@ -624,11 +617,6 @@ classlist-polyfill@^1.0.3:
   resolved "https://registry.npmjs.org/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz"
   integrity sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ==
 
-client-only@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
-  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
-
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"
@@ -808,6 +796,11 @@ fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
+fslightbox-react@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.7.4.tgz#d1824928d3b969a07baccd02a04285b97c6c51b2"
+  integrity sha512-dmHoxfdvf2TP78jv7qPLvd/cbQOIl2P8CBapLYpcoIigDV0bAcNkx3Tav6Isjruv2bXwWoXZY1C9+A5xTd3ZFQ==
 
 function-bind@^1.1.1:
   version "1.1.1"

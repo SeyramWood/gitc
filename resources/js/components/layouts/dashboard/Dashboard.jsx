@@ -1,9 +1,9 @@
+import { Inertia } from "@inertiajs/inertia";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import { Avatar } from "primereact/avatar";
 import { Badge } from "primereact/badge";
 import React, { useState } from "react";
 
-import { Inertia } from "@inertiajs/inertia";
-import { Link, usePage } from "@inertiajs/inertia-react";
 import "../../../../css/dashboard/app.scss";
 
 const links = [
@@ -13,19 +13,19 @@ const links = [
         icon: "home",
     },
     {
-        label: "Orders",
-        link: "/dashboard/orders",
-        icon: "cart-plus",
+        label: "Publications",
+        link: "/dashboard/publications",
+        icon: "globe",
     },
     {
-        label: "Customers",
-        link: "/dashboard/customers",
-        icon: "shopping-bag",
+        label: "Cases",
+        link: "/dashboard/cases",
+        icon: "file",
     },
     {
-        label: "Agents",
-        link: "/dashboard/agents",
-        icon: "id-card",
+        label: "Albums",
+        link: "/dashboard/albums",
+        icon: "images",
     },
     {
         label: "Enquiries",
@@ -33,46 +33,7 @@ const links = [
         dropdown: [
             {
                 label: "View Enquiries",
-                link: "/enquiries",
-            },
-            {
-                label: "Storefronts",
-                link: "/dashboard/merchants/storefronts",
-            },
-        ],
-    },
-
-    {
-        label: "Albums",
-        icon: "gift",
-        dropdown: [
-            {
-                label: "View Albums",
-                link: "/albums",
-            },
-            {
-                label: "View Gallaries",
-                link: "/gallaries",
-            },
-        ],
-    },
-    {
-        label: "Publications",
-        icon: "gift",
-        dropdown: [
-            {
-                label: "View Files",
-                link: "/pdf/files",
-            },
-        ],
-    },
-    {
-        label: "Cases",
-        icon: "gift",
-        dropdown: [
-            {
-                label: "View cases",
-                link: "/ourcases",
+                link: "/dashboard/enquiries",
             },
         ],
     },
@@ -82,7 +43,7 @@ const links = [
         dropdown: [
             {
                 label: "View Users",
-                link: "/users",
+                link: "/dashboard/users",
             },
         ],
     },
@@ -93,7 +54,7 @@ const Dashboard = ({ page, children }) => {
     const [unreadNotifications, setUnreadNotifications] = useState();
     const [asideNav, setAsideNav] = useState(false);
     const [asideNavSize, setAsideNavSize] = useState("main");
-    const { flash, auth } = usePage().props;
+    const { flash, authUser } = usePage().props;
     const toggleAside = () => {
         setAsideNav((state) => (state = !state));
 
@@ -123,13 +84,6 @@ const Dashboard = ({ page, children }) => {
                 : el.classList.add("position");
         })();
     }, [asideNav]);
-
-    React.useEffect(() => {
-        // getNewNotifications();
-        console.log(Ziggy.routes);
-        console.log(route().params);
-        console.log(location.pathname);
-    }, []);
 
     if (!asideNavSize) {
         return <p>loading</p>;
@@ -370,7 +324,7 @@ const Dashboard = ({ page, children }) => {
                                     style={{ color: "#ffffff" }}
                                     shape="circle"
                                 />
-                                <span>{auth.user?.username}</span>
+                                <span>{authUser?.name.split(" ")[0]}</span>
                             </div>
                             <div className="dropdown">
                                 <div className="dropdown__content">
@@ -398,11 +352,11 @@ const Dashboard = ({ page, children }) => {
                                         <div className="separator"></div>
                                         <li className="profile">
                                             <Link
+                                                type="button"
                                                 as="button"
                                                 replace
                                                 method="POST"
-                                                data={{ _method: "POST" }}
-                                                href={`/logout`}
+                                                href={`/auth/logout`}
                                             >
                                                 <span>
                                                     <i className="pi pi-sign-out"></i>
@@ -433,8 +387,8 @@ const Dashboard = ({ page, children }) => {
                 <footer className="footer">
                     <div className="asinyo__footer__copyright">
                         <strong>
-                            &copy;{new Date().getUTCFullYear()} Asinyo. All
-                            Rights Reserved
+                            &copy;{new Date().getUTCFullYear()} Ghana
+                            International Trade Commission. All Rights Reserved
                         </strong>
                     </div>
                 </footer>

@@ -3,236 +3,65 @@
 namespace App\Http\Controllers;
 
 use App\Models\Album;
-use App\Models\Gallary;
+use App\Traits\AlbumTrait;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use Inertia\Inertia;
+
 
 class AlbumController extends Controller
 {
+    use AlbumTrait;
 
-    private $file_path;
-
-
-    public function __construct()
+    public function all(Request $request)
     {
-        $this->file_path = public_path('uploads/');
-
+        return $this->getAlbums((int)$request->get("offset"), (int)$request->get("limit"));
     }
-    // Save albums
+
     public function store(Request $request)
     {
+
         $request->validate([
-            'name' => 'required|unique:albums,name',
+            'name' => 'required',
             'description' => 'nullable',
-            'images' => 'nullable',
-
+            'date' => 'required',
         ]);
 
-
-        DB::transaction(function () use ($request) {
-            // // Create files
-            $data['album'] = Album::create([
-                'name' => $request->name,
-                'description' => $request->description,
-            ]);
-//
-            $file = $request->file('images');
-
-            if (!is_dir($this->file_path)) {
-                mkdir($this->file_path, 0777);
-            }
-            $name = sha1(date('YmdHis') . Str::random(30));
-
-            $save_name = $name . '.' .$file->getClientOriginalExtension();
-
-
-            // this saves the actual image
-            $file->move($this->file_path, $save_name);
-
-
-            $data['album']->gallary()->create([
-                'images' => $save_name,
-                'album_id' => $data['album']->id
-            ]);
-
-            return redirect()->route('album.index')->with('message', 'Success, Created Sucussfully.');
-        });
-    }
-
-    // Get all albums
-    public function index()
-    {
-        $albums = Album::orderBy('created_at','DESC')->paginate(15);
-
-        return Inertia::render('Backend/Album', [
-            'albums' => $albums
+        $record = Album::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'date' => $request->date,
         ]);
-
+        return response()->json([
+            'data' => $record,
+            'status' => true
+            ], 200);
     }
 
-//    public function Details(Album $album)
-//    {
-//
-//        $album = Album::with('gallary')->whereId($album->id)->first();
-//
-//        return Inertia::render('Backend/ViewAlbum', [
-//            'id' => $album->id,
-//            'name' => $album->name,
-//        ]);
-
-
-
-//    }
-
-    public function getEditForm(Album $album)
-    {
-
-        $album = Album::findOrFail($album->id);
-
-        return Inertia::render('Backend/EditAlbum', [
-            'album'=>[
-                'id' => $album->id,
-                'name' => $album->name,
-                'description' => $album->description,
-            ]
-        ]);
-
-
-
-    }
-
-    // update file
     public function update(Request $request, Album $album)
     {
 
-//        dd($request);
-         if ($request->images){
-
-             $image = $request->file('images');
-
-             $name = sha1(date('YmdHis') . Str::random(30));
-
-             $image_name = $name . '.' . $image->getClientOriginalExtension();
-
-
-             // this saves the actual image
-
-             $image->move($this->file_path, $image_name);
-
-
-
-
-         }
-
-
-        $data['album'] = Album::findOrFail($album->id)->update([
-            'name' => $request->name ?? $album->name,
-            'description' => $request->description ?? $album->description,
+        $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+            'date' => 'required',
         ]);
 
-        $image = Gallary::select('images')->whereAlbum_id($album->id)->first();
-
-        $album->gallary()->update([
-            'images' => $image_name ?? $image->images,
+        $album->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'date' => $request->date,
         ]);
 
-
-        return redirect()->route('album.index')->with('message', 'Success, Created Sucussfully.');
-
+        return $this->getAlbum($album->id);
     }
 
-
-    public function getDeleteForm(Album $album)
+    public function delete(Album $album)
     {
-
-        $album = Album::findOrFail($album->id);
-
-        return Inertia::render('Backend/DeleteAlbum', [
-            'album'=>[
-                'id' => $album->id,
-                'name' => $album->name,
-                'description' => $album->description,
-            ]
-        ]);
-
-
-
-    }
-    // Delete file file fom db
-    public function destroy(Album $album)
-    {
-        $album = Album::findOrFail($album->id);
-
         $album->delete();
-
-        return redirect()->route('album.index')->with('message', 'Success, Deleted Sucussfully.');
+        return response()->json([
+            "message" => "Album deleted",
+            'status' => true
+        ], 200);
     }
 
 
-    public function getAlbumGallary(Album $album)
-    {
-        $albumGallaries = Gallary::whereAlbum_id($album->id)->orderBy('created_at','DESC')->paginate(15);
-
-      if ($albumGallaries){
-          return Inertia::render('Backend/ViewAlbum', [
-              'albumGallaries' =>$albumGallaries,
-          ]);
-      }
-
-
-    }
-
-    public function getAddToGallaryForm(Album $album)
-    {
-
-        $album = Album::findOrFail($album->id);
-
-        return Inertia::render('Backend/AddGallary', [
-            'album'=>[
-                'id' => $album->id,
-                'name' => $album->name,
-                'description' => $album->description,
-            ]
-        ]);
-
-
-
-    }
-
-    // store photos
-
-    public function adToGallary(Request $request, Album $album)
-    {
-
-//        $img = $request->file('images');
-////
-//      dd($img);
-//
-//        dd($request);
-        if ($request->file('images')) {
-//            foreach ($request->file('images') as $files) {
-
-
-
-                if (!is_dir($this->file_path)) {
-                    mkdir($this->file_path, 0777);
-                }
-                  $files = $request->file('images');
-
-//                dd($files);
-//                $file = $files;
-                $name = sha1(date('YmdHis') . Str::random(30));
-
-                $save_name = $name . '.' . $files->getClientOriginalExtension();
-                $files->move($this->file_path, $save_name);
-                // // Create files
-                $album->gallary()->create([
-                    'images' => $save_name,
-                ]);
-            return redirect()->route('album.index')->with('message', 'Success, Added Sucussfully.');
-            }
-//        }
-    }
 }

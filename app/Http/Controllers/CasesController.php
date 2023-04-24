@@ -2,188 +2,108 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OurCase;
+use App\Models\Cases;
+use App\Traits\CasesTrait;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Inertia\Inertia;
 
 class CasesController extends Controller
 {
-    private $file_path;
+    use CasesTrait;
+
+    private $pdf_path;
 
 
     public function __construct()
     {
-        $this->file_path = public_path('uploads/');
-
+        $this->pdf_path = public_path('uploads/cases');
     }
 
-    // Get all files
-    public function index()
+    public function all(Request $request)
     {
-        $ourcases = OurCase::orderBy('created_at','DESC')->paginate(15);
-
-        if ($ourcases) {
-            return Inertia::render('Backend/CaseUpload', [
-                'ourcases' => $ourcases
-            ]);
-        }
-
+        return $this->getCases((int)$request->get("offset"), (int)$request->get("limit"));
     }
 
-// Store file to db
     public function store(Request $request)
     {
-
-//        dd($request);
         $request->validate([
+            'category' => 'required|numeric',
             'pdf' => 'required',
             'title' => 'required',
             'description' => 'nullable',
-            'issue_date' => 'required'
-
+            'issued_date' => 'required',
+            'investigation_number' => 'required'
         ]);
-        DB::transaction(function () use ($request) {
+        $pdf = $request->file('pdf');
+        if (!is_dir($this->pdf_path)) {
+            mkdir($this->pdf_path, 0777, true);
+        }
+        $name = sha1(date('YmdHis') . Str::random(30));
 
+        $pdf_name = $name . '.' . $pdf->getClientOriginalExtension();
+
+        $pdf->move($this->pdf_path, $pdf_name);
+        $record = Cases::create([
+            'case_category_id' => $request->category,
+            'pdf' => $pdf_name ?? null,
+            'investigation_number' => $request->investigation_number,
+            'title' => $request->title,
+            'issued_date' => $request->issued_date,
+            'description' => $request->description,
+        ]);
+        return response()->json([
+            'data' => $record,
+            'status' => true
+            ], 200);
+    }
+
+    public function update(Request $request, Cases $case)
+    {
+
+        $request->validate([
+            'category' => 'required|numeric',
+            'title' => 'required',
+            'description' => 'nullable',
+            'pdf' => 'nullable',
+            'investigation_number' => "required",
+            'issued_date' => 'required',
+        ]);
+
+        $name = sha1(date('YmdHis') . Str::random(30));
+        $pdf_name = null;
+
+        if ($request->file("pdf")) {
             $pdf = $request->file('pdf');
-
-
-            if (!is_dir($this->file_path)) {
-                mkdir($this->file_path, 0777);
+            $pdf_name = $name . '.' . $pdf->getClientOriginalExtension();
+            $pdf->move($this->pdf_path, $pdf_name);
+            $file_path = "{$this->pdf_path}/{$case->pdf}";
+            if (File::exists($file_path)) {
+                File::delete($file_path);
             }
-            $name = sha1(date('YmdHis') . Str::random(30));
-
-            $pdf_name = $name . '.' . $pdf->getClientOriginalExtension();
-
-
-            // this saves the actual image
-            $pdf->move($this->file_path, $pdf_name);
-
-
-
-
-//             dd($save_name);
-            $data['ourcases'] = OurCase::create([
-                'pdf' => $pdf_name ?? null,
-                'title' => $request->title,
-                'issue_date' => $request->issue_date,
-                'description' => $request->description,
-            ]);
-
-
-//
-        });
-
-
-    }
-
-    public function Details(OurCase $ourcase)
-    {
-
-        $ourcase = OurCase::whereId($ourcase->id)->first();
-
-        return Inertia::render('Backend/ViewCase', [
-            'id' => $ourcase->id,
-            'title' => $ourcase->title,
-            'description' => $ourcase->description,
-            'pdf' => $ourcase->pdf,
-            'issue_date' => $ourcase->issue_date,
-        ]);
-
-
-
-    }
-
-    public function getEditForm(OurCase $ourcase)
-    {
-
-        $ourcase = OurCase::findOrFail($ourcase->id);
-
-        return Inertia::render('Backend/EditCase', [
-            'ourcase'=>[
-                'id' => $ourcase->id,
-                'title' => $ourcase->title,
-                'description' => $ourcase->description,
-                'issue_date' => $ourcase->issue_date,
-            ]
-        ]);
-
-
-
-    }
-
-    // update file
-    public function update(Request $request, OurCase $ourcase)
-    {
-
-//        dd($request);
-
-        if ($request->pdf){
-            $pdf = $request->file('pdf');
-
-
-            $name = sha1(date('YmdHis') . Str::random(30));
-
-            $pdf_name = $name . '.' . $pdf->getClientOriginalExtension();
-
-
-
-            // this saves the actual image
-            $pdf->move($this->file_path, $pdf_name);
         }
-
-
-
-
-
-
-
-        $data['ourcases'] = OurCase::findOrFail($ourcase->id)->update([
-            'pdf' => $pdf_name ?? $ourcase->pdf,
-            'title' => $request->title ?? $ourcase->title,
-            'description' => $request->description ?? $ourcase->description,
-            'issue_date' => $request->issue_date ?? $ourcase->issue_date,
+        $case->update([
+            'case_category_id' => $request->category,
+            'pdf' => $pdf_name ?? $case->pdf,
+            'investigation_number' => $request->investigation_number,
+            'title' => $request->title,
+            'issued_date' => $request->issued_date,
+            'description' => $request->description,
         ]);
 
-
-
-        return redirect()->route('cases.files.index');
-
+        return $this->getCase($case->id);
     }
 
-
-    public function getDeleteForm(OurCase $ourcase)
+    public function delete(Cases $case)
     {
-
-        $ourcase = OurCase::findOrFail($ourcase->id);
-
-        return Inertia::render('Backend/DeleteCase', [
-            'ourcase'=>[
-                'id' => $ourcase->id,
-                'title' => $ourcase->title,
-                'description' => $ourcase->description,
-                'pdf' => $ourcase->pdf,
-                'issue_date' => $ourcase->published_date,
-            ]
-        ]);
-
-
-
-    }
-    // Delete file file fom db
-    public function destroy(OurCase $ourcase)
-    {
-        $ourcase = OurCase::findOrFail($ourcase->id);
-        $file_path = "uploads/{$ourcase->pdf}";
-
-        // Remove the file from storage if exist
-        if (OurCase::exists($file_path)) {
-            @unlink($file_path);
+        $file_path = "{$this->pdf_path}/{$case->pdf}";
+        if (File::exists($file_path)) {
+            File::delete($file_path);
         }
-
-        $ourcase->delete();
-
-        return redirect()->route('cases.files.index');
+        $case->delete();
+        return response()->json([
+            "message" => "Case deleted",
+            'status' => true
+        ], 200);
     }
 }
