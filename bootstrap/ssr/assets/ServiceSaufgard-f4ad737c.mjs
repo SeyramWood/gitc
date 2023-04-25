@@ -1,33 +1,39 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
 import "react";
-import { W as WebsiteLayout } from "./WebsiteLayout-e1c37850.mjs";
+import { W as WebsiteLayout } from "./WebsiteLayout-bb3a7897.mjs";
 import { SlCallIn, SlEnvelopeOpen, SlLocationPin } from "react-icons/sl";
 import { Link } from "@inertiajs/inertia-react";
-import { H as HeadingSecondary, P as Paragraph } from "./HeadingSecondary-7080f354.mjs";
 import "react/jsx-runtime";
 import "react-dom/server";
 import "process";
 import "http";
+import "./helpers-bf0c6e44.mjs";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
+const Paragraph = (prop) => {
+  return /* @__PURE__ */ jsx("div", { className: `text-lg text-grey ${prop.className}`, children: prop.children });
+};
+const HeadingSecondary = (prop) => {
+  return /* @__PURE__ */ jsx("div", { className: `my-4 text-3xl text-primary ${prop.className}`, children: prop.children });
+};
 const ServiceSaufgard = () => {
-  return /* @__PURE__ */ jsx(WebsiteLayout, { page: "service", children: /* @__PURE__ */ jsxs("div", { className: "bg-white text-black", children: [
+  return /* @__PURE__ */ jsx(WebsiteLayout, { page: "home", children: /* @__PURE__ */ jsxs("div", { className: "bg-white ", children: [
     /* @__PURE__ */ jsx("div", { className: "bg-gray-300  p-3", children: /* @__PURE__ */ jsx("span", { children: "GITC . Our Services . Trade Remedies . Subsidy & Countervailing Duties" }) }),
     /* @__PURE__ */ jsx("div", { className: "hero min-h-screen bg-accent-content", children: /* @__PURE__ */ jsxs("div", { className: "hero-content flex-col md:flex-row-reverse", children: [
-      /* @__PURE__ */ jsxs("div", { className: "  max-h-4xl mt-20", children: [
-        /* @__PURE__ */ jsx(HeadingSecondary, { children: "Trade Remedy" }),
-        /* @__PURE__ */ jsx(Paragraph, { className: "text-sm mb-5", children: "Subsidy & controvailing duties; antidumping duties, safeguard and measures" }),
+      /* @__PURE__ */ jsxs("div", { className: "  max-h-4xl mt-40", children: [
         /* @__PURE__ */ jsx(HeadingSecondary, { children: "Safeguards Measures" }),
+        /* @__PURE__ */ jsx(Paragraph, { className: "text-sm mb-5", children: "Subsidy & controvailing duties; antidumping duties, safeguard and measures" }),
         /* @__PURE__ */ jsx("img", { className: "w-screen", src: "/images/subsidy.png", alt: "Album" })
       ] }),
-      /* @__PURE__ */ jsx("div", { className: "card h-46  text-dark  w-full shadow-2sm bg-white  ", children: /* @__PURE__ */ jsxs("div", { className: "card-body", children: [
+      /* @__PURE__ */ jsx("div", { className: "card  text-dark  w-full shadow-2sm bg-white  ", children: /* @__PURE__ */ jsxs("div", { className: "card-body", children: [
         /* @__PURE__ */ jsx(HeadingSecondary, { children: "Our Services" }),
-        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/dumping", children: "Anti - Dumping Duties" }) }),
-        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/subsidy", children: "Subsidy and Countervailing Duties" }) }),
-        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/safeguard", children: "Safeguards Measures" }) }),
+        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service", children: "  Anti - Dumping Duties" }) }),
+        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/dumping", children: "  Anti - Dumping Duties" }) }),
+        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/subsidy", children: "    Subsidy and Countervailing Duties" }) }),
+        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/safeguard", children: "  Safeguards Measures" }) }),
         /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/dispute", children: "Dispute Settlement" }) }),
-        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service", children: " Tariff Review" }) }),
-        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/research", children: "Research" }) })
+        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service", children: "  Tariff Review" }) }),
+        /* @__PURE__ */ jsx(Paragraph, { children: /* @__PURE__ */ jsx(Link, { href: "/service/research", children: "  Research" }) })
       ] }) })
     ] }) }),
     /* @__PURE__ */ jsx("div", { className: "hero min-h-screen bg-accent-content", children: /* @__PURE__ */ jsxs("div", { className: "hero-content flex-col lg:flex-row-reverse", children: [
