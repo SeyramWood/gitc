@@ -54,14 +54,14 @@ const Navigation = () => {
         <>
             {/* Mobile Navigation */}
             <section className="mobile__navigation sticky left-0 top-0 h-[4rem] flex md:hidden items-center justify-between w-full bg-white z-20 px-web-xs">
-                <div>
+                <Link href="/">
                     <img
                         src="/images/logo.png"
                         alt=""
                         srcSet=""
                         className="h-[3.5rem]"
                     />
-                </div>
+                </Link>
                 <button
                     className={`mobile__navigation__menu ${
                         menuToggle && "active"
@@ -86,95 +86,100 @@ const Navigation = () => {
                         <span></span>
                     </button>
                 </section>
-
-                <ul className="flex-column items-center justify-start h-full [&>li>a, &>li>span]:opacity-70 text-xl font-bold relative">
-                    <li className="[&:hover>a]:opacity-100">
-                        <Link href="/">Home</Link>
-                    </li>
-                    <li className="relative hover:opacity-100">
-                        <span>
-                            <span>About Us</span>
-                            <span className="ml-2 text-xl text-bolder">
-                                <SlArrowDown />
+                <div className="flex h-screen-sm mobile__navigation__menu__items__wrapper">
+                    <ul className="flex-column items-center justify-center h-screen-sm w-screen-sm [&>li>a, &>li>span]:opacity-70 text-md font-semibold relative">
+                        <li className="[&:hover>a]:opacity-100">
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li className="relative hover:opacity-100">
+                            <span>
+                                <span>About Us</span>
+                                <span className="ml-2 text-md text-bolder">
+                                    <SlArrowDown />
+                                </span>
                             </span>
-                        </span>
-                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
-                            <li>
-                                <Link href="/about">Our Team</Link>
-                            </li>
-                            <li>
-                                <Link href="/story">Our Story</Link>
-                            </li>
-                            <li>
-                                <Link href="/message">Our Message</Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="hover:opacity-100">
-                        <span>
-                            <span>Our Services</span>
-                            <span className="ml-2 text-xl text-bolder">
-                                <SlArrowDown />
+                            <ul className="text-white  [&>li>a]:text-md dropdown opacity-60 [&>li>a]:font-thin [&>li:hover>a]:text-primary-light">
+                                <li>
+                                    <Link href="/about">Our Team</Link>
+                                </li>
+                                <li>
+                                    <Link href="/story">Our Story</Link>
+                                </li>
+                                <li>
+                                    <Link href="/message">Our Message</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="hover:opacity-100">
+                            <span>
+                                <span>Our Services</span>
+                                <span className="ml-2 text-xl text-bolder">
+                                    <SlArrowDown />
+                                </span>
                             </span>
-                        </span>
-                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
-                            <li>
-                                <Link href="/service/subsidy">
-                                    Subsidy and Counter
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/service/safeguard">
-                                    Safeguards Measures
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/service/research">Research</Link>
-                            </li>
-                            <li>
-                                <Link href="/service/dispute">
-                                    Dispute Settlements
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/service/dumping">
-                                    Anti-Dumping
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/services">Tariff Review</Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="hover:opacity-100">
-                        <Link href="/resources"></Link>
-                        <span>
-                            <span>Resources</span>
-                            <span className="ml-2 text-xl text-bolder">
-                                <SlArrowDown />
+                            <ul className=" text-white [&>li>a]:text-md  dropdown  opacity-60 [&>li>a]:font-thin [&>li:hover>a]:text-primary-light">
+                                <li>
+                                    <Link href="/service/subsidy">
+                                        Subsidy and Counter
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/service/safeguard">
+                                        Safeguards Measures
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/service/research">
+                                        Research
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/service/dispute">
+                                        Dispute Settlements
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/service/dumping">
+                                        Anti-Dumping
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/services">Tariff Review</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="hover:opacity-100">
+                            <Link href="/resources"></Link>
+                            <span>
+                                <span>Resources</span>
+                                <span className="ml-2 text-xl text-bolder">
+                                    <SlArrowDown />
+                                </span>
                             </span>
-                        </span>
-                        <ul className=" bg-white top-[3rem] text-tertiary min-w-[15rem] [&>li>a]:text-md dropdown">
-                            <li>
-                                <Link href="/resources">
-                                    Legislative Instrument
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/publications">Publications</Link>
-                            </li>
-                            <li>
-                                <Link href="/customscases">Cases</Link>
-                            </li>
-                        </ul>
-                    </li>
-                    <li className="hover:opacity-100">
-                        <Link href="/gallery">Gallery</Link>
-                    </li>
-                    <li className="hover:opacity-100">
-                        <Link href="/contact">Contact Us</Link>
-                    </li>
-                </ul>
+                            <ul className=" text-white [&>li>a]:text-md dropdown opacity-60 [&>li>a]:font-thin [&>li:hover>a]:text-primary-light">
+                                <li>
+                                    <Link href="/resources">
+                                        Legislative Instrument
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/publications">
+                                        Publications
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/customscases">Cases</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li className="hover:opacity-100">
+                            <Link href="/gallery">Gallery</Link>
+                        </li>
+                        <li className="hover:opacity-100">
+                            <Link href="/contact">Contact Us</Link>
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             {/* Main Navigation */}

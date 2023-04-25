@@ -41,9 +41,7 @@ class GalleryController extends Controller
                 ]);
             }
         }
-        return response()->json([
-            'status' => true,
-            ], 200);
+        return $this->getAlbum((int)$request->get("album"));
     }
 
     public function update(Request $request, Gallery $gallery)

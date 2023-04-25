@@ -1,9 +1,30 @@
-import { Link } from "@inertiajs/inertia-react";
+import { Link, usePage } from "@inertiajs/inertia-react";
 import React from "react";
 import { SlCallIn, SlEnvelopeOpen, SlPaperPlane } from "react-icons/sl";
+
 import { FooterCarousel } from "../../carousel";
 
 const Footer = () => {
+    const { footerAlbums } = usePage().props;
+    const [albums, setAlbums] = React.useState([]);
+    React.useEffect(() => {
+        (() => {
+            if (footerAlbums.length > 0) {
+                setAlbums((state) =>
+                    footerAlbums.map((a, index) => {
+                        return {
+                            images: a.gallery
+                                .map((g) => `/uploads/gallery/${g.image}`)
+                                .slice(-4),
+                            duration: 2000,
+                            axis: index === 1 || index === 2 ? "y" : "x",
+                        };
+                    })
+                );
+            }
+        })();
+    }, [footerAlbums]);
+
     return (
         <footer className="w-[100%] text-white">
             <nav className="w-[100%] h-[auto] lg:h-[60vh] flex flex-col md:flex-row md:flex-wrap bg-footer px-web-s lg:px-web-l justify-start items-start py-[3rem]">
@@ -171,51 +192,18 @@ const Footer = () => {
                     </div>
 
                     <section className="grid grid-cols-2 gap-2">
-                        <Link href="/gallery">
-                            <FooterCarousel
-                                images={[
-                                    "/images/footer/footer2.jpg",
-                                    "/images/footer/footer1.jpg",
-                                    "/images/footer/footer.jpg",
-                                ]}
-                                duration={2000}
-                            />
-                        </Link>
-                        <Link href="/gallery">
-                            <FooterCarousel
-                                images={[
-                                    "/images/footer/footer3.jpg",
-                                    "/images/footer/footer2.jpg",
-                                    "/images/footer/footer1.jpg",
-                                    "/images/footer/footer.jpg",
-                                ]}
-                                duration={2000}
-                                axis="y"
-                            />
-                        </Link>
-                        <Link href="/gallery">
-                            <FooterCarousel
-                                images={[
-                                    "/images/footer/footer2.jpg",
-                                    "/images/footer/footer1.jpg",
-                                    "/images/footer/footer3.jpg",
-                                    "/images/footer/footer.jpg",
-                                ]}
-                                duration={2000}
-                                axis="y"
-                            />
-                        </Link>
-                        <Link href="/gallery">
-                            <FooterCarousel
-                                images={[
-                                    "/images/footer/footer2.jpg",
-                                    "/images/footer/footer1.jpg",
-                                    "/images/footer/footer.jpg",
-                                    "/images/footer/footer3.jpg",
-                                ]}
-                                duration={2000}
-                            />
-                        </Link>
+                        {albums.map((a, index) => (
+                            <Link
+                                href="/gallery"
+                                key={`footer_gallery_${index}`}
+                            >
+                                <FooterCarousel
+                                    images={a.images}
+                                    duration={a.duration}
+                                    axis={a.axis}
+                                />
+                            </Link>
+                        ))}
                     </section>
                 </section>
             </nav>

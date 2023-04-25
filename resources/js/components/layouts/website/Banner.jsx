@@ -1,6 +1,8 @@
 import React from "react";
-import "../../../../css/banner.scss";
+
 import { Carousel, CarouselItem } from "../../carousel";
+
+import "../../../../css/banner.scss";
 
 const Banner = ({ page }) => {
     return (
@@ -12,8 +14,8 @@ const Banner = ({ page }) => {
             {page === "publication" && <Publication />}
             {page === "gallery" && <BannerGalleries />}
             {page === "contactUs" && <ContactUs />}
-            {page === "story" && <Story />}
             {page === "message" && <Message />}
+            {page === "story" && <Story />}
             {page === "faq" && <Faq />}
         </>
     );
@@ -58,7 +60,7 @@ const BannerHome = () => {
     ];
 
     return (
-        <section className="w-full h-[var(--banner-height)] overflow-hidden">
+        <section className="w-full h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)] overflow-hidden">
             <div className="w-full h-full carousel-wrapper">
                 <Carousel>
                     {sliders.map((slider, index) => (
@@ -78,17 +80,17 @@ const BannerHome = () => {
 
 const BannerAbout = () => {
     return (
-        <section className="banner__static about">
+        <section className="banner__static about h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">About Us</h1>
-                <p className="mt-8 text-3xl font-light text-white"></p>
+                <h1 className="text-5xl lg:text-7xl text-bold">About Us</h1>
+                {/* <p className="mt-8 text-[1.2rem] lg:text-3xl font-light text-white"></p> */}
             </article>
         </section>
     );
 };
 const BannerServices = () => {
     return (
-        <section className="banner__static services">
+        <section className="banner__static services h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
                 <h1 className="text-7xl text-bold">Our Services</h1>
                 <p className="mt-8 text-3xl font-light text-white"></p>
@@ -98,9 +100,9 @@ const BannerServices = () => {
 };
 const BannerResources = () => {
     return (
-        <section className="banner__static resources">
+        <section className="banner__static resources h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Resources</h1>
+                <h1 className="text-5xl lg:text-7xl text-bold">Resources</h1>
                 <p className="mt-8 text-3xl font-light text-white"></p>
             </article>
         </section>
@@ -109,9 +111,9 @@ const BannerResources = () => {
 
 const BannerGalleries = () => {
     return (
-        <section className="banner__static gallery">
+        <section className="banner__static gallery h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Gallery</h1>
+                <h1 className="text-5xl lg:text-7xl text-bold">Gallery</h1>
                 <p className="mt-8 text-3xl font-light text-white"></p>
             </article>
         </section>
@@ -120,9 +122,9 @@ const BannerGalleries = () => {
 
 const ContactUs = () => {
     return (
-        <section className="banner__static contact">
+        <section className="banner__static contact h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Contact Us</h1>
+                <h1 className="text-5xl lg:text-7xl text-bold">Contact Us</h1>
                 <p className="mt-8 text-3xl font-light text-white">
                     Connect with Us
                 </p>
@@ -133,9 +135,9 @@ const ContactUs = () => {
 
 const Publication = () => {
     return (
-        <section className="banner__static publication">
+        <section className="banner__static publication h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Publications</h1>
+                <h1 className="text-5xl lg:text-7xl text-bold">Publications</h1>
             </article>
         </section>
     );
@@ -143,27 +145,27 @@ const Publication = () => {
 
 const Story = () => {
     return (
-        <section className="banner__static story">
+        <section className="banner__static story h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Our Story</h1>
+                <h1 className="text-5xl lg:text-7xl text-bold">Our Story</h1>
             </article>
         </section>
     );
 };
 const Message = () => {
     return (
-        <section className="banner__static message">
+        <section className="banner__static message h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Our Message</h1>
+                <h1 className="text-5xl lg:text-7xl text-bold">Our Message</h1>
             </article>
         </section>
     );
 };
 const Faq = () => {
     return (
-        <section className="banner__static faq">
+        <section className="banner__static faq h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">
+                <h1 className="text-5xl lg:text-7xl text-bold">
                     Frequently Asked Question
                 </h1>
                 <p className="mt-8 text-3xl font-light text-white">

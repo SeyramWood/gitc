@@ -4,7 +4,10 @@
 
 :root {
     --banner-height: calc(100vh - 8rem);
+    --banner-height-md: calc(90vh - 4rem);
+    --banner-height-sm: calc(100vh - 4rem);
 }
+
 :root,
 [data-theme] {
     background-color: #fff !important;

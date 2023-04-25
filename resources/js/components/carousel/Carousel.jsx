@@ -1,5 +1,6 @@
 import React from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+
 import "../../../css/banner.scss";
 
 const Carousel = ({ children }) => {
@@ -34,10 +35,10 @@ const Carousel = ({ children }) => {
             </>
             <div className="carousel__container__controls">
                 <button onClick={() => handlePrevious()}>
-                    <SlArrowLeft />
+                    <SlArrowLeft className="hidden lg:block text-[2.5rem]" />
                 </button>
                 <button onClick={() => handleNext()}>
-                    <SlArrowRight />
+                    <SlArrowRight className="hidden lg:block text-[2.5rem]" />
                 </button>
             </div>
             <div className="carousel__container__indicators">

@@ -3,12 +3,14 @@
 namespace App\Http\Middleware;
 
 use App\Models\Album;
+use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
 
 class HandleInertiaRequests extends Middleware
 {
+    use ResponseTrait;
     /**
      * The root template that's loaded on the first page visit.
      *
@@ -51,6 +53,8 @@ class HandleInertiaRequests extends Middleware
                 'message' => $request->session()->get('message') ?? false,
                 'error' =>  $request->session()->get('error') ?? false,
             ],
+
+            'footerAlbums' => $this->getFooterAlbums()
         ]);
     }
 }

@@ -516,7 +516,7 @@ const Cases = ({ categories }) => {
                         <div className="flex justify-end mt-6">
                             <Button
                                 type="submit"
-                                label="Add"
+                                label="Update"
                                 loading={caseUpdateForm.isSubmitting}
                                 disabled={caseUpdateForm.isSubmitting}
                             />

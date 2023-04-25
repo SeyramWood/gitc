@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class PageController extends Controller
 {
+    use ResponseTrait;
+
     public function index()
     {
         return Inertia::render('Website/Index');
@@ -71,7 +74,9 @@ class PageController extends Controller
     }
     public function publication()
     {
-        return Inertia::render('Website/Publication');
+        return Inertia::render('Website/Publication', [
+            "publications" => $this->getPublications()
+        ]);
     }
 
     public function faq()
@@ -86,13 +91,17 @@ class PageController extends Controller
 
      public function gallery()
     {
-        return Inertia::render('Website/Gallery');
+        return Inertia::render('Website/Gallery', [
+            "albums" => $this->getAlbums()
+        ]);
     }
 
     // resources
     public function customsFiles()
     {
-        return Inertia::render('Website/CustomsFiles');
+        return Inertia::render('Website/CustomsFiles', [
+            "cases" => $this->getCases()
+        ]);
     }
     public function disputesFiles()
     {

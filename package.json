@@ -32,7 +32,6 @@
         "aos": "^2.3.4",
         "chart.js": "^3.7.1",
         "fslightbox-react": "^1.7.4",
-        "keen-slider": "^6.8.5",
         "pdf-viewer-reactjs": "^2.2.3",
         "pdfjs-dist": "3.3.122",
         "react": "^18.2.0",
@@ -40,8 +39,7 @@
         "react-pdf-viewer": "^0.1.0",
         "react-read-pdf": "^2.0.9",
         "react-responsive-modal": "^6.4.1",
-        "worker-loader": "^3.0.8",
         "react-svg-spinner": "^1.0.4",
-        "yet-another-react-lightbox": "^2.2.7"
+        "worker-loader": "^3.0.8"
     }
 }

@@ -70,11 +70,11 @@ const Album = () => {
                     summary: "Album added successfully",
                     life: 3000,
                 });
-                const newPubs =
+                const newAlbum =
                     allAlbum.length < lazyParams.rows
                         ? [data.data, ...allAlbum]
                         : [data.data, ...[].concat(allAlbum.pop())];
-                setAllAlbum(newPubs);
+                setAllAlbum(newAlbum);
             })
             .catch((err) => {
                 albumForm.updateIsSubmitting(false);
@@ -159,13 +159,7 @@ const Album = () => {
                     })
                     .catch((err) => {
                         if (err["response"]) {
-                            if (err.response.status === 413) {
-                                toast.current.show({
-                                    severity: "error",
-                                    summary: "Files to large",
-                                    life: 3000,
-                                });
-                            } else if (err.response.status === 500) {
+                            if (err.response.status === 500) {
                                 toast.current.show({
                                     severity: "error",
                                     summary:
@@ -347,7 +341,7 @@ const Album = () => {
                     tooltip="View Gallery"
                     tooltipOptions={{ position: "top" }}
                     className="p-button-text p-button-secondary p-button-sm"
-                    disabled={row.gallery.length === 0}
+                    disabled={row.gallery?.length === 0}
                     onClick={() => viewGallery(row)}
                 />
                 <Button
@@ -429,12 +423,12 @@ const Album = () => {
                         emptyMessage="No case found."
                     >
                         <Column header="Name" field="name" />
+                        <Column header="Date" body={dateDateBody} />
                         <Column
                             header="Description"
                             field="description"
-                            bodyStyle={{ width: "40rem" }}
+                            bodyStyle={{ maxWidth: "40rem" }}
                         />
-                        <Column header="Date" body={dateDateBody} />
                         <Column header="Actions" body={actionTemplate} />
                     </DataTable>
                 </Card>
@@ -572,7 +566,6 @@ const Album = () => {
                         multiple
                         name="images[]"
                         url={`/dashboard/gallery?album=${currentAlbum?.id}`}
-                        onUpload={() => onGalleryUpload()}
                         accept="image/*"
                         maxFileSize={10000000}
                         emptyTemplate={
@@ -580,6 +573,38 @@ const Album = () => {
                                 Drag and drop files to here to upload.
                             </p>
                         }
+                        onUpload={(e) => {
+                            setNewGalleryDialog(false);
+                            toast.current.show({
+                                severity: "success",
+                                summary: "Success",
+                                detail: "Gallery uploaded successfully",
+                            });
+                            const data = JSON.parse(e.xhr.response);
+                            setAllAlbum((state) =>
+                                state.map((a) => {
+                                    if (a.id === data.data.id) {
+                                        return data.data;
+                                    }
+                                    return a;
+                                })
+                            );
+                        }}
+                        onError={(e) => {
+                            if (e.xhr.status === 413) {
+                                toast.current.show({
+                                    severity: "error",
+                                    summary: "Files to large",
+                                    life: 3000,
+                                });
+                            } else {
+                                toast.current.show({
+                                    severity: "error",
+                                    summary: "Oooops! somthing went wrong.",
+                                    life: 3000,
+                                });
+                            }
+                        }}
                     />
                 )}
             </Dialog>

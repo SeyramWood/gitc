@@ -87,7 +87,7 @@
     &.active {
         opacity: 1;
         visibility: visible;
-        animation: scaleZ 0.3s ease-in forwards;
+        animation: scaleZ 0.2s ease-in forwards;
         transform-origin: center center;
     }
 
@@ -228,26 +228,35 @@
             transform: translateX(100%);
             overflow-x: hidden;
         }
+        &__wrapper {
+            & > ul {
+                margin: 3rem;
+                & > li {
+                    width: 100%;
+                    &:not(:last-child) {
+                        margin-bottom: 2rem;
+                    }
+                    & > a {
+                    }
+                    & > span {
+                        display: flex;
+                    }
+                    & > .dropdown {
+                        width: 100%;
+                        height: auto;
+                        display: none;
 
-        & > ul {
-            margin: 1rem;
-            & > li {
-                width: 100%;
-                padding: 0.5rem 0;
-                & > a {
-                }
-                & > span {
-                    display: flex;
-                }
-                & > .dropdown {
-                    margin: 0.5rem 0;
-                    padding: 0 0.5rem;
-                    height: 100%;
-                    display: none;
-                    transition: all 0.6s ease-out;
-                }
-                &:hover > .dropdown {
-                    display: block;
+                        margin: 1rem 0 1rem 1rem;
+                        transition: all 0.6s ease-out;
+                        & > li {
+                            &:not(:last-child) {
+                                margin-bottom: 0.5rem;
+                            }
+                        }
+                    }
+                    &:hover > .dropdown {
+                        display: block;
+                    }
                 }
             }
         }

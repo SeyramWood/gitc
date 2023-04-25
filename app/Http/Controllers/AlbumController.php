@@ -25,15 +25,12 @@ class AlbumController extends Controller
             'date' => 'required',
         ]);
 
-        $record = Album::create([
+        $album = Album::create([
             'name' => $request->name,
             'description' => $request->description,
             'date' => $request->date,
         ]);
-        return response()->json([
-            'data' => $record,
-            'status' => true
-            ], 200);
+        return $this->getAlbum($album->id);
     }
 
     public function update(Request $request, Album $album)

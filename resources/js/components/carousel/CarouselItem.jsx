@@ -15,9 +15,9 @@ const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
                     className="carousel__container__item__wrapper__image"
                     style={styles}
                 ></div>
-                <div className="carousel__container__item__wrapper__content w-[85%] mt-[4rem]">
+                <div className="carousel__container__item__wrapper__content w-[85%] mt-[0] lg:mt-[4rem]">
                     <h1
-                        className={`text-7xl text-bold mb-8 ${
+                        className={`text-4xl text-bold lg:text-7xl lg:text-bold mb-8 ${
                             status === "active"
                                 ? "animate__animated animate__fadeInRightBig animate__fast-2s"
                                 : ""
@@ -25,9 +25,9 @@ const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
                     >
                         {heading}
                     </h1>
-                    <div className="w-[60%]">
+                    <div className="w-[100%] md:w-[60%]">
                         <p
-                            className={`text-3xl text-white font-light ${
+                            className={`text-[1.2rem] lg:text-3xl text-white font-light ${
                                 status === "active"
                                     ? "animate__animated animate__fadeInUp animate__delay-1s"
                                     : ""

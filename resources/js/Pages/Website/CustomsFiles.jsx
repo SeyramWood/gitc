@@ -1,7 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { WebsiteLayout } from "../../components/layouts";
 // files
-import customsPdf from "../../files/customsFiles";
 // modal
 import { Modal } from "react-responsive-modal";
 // pdf reader
@@ -21,6 +20,7 @@ import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 // data
 import "react-responsive-modal/styles.css";
 // Import styles
+import { Link } from "@inertiajs/inertia-react";
 import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
 import CasesNav from "../../components/layouts/website/CasesNav";
 
@@ -31,7 +31,7 @@ const pageLayout = {
     }),
 };
 
-function CustomsFiles() {
+function CustomsFiles({ cases }) {
     const defaultLayoutPluginInstance = defaultLayoutPlugin();
     const pageNavigationPluginInstance = pageNavigationPlugin();
     // modal
@@ -50,10 +50,36 @@ function CustomsFiles() {
     // pdf viewer
     const getFilePluginInstance = getFilePlugin();
     const { DownloadButton } = getFilePluginInstance;
+
     return (
         <WebsiteLayout page="resource">
+            <Modal
+                key="pdf__modal"
+                classNames={{
+                    modal: "pdf__modal",
+                }}
+                open={open}
+                onClose={() => setOpen(false)}
+            >
+                <div className="w-[50rem] h-[60rem] mt-10">
+                    {open && (
+                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
+                            <Viewer
+                                fileUrl={currentFile}
+                                plugins={[
+                                    defaultLayoutPluginInstance,
+                                    getFilePluginInstance,
+                                    pageNavigationPluginInstance,
+                                ]}
+                                defaultScale={SpecialZoomLevel.PageFit}
+                                pageLayout={pageLayout}
+                            />
+                        </Worker>
+                    )}
+                </div>
+            </Modal>
             <div className="w-[100%]   bg-white">
-                <div className="sm:flex px-10 py-16">
+                <div className="px-10 py-16 sm:flex">
                     <div className="sm:w-[40%] sm:block hidden">
                         <CasesNav />
                     </div>
@@ -65,96 +91,108 @@ function CustomsFiles() {
                             consequatur reprehenderit harum enim blanditiis!
                             Eligendi in laborum tempora eius doloremque?
                         </p>
+
                         <div className="border">
-                            <table className="table-fixed  w-[100%] ">
+                            <table className="table-auto w-[100%] ">
                                 <thead className="text-left bg-red-100/30">
                                     <tr className="border-b">
-                                        <th className="p-3">
-                                            Investitation No
+                                        <th className="p-3 text-sm">
+                                            Investigation #
                                         </th>
-                                        <th className="p-3">Title</th>
-                                        <th className="p-3">Date Issued</th>
+                                        <th className="p-3 text-sm">Title</th>
+                                        <th className="p-3 text-sm">
+                                            Description
+                                        </th>
+                                        <th className="p-3 text-sm whitespace-nowrap">
+                                            Date Issued
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {customsPdf.map((item, index) => (
-                                        <tr className="border-b" key={index}>
-                                            <td
-                                                className="p-3 hover:text-primary/60 cursor-pointer"
-                                                onClick={() =>
-                                                    opneFile(item.pdfPath)
-                                                }
+                                    {cases.data.length > 0 ? (
+                                        cases.data.map((item, index) => (
+                                            <tr
+                                                className="border-b"
+                                                key={index}
                                             >
-                                                {item.name}
-                                            </td>
-                                            <td className="p-3">
-                                                Malcolm Lockyer
-                                            </td>
-                                            <td className="p-3">1961</td>
-                                        </tr>
-                                    ))}
-                                    <Modal
-                                        key="pdf__modal"
-                                        classNames={{
-                                            modal: "pdf__modal",
-                                        }}
-                                        open={open}
-                                        onClose={() => setOpen(false)}
-                                    >
-                                        <div className="w-[50rem] h-[60rem] mt-10">
-                                            {open && (
-                                                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                                                    <Viewer
-                                                        fileUrl={currentFile}
-                                                        plugins={[
-                                                            defaultLayoutPluginInstance,
-                                                            getFilePluginInstance,
-                                                            pageNavigationPluginInstance,
-                                                        ]}
-                                                        defaultScale={
-                                                            SpecialZoomLevel.PageFit
+                                                <td className="p-3">
+                                                    {item.investigation_number}
+                                                </td>
+                                                <td className="p-3">
+                                                    <span
+                                                        onClick={() =>
+                                                            opneFile(
+                                                                `/uploads/cases/${item.pdf}`
+                                                            )
                                                         }
-                                                        pageLayout={pageLayout}
-                                                    />
-                                                </Worker>
-                                            )}
-                                        </div>
-                                    </Modal>
+                                                        className="p-3 cursor-pointer hover:text-primary/60"
+                                                    >
+                                                        {item.title}
+                                                    </span>
+                                                </td>
+                                                <td className="p-3 w-[20rem]">
+                                                    {item.description}
+                                                </td>
+                                                <td className="p-3 w-[5rem]">
+                                                    {new Date(
+                                                        item.issued_date
+                                                    ).getFullYear()}
+                                                </td>
+                                            </tr>
+                                        ))
+                                    ) : (
+                                        <tr>
+                                            <td className="p-3">
+                                                No case found!
+                                            </td>
+                                        </tr>
+                                    )}
                                 </tbody>
                             </table>
                         </div>
-                        <div class="flex  gap-2 pt-3 justify-center">
-                            <a
-                                href="#"
-                                class="px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white"
-                            >
-                                Previous
-                            </a>
-
-                            <a
-                                href="#"
-                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white"
-                            >
-                                1
-                            </a>
-                            <a
-                                href="#"
-                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white"
-                            >
-                                2
-                            </a>
-                            <a
-                                href="#"
-                                class="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-red-400 hover:text-white"
-                            >
-                                3
-                            </a>
-                            <a
-                                href="#"
-                                class="px-4 py-2 font-bold text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white"
-                            >
-                                Next
-                            </a>
+                        <div className="flex gap-2 pt-[2rem] justify-center">
+                            <>
+                                {cases?.links.map((link, index) =>
+                                    link.url ? (
+                                        <Link
+                                            preserveScroll
+                                            href={`${link.url}`}
+                                            className={`${
+                                            link.active
+                                                && "bg-red-400 text-white "
+                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                            key={index}
+                                            as="button"
+                                            type="button"
+                                        >
+                                            <span
+                                                dangerouslySetInnerHTML={{
+                                                    __html: link.label,
+                                                }}
+                                            ></span>
+                                        </Link>
+                                    ) : (
+                                        <Link
+                                            preserveScroll
+                                            href={`${link.url}`}
+                                            className={`${
+                                            link.active
+                                                && "bg-red-400 text-white "
+                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                            key={index}
+                                            disabled
+                                            as="button"
+                                            type="button"
+                                        >
+                                            <span
+                                                dangerouslySetInnerHTML={{
+                                                    __html: link.label,
+                                                }}
+                                            ></span>
+                                        </Link>
+                                    )
+                                )}
+                            </>
                         </div>
                     </div>
                 </div>

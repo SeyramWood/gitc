@@ -1,4 +1,5 @@
 import React from "react";
+
 import "../../../css/footer.scss";
 
 function FooterCarousel({ images = [], duration = 1000, axis }) {
@@ -26,6 +27,7 @@ function FooterCarousel({ images = [], duration = 1000, axis }) {
         <div className="footer__carousel">
             {images.map((image, i) => (
                 <div
+                    key={image}
                     className={`footer__carousel__item`}
                     style={{
                         display: axis === "y" ? "block" : "inline-block",
