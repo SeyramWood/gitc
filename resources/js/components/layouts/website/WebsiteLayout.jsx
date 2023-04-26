@@ -1,3 +1,4 @@
+import "../../../../css/app.css";
 import "animate.css";
 import React from "react";
 import Banner from "./Banner";
