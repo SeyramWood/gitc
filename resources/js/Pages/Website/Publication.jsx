@@ -7,7 +7,6 @@ import { WebsiteLayout } from "../../components/layouts";
 
 import "keen-slider/keen-slider.min.css";
 // import "../../../css/style.css";
-import "yet-another-react-lightbox/styles.css";
 
 // pdf
 import { Worker } from "@react-pdf-viewer/core";
@@ -201,9 +200,9 @@ const Publication = ({ publications }) => {
                                             preserveScroll
                                             href={`${link.url}`}
                                             className={`${
-                                            link.active
-                                                && "bg-red-400 text-white "
-                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                                link.active &&
+                                                "bg-red-400 text-white "
+                                            } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
                                             key={index}
                                             as="button"
                                             type="button"
@@ -219,9 +218,9 @@ const Publication = ({ publications }) => {
                                             preserveScroll
                                             href={`${link.url}`}
                                             className={`${
-                                            link.active
-                                                && "bg-red-400 text-white "
-                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                                link.active &&
+                                                "bg-red-400 text-white "
+                                            } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
                                             key={index}
                                             disabled
                                             as="button"

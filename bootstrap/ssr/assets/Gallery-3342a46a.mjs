@@ -1,7 +1,9 @@
 import { a as jsxs, j as jsx, F as Fragment } from "../ssr.mjs";
 import { Link } from "@inertiajs/inertia-react";
-import FsLightbox from "fslightbox-react";
-import React, { useState } from "react";
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+/* empty css                  */import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import { W as WebsiteLayout } from "./WebsiteLayout-bb3a7897.mjs";
 import { f as formatDateTimeShort } from "./helpers-bf0c6e44.mjs";
 import "react/jsx-runtime";
@@ -12,27 +14,29 @@ import "react-icons/sl";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
 function Gallery({ albums }) {
-  const [galleryViewer, setGalleryViewer] = React.useState(false);
   const [currentGallery, setCurrentGallery] = useState();
-  const [selectedIndex, setSelectedIndex] = useState();
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   function openGallery(gallery, index) {
     setCurrentGallery(
-      gallery.map((gallery2) => `/uploads/gallery/${gallery2.image}`)
+      gallery.map((gallery2) => ({
+        src: `/uploads/gallery/${gallery2.image}`
+      }))
     );
     setSelectedIndex(index);
-    setGalleryViewer((state) => !state);
   }
   return /* @__PURE__ */ jsxs(WebsiteLayout, { page: "gallery", children: [
     /* @__PURE__ */ jsx(
-      FsLightbox,
+      Lightbox,
       {
-        toggler: galleryViewer,
-        sources: currentGallery,
-        onClose: () => {
+        open: selectedIndex >= 0,
+        fullscreen: { auto: false },
+        plugins: [Fullscreen, Counter],
+        index: selectedIndex,
+        close: () => {
+          setSelectedIndex(-1);
           setCurrentGallery();
-          setSelectedIndex();
         },
-        sourceIndex: selectedIndex
+        slides: currentGallery
       }
     ),
     /* @__PURE__ */ jsx("div", { className: "pb-10 bg-white", children: /* @__PURE__ */ jsxs("div", { className: "", children: [
@@ -87,7 +91,7 @@ function Gallery({ albums }) {
             ] })
           ]
         },
-        `album__${index}`
+        `album__${index}`.toString()
       )) }) }),
       /* @__PURE__ */ jsx("div", { className: "flex gap-2 pt-[2rem] justify-center", children: /* @__PURE__ */ jsx(Fragment, { children: albums == null ? void 0 : albums.links.map(
         (link, index) => link.url ? /* @__PURE__ */ jsx(

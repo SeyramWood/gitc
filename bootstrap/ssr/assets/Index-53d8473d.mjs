@@ -1,11 +1,11 @@
 import { j as jsx, a as jsxs } from "../ssr.mjs";
 import { useForm, Link } from "@inertiajs/inertia-react";
 import AOS from "aos";
-import { useKeenSlider } from "keen-slider/react.js";
+/* empty css               *//* empty css                           */import { useKeenSlider } from "keen-slider/react.js";
 import { useEffect, useState } from "react";
 import { W as WebsiteLayout } from "./WebsiteLayout-bb3a7897.mjs";
 import { B as Button } from "./Button-1ba643b5.mjs";
-/* empty css               *//* empty css                           */import "react/jsx-runtime";
+import "react/jsx-runtime";
 import "react-dom/server";
 import "process";
 import "http";
@@ -155,7 +155,7 @@ const Index = () => {
         ]
       }
     ) }),
-    /* @__PURE__ */ jsx("div", { className: "px-2 overflow-hidden  sm:px-16", children: /* @__PURE__ */ jsxs("div", { className: "pb-32 ", children: [
+    /* @__PURE__ */ jsx("div", { className: "px-2 overflow-hidden sm:px-16", children: /* @__PURE__ */ jsxs("div", { className: "pb-32 ", children: [
       /* @__PURE__ */ jsx(
         "div",
         {

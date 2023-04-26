@@ -1,33 +1,40 @@
 import { Link } from "@inertiajs/inertia-react";
-import FsLightbox from "fslightbox-react";
+// import FsLightbox from "fslightbox-react";
 import React, { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import "yet-another-react-lightbox/plugins/counter.css";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import "yet-another-react-lightbox/styles.css";
 
 import { WebsiteLayout } from "../../components/layouts";
 import { formatDateTimeShort } from "../../helpers";
 
 function Gallery({ albums }) {
-    const [galleryViewer, setGalleryViewer] = React.useState(false);
     const [currentGallery, setCurrentGallery] = useState();
-    const [selectedIndex, setSelectedIndex] = useState();
+    const [selectedIndex, setSelectedIndex] = useState(-1);
 
     function openGallery(gallery, index) {
         setCurrentGallery(
-            gallery.map((gallery) => `/uploads/gallery/${gallery.image}`)
+            gallery.map((gallery) => ({
+                src: `/uploads/gallery/${gallery.image}`,
+            }))
         );
         setSelectedIndex(index);
-        setGalleryViewer((state) => !state);
     }
 
     return (
         <WebsiteLayout page="gallery">
-            <FsLightbox
-                toggler={galleryViewer}
-                sources={currentGallery}
-                onClose={() => {
+            <Lightbox
+                open={selectedIndex >= 0}
+                fullscreen={{ auto: false }}
+                plugins={[Fullscreen, Counter]}
+                index={selectedIndex}
+                close={() => {
+                    setSelectedIndex(-1);
                     setCurrentGallery();
-                    setSelectedIndex();
                 }}
-                sourceIndex={selectedIndex}
+                slides={currentGallery}
             />
 
             <div className="pb-10 bg-white">
@@ -52,7 +59,7 @@ function Gallery({ albums }) {
                         <div className="grid-cols-3 sm:grid">
                             {albums.data.map((item, index) => (
                                 <div
-                                    key={`album__${index}`}
+                                    key={`album__${index}`.toString()}
                                     className="relative sm:w-[20rem] mx-3 mb-10"
                                 >
                                     <div className="overflow-hidden bg-black cursor-pointer ">

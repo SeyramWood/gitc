@@ -2631,11 +2631,6 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-fslightbox-react@^1.7.4:
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.7.4.tgz#d1824928d3b969a07baccd02a04285b97c6c51b2"
-  integrity sha512-dmHoxfdvf2TP78jv7qPLvd/cbQOIl2P8CBapLYpcoIigDV0bAcNkx3Tav6Isjruv2bXwWoXZY1C9+A5xTd3ZFQ==
-
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -3479,7 +3474,7 @@ json5@^2.1.2, json5@^2.2.2:
 
 keen-slider@^6.8.5:
   version "6.8.5"
-  resolved "https://registry.npmjs.org/keen-slider/-/keen-slider-6.8.5.tgz"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-6.8.5.tgz#1d96ff3ab77f195fc6cacd2e5aecc35d8ceb9702"
   integrity sha512-9yoosfffgTCrkmbX8kCUMWsn9KDgPSkxBof5/0yXde001D1xao7i9ppfxQCCK0MLnoCa+Rdssby0jFbTTUM4rw==
 
 killable@^1.0.0:
@@ -4765,7 +4760,7 @@ react-transition-group@^4.4.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@^16.2.0:
+react@^16.0.0, react@^16.2.0:
   version "16.14.0"
   resolved "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
@@ -6217,7 +6212,7 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yet-another-react-lightbox@^2.2.7:
-  version "2.2.7"
-  resolved "https://registry.npmjs.org/yet-another-react-lightbox/-/yet-another-react-lightbox-2.2.7.tgz"
-  integrity sha512-v6/P2NUOjAQ9egmPYyn8BG3qs6tszVNGWC5fVaKaURqDXcwEqpoSBr4/9djWwiW6DdzxJh06KRV9Fas2HHeExg==
+yet-another-react-lightbox@^3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/yet-another-react-lightbox/-/yet-another-react-lightbox-3.5.3.tgz#a882f093f75de90ec74aac4e59c9a4aba0601978"
+  integrity sha512-MKJkBPtHLFKmZIUsLTUARfzyGpr9iqSM37eHzLY7o8eEPwZ/Hx4hEkAH46SE0GV394mkUPFS3F5Jg5A+2SHs4Q==

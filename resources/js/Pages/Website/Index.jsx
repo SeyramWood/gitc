@@ -1,14 +1,13 @@
 import { Link, useForm } from "@inertiajs/inertia-react";
 import AOS from "aos";
+import "aos/dist/aos.css";
+import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import React, { useEffect, useState } from "react";
 
 import { WebsiteLayout } from "../../components/layouts";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
-
-import "aos/dist/aos.css";
-import "keen-slider/keen-slider.min.css";
 
 const animation = { duration: 40000, easing: (t) => t };
 
@@ -201,7 +200,7 @@ const Index = () => {
                 </div>
 
                 {/* services section*/}
-                <div className="px-2 overflow-hidden  sm:px-16">
+                <div className="px-2 overflow-hidden sm:px-16">
                     <div className="pb-32 ">
                         <div
                             className="sm:h-[17rem] h-[2rem] w-full"

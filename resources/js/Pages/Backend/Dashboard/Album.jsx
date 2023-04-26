@@ -1,5 +1,10 @@
 import axios from "axios";
-import FsLightbox from "fslightbox-react";
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import "yet-another-react-lightbox/plugins/counter.css";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import "yet-another-react-lightbox/styles.css";
+
 import { Button } from "primereact/button";
 import { Calendar } from "primereact/calendar";
 import { Card } from "primereact/card";
@@ -29,6 +34,7 @@ const Album = () => {
         React.useState("add");
     const [currentAlbum, setCurrentAlbum] = React.useState();
     const [currentGallery, setCurrentGallery] = React.useState();
+    const [selectedIndex, setSelectedIndex] = React.useState(-1);
     const [allAlbumCount, setAllAlbumCount] = React.useState();
     const [allAlbum, setAllAlbum] = React.useState([]);
     const [lazyParams, setLazyParams] = React.useState({
@@ -286,10 +292,16 @@ const Album = () => {
         setNewGalleryDialog(true);
     };
     const viewGallery = (data) => {
+        // setCurrentGallery(
+        //     data.gallery.map((gallery) => `/uploads/gallery/${gallery.image}`)
+        // );
+        // setGalleryViewer((state) => !state);
         setCurrentGallery(
-            data.gallery.map((gallery) => `/uploads/gallery/${gallery.image}`)
+            data.gallery.map((gallery) => ({
+                src: `/uploads/gallery/${gallery.image}`,
+            }))
         );
-        setGalleryViewer((state) => !state);
+        setSelectedIndex(0);
     };
 
     const onGalleryUpload = (action) => {
@@ -402,6 +414,7 @@ const Album = () => {
         <>
             <Toast ref={toast} />
             <ConfirmPopup />
+
             <Dashboard page="Album">
                 <Card>
                     <DataTable
@@ -630,12 +643,17 @@ const Album = () => {
                     },
                 ]}
             />
-            <FsLightbox
-                toggler={galleryViewer}
-                sources={currentGallery}
-                onClose={() => {
+
+            <Lightbox
+                open={selectedIndex >= 0}
+                fullscreen={{ auto: false }}
+                plugins={[Fullscreen, Counter]}
+                index={selectedIndex}
+                close={() => {
+                    setSelectedIndex(-1);
                     setCurrentGallery();
                 }}
+                slides={currentGallery}
             />
         </>
     );

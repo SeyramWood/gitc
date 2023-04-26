@@ -1,6 +1,8 @@
 import { a as jsxs, F as Fragment, j as jsx } from "../ssr.mjs";
 import axios from "axios";
-import FsLightbox from "fslightbox-react";
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+/* empty css                  */import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import { Button } from "primereact/button";
 import { Calendar } from "primereact/calendar";
 import { Card } from "primereact/card";
@@ -31,12 +33,13 @@ import "primereact/badge";
 const Album = () => {
   const toast = React.useRef(null);
   const actionMenu = React.useRef(null);
-  const [galleryViewer, setGalleryViewer] = React.useState(false);
+  React.useState(false);
   const [newAlbumDialog, setNewAlbumDialog] = React.useState(false);
   const [newGalleryDialog, setNewGalleryDialog] = React.useState(false);
   const [newGalleryActionDialog, setNewGalleryActionDialog] = React.useState("add");
   const [currentAlbum, setCurrentAlbum] = React.useState();
   const [currentGallery, setCurrentGallery] = React.useState();
+  const [selectedIndex, setSelectedIndex] = React.useState(-1);
   const [allAlbumCount, setAllAlbumCount] = React.useState();
   const [allAlbum, setAllAlbum] = React.useState([]);
   const [lazyParams, setLazyParams] = React.useState({
@@ -266,9 +269,11 @@ const Album = () => {
   };
   const viewGallery = (data) => {
     setCurrentGallery(
-      data.gallery.map((gallery) => `/uploads/gallery/${gallery.image}`)
+      data.gallery.map((gallery) => ({
+        src: `/uploads/gallery/${gallery.image}`
+      }))
     );
-    setGalleryViewer((state) => !state);
+    setSelectedIndex(0);
   };
   const onPage = (event) => {
     setLazyParams(event);
@@ -604,13 +609,17 @@ const Album = () => {
       }
     ),
     /* @__PURE__ */ jsx(
-      FsLightbox,
+      Lightbox,
       {
-        toggler: galleryViewer,
-        sources: currentGallery,
-        onClose: () => {
+        open: selectedIndex >= 0,
+        fullscreen: { auto: false },
+        plugins: [Fullscreen, Counter],
+        index: selectedIndex,
+        close: () => {
+          setSelectedIndex(-1);
           setCurrentGallery();
-        }
+        },
+        slides: currentGallery
       }
     )
   ] });

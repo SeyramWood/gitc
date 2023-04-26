@@ -16,7 +16,6 @@ import "react-icons/sl";
 import "./helpers-bf0c6e44.mjs";
 import "@n8tb1t/use-scroll-position";
 import "react-icons/rx";
-const styles = "";
 const pageLayout = {
   transformSize: ({ size }) => ({
     height: size.height + 20,
