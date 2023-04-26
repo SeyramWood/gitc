@@ -1,13 +1,13 @@
-//theme
-
-// import "../css/app.css";
-// import "../css/dashboard/app.scss";
-import "./bootstrap";
-
 import { createInertiaApp } from "@inertiajs/inertia-react";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import React from "react";
 import { createRoot } from "react-dom/client";
+
+//theme
+
+import "../css/app.css";
+// import "../css/dashboard/app.scss";
+import "./bootstrap";
 
 const appName =
     window.document.getElementsByTagName("title")[0]?.innerText ||

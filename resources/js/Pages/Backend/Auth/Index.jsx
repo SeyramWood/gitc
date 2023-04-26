@@ -1,13 +1,19 @@
 import { Inertia } from "@inertiajs/inertia";
 import { Button } from "primereact/button";
-import { Card } from "primereact/card";
 import { InputText } from "primereact/inputText";
 import React from "react";
 
-import { InputWrapper } from "../../../components/common";
+import { Card, InputWrapper } from "../../../components/common";
 import useFormValidation from "../../../components/form/useFormValidation";
 
 import "../../../../css/dashboard/app.scss";
+import "primeicons/primeicons.css";
+//icons
+import "primereact/resources/primereact.min.css";
+//core css
+import "primereact/resources/themes/lara-dark-blue/theme.css";
+//theme
+import "primereact/resources/themes/lara-light-blue/theme.css";
 
 const Login = () => {
     const userForm = useFormValidation(
