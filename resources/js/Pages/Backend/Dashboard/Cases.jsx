@@ -84,7 +84,13 @@ const Cases = ({ categories }) => {
         data.append("title", caseForm.state.title);
         data.append("pdf", caseForm.state.pdf[0]);
         data.append("description", caseForm.state.description);
-        data.append("issued_date", caseForm.state.issued_date);
+        data.append(
+            "issued_date",
+            caseForm.state.issued_date
+                .toISOString()
+                .slice(0, 19)
+                .replace("T", " ")
+        );
         data.append(
             "investigation_number",
             caseForm.state.investigation_number
@@ -152,7 +158,13 @@ const Cases = ({ categories }) => {
                 : caseUpdateForm.state.pdf
         );
         data.append("description", caseUpdateForm.state.description);
-        data.append("issued_date", caseUpdateForm.state.issued_date);
+        data.append(
+            "issued_date",
+            caseUpdateForm.state.issued_date
+                .toISOString()
+                .slice(0, 19)
+                .replace("T", " ")
+        );
 
         axios
             .post(`/dashboard/cases/${currentCase.id}`, data, {

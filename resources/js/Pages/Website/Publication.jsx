@@ -1,7 +1,6 @@
 // slider
-import { useKeenSlider } from "keen-slider/react";
 // gallery
-import React, { useState } from "react";
+import React from "react";
 
 import { WebsiteLayout } from "../../components/layouts";
 
@@ -9,15 +8,9 @@ import "keen-slider/keen-slider.min.css";
 // import "../../../css/style.css";
 
 // pdf
-import { Worker } from "@react-pdf-viewer/core";
 // Import the main component
-import { SpecialZoomLevel, Viewer } from "@react-pdf-viewer/core";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import { getFilePlugin } from "@react-pdf-viewer/get-file";
-import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
 // import React, { useState } from "react";
 // modal
-import { Modal } from "react-responsive-modal";
 
 // import { WebsiteLayout } from "../../components/layouts";
 
@@ -58,79 +51,8 @@ const month = {
 };
 
 const Publication = ({ publications }) => {
-    //
-    const defaultLayoutPluginInstance = defaultLayoutPlugin();
-    const pageNavigationPluginInstance = pageNavigationPlugin();
-    // modal
-    const [open, setOpen] = useState(false);
-    const [currentFile, setCurrentFile] = useState();
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
-
-    function opneFile(filePath) {
-        setCurrentFile(filePath);
-        setOpen(true);
-    }
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
-    // pdf viewer
-    const getFilePluginInstance = getFilePlugin();
-    const { DownloadButton } = getFilePluginInstance;
-    //
-
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [loaded, setLoaded] = useState(false);
-    const [sliderRef, instanceRef] = useKeenSlider({
-        breakpoints: {
-            "(min-width: 400px)": {
-                slides: { perView: 1, spacing: 1 },
-                loop: true,
-                mode: "free-snap",
-            },
-            "(min-width: 1000px)": {
-                slides: { perView: 3, spacing: 20 },
-                loop: true,
-                mode: "free-snap",
-            },
-        },
-
-        initial: 0,
-        slideChanged(slider) {
-            setCurrentSlide(slider.track.details.rel);
-        },
-        created() {
-            setLoaded(true);
-        },
-    });
-
     return (
         <WebsiteLayout page="publication">
-            <Modal
-                key="pdf__modal"
-                classNames={{
-                    modal: "pdf__modal",
-                }}
-                open={open}
-                onClose={() => setOpen(false)}
-            >
-                <div className="sm:w-[50rem] sm:h-[60rem] w-[19rem] h-[30rem]">
-                    {open && (
-                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                            <Viewer
-                                fileUrl={currentFile}
-                                plugins={[
-                                    defaultLayoutPluginInstance,
-                                    getFilePluginInstance,
-                                    pageNavigationPluginInstance,
-                                ]}
-                                defaultScale={SpecialZoomLevel.PageFit}
-                                pageLayout={pageLayout}
-                            />
-                        </Worker>
-                    )}
-                </div>
-            </Modal>
             <div className="overflow-hidden bg-white">
                 <div className="pt-10 text-center">
                     <h2 className="sm:pb-16 pb-5 sm:text-[3rem] text-[2rem] text-center text-red-600">
@@ -144,13 +66,11 @@ const Publication = ({ publications }) => {
                         <div className="grid gap-6 sm:grid-cols-3">
                             {publications.data.map((item, index) => (
                                 <div className="" key={index}>
-                                    <div
-                                        className="cursor-pointer"
-                                        onClick={() =>
-                                            opneFile(
-                                                `/uploads/publications/pdf/${item.pdf}`
-                                            )
-                                        }
+                                    <a
+                                        href={`/uploads/publications/pdf/${item.pdf}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block"
                                     >
                                         <div className="relative">
                                             <img
@@ -188,7 +108,7 @@ const Publication = ({ publications }) => {
                                             </p>
                                             <p>{item.description}</p>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             ))}
                         </div>
@@ -200,9 +120,10 @@ const Publication = ({ publications }) => {
                                             preserveScroll
                                             href={`${link.url}`}
                                             className={`${
-                                                link.active &&
-                                                "bg-red-400 text-white "
-                                            } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                                link.active
+                                                    ? "bg-red-400 text-white"
+                                                    : "bg-gray-300"
+                                            } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white`}
                                             key={index}
                                             as="button"
                                             type="button"
@@ -218,9 +139,10 @@ const Publication = ({ publications }) => {
                                             preserveScroll
                                             href={`${link.url}`}
                                             className={`${
-                                                link.active &&
-                                                "bg-red-400 text-white "
-                                            } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                                link.active
+                                                    ? "bg-red-400 text-white"
+                                                    : "bg-gray-300"
+                                            } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white `}
                                             key={index}
                                             disabled
                                             as="button"
@@ -244,22 +166,3 @@ const Publication = ({ publications }) => {
 };
 
 export default Publication;
-// function Arrow(props) {
-//     const disabeld = props.disabled ? " arrow--disabled" : "";
-//     return (
-//         <svg
-//             onClick={props.onClick}
-//             className={`arrow ${props.left ? "arrow--left" : "arrow--right"
-//                 } ${disabeld}`}
-//             xmlns="http://www.w3.org/2000/svg"
-//             viewBox="0 0 24 24"
-//         >
-//             {props.left && (
-//                 <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-//             )}
-//             {!props.left && (
-//                 <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-//             )}
-//         </svg>
-//     );
-// }

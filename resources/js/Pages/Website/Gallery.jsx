@@ -136,9 +136,10 @@ function Gallery({ albums }) {
                                         preserveScroll
                                         href={`${link.url}`}
                                         className={`${
-                                            link.active &&
-                                            "bg-red-400 text-white "
-                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                            link.active
+                                                ? "bg-red-400 text-white"
+                                                : "bg-gray-300"
+                                        } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white`}
                                         key={index}
                                         as="button"
                                         type="button"
@@ -154,9 +155,10 @@ function Gallery({ albums }) {
                                         preserveScroll
                                         href={`${link.url}`}
                                         className={`${
-                                            link.active &&
-                                            "bg-red-400 text-white "
-                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                            link.active
+                                                ? "bg-red-400 text-white"
+                                                : "bg-gray-300"
+                                        } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white `}
                                         key={index}
                                         disabled
                                         as="button"

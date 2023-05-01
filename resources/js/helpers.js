@@ -10,7 +10,13 @@ let dateOptions = {
 
 export function formatDateTimeShort(string) {
     const date = string ? new Date(string) : undefined;
-    return date?.toLocaleDateString("en-GH", dateOptions) || "";
+    return date?.toLocaleDateString("en-US", dateOptions) || "";
+}
+
+export function formatDateShort(string) {
+    const date = string ? new Date(string) : undefined;
+    delete dateOptions.weekday;
+    return date?.toLocaleDateString("en-US", dateOptions) || "";
 }
 export function getDateTimeShort() {
     return formatDateTimeShort(new Date().toJSON());

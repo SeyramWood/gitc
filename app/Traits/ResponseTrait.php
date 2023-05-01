@@ -4,7 +4,9 @@ namespace App\Traits;
 
 use App\Models\Publication;
 use App\Models\Album;
+use App\Models\CaseCategory;
 use App\Models\Cases;
+use Illuminate\Support\Facades\DB;
 
 trait ResponseTrait
 {
@@ -12,9 +14,25 @@ trait ResponseTrait
     {
        return Publication::orderBy('created_at', 'desc')->paginate(50);
     }
-    public function getCases()
+    public function getCases($category, $filter)
     {
-       return Cases::orderBy('created_at', 'desc')->paginate(50);
+
+        if ($filter) {
+            return $category->cases()->whereYear('issued_date', $filter)->orderBy('issued_date', 'desc')->paginate(50);
+        }
+       return $category->cases()->orderBy('issued_date', 'desc')->paginate(50);
+    }
+    public function getYearOfCases($category)
+    {
+        return $category->cases()-> select(DB::raw('count(*) as count, year(issued_date) as year'))
+        ->whereRaw('issued_date > DATE_SUB(CURDATE(), INTERVAL 5 YEAR)')
+        ->groupBy('year')
+        ->orderBy('year', 'desc')
+        ->get();
+    }
+    public function getCategoryOfCases()
+    {
+        return CaseCategory::withCount("cases")->get();
     }
     public function getAlbums()
     {

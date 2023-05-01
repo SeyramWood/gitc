@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description')->nullable();
             $table->string('pdf');
-            $table->string('issued_date');
+            $table->timestamp('issued_date')->nullable();
             $table->timestamps();
         });
     }

@@ -1,15 +1,13 @@
-import React, { useState } from "react";
 import { WebsiteLayout } from "../../components/layouts";
+import { formatDateShort } from "../../helpers";
+// Import styles
+import { Link } from "@inertiajs/inertia-react";
+// pdf reader
+// Import the main component
+import React, { useState } from "react";
 // files
 // modal
-import { Modal } from "react-responsive-modal";
-// pdf reader
-import { Worker } from "@react-pdf-viewer/core";
-// Import the main component
-import { SpecialZoomLevel, Viewer } from "@react-pdf-viewer/core";
-import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
-import { getFilePlugin } from "@react-pdf-viewer/get-file";
-import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
+
 // Import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
 // Import the styles
@@ -17,12 +15,9 @@ import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 // Import styles
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
 // data
 import "react-responsive-modal/styles.css";
-// Import styles
-import { Link } from "@inertiajs/inertia-react";
-import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
-import CasesNav from "../../components/layouts/website/CasesNav";
 
 const pageLayout = {
     transformSize: ({ size }) => ({
@@ -31,57 +26,67 @@ const pageLayout = {
     }),
 };
 
-function CustomsFiles({ cases }) {
-    const defaultLayoutPluginInstance = defaultLayoutPlugin();
-    const pageNavigationPluginInstance = pageNavigationPlugin();
-    // modal
-    const [open, setOpen] = useState(false);
-    const [currentFile, setCurrentFile] = useState();
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
+function Cases({ categories, yearFilters, cases }) {
+    const [currentURL, setCurrentURL] = useState();
 
-    function opneFile(filePath) {
-        setCurrentFile(filePath);
-        setOpen(true);
-    }
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
-    // pdf viewer
-    const getFilePluginInstance = getFilePlugin();
-    const { DownloadButton } = getFilePluginInstance;
+    React.useEffect(() => {
+        const path = document.location.pathname.split("/");
+        if (!isNaN(parseInt(path[path.length - 1]))) {
+            const path = document.location.pathname.split("/");
+            path.pop();
+            setCurrentURL(path.join("/"));
+        } else {
+            setCurrentURL(path.join("/"));
+        }
+    }, []);
 
     return (
         <WebsiteLayout page="resource">
-            <Modal
-                key="pdf__modal"
-                classNames={{
-                    modal: "pdf__modal",
-                }}
-                open={open}
-                onClose={() => setOpen(false)}
-            >
-                <div className="w-[50rem] h-[60rem] mt-10">
-                    {open && (
-                        <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js">
-                            <Viewer
-                                fileUrl={currentFile}
-                                plugins={[
-                                    defaultLayoutPluginInstance,
-                                    getFilePluginInstance,
-                                    pageNavigationPluginInstance,
-                                ]}
-                                defaultScale={SpecialZoomLevel.PageFit}
-                                pageLayout={pageLayout}
-                            />
-                        </Worker>
-                    )}
-                </div>
-            </Modal>
             <div className="w-[100%]   bg-white">
                 <div className="px-10 py-16 sm:flex">
                     <div className="sm:w-[40%] sm:block hidden">
-                        <CasesNav />
+                        <div className="sm:pr-7">
+                            <h2 className="sm:text-3xl ">
+                                Legislative Instruments
+                            </h2>
+                            <div className="pb-20 sm:pl-3">
+                                {categories?.map((cat) => (
+                                    <p
+                                        key={cat.name}
+                                        className="py-3 text-red-500 duration-700 ease-in-out cursor-pointer hover:text-red-500/90 hover:scale-105 teansition"
+                                    >
+                                        <Link
+                                            href={`/cases/${cat.slug}`}
+                                            preserveScroll
+                                        >
+                                            {`${cat.name} - (${cat.cases_count})`}
+                                        </Link>
+                                    </p>
+                                ))}
+                            </div>
+                            {yearFilters.length > 0 && (
+                                <div className="px-2 text-center w-[50%] border rounded bg-green-100/20 ">
+                                    <h2 className="border-b font-">
+                                        Filter By Year
+                                    </h2>
+                                    <div className="">
+                                        {yearFilters.map((yearFilter) => (
+                                            <p
+                                                key={yearFilter.year}
+                                                className="pb-1 text-red-500 duration-700 ease-in-out border-b cursor-pointer hover:text-red-500/90 hover:scale-105 teansition"
+                                            >
+                                                <Link
+                                                    preserveScroll
+                                                    href={`${currentURL}/${yearFilter.year}`}
+                                                >
+                                                    {`${yearFilter.year} - (${yearFilter.count})`}
+                                                </Link>
+                                            </p>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                     <div className=" sm:w-[60%]">
                         <p className="pb-12">
@@ -93,17 +98,15 @@ function CustomsFiles({ cases }) {
                         </p>
 
                         <div className="border">
-                            <table className="table-auto w-[100%] ">
+                            <table className="table-fixed w-[100%] ">
                                 <thead className="text-left bg-red-100/30">
                                     <tr className="border-b">
                                         <th className="p-3 text-sm">
-                                            Investigation #
+                                            Investigation Title
                                         </th>
-                                        <th className="p-3 text-sm">Title</th>
-                                        <th className="p-3 text-sm">
-                                            Description
-                                        </th>
-                                        <th className="p-3 text-sm whitespace-nowrap">
+                                        <th className="p-3 text-sm">Inv #</th>
+                                        <th className="p-3 text-sm">Action</th>
+                                        <th className="p-3 text-sm w-[5rem]">
                                             Date Issued
                                         </th>
                                     </tr>
@@ -116,27 +119,25 @@ function CustomsFiles({ cases }) {
                                                 key={index}
                                             >
                                                 <td className="p-3">
+                                                    <a
+                                                        href={`/uploads/cases/${item.pdf}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="p-3 text-primary/60 hover:underline"
+                                                    >
+                                                        {item.title}
+                                                    </a>
+                                                </td>
+                                                <td className="p-3">
                                                     {item.investigation_number}
                                                 </td>
                                                 <td className="p-3">
-                                                    <span
-                                                        onClick={() =>
-                                                            opneFile(
-                                                                `/uploads/cases/${item.pdf}`
-                                                            )
-                                                        }
-                                                        className="p-3 cursor-pointer hover:text-primary/60"
-                                                    >
-                                                        {item.title}
-                                                    </span>
-                                                </td>
-                                                <td className="p-3 w-[20rem]">
                                                     {item.description}
                                                 </td>
-                                                <td className="p-3 w-[5rem]">
-                                                    {new Date(
+                                                <td className="p-3">
+                                                    {formatDateShort(
                                                         item.issued_date
-                                                    ).getFullYear()}
+                                                    )}
                                                 </td>
                                             </tr>
                                         ))
@@ -158,9 +159,10 @@ function CustomsFiles({ cases }) {
                                             preserveScroll
                                             href={`${link.url}`}
                                             className={`${
-                                            link.active
-                                                && "bg-red-400 text-white "
-                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                                link.active
+                                                    ? "bg-red-400 text-white"
+                                                    : "bg-gray-300"
+                                            } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white`}
                                             key={index}
                                             as="button"
                                             type="button"
@@ -176,9 +178,10 @@ function CustomsFiles({ cases }) {
                                             preserveScroll
                                             href={`${link.url}`}
                                             className={`${
-                                            link.active
-                                                && "bg-red-400 text-white "
-                                        } px-4 py-2 text-gray-500 bg-gray-300 rounded-md hover:bg-red-400 hover:text-white `}
+                                                link.active
+                                                    ? "bg-red-400 text-white"
+                                                    : "bg-gray-300"
+                                            } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white `}
                                             key={index}
                                             disabled
                                             as="button"
@@ -201,4 +204,4 @@ function CustomsFiles({ cases }) {
     );
 }
 
-export default CustomsFiles;
+export default Cases;

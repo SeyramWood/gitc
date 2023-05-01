@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CaseCategory;
 use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -97,10 +98,12 @@ class PageController extends Controller
     }
 
     // resources
-    public function customsFiles()
+    public function customsFiles(CaseCategory $caseCategory, $filter = null)
     {
-        return Inertia::render('Website/CustomsFiles', [
-            "cases" => $this->getCases()
+        return Inertia::render('Website/Cases', [
+            "cases" => $this->getCases($caseCategory, $filter),
+            "categories" => $this->getCategoryOfCases(),
+            "yearFilters" => $this->getYearOfCases($caseCategory),
         ]);
     }
     public function disputesFiles()

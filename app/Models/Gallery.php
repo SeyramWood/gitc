@@ -10,8 +10,8 @@ class Gallery extends Model
     use HasFactory;
     protected $guarded =[];
 
-    public function gallery()
+    public function album()
     {
-        return $this->belongsTo(Gallery::class);
+        return $this->belongsTo(Album::class);
     }
 }

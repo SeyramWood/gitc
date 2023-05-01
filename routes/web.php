@@ -51,7 +51,7 @@ Route::get('/faq', [PageController::class, 'Faq']);
 Route::get('/resources', [PageController::class, 'resources']);
 Route::get('/gallery', [PageController::class, 'gallery']);
 // resources
-Route::get('/customscases', [PageController::class, 'customsFiles']);
+Route::get('/cases/{caseCategory:slug}/{filter:?}', [PageController::class, 'customsFiles']);
 Route::get('/anti-dumpingcases', [PageController::class, 'measuresFiles']);
 Route::get('/subsidycases', [PageController::class, 'subsidyFiles']);
 Route::get('/safeguardscases', [PageController::class, 'disputesFiles']);

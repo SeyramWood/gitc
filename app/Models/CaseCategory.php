@@ -9,4 +9,9 @@ class CaseCategory extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function cases()
+    {
+        return $this->hasMany(Cases::class);
+    }
 }

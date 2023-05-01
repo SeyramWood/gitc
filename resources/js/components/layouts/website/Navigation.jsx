@@ -168,7 +168,7 @@ const Navigation = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/customscases">Cases</Link>
+                                    <Link href="/cases/anti-dumping">Cases</Link>
                                 </li>
                             </ul>
                         </li>
@@ -274,7 +274,7 @@ const Navigation = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/customscases">Cases</Link>
+                                        <Link href="/cases/anti-dumping">Cases</Link>
                                     </li>
                                 </ul>
                             </div>
