@@ -129,7 +129,6 @@ const Index = () => {
                                     style={{ borderRadius: "100%" }}
                                 >
                                     <img
-                                        // src="images/homePage/objectivity.png"
                                         src="images/homePage/professionalism.png"
                                         alt="professional"
                                         className="object-contain -translate-x-1 -translate-y-5"
@@ -155,7 +154,6 @@ const Index = () => {
                                     style={{ borderRadius: "100%" }}
                                 >
                                     <img
-                                        // src="images/homePage/objectivity.png"
                                         src="images/homePage/integrity.png"
                                         alt="Integrity"
                                         className="object-contain -translate-x-1 -translate-y-5 "
@@ -178,7 +176,7 @@ const Index = () => {
                                     className="sm:bg-black/5"
                                     style={{ borderRadius: "100%" }}
                                 >
-                                    {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
+
                                     <img
                                         src="images/homePage/search.png"
                                         alt="Integrity"
@@ -394,14 +392,6 @@ const Index = () => {
                                         backgroundSize: "cover",
                                     }}
                                 >
-                                    {/* <div className="sm:h-[35rem] bg-red-700" >
-                                     */}
-                                    {/* <img
-                                        className="sm:hidden opacity-90"
-                                        src="images/homePage/storyOne.jpg"
-                                        alt=""
-                                        style={{}}
-                                    />  */}
                                 </div>
                                 <div className="bg-white ">
                                     <div
@@ -490,12 +480,6 @@ const Index = () => {
                                         backgroundRepeat: "round",
                                     }}
                                 >
-                                    {/* <div className="sm:h-[35rem] ">
-                                        <img
-                                            className="sm:w-[80rem] sm:h-[35rem]"
-                                            src="images/homePage/storyTwo.jpg"
-                                            alt=""
-                                        /> */}
                                 </div>
                             </div>
                         </div>
@@ -537,37 +521,7 @@ const Index = () => {
                                         />
                                     </div>
                                 </div>
-                                {/* <div className="keen-slider__slide number-slide5">5</div>
-                            <div className="keen-slider__slide number-slide6">6</div> */}
                             </div>
-                            {/* <div className="">
-                            <img
-                                src="images/homePage/sponsorTwo.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div>
-                        <div className="">
-                            <img
-                                src="images/homePage/sponsorThree.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div>
-                        <div className="">
-                            <img
-                                src="images/homePage/sponsorFour.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div>
-                        <div className="">
-                            <img
-                                src="images/homePage/sponsorFive.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div> */}
                         </div>
                     </div>
                 </div>
@@ -581,7 +535,7 @@ const Index = () => {
                     >
                         <div className="justify-center sm:flex  sm:w-[100%]">
                             <div className="sm:w-[50%] ">
-                                {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
+                               
                                 <img
                                     className=""
                                     src="/images/homePage/Min.jpg"
@@ -606,10 +560,10 @@ const Index = () => {
                                         Read More
                                     </h2>
                                     <div className="pl-5 ">
-                                        <h1 className="text-2xl sm:pt-8 text-primary">
+                                        <h1 className="text-2xl sm:pt-3 text-primary">
                                             Frank Agyekum
                                         </h1>
-                                        <p className="py-1 font-light text-primary">
+                                        <p className="font-light text-primary">
                                             Executive Secretary
                                         </p>
                                     </div>

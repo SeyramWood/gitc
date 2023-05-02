@@ -88,8 +88,9 @@ function ServiceDumping() {
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
                                         {" "}
+                                        <a href="\pdfFiles\resourcesPdfs\GITC_ANTI_DUMPING_REGULATIONS,2019_PASSED.pdf" target="_blank">
                                         GITC ( Anti-Dumping ) Regulations, 2019
-                                        ( L.I 2380 ){" "}
+                                        ( L.I 2380 )</a>{" "}
                                     </span>
                                 </div>
                                 <div className="flex p-5 my-2 mb-5 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">

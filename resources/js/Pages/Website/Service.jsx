@@ -75,14 +75,16 @@ function Service() {
                                 <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
+                                        <a href="\pdfFiles\resourcesPdfs\CUSTOMS_VALUATION_AND_DISPUTE_SETTLEMENT_REGULATIONS_2019_L.I_2382.pdf" target="_blank">
                                         {" "}
-                                        GITC ( Anti-Dumping ) Regulations, 2019
-                                        ( L.I 2380 ){" "}
+                                        GITC ( ANTI - DUMPING ) Regulations, 2019
+                                        ( L.I 2380 ){" "}</a>
                                     </span>
                                 </div>
                                 <div className="my-2 shadow-lg p-5 mb-5 rounded flex cursor-pointer transition duration-500 ease-in-out hover:scale-110 ">
                                     <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700" />{" "}
                                     <span className="pt-6">
+                                        
                                         {" "}
                                         GITC Questionnaire ( Editable )
                                     </span>
