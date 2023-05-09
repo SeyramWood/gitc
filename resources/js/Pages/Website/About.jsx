@@ -15,10 +15,10 @@ const About = () => {
                 </div>
                 <div className="sm:h-[15rem] sm:block hidden ">
                     <div className=" " >
-                        <img src="images/homePage/headings/GOVERNING BOARD.jpg" className=" object-contain mx-auto" alt="" />
-                        <div className="-translate-y-[13rem]">
+                        <img src="images/homePage/headings/GOVERNING BOARD.jpg" className=" object-contain mx-auto w-[80%]" alt="" />
+                        <div className="-translate-y-[12rem]">
                             <div className="text-center mb-7">
-                                <h1 className="text-primary mb-0 pb-0 text-[4rem] ">
+                                <h1 className="text-primary mb-0 pb-0 text-[4.3rem] ">
                                     Governing Board
                                 </h1>
                             </div>

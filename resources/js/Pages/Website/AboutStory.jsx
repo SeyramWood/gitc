@@ -65,8 +65,11 @@ const AboutMessage = () => {
                 </div>
 
                 {/* values */}
-                <div className="mt-32" style={{ backgroundImage: "url('images/bg.jpg')",objectFit:"cover" }}>
-                    <div className="sm:p-10 p-4 md:flex justify-center bg-white/70 ">
+                <div className="mt-32 bg-slate-300/30" >
+                <h6 className="text-center text-[3.4rem]  text-black/50">
+                            Core Values
+                        </h6>
+                    <div className="px-7 pb-2 md:flex justify-center ">
                         <div className="flex p-2 my-5">
                             <div className="p-3 w-[30%]">
                                 <div className="sm:bg-black/5" style={{ borderRadius: "100%" }}>
@@ -149,7 +152,7 @@ const AboutMessage = () => {
                                 </p>
                             </div>
                         </div>
-                       
+
                     </div>
                 </div>
 
@@ -211,12 +214,7 @@ const AboutMessage = () => {
                                 />
                             </div>
                             <div className="sm:w-[50%]">
-                                <div
-                                    className="bg-primary text-white px-16 py-7 sm:h-[35rem]"
-                                    // data-aos="fade-up"
-                                    // data-aos-duration="2000"
-
-                                >
+                                <div className="bg-primary sm:pt-28 text-white px-16 py-7 sm:h-[35rem]"  >
                                     <h4 className="text-left text-white font-bold">
                                         Mission
                                     </h4>
@@ -231,12 +229,12 @@ const AboutMessage = () => {
                                     </p>
 
                                     <h4 className="text-left font-bold text-white pt-6">
-                                        Vission
+                                        Vision
                                     </h4>
                                     <p className=" text-[1.1rem] text-white pb-5 sm:pb-0">
                                         To become world-class fair trade regulatory agency.
                                     </p>
-                                  
+
                                 </div>
                             </div>
                         </div>

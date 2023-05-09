@@ -10,22 +10,14 @@ function Service() {
                     <ServicesNav />
                     <div className="sm:w-[70%]">
                         <div className="text-black px-6 pb-16">
-                            <h2 className="text-primary sm:text-[4rem] pb-0 ">
-                                Trade Remedies
+                            <h2 className="text-primary sm:text-[3.5rem] pb-0 ">
+                            Subsidy &amp; Countervailing Duties
                             </h2>
-                            <p className="text-xl">
-                                {" "}
-                                Subsidy & Countervailing Duties; Anti-Dumping
-                                Duties and Safeguard Measures
-                            </p>
-
-                            <h2 className="text-red-500 text-4xl font-bold mt-10">
-                                Subsidy & Countervailing Duties
-                            </h2>
-                            <div className="sm:pr-6 my-10 ">
+                            
+                            <div className="sm:pr-6 my-10  ">
                                 <img
                                     src="images/subsidy.png"
-                                    className="overflow-hidden w-full sm:h-[28rem] "
+                                    className="overflow-hidden w-full sm:h-[28rem] shadow-xl"
                                     alt=""
                                 />
                             </div>
@@ -75,18 +67,13 @@ function Service() {
                                 <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
+                                        <a href="\pdfFiles\resourcesPdfs\CUSTOMS_VALUATION_AND_DISPUTE_SETTLEMENT_REGULATIONS_2019_L.I_2382.pdf" target="_blank">
                                         {" "}
-                                        GITC ( Anti-Dumping ) Regulations, 2019
-                                        ( L.I 2380 ){" "}
+                                        GITC ( ANTI - DUMPING ) Regulations, 2019
+                                        ( L.I 2380 ){" "}</a>
                                     </span>
                                 </div>
-                                <div className="my-2 shadow-lg p-5 mb-5 rounded flex cursor-pointer transition duration-500 ease-in-out hover:scale-110 ">
-                                    <AiOutlineFileWord className="w-[4rem] h-[4rem] text-blue-700" />{" "}
-                                    <span className="pt-6">
-                                        {" "}
-                                        GITC Questionnaire ( Editable )
-                                    </span>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

@@ -55,16 +55,16 @@ function Resources() {
     return (
         <WebsiteLayout page="resource">
             <div className="bg-white py-16  overflow-hidden">
-                <div className="grid sm:grid-cols-5 gap-5 mx-auto p-16">
+                <div className="grid w-[70%] sm:grid-cols-2 gap-16 mx-auto sm:px-16">
                     {data.map((item, index) => (
                         <div
-                            className="border sm:my-0 my-3 cursor-pointer hover:bg-red-100/30"
+                            className="border shadow-xl sm:my-0 my-3 h-[26rem] cursor-pointer hover:bg-red-100/30 transition duration-500 ease-in-out hover:scale-110"
                             key={index}
                             onClick={() => opneFile(item.pdf)}
                         >
                             <div className="mx-auto ">
-                                <AiOutlineFilePdf className="text-[10rem] w-[100%] text-red-700 " />
-                                <p className="lowercase text-center px-5 ">
+                                <AiOutlineFilePdf className="text-[20rem] w-[100%] text-center text-red-700 " />
+                                <p className="lowercase text-center px-3 ">
                                     {item.name}
                                 </p>
                             </div>

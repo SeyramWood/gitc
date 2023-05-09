@@ -78,8 +78,8 @@ const Contact = () => {
 
                 {/* Form */}
                 <div className="px-5 sm:px-32 sm:py-0 py-14">
-                    <div className="pb-6 text-center">
-                        <HeadingPrimary>Contact Us</HeadingPrimary>
+                    <div className="pb-6 sm:pt-14 text-center">
+                        <HeadingPrimary>Leave A Message</HeadingPrimary>
                     </div>
                     <div className="mx-2 sm:pr-2">
                         <form action="" className="justify-center sm:flex ">

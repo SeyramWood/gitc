@@ -12,16 +12,15 @@ import ButtonOutline from "../../components/layouts/website/ButtonOutline";
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
-    const { data, setData, post, progress, processing, reset, errors } =
-        useForm({
-            first_name: "",
-            last_name: "",
-            email: "",
-            phone: "",
-            subject: "",
-            message: "",
-            industry: "",
-        });
+    const { data, setData, post, progress, processing, reset, errors } = useForm({
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        industry: "",
+    });
 
     function submit(e) {
         e.preventDefault();
@@ -93,107 +92,104 @@ const Index = () => {
             <div className="text-lg bg-white ">
                 {/* values section */}
                 <div className="px-2 mb-32 sm:py-10 bg-faded ">
-                    <div
-                        className="justify-center w-[100%] gap-3 pb-4 md:flex"
-                        data-aos="fade-up"
-                        data-aos-duration="2000"
-                    >
-                        <div className="flex p-2 my-5 ">
-                            <div className="p-3 w-[30%]">
-                                <div
-                                    className="sm:bg-black/5"
-                                    style={{ borderRadius: "100%" }}
-                                >
-                                    <img
-                                        src="images/homePage/objectivity.png"
-                                        alt="Objectivity"
-                                        className="object-contain -translate-x-1 -translate-y-5"
-                                    />
+                    <div className="" data-aos="fade-up" data-aos-duration="2000">
+                        <h1 className="text-center text-[3rem] sm:text-[5rem] pt-8 sm:pb-7 pb-4 text-grey/40">
+                            Our Values
+                        </h1>
+                        <div className="justify-center w-[100%] gap-3 pb-4 md:flex">
+                            <div className="flex p-2 my-5 ">
+                                <div className="p-3 w-[30%]">
+                                    <div
+                                        className="sm:bg-black/5"
+                                        style={{ borderRadius: "100%" }}
+                                    >
+                                        <img
+                                            src="images/homePage/objectivity.png"
+                                            alt="Objectivity"
+                                            className="object-contain -translate-x-1 -translate-y-5"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="w-[70%] sm:pl-2">
+                                    <h2 className="">Objectivity</h2>
+                                    <p className="">
+                                        To ensure equality and fairness in the application of
+                                        measures affecting international trade and the use of world
+                                        trade measures.
+                                    </p>
                                 </div>
                             </div>
-                            <div className="w-[70%] sm:pl-2">
-                                <h2 className="">Objectivity</h2>
-                                <p className="">
-                                    To ensure equality and fairness in the
-                                    application of measures affecting
-                                    international trade and the use of world
-                                    trade measures.
-                                </p>
-                            </div>
-                        </div>
 
-                        <div className="flex p-2 my-5 ">
-                            <div className="p-3 w-[30%] ">
-                                <div
-                                    className="sm:bg-black/5"
-                                    style={{ borderRadius: "100%" }}
-                                >
-                                    <img
-                                        // src="images/homePage/objectivity.png"
-                                        src="images/homePage/professionalism.png"
-                                        alt="professional"
-                                        className="object-contain -translate-x-1 -translate-y-5"
-                                    />
+                            <div className="flex p-2 my-5 ">
+                                <div className="p-3 w-[30%] ">
+                                    <div
+                                        className="sm:bg-black/5"
+                                        style={{ borderRadius: "100%" }}
+                                    >
+                                        <img
+                                            // src="images/homePage/objectivity.png"
+                                            src="images/homePage/professionalism.png"
+                                            alt="professional"
+                                            className="object-contain -translate-x-1 -translate-y-5"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="w-[70%] sm:pl-2">
+                                    <h2 className="">Professionalism</h2>
+
+                                    <p className="">
+                                        To ensure a high level of competence and efficiency in
+                                        applying international trade rules and regulations as under
+                                        the World Trade Organization provisions.
+                                    </p>
                                 </div>
                             </div>
-                            <div className="w-[70%] sm:pl-2">
-                                <h2 className="">Professionalism</h2>
 
-                                <p className="">
-                                    To ensure a high level of competence and
-                                    efficiency in applying international trade
-                                    rules and regulations as under the World
-                                    Trade Organization provisions.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="flex p-2 my-5 ">
-                            <div className="p-3 w-[30%] sm:pl-1">
-                                <div
-                                    className="sm:bg-black/5"
-                                    style={{ borderRadius: "100%" }}
-                                >
-                                    <img
-                                        // src="images/homePage/objectivity.png"
-                                        src="images/homePage/integrity.png"
-                                        alt="Integrity"
-                                        className="object-contain -translate-x-1 -translate-y-5 "
-                                    />
+                            <div className="flex p-2 my-5 ">
+                                <div className="p-3 w-[30%] sm:pl-1">
+                                    <div
+                                        className="sm:bg-black/5"
+                                        style={{ borderRadius: "100%" }}
+                                    >
+                                        <img
+                                            // src="images/homePage/objectivity.png"
+                                            src="images/homePage/integrity.png"
+                                            alt="Integrity"
+                                            className="object-contain -translate-x-1 -translate-y-5 "
+                                        />
+                                    </div>
+                                </div>
+                                <div className="w-[70%] ">
+                                    <h2 className="">Integrity</h2>
+                                    <p className="">
+                                        To ensure absolute neutrality and consistency in the
+                                        execution of the mandate of the Commission.
+                                    </p>
                                 </div>
                             </div>
-                            <div className="w-[70%] ">
-                                <h2 className="">Integrity</h2>
-                                <p className="">
-                                    To ensure absolute neutrality and
-                                    consistency in the execution of the mandate
-                                    of the Commission.
-                                </p>
-                            </div>
-                        </div>
 
-                        <div className="flex p-2 my-5 ">
-                            <div className="p-3 w-[30%] ">
-                                <div
-                                    className="sm:bg-black/5"
-                                    style={{ borderRadius: "100%" }}
-                                >
-                                    {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
-                                    <img
-                                        src="images/homePage/search.png"
-                                        alt="Integrity"
-                                        className="object-contain -translate-x-1 -translate-y-5 "
-                                    />
+                            <div className="flex p-2 my-5 ">
+                                <div className="p-3 w-[30%] ">
+                                    <div
+                                        className="sm:bg-black/5"
+                                        style={{ borderRadius: "100%" }}
+                                    >
+                                        {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
+                                        <img
+                                            src="images/homePage/search.png"
+                                            alt="Integrity"
+                                            className="object-contain -translate-x-1 -translate-y-5 "
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="w-[70%] ">
-                                <h2 className="">Transparency</h2>
-                                <p>
-                                    To ensure that the commission operates on an
-                                    open and fair terrain by providing a level
-                                    playing field in its dealings with all
-                                    parties.
-                                </p>
+                                <div className="w-[70%] ">
+                                    <h2 className="">Transparency</h2>
+                                    <p>
+                                        To ensure that the Commission operates an open and fair
+                                        terrain by providing a level playing field in its dealings
+                                        with all parties.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -203,10 +199,9 @@ const Index = () => {
                 <div className="px-2 overflow-hidden sm:px-16">
                     <div className="pb-32 ">
                         <div
-                            className="sm:h-[17rem] h-[2rem] w-full"
+                            className="sm:h-[17rem] h-[2rem] w-full "
                             style={{
-                                backgroundImage:
-                                    "url('images/homePage/headings/SERVICES.jpg')",
+                                backgroundImage: "url('images/homePage/headings/SERVICES.jpg')",
                                 backgroundRepeat: "no-repeat",
                                 backgroundPositionX: "center",
                                 backgroundAttachment: "fixed",
@@ -225,10 +220,7 @@ const Index = () => {
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
-                                            <Link
-                                                href="/services"
-                                                className="text-white"
-                                            >
+                                            <Link href="/services" className="text-white">
                                                 View More
                                             </Link>
                                         </div>
@@ -242,53 +234,12 @@ const Index = () => {
                                 <div className="my-2 ">
                                     <h2 className="py-5">Trade Remedies</h2>
                                     <p className="mb-3">
-                                        To ensure equality and fairness in the
-                                        application of measures affecting
-                                        international trade and the use of world
-                                        trade regulations.
+                                        To provide actions that ensure domestic producers /
+                                        industries are protected from dumping, subsidization, and
+                                        influx of imported products.
                                     </p>
                                     <Link
                                         href="/services"
-                                        className="text-primary hover:text-red-300"
-                                    >
-                                        Read More . . .
-                                    </Link>
-                                </div>
-                            </div>
-                            <div
-                                className="sm:w-[25%] "
-                                data-aos="fade-up"
-                                data-aos-anchor-placement="center-bottom"
-                                data-aos-duration="1000"
-                            >
-                                <div className="h-[45%] relative">
-                                    <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
-                                        <div className="text-center translate-y-[6rem]">
-                                            <Link
-                                                href="/service/dispute"
-                                                className="text-white"
-                                            >
-                                                View More
-                                            </Link>
-                                        </div>
-                                    </div>
-                                    <img
-                                        src="images/homePage/serviceTwo.jpg"
-                                        className="w-full object-cover h-[15rem] "
-                                    />
-                                </div>
-                                <div className="my-2 ">
-                                    <h2 className="py-5 ">
-                                        Dispute Settlement
-                                    </h2>
-                                    <p className="mb-3">
-                                        Providing actions to resolve issues
-                                        arising out of a member-state violating
-                                        the rules and regulationso f the World
-                                        Trade Organization.
-                                    </p>
-                                    <Link
-                                        href="/service/dispute"
                                         className="text-primary hover:text-red-300"
                                     >
                                         Read More . . .
@@ -304,10 +255,7 @@ const Index = () => {
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
-                                            <Link
-                                                href="/service/tariff"
-                                                className="text-white"
-                                            >
+                                            <Link href="/service/tariff" className="text-white">
                                                 View More
                                             </Link>
                                         </div>
@@ -320,11 +268,10 @@ const Index = () => {
                                 <div className="my-2 ">
                                     <h2 className="py-5">Tarrif Review</h2>
                                     <p className="mb-3">
-                                        Providing a review of customs duty that
-                                        affects the production and
-                                        competitiveness of goods in relation to
-                                        the domestic producer or domestic
-                                        industry
+                                        To provide a domestic manufacturing/industry review of
+                                        customs duty that adversely affects the production and
+                                        competitiveness of the local product in relation to imported
+                                        goods.
                                     </p>
                                     <Link
                                         href="/service/tariff"
@@ -338,15 +285,47 @@ const Index = () => {
                                 className="sm:w-[25%] "
                                 data-aos="fade-up"
                                 data-aos-anchor-placement="center-bottom"
+                                data-aos-duration="1000"
+                            >
+                                <div className="h-[45%] relative">
+                                    <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
+                                        <div className="text-center translate-y-[6rem]">
+                                            <Link href="/service/dispute" className="text-white">
+                                                View More
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <img
+                                        src="images/homePage/serviceTwo.jpg"
+                                        className="w-full object-cover h-[15rem] "
+                                    />
+                                </div>
+                                <div className="my-2 ">
+                                    <h2 className="py-5 ">Dispute Settlement</h2>
+                                    <p className="mb-3">
+                                        To resolve disputes between importers and the Customs
+                                        Division of the Ghana Revenue Authority in respect of the
+                                        classification and valuation of products that are imported.
+                                    </p>
+                                    <Link
+                                        href="/service/dispute"
+                                        className="text-primary hover:text-red-300"
+                                    >
+                                        Read More . . .
+                                    </Link>
+                                </div>
+                            </div>
+
+                            <div
+                                className="sm:w-[25%] "
+                                data-aos="fade-up"
+                                data-aos-anchor-placement="center-bottom"
                                 data-aos-duration="3000"
                             >
                                 <div className="h-[45%] relative">
                                     <div className="absolute opacity-0 transition duration-700 ease-in-out hover:opacity-100 hover:bg-black/70 h-[15rem] w-[100%] cursor-pointer">
                                         <div className="text-center translate-y-[6rem]">
-                                            <Link
-                                                href="/service/research"
-                                                className="text-white"
-                                            >
+                                            <Link href="/service/research" className="text-white">
                                                 View More
                                             </Link>
                                         </div>
@@ -359,11 +338,9 @@ const Index = () => {
                                 <div className="my-2 ">
                                     <h2 className="py-4">Research</h2>
                                     <p className="mb-3">
-                                        The Commission is to study, identify,
-                                        and recommend to the Minister of Trade
-                                        and Industry tariff levels for specific
-                                        sectors of the economy with due regard
-                                        to the effective rate of protection.
+                                        To undertake studies on policies relating to trade and
+                                        industry and recommend findings to the Minister for Trade
+                                        and Industry.
                                     </p>
                                     <Link
                                         href="/service/research"
@@ -381,21 +358,20 @@ const Index = () => {
                 </div>
 
                 {/* story section*/}
-                <div className="overflow-hidden sm:px-20 ">
+                <div className="overflow-hidden sm:px-16 ">
                     <div className="">
                         <div className="">
                             <div className="justify-center block bg-black sm:flex">
                                 <div
-                                    className="sm:w-[80rem] sm:h-[32rem] h-52 opacity-60"
+                                    className="sm:w-[50%]  opacity-60"
                                     style={{
-                                        backgroundImage:
-                                            "url('images/homePage/storyOne.jpg')",
+                                        backgroundImage: "url('images/homePage/storyOne.jpg')",
                                         backgroundAttachment: "fixed",
                                         backgroundSize: "cover",
                                     }}
                                 >
                                     {/* <div className="sm:h-[35rem] bg-red-700" >
-                                     */}
+                   */}
                                     {/* <img
                                         className="sm:hidden opacity-90"
                                         src="images/homePage/storyOne.jpg"
@@ -403,9 +379,9 @@ const Index = () => {
                                         style={{}}
                                     />  */}
                                 </div>
-                                <div className="bg-white ">
+                                <div className="bg-white sm:w-[50%] ">
                                     <div
-                                        className="container px-4 pt-6 sm:pt-12 sm:px-20"
+                                        className="container  px-4 pt-6 sm:pt-20 sm:px-20"
                                         data-aos="fade-left"
                                         data-aos-duration="2000"
                                     >
@@ -413,21 +389,16 @@ const Index = () => {
                                             DID YOU KNOW THAT
                                         </p>
                                         <h2 className="font-bold text-red-600 sm:text-left sm:text-3xl">
-                                            GITC is among seven trade remedy
-                                            institutions and investigating
-                                            authorities in Africa.
+                                            GITC is among seven trade remedy institutions and
+                                            investigating authorities in Africa.
                                         </h2>
                                         <p className="mb-5 sm:text-left">
-                                            These other African countries are:
-                                            Egypt, South Africa, Morocco,
-                                            Tunisia, Mauritius, and Madagascar.
-                                            These other African countries are:
-                                            Egypt,South Africa, Morocco,
-                                            Tunisia, Mauritius, and Madagascar.
+                                            These other African countries are: Egypt, South Africa,
+                                            Morocco, Tunisia, Mauritius, and Madagascar.
                                         </p>
-                                        <div className="px-4">
+                                        <div className="pb-4">
                                             <Link href="/story">
-                                                <ButtonOutline className="sm:w-[14rem] bg-primary my-12 border-primary/40 text-white hover:bg-red-400/80 hover:text-white">
+                                                <ButtonOutline className="sm:w-[14rem] bg-primary my-14 border-primary/40 text-white hover:bg-red-400/80 hover:text-white">
                                                     Read Our Story
                                                 </ButtonOutline>
                                             </Link>
@@ -436,66 +407,51 @@ const Index = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col-reverse justify-center bg-black sm:flex sm:flex-row ">
-                                <div className="text-white bg-red-700">
+                                <div className="text-white sm:w-[50%] bg-red-700">
                                     <div
-                                        className="container px-4 pt-4 sm:px-20 "
+                                        className="container px-4 py-14 sm:px-16"
                                         data-aos="fade-right"
                                         data-aos-duration="2000"
                                     >
-                                        <h2 className="text-[3rem] text-white sm:pt-10 pb-6 font-bold">
-                                            We ensure:
+                                        <h2 className=" my-6 font-bold text-white sm:text-3xl">
+                                            The bane of development in developing countries as against
+                                            developed countries is the lack of industrialization in
+                                            the former. The inability of developing counties ...
                                         </h2>
-                                        <ul className="sm:text-[1.1rem] list-disc px-4 sm:pl-4 ">
-                                            <li className="py-4">
-                                                Ghana’s compliance with
-                                                international trade rules and
-                                                regulations;
-                                            </li>
-                                            <li className="py-3">
-                                                Fairness, efficiency,
-                                                transparency and objectivity in
-                                                the application of measures
-                                                affecting international trade
-                                                rules and the use of world trade
-                                                regulations;
-                                            </li>
-                                            <li className="py-3">
-                                                Fair competition for persons
-                                                engaged in domestic production
-                                                and international trade.
-                                            </li>
-                                            <li className="pt-3">
-                                                Protection of the domestic
-                                                market from the impact of unfair
-                                                trade practices in the course of
-                                                international trade.
-                                            </li>
-                                        </ul>
 
                                         <Link href="/story">
-                                            <ButtonOutline className="sm:w-[14rem] my-12 bg-white text-primary border-white/40 hover:bg-red-100/40 hover:text-white ">
-                                                Read Our Story
+                                            <ButtonOutline className="sm:w-[14rem] my-6 bg-white text-primary border-white/40 hover:bg-red-100/40 hover:text-white ">
+                                                Read Our Message
                                             </ButtonOutline>
                                         </Link>
+
+                                        <div className="">
+                                            <h1 className="text-2xl sm:pt-1 text-white">
+                                                Frank Agyekum
+                                            </h1>
+                                            <p className="font-light text-white">
+                                                Executive Secretary
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div
+                                {/* <div
                                     className="sm:w-[80rem] sm:h-[40rem] h-52  opacity-60"
                                     style={{
                                         backgroundImage:
-                                            "url('images/homePage/storyTwo.jpg')",
+                                            "url('/images/homePage/Min.jpg')",
                                         backgroundAttachment: "fixed",
                                         objectFit: "fill",
                                         backgroundRepeat: "round",
                                     }}
-                                >
-                                    {/* <div className="sm:h-[35rem] ">
-                                        <img
-                                            className="sm:w-[80rem] sm:h-[35rem]"
-                                            src="images/homePage/storyTwo.jpg"
-                                            alt=""
-                                        /> */}
+                                > */}
+                                <div className="sm:w-[50%]">
+                                    <img
+                                        className="sm:h-[100%] "
+                                        src="/images/homePage/Min.jpg"
+                                        alt=""
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -573,7 +529,7 @@ const Index = () => {
                 </div>
 
                 {/* Minister */}
-                <div className="pb-24 ">
+                {/* <div className="pb-24 ">
                     <div
                         className="block shadow-lg sm:mx-24"
                         data-aos="fade-up"
@@ -581,7 +537,6 @@ const Index = () => {
                     >
                         <div className="justify-center sm:flex  sm:w-[100%]">
                             <div className="sm:w-[50%] ">
-                                {/* <HeadingPrimary>	&quot;</HeadingPrimary> */}
                                 <img
                                     className=""
                                     src="/images/homePage/Min.jpg"
@@ -606,7 +561,7 @@ const Index = () => {
                                         Read More
                                     </h2>
                                     <div className="pl-5 ">
-                                        <h1 className="text-2xl sm:pt-8 text-primary">
+                                        <h1 className="text-2xl sm:pt-3 text-primary">
                                             Frank Agyekum
                                         </h1>
                                         <p className="py-1 font-light text-primary">
@@ -617,133 +572,30 @@ const Index = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* contact section*/}
-                <div className="w-full px-2 text-center md:flex">
-                    <div className="md:w-[50%] px-5 ">
-                        <div className="sm:px-16">
-                            <div className="pt-10 mx-auto ">
-                                <h4 className="font-bold text-red-600 custom ">
-                                    Connect with us
-                                </h4>
-                                <p className="text-[1.3rem] pt-8">
-                                    Please fill out the form and press the
-                                    submit button. We will get back to you with
-                                    1-2 business days.
-                                </p>
+                <div className="w-full px-2 justify-content-center text-center">
+                    <div className="flex pb-4 bg-grey/20">
+                        <div className="mx-auto px-3  py-20 ">
+                            <div className="bg-white rounded shadow-xl">
+                                <div className="p-10">
+                                    <p className="sm:text-[3rem] text-[1.8rem]">Join our newsletters</p>
+                                    <p className="pt-5">Subscribe to get access to more news and updates</p>
+                                </div>
+
+                                <div className="pb-16">
+                                    <form action="" className="sm:w-[40rem]">
+                                        <div className=" ">
+                                            <input type="email" className="rounded w-[60%]  mr-3" placeholder="Enter Your Email" />
+
+                                            <button className="p-2 px-3 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white">Subscribe</button>
+                                        </div>
+
+                                    </form>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="md:w-[50%]  ">
-                        <div className="">
-                            <form onSubmit={submit} className="px-3">
-                                <div className="grid grid-cols-2">
-                                    {/* <div className=""> */}
-                                    <input
-                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="First Name *"
-                                        required="required"
-                                        type="text"
-                                        value={data.first_name}
-                                        onChange={(e) =>
-                                            setData(
-                                                "first_name",
-                                                e.target.value
-                                            )
-                                        }
-                                    />
-                                    <input
-                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Last Name *"
-                                        required="required"
-                                        type="text"
-                                        value={data.last_name}
-                                        onChange={(e) =>
-                                            setData("last_name", e.target.value)
-                                        }
-                                    />
-                                    <input
-                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Email *"
-                                        required="required"
-                                        type="Email"
-                                        value={data.email}
-                                        onChange={(e) =>
-                                            setData("email", e.target.value)
-                                        }
-                                    />
-                                    {/* </div> */}
-                                    {/* <div className=""> */}
-                                    <input
-                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Subject *"
-                                        required="required"
-                                        type="text"
-                                        value={data.subject}
-                                        onChange={(e) =>
-                                            setData("subject", e.target.value)
-                                        }
-                                    />
-                                    <input
-                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Phone Number"
-                                        type="text"
-                                        value={data.phone}
-                                        onChange={(e) =>
-                                            setData("phone", e.target.value)
-                                        }
-                                    />
 
-                                    <input
-                                        className="m-3 bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20"
-                                        placeholder="Industry"
-                                        type="text"
-                                        value={data.industry}
-                                        onChange={(e) =>
-                                            setData("industry", e.target.value)
-                                        }
-                                    />
-                                    {/* </div> */}
-                                    {/* <div className="pt-2 m-3"> */}
-                                </div>
-                                <div className="px-3 mx-auto">
-                                    <textarea
-                                        className="w-full bg-gray-100 border-none focus:outline-none focus:ring focus:ring-primary/20 "
-                                        rows="4"
-                                        placeholder="Message"
-                                        required="required"
-                                        name=""
-                                        value={data.message}
-                                        onChange={(e) =>
-                                            setData("message", e.target.value)
-                                        }
-                                    />
-                                </div>
-                                {/* </div> */}
-
-                                <div className="mb-4">
-                                    {/*<Button className=" w-80 mt-[2rem] mb-[3rem]"  >*/}
-                                    {/*Submit Now*/}
-                                    {/*</Button>*/}
-                                    {progress && (
-                                        <progress
-                                            value={progress.percentage}
-                                            max="100"
-                                        >
-                                            {progress.percentage}%
-                                        </progress>
-                                    )}
-                                    <button
-                                        className={`block border p-4 sm:w-[20rem] rounded-full mx-auto
-         text-white bg-[rgb(255,35,34)] hover:scale-110 transition ease-in-out`}
-                                        type="submit"
-                                        disabled={processing}
-                                    >
-                                        Submit Now
-                                    </button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
