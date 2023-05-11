@@ -64,7 +64,7 @@ function Resources() {
                         >
                             <div className="mx-auto ">
                                 <AiOutlineFilePdf className="text-[20rem] w-[100%] text-center text-red-700 " />
-                                <p className="lowercase text-center px-3 ">
+                                <p className="text-center px-3 ">
                                     {item.name}
                                 </p>
                             </div>

@@ -11,9 +11,9 @@ function Service() {
                     <div className="sm:w-[70%]">
                         <div className="text-black px-6 pb-16">
                             <h2 className="text-primary sm:text-[3.5rem] pb-0 ">
-                            Subsidy &amp; Countervailing Duties
+                                Subsidy &amp; Countervailing Duties
                             </h2>
-                            
+
                             <div className="sm:pr-6 my-10  ">
                                 <img
                                     src="images/subsidy.png"
@@ -67,13 +67,13 @@ function Service() {
                                 <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
-                                        <a href="\pdfFiles\resourcesPdfs\CUSTOMS_VALUATION_AND_DISPUTE_SETTLEMENT_REGULATIONS_2019_L.I_2382.pdf" target="_blank">
-                                        {" "}
-                                        GITC ( ANTI - DUMPING ) Regulations, 2019
-                                        ( L.I 2380 ){" "}</a>
+                                        <a href="\pdfFiles\resourcesPdfs\SUBSIDY_AND_COUNTERVAILING_MEASURES_REGULATIONS_2020_PASSED.pdf" target="_blank">
+                                            {" "}
+                                            SUBSIDY &amp; COUNTERVAILING MEASURES REGULATIONS, 2020
+                                            ( L.I 2380 ){" "}</a>
                                     </span>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>

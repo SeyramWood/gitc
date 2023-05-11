@@ -41,7 +41,11 @@ function ServiceSafeguard() {
                                 <i>Downloadable Legislative Instrument and Questionnaire</i>
                                 <div className="my-2 shadow-lg p-5 cursor-pointer rounded flex  transition duration-500 ease-in-out hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
-                                    <span className="pt-6">  GITC ( Anti-Dumping ) Regulations, 2019 ( L.I 2380 ) </span>
+                                    <span className="pt-6">
+                                        <a href="\pdfFiles\resourcesPdfs\GITC_SAFEGUARD_MEASURES_REGULATIONS_2020_YET_TO_BE_PASSED.pdf" target="_blank">
+                                            SAFEGUARD MEASURES REGULATIONS 2020, ( L.I 2380 )
+                                        </a>
+                                    </span>
                                 </div>
 
                             </div>

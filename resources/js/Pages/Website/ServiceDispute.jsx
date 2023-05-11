@@ -11,7 +11,7 @@ function ServiceDispute() {
                     <ServicesNav />
                     <div className="sm:w-[70%]">
                         <div className="text-black px-6">
-                            <h2 className="text-primary text-[4rem] pb-0 ">
+                            <h2 className="text-primary text-[3rem] pb-0 ">
                                 Customs Valuation (Dispute Settlement)
                             </h2>
 
@@ -52,7 +52,7 @@ function ServiceDispute() {
                                     <span className="pt-6">
                                         {" "}
                                         <a href="\pdfFiles\resourcesPdfs\CUSTOMS_VALUATION_AND_DISPUTE_SETTLEMENT_REGULATIONS_2019_L.I_2382.pdf" target="_blank">
-                                            GITC ( DISPUTE SETTLEMENT ) Regulations, 2019
+                                           CUSTOMS VALUATION AND DISPUTE SETTLEMENT REGULATIONS, 2019
                                             ( L.I 2380 )
                                         </a>{" "}
                                     </span>

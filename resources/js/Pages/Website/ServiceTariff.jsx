@@ -28,12 +28,8 @@ function ServiceTarrif() {
                                     petitioner or that are used by the petitioner as inputs for the production of other
                                     products.
                                 </p>
-
-
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>

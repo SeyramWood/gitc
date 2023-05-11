@@ -26,7 +26,7 @@ const About = () => {
                     </div>
 
                 </div>
-                
+
                 <div className="sm:px-[8rem] sm:mb-32 mb-14">
                     {/* cards container */}
                     <div class="sm:grid grid-cols-3 gap-16 sm:m-0 m-4 ">
@@ -60,7 +60,7 @@ const About = () => {
                             <div className="p-4 bg-slate-100">
                                 <Link href="/">
                                     <h2 className="text-primary">
-                                         Prof. Paul Kuruk
+                                        Prof. Paul Kuruk
                                     </h2>
                                     <p className="">
                                         Deputy Chairman, Board
@@ -161,7 +161,9 @@ const About = () => {
                                         <h1 className="text-primary mb-0 pb-0 text-[4rem] ">
                                             Our Team
                                         </h1>
-                                        <p className="text-black sm:text-[16px] uppercase">Meet The Heads Of Departments</p>
+                                        <p className="text-black sm:text-[16px] uppercase">
+                                            Meet The Heads Of Departments
+                                        </p>
                                     </div>
                                 </div>
                             </div>

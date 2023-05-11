@@ -586,10 +586,10 @@ const Index = () => {
 
                                 <div className="pb-16">
                                     <form action="" className="sm:w-[40rem]">
-                                        <div className=" ">
+                                        <div className="px-2 ">
                                             <input type="email" className="rounded w-[60%]  mr-3" placeholder="Enter Your Email" />
 
-                                            <button className="p-2 px-3 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white">Subscribe</button>
+                                            <button className="py-2 sm:px-3 px-2 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white ">Subscribe</button>
                                         </div>
 
                                     </form>

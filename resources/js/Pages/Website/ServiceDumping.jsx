@@ -39,7 +39,7 @@ function ServiceDumping() {
                                     domestic
                                     industry producing a like product or directly competitive product.
                                 </p>
-                              
+
                             </div>
                             <div className="sm:pr-4">
                                 <h2 className="text-4xl text-primary">
@@ -54,8 +54,9 @@ function ServiceDumping() {
                                     <span className="pt-6">
                                         {" "}
                                         <a href="\pdfFiles\resourcesPdfs\GITC_ANTI_DUMPING_REGULATIONS,2019_PASSED.pdf" target="_blank">
-                                            GITC ( Anti-Dumping ) Regulations, 2019
-                                            ( L.I 2380 )</a>{" "}
+                                            ANTI - DUMPING REGULATIONS, 2019
+                                            ( L.I 2380 )
+                                        </a>{" "}
                                     </span>
                                 </div>
 
