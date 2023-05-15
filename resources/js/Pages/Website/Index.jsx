@@ -210,9 +210,12 @@ const Index = () => {
                             data-aos-anchor-placement="center-bottom"
                             data-aos-duration="400"
                         >
-                            <h1 className="text-center translate-y-[7rem] text-primary">
-                                Services
-                            </h1>
+                            <div className="translate-y-[7rem] ">
+                                <h1 className="text-center  text-primary">
+                                    Services
+                                </h1>
+                            </div>
+
                         </div>
 
                         <div className="justify-center gap-6 md:flex sm:mt-13 ">
@@ -574,11 +577,11 @@ const Index = () => {
                     </div>
                 </div> */}
 
-                {/* contact section*/}
-                <div className="w-full px-2 justify-content-center text-center">
-                    <div className="flex pb-4 bg-grey/20">
-                        <div className="mx-auto px-3  py-20 ">
-                            <div className="bg-white rounded shadow-xl">
+                {/* newsletters section*/}
+                <div className="w-full px-2 pb-16 justify-content-center text-center">
+                    <div className="flex pb-4">
+                        <div className="mx-auto px-3 ">
+                            <div className="bg-red-100/90 rounded shadow-xl">
                                 <div className="p-10">
                                     <p className="sm:text-[3rem] text-[1.8rem]">Join our newsletters</p>
                                     <p className="pt-5">Subscribe to get access to more news and updates</p>
