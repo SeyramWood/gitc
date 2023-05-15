@@ -55,15 +55,19 @@ const Footer = () => {
                                 style={{ fontStyle: "normal" }}
                             >
                                 <span className="text-white opacity-60">
-                                    2nd Floor (West Wing),
+                                    Ghana Free Zones Building
                                 </span>
                                 <br />
                                 <span className="text-white opacity-60">
-                                    East Cantonments near US Embassy,
+                                    2<sup>nd</sup> Floor (West wing)
                                 </span>
                                 <br />
                                 <span className="text-white opacity-60">
-                                    5th Link Road, Accra.
+                                    East Cantonment
+                                </span>
+                                <br />
+                                <span className="text-white opacity-60">
+                                    5<sup>th</sup> Link Road, Accra.
                                 </span>
 
                                 {/* <p className="text-white opacity-60"></p> */}
@@ -119,7 +123,7 @@ const Footer = () => {
                             <Link href="/about">Our team</Link>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
-                            <Link href="/services">Our service</Link>
+                            <Link href="/services">Our services</Link>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
                             <Link href="/resources">Resources</Link>
@@ -152,7 +156,7 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Ghana Free Zone Authority
+                                Ghana Free Zones Authority
                             </a>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
@@ -170,7 +174,7 @@ const Footer = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Ghana Standard Authority
+                                Ghana Standards Authority
                             </a>
                         </li>
                         <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
@@ -180,6 +184,15 @@ const Footer = () => {
                                 rel="noopener noreferrer"
                             >
                                 World Trade Center
+                            </a>
+                        </li>
+                        <li className="mb-3 text-[1rem] capitalize transform hover:text-primary">
+                            <a
+                                href="https://www.agighana.org"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Association of Ghanaian Industries
                             </a>
                         </li>
                     </ul>

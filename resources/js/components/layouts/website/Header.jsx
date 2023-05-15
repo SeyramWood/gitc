@@ -6,13 +6,14 @@ import {
     SlEnvelopeOpen,
     SlLocationPin,
 } from "react-icons/sl";
+
 import { getDateTimeShort } from "../../../helpers";
 
 function Header() {
     return (
         <>
-            <header className="w-full h-[3.5rem] bg-white hidden md:flex justify-between items-center px-web-l text-secondary">
-                <ul className="flex self-stretch">
+            <header className="w-full h-[3rem] bg-white hidden md:flex justify-between items-center px-web-l text-secondary">
+                <ul className="flex self-stretch text-sm">
                     <li className="flex items-center pr-4 mr-5 text-center border-r-2 border-gray-100">
                         <span className="mr-2">
                             <SlClock />
@@ -52,14 +53,14 @@ function Header() {
                     </li>
                 </ul>
             </header>
-            <section className="justify-center w-full h-[4.5rem] md:flex z-10 hidden justify-items-center bg-white">
+            <section className="justify-center w-full h-[10rem] md:flex z-10 hidden justify-items-center bg-white">
                 <div className=" left-0 h-[100%] items-center md:flex justify-between w-[85%]">
                     <Link href="/">
                         <img
                             src="/images/logo.png"
                             alt=""
                             srcSet=""
-                            className="h-[4.5rem]"
+                            className="h-[9rem]"
                         />
                     </Link>
                     <div>

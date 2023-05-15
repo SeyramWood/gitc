@@ -29,23 +29,15 @@ const BannerHome = () => {
             image: "/images/banner/anti-dumping.jpg",
             content: {
                 h1: "Anti-Dumping",
-                p: `We provide actions that counteract the import dumping of goods in Ghana.`,
+                p: `We provide remedies to counteract the dumping of imported products into Ghana.`,
             },
             buttons: ["Learn More"],
         },
         {
             image: "/images/banner/customs-valuation.jpg",
             content: {
-                h1: "Customs Valuation",
-                p: `We provide address problems caused by a nation that has breached the stipulations of the World Trade Organisation.`,
-            },
-            buttons: ["Learn More"],
-        },
-        {
-            image: "/images/banner/subsidy.png",
-            content: {
-                h1: "Subsidy & Countervailing",
-                p: `We provide action where imposed subsidy is specified an causes material injury to a domestic industry.`,
+                h1: "Customs Valuation", //(Dispute Settlement)
+                p: `We settle disputes arising from classification, valuation, or origin determination by Customs Division of Ghana Revenue Authority.`,
             },
             buttons: ["Learn More"],
         },
@@ -54,6 +46,14 @@ const BannerHome = () => {
             content: {
                 h1: "Safeguard Measures",
                 p: `We provide measures that ensure domestic producers in Ghana are not adversely  affected by the influx of imports.`,
+            },
+            buttons: ["Learn More"],
+        },
+        {
+            image: "/images/banner/subsidy.png",
+            content: {
+                h1: "Subsidy & Countervailing",
+                p: `We provide measures to counteract the adverse effect of imported subsidized Products.`,
             },
             buttons: ["Learn More"],
         },

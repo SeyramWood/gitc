@@ -1,10 +1,12 @@
-import { WebsiteLayout } from "../../components/layouts";
-import { formatDateShort } from "../../helpers";
 // Import styles
 import { Link } from "@inertiajs/inertia-react";
 // pdf reader
 // Import the main component
 import React, { useState } from "react";
+
+import { WebsiteLayout } from "../../components/layouts";
+import { formatDateShort } from "../../helpers";
+
 // files
 // modal
 
@@ -53,7 +55,11 @@ function Cases({ categories, yearFilters, cases }) {
                                 {categories?.map((cat) => (
                                     <p
                                         key={cat.name}
-                                        className="py-3 text-red-500 duration-700 ease-in-out cursor-pointer hover:text-red-500/90 hover:scale-105 teansition"
+                                        className={`${
+                                            cat.slug ===
+                                                currentURL?.split("/")[2] &&
+                                            "font-bold"
+                                        } py-3 text-red-500  duration-700 ease-in-out cursor-pointer hover:text-red-500/90 hover:scale-105 transition`}
                                     >
                                         <Link
                                             href={`/cases/${cat.slug}`}
