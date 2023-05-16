@@ -7,6 +7,7 @@ import { SlArrowDown, SlMagnifier } from "react-icons/sl";
 import "../../../../css/navigation.scss";
 
 const Navigation = () => {
+    const [navMarginTop, _] = React.useState("17rem");
     const [searchToggle, setSearchToggle] = React.useState(false);
     const [menuToggle, setMenuToggle] = React.useState(false);
     const [headerStyle, setHeaderStyle] = React.useState({
@@ -22,7 +23,7 @@ const Navigation = () => {
 
     useScrollPosition(
         ({ prevPos, currPos }) => {
-            const isSticky = currPos.y < -230;
+            const isSticky = currPos.y < -350;
 
             const animateNavStyle = {
                 width: isSticky ? "100%" : "85%",
@@ -36,7 +37,7 @@ const Navigation = () => {
             };
             const shouldBeStyle = {
                 position: isSticky ? "sticky" : "absolute",
-                top: isSticky ? "0" : "12rem",
+                top: isSticky ? "0" : `${navMarginTop}`,
             };
             if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) {
                 return;
@@ -168,7 +169,9 @@ const Navigation = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/cases/anti-dumping">Cases</Link>
+                                    <Link href="/cases/anti-dumping">
+                                        Cases
+                                    </Link>
                                 </li>
                             </ul>
                         </li>
@@ -185,7 +188,7 @@ const Navigation = () => {
             {/* Main Navigation */}
 
             <section
-                className="w-full bg-transparent absolute top-[12rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper"
+                className={`w-full bg-transparent absolute top-[${navMarginTop}] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper`}
                 style={{ ...headerStyle }}
             >
                 <nav
@@ -274,7 +277,9 @@ const Navigation = () => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/cases/anti-dumping">Cases</Link>
+                                        <Link href="/cases/anti-dumping">
+                                            Cases
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
