@@ -7,7 +7,6 @@ import { SlArrowDown, SlMagnifier } from "react-icons/sl";
 import "../../../../css/navigation.scss";
 
 const Navigation = () => {
-    const [navMarginTop, _] = React.useState("17rem");
     const [searchToggle, setSearchToggle] = React.useState(false);
     const [menuToggle, setMenuToggle] = React.useState(false);
     const [headerStyle, setHeaderStyle] = React.useState({
@@ -37,7 +36,7 @@ const Navigation = () => {
             };
             const shouldBeStyle = {
                 position: isSticky ? "sticky" : "absolute",
-                top: isSticky ? "0" : `${navMarginTop}`,
+                top: isSticky ? "0" : "17rem",
             };
             if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) {
                 return;
@@ -188,7 +187,7 @@ const Navigation = () => {
             {/* Main Navigation */}
 
             <section
-                className={`w-full bg-transparent absolute top-[${navMarginTop}] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper`}
+                className={`w-full bg-transparent absolute top-[17rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper`}
                 style={{ ...headerStyle }}
             >
                 <nav

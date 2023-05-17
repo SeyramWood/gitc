@@ -1,1 +1,0 @@
-let n={weekday:"long",year:"numeric",month:"short",day:"numeric"};function o(t){const e=t?new Date(t):void 0;return(e==null?void 0:e.toLocaleDateString("en-GH",n))||""}function a(){return o(new Date().toJSON())}export{o as f,a as g};

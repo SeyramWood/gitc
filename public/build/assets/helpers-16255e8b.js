@@ -1,0 +1,1 @@
+let n={weekday:"long",year:"numeric",month:"short",day:"numeric"};function o(t){const e=t?new Date(t):void 0;return(e==null?void 0:e.toLocaleDateString("en-US",n))||""}function a(t){const e=t?new Date(t):void 0;return delete n.weekday,(e==null?void 0:e.toLocaleDateString("en-US",n))||""}function r(){return o(new Date().toJSON())}export{a,o as f,r as g};
