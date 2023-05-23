@@ -8,10 +8,15 @@ import React, { useEffect, useState } from "react";
 import { WebsiteLayout } from "../../components/layouts";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
+import axios from "axios";
+
+import useFormValidation from "../../components/form/useFormValidation";
 
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
+
+
     const { data, setData, post, progress, processing, reset, errors } = useForm({
         first_name: "",
         last_name: "",
@@ -86,9 +91,40 @@ const Index = () => {
             s.moveToIdx(s.track.details.abs + 5, true, animation);
         },
     });
+    // old newsletter
+    // const [emailInput, setEmailInput] = useState("");
+    const [success, setSuccess] = useState(false)
+
+
+
+    // newsletter function
+    const newsLetter = useFormValidation(
+        {
+            email: "",
+        },
+        {
+            email: "required|email",
+        },
+        submitEmail
+    )
+
+    function submitEmail(event) {
+        event.preventDefault();
+        axios.post(`http://127.0.0.1:8000`, newsLetter.state)
+            .then(
+                newsLetter.clearValues(true),
+                console.log(newsLetter.state)
+            ).catch((error) => {
+                console.log(error)
+            })
+
+        setSuccess(true)
+    }
+    // end of letter
 
     return (
         <WebsiteLayout page="home">
+
             <div className="text-lg bg-white ">
                 {/* values section */}
                 <div className="px-2 mb-32 sm:py-10 bg-faded ">
@@ -531,8 +567,8 @@ const Index = () => {
                     </div>
                 </div>
 
-                {/* Minister */}
-                {/* <div className="pb-24 ">
+                {/* Minister
+                <div className="pb-24 ">
                     <div
                         className="block shadow-lg sm:mx-24"
                         data-aos="fade-up"
@@ -582,17 +618,44 @@ const Index = () => {
                     <div className="flex pb-4">
                         <div className="mx-auto px-3 ">
                             <div className="bg-red-100/90 rounded shadow-xl">
-                                <div className="p-10">
+                                <div className="pt-10 px-10 pb-7">
                                     <p className="sm:text-[3rem] text-[1.8rem]">Join our newsletters</p>
                                     <p className="pt-5">Subscribe to get access to more news and updates</p>
                                 </div>
 
                                 <div className="pb-16">
-                                    <form action="" className="sm:w-[40rem]">
-                                        <div className="px-2 ">
-                                            <input type="email" className="rounded w-[60%]  mr-3" placeholder="Enter Your Email" />
+                                    {/* <form onSubmit={submitEmail} className="sm:w-[40rem]" >
+                                        <input
+                                            onBlur={newsLetter.handleBlur}
+                                            required="required"
+                                            type="email"
+                                            value={newsLetter.state.email}
+                                            name="email"
+                                            onChange={newsLetter.handleChange}
+                                            placeholder="enter your email" />
+                                        <button type="submit" className="p-1 border-red-200 bg-white m-3">Subscribe</button>
+                                    </form> */}
+                                    <form onSubmit={newsLetter.handleSubmit} className="sm:w-[40rem]">
 
-                                            <button className="py-2 sm:px-3 px-2 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white ">Subscribe</button>
+                                        <div className="px-16 text-center ">
+                                            <p className="text-left text-[13px] text-red-600 ">
+                                                {newsLetter.errors.email}
+                                            </p>
+                                        </div>
+                                        <div className="px-16 text-center flex">
+                                            <input type="email"
+                                                className="rounded w-full focus:ring mr-2 focus:ring-primary/20 border-none"
+                                                onBlur={newsLetter.handleBlur}
+                                                value={newsLetter.state.email}
+                                                name="email"
+                                                onChange={newsLetter.handleChange}
+                                                placeholder="Enter Your Email"
+                                            />
+                                            {success ?
+                                                <p className="bg-red-200/80 rounded m-4 text-center text-red-600">You have subscribed to our daily newsletters !!</p>
+                                                :
+                                                <button type="submit" className="py-2 sm:px-3 px-2 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white ">Subscribe</button>
+                                            }
                                         </div>
 
                                     </form>
