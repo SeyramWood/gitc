@@ -460,7 +460,7 @@ const Index = () => {
                                         data-aos-duration="2000"
                                     >
                                         <img
-                                            src="images/quote2.png"
+                                            src="images/quote.png"
                                             alt="quote"
                                             className="w-[8%]  xs:hidden"
                                         />
