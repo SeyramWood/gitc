@@ -46,16 +46,14 @@ function ServiceDumping() {
                                     Related Downloads
                                 </h2>
                                 <i>
-                                    Downloadable Legislative Instrument and
-                                    Questionnaire
+                                    Downloadable Legislative Instrument 
                                 </i>
                                 <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
                                         {" "}
-                                        <a href="\pdfFiles\resourcesPdfs\GITC_ANTI_DUMPING_REGULATIONS,2019_PASSED.pdf" target="_blank">
-                                            ANTI - DUMPING REGULATIONS, 2019
-                                            ( L.I 2380 )
+                                        <a className="font-bold" href="\pdfFiles\resourcesPdfs\GITC_ANTI_DUMPING_REGULATIONS,2019_PASSED.pdf" target="_blank">
+                                            GITC (Anti-Dumping) Regulations, 2019 (L.I 2380)
                                         </a>{" "}
                                     </span>
                                 </div>

@@ -60,8 +60,9 @@ const Contact = () => {
             .then((response) => {
                 contactForm.clearValues(true);
                 contactForm.updateIsSubmitting(false);
-
-
+            })
+            .catch((error)=>{
+                setError("eerror occured")
             })
 
 
@@ -134,7 +135,9 @@ const Contact = () => {
                                 <HeadingPrimary>Leave A Message</HeadingPrimary>
                             </div>
                             <div className="mx-2 sm:pr-2">
-
+                               <h2>
+                                {error}
+                               </h2>
                                 <form onSubmit={contactForm.handleSubmit} className="justify-center ">
                                     <div className="sm:grid grid-cols-2 text-center">
 
