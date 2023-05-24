@@ -117,9 +117,7 @@ const Index = () => {
                 setSuccess(true)
             ).catch((error) => {
                 if (error["response"]) {
-                    newsLetter.setServerErrors(error.response.data.errors)
-                } else if (error.response.status === Range(400, 499)) {
-                    setErrorMessage("Ooops! Something went wrong, please refresh and try again.")
+                    setErrorMessage(newsLetter.setServerErrors(error.response.data.errors))
                 }
             }
             )
