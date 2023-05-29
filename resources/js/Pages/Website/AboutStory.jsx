@@ -67,7 +67,7 @@ const AboutMessage = () => {
                 {/* values */}
                 <div className="mt-32 bg-slate-300/30" >
                     <h1 className="text-center text-[3rem] sm:text-[4rem] pt-4 text-grey/40">
-                        Our Values
+                        Our Core Values
                     </h1>
                     <div className="px-7 pb-2 md:flex justify-center ">
                         <div className="flex p-2 my-5">

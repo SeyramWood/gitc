@@ -6,7 +6,7 @@ const AboutMessage = () => {
     return (
         <WebsiteLayout page="message" className="bg-white">
             <div className="bg-white">
-                <div className="sm:py-20 py-10 bg-slate-100 px-10 sm:text-left text-center">
+                <div className="sm:py-20 py-10 bg-red-100/10 px-10 sm:text-left text-center">
                     <h2 className="sm:text-[3rem]  sm:block text-[2rem] hidden  sm:py-8">
                         Top Message
                     </h2>
@@ -14,7 +14,7 @@ const AboutMessage = () => {
                         <div className="float-right sm:w-[30%] sm:h-[70%] sm:mx-4 sm:mb-4 sm:pb-0 pb-5">
                             <img
                                 src="images/index/agyekum.jpg"
-                                className="object-fit "
+                                className="object-fit shadow-xl"
                                 alt="img"
                             />
                             <h3 className="text-primary font-bold text-[1.6rem] mt-4">

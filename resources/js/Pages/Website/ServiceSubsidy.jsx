@@ -26,8 +26,8 @@ function ServiceSubsidy() {
                                     A <b>subsidy</b> is considered to exist if the Government or a public body within the territory of
                                     an exporting country provides a financial contribution to the manufacturer, producer, exporter,
                                     or transporter of any product which has been imported into the domestic market and confers a
-                                    benefit on the recipient. This may include the provision of grants, '
-                                    loans and equity infusion to a specific industry of the exporting country.
+                                    benefit on the recipient. This may include the provision of grants, loans and equity infusion to a
+                                    specific industry of the exporting country.
                                 </p>
                                 <p className="pb-8 text-black">
                                     The Commission will trigger an investigation when it has sufficient evidence of the
@@ -44,15 +44,14 @@ function ServiceSubsidy() {
                                     Related Downloads
                                 </h2>
                                 <i>
-                                    Downloadable Legislative Instrument and
-                                    Questionnaire
+                                    Downloadable Legislative Instrument
                                 </i>
                                 <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
                                         {" "}
-                                        <a href="\pdfFiles\resourcesPdfs\SUBSIDY_AND_COUNTERVAILING_MEASURES_REGULATIONS_2020_PASSED.pdf" target="_blank">
-                                            SUBSIDY AND COUNTERVAILING MEASURES REGULATIONS, 2020
+                                        <a href="\pdfFiles\resourcesPdfs\SUBSIDY_AND_COUNTERVAILING_MEASURES_REGULATIONS_2020_PASSED.pdf" target="_blank" className="font-bold">
+                                            GITC (Subsidy and Countervailing Measures) Regulations, 2020 (L.I 2425)
                                         </a>{" "}
                                     </span>
                                 </div>

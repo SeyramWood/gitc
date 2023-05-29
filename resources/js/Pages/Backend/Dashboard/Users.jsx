@@ -80,7 +80,7 @@ const Users = () => {
                 userForm.updateIsSubmitting(false);
                 if (err["response"]) {
                     if (err.response.status === 422) {
-                        userForm.setServerErrors(err.response.data.errors);
+                        userForm.setServerErrors(err.esponse.data.errors);
                     } else if (err.response.status === 500) {
                         toast.current.show({
                             severity: "error",

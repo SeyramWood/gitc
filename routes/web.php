@@ -33,7 +33,7 @@ Route::get('/config', function ()
 
 });
 
-Route::get('/', [PageController::class, 'index'])->name('home');
+Route::any('/', [PageController::class, 'index'])->name('home');
 Route::get('/services', [PageController::class, 'service'])->name('services');
 Route::get('/service/subsidy', [PageController::class, 'ServiceSubsidy']);
 Route::get('/service/safeguard', [PageController::class, 'ServiceSafeguard']);
@@ -45,7 +45,7 @@ Route::get('/about', [PageController::class, 'about']);
 Route::get('/message', [PageController::class, 'aboutMessage']);
 Route::get('/story', [PageController::class, 'aboutStory']);
 Route::get('/publish', [PageController::class, 'publish']);
-Route::get('/contact', [PageController::class, 'contact']);
+Route::any('/contact', [PageController::class, 'contact']);
 Route::get('/publications', [PageController::class, 'publication']);
 Route::get('/faq', [PageController::class, 'Faq']);
 Route::get('/resources', [PageController::class, 'resources']);

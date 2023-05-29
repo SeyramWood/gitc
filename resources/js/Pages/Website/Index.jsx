@@ -8,10 +8,15 @@ import React, { useEffect, useState } from "react";
 import { WebsiteLayout } from "../../components/layouts";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
+import axios from "axios";
+
+import useFormValidation from "../../components/form/useFormValidation";
 
 const animation = { duration: 40000, easing: (t) => t };
 
 const Index = () => {
+
+
     const { data, setData, post, progress, processing, reset, errors } = useForm({
         first_name: "",
         last_name: "",
@@ -86,15 +91,50 @@ const Index = () => {
             s.moveToIdx(s.track.details.abs + 5, true, animation);
         },
     });
+    // old newsletter
+    // const [emailInput, setEmailInput] = useState("");
+    const [success, setSuccess] = useState(false)
+    const [errorMessage, setErrorMessage] = useState(" ")
+
+
+    // newsletter function
+    const newsLetter = useFormValidation(
+        {
+            email: "",
+        },
+        {
+            email: "required|email",
+        },
+        submitEmail
+    )
+
+    function submitEmail() {
+
+        axios.post(`http://127.0.0.1:8000`, newsLetter.state)
+            .then(
+                newsLetter.clearValues(true),
+                console.log(newsLetter.state),
+                setSuccess(true)
+            ).catch((error) => {
+                if (error["response"]) {
+                    setErrorMessage(newsLetter.setServerErrors(error.response.data.errors))
+                }
+            }
+            )
+
+
+    }
+    // end of letter
 
     return (
         <WebsiteLayout page="home">
+
             <div className="text-lg bg-white ">
                 {/* values section */}
                 <div className="px-2 mb-32 sm:py-10 bg-faded ">
                     <div className="" data-aos="fade-up" data-aos-duration="2000">
                         <h1 className="text-center text-[3rem] sm:text-[5rem] pt-8 sm:pb-7 pb-4 text-grey/40">
-                            Our Values
+                            Our Core Values
                         </h1>
                         <div className="justify-center w-[100%] gap-3 pb-4 md:flex">
                             <div className="flex p-2 my-5 ">
@@ -237,9 +277,10 @@ const Index = () => {
                                 <div className="my-2 ">
                                     <h2 className="py-5">Trade Remedies</h2>
                                     <p className="mb-3">
-                                        To provide actions that ensure domestic producers /
-                                        industries are protected from dumping, subsidization, and
-                                        influx of imported products.
+                                        To provide actions that safeguard domestic manufacturers / industries
+                                        against unfair trade practices such as dumping, subsidization,
+                                        and the sudden, sharp, and significant influx of imported products
+                                        onto the local market.
                                     </p>
                                     <Link
                                         href="/services"
@@ -412,29 +453,37 @@ const Index = () => {
                             <div className="flex flex-col-reverse justify-center bg-black sm:flex sm:flex-row ">
                                 <div className="text-white sm:w-[50%] bg-red-700">
                                     <div
-                                        className="container px-4 py-14 sm:px-16"
+                                        className="container px-4 py-14 sm:px-10"
                                         data-aos="fade-right"
                                         data-aos-duration="2000"
                                     >
-                                        <h2 className=" my-6 font-bold text-white sm:text-3xl">
-                                            The bane of development in developing countries as against
-                                            developed countries is the lack of industrialization in
-                                            the former. The inability of developing counties ...
-                                        </h2>
+                                        <img
+                                            src="images/quote.png"
+                                            alt="quote"
+                                            className="w-[8%]  xs:hidden"
+                                        />
+                                        <div className="pl-8">
 
-                                        <Link href="/story">
-                                            <ButtonOutline className="sm:w-[14rem] my-6 bg-white text-primary border-white/40 hover:bg-red-100/40 hover:text-white ">
-                                                Read Our Message
-                                            </ButtonOutline>
-                                        </Link>
+                                            <h2 className=" mt-0 pt-2 my-6 font-bold text-white sm:text-3xl">
+                                                The bane of development in developing countries as against
+                                                developed countries is the lack of industrialization in
+                                                the former. The inability of developing counties ...
+                                            </h2>
 
-                                        <div className="">
-                                            <h1 className="text-2xl sm:pt-1 text-white">
-                                                Frank Agyekum
-                                            </h1>
-                                            <p className="font-light text-white">
-                                                Executive Secretary
-                                            </p>
+                                            <Link href="/story">
+                                                <ButtonOutline className="sm:w-[14rem] my-6 bg-white text-primary border-white/40 hover:bg-red-100/40 hover:text-white ">
+                                                    Read More
+                                                </ButtonOutline>
+                                            </Link>
+
+                                            <div className="">
+                                                <h1 className="text-2xl sm:pt-1 text-white">
+                                                    Frank Agyekum
+                                                </h1>
+                                                <p className="font-light text-white">
+                                                    Executive Secretary
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -496,104 +545,69 @@ const Index = () => {
                                         />
                                     </div>
                                 </div>
-                                {/* <div className="keen-slider__slide number-slide5">5</div>
-                            <div className="keen-slider__slide number-slide6">6</div> */}
+
                             </div>
-                            {/* <div className="">
-                            <img
-                                src="images/homePage/sponsorTwo.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div>
-                        <div className="">
-                            <img
-                                src="images/homePage/sponsorThree.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div>
-                        <div className="">
-                            <img
-                                src="images/homePage/sponsorFour.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div>
-                        <div className="">
-                            <img
-                                src="images/homePage/sponsorFive.png"
-                                className="w-full object-contain h-[10rem]"
-                                alt=""
-                            />
-                        </div> */}
+
                         </div>
                     </div>
                 </div>
-
-                {/* Minister */}
-                {/* <div className="pb-24 ">
-                    <div
-                        className="block shadow-lg sm:mx-24"
-                        data-aos="fade-up"
-                        data-aos-duration="2000"
-                    >
-                        <div className="justify-center sm:flex  sm:w-[100%]">
-                            <div className="sm:w-[50%] ">
-                                <img
-                                    className=""
-                                    src="/images/homePage/Min.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div className="sm:w-[50%] bg-white sm:px-8">
-                                <div className="container sm:pt-14">
-                                    <img
-                                        src="images/quote.png"
-                                        alt="quote"
-                                        className="w-[14%] pl-5 xs:hidden"
-                                    />
-                                    <p className="pl-4 my-6 font-bold text-black sm:text-[1.8rem]">
-                                        The bane of development in developing
-                                        countries as against developed countries
-                                        is the lack of industrialization in the
-                                        former. The inability of developing
-                                        counties ...
-                                    </p>
-                                    <h2 className="pl-5 text-red-500 cursor-pointer hover:text-red-300 ">
-                                        Read More
-                                    </h2>
-                                    <div className="pl-5 ">
-                                        <h1 className="text-2xl sm:pt-3 text-primary">
-                                            Frank Agyekum
-                                        </h1>
-                                        <p className="py-1 font-light text-primary">
-                                            Executive Secretary
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
 
                 {/* newsletters section*/}
                 <div className="w-full px-2 pb-16 justify-content-center text-center">
                     <div className="flex pb-4">
                         <div className="mx-auto px-3 ">
-                            <div className="bg-red-100/90 rounded shadow-xl">
-                                <div className="p-10">
+                            <div className=" bg-slate-200 rounded shadow-xl">
+                                <div className="pt-10 px-10 pb-7">
                                     <p className="sm:text-[3rem] text-[1.8rem]">Join our newsletters</p>
                                     <p className="pt-5">Subscribe to get access to more news and updates</p>
                                 </div>
 
                                 <div className="pb-16">
-                                    <form action="" className="sm:w-[40rem]">
-                                        <div className="px-2 ">
-                                            <input type="email" className="rounded w-[60%]  mr-3" placeholder="Enter Your Email" />
+                                    {/* <form onSubmit={submitEmail} className="sm:w-[40rem]" >
+                                        <input
+                                            onBlur={newsLetter.handleBlur}
+                                            required="required"
+                                            type="email"
+                                            value={newsLetter.state.email}
+                                            name="email"
+                                            onChange={newsLetter.handleChange}
+                                            placeholder="enter your email" />
+                                        <button type="submit" className="p-1 border-red-200 bg-white m-3">Subscribe</button>
+                                    </form> */}
+                                    <form onSubmit={newsLetter.handleSubmit} className="sm:w-[40rem]">
+                                        {success ?
+                                            <p className="text-[18px] text-red-600 ">
+                                                Thank you for subscribing to our newsletters
+                                            </p>
+                                            :
+                                            <div>
+                                                <div className="px-16 text-center ">
+                                                    <p className="text-left text-[13px] text-red-600 ">
+                                                        {newsLetter.errors.email}
 
-                                            <button className="py-2 sm:px-3 px-2 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white ">Subscribe</button>
-                                        </div>
+                                                        {errorMessage}
+                                                    </p>
+                                                </div>
+                                                <div className="px-16 text-center flex">
+                                                    <input type="email"
+                                                        className="rounded w-full focus:ring mr-2 focus:ring-primary/20 border-none"
+                                                        onBlur={newsLetter.handleBlur}
+                                                        value={newsLetter.state.email}
+                                                        name="email"
+                                                        onChange={newsLetter.handleChange}
+                                                        placeholder="Enter Your Email"
+                                                    />
+
+
+                                                    {/* <p className="bg-red-200/80 rounded m-4 text-center text-red-600">
+                                                        You have subscribed to our daily newsletters !!
+                                                    </p> */}
+
+                                                    <button type="submit" className="py-2 sm:px-3 px-2 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white ">Subscribe</button>
+
+                                                </div>
+                                            </div>
+                                        }
 
                                     </form>
                                 </div>
