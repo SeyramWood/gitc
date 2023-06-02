@@ -159,7 +159,7 @@ const Navigation = () => {
                             <ul className=" text-white [&>li>a]:text-md dropdown opacity-60 [&>li>a]:font-thin [&>li:hover>a]:text-primary-light">
                                 <li>
                                     <Link href="/resources">
-                                        Legislative Instrument
+                                        Legislative Instruments
                                     </Link>
                                 </li>
                                 <li>
@@ -270,6 +270,11 @@ const Navigation = () => {
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
                                 <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
+                                    <li>
+                                        <Link href="/resources">
+                                            Legislative Instruments
+                                        </Link>
+                                    </li>
                                     <li>
                                         <Link href="/publications">
                                             Publications

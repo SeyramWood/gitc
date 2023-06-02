@@ -29,14 +29,14 @@ const BannerHome = () => {
             image: "/images/banner/anti-dumping.jpg",
             content: {
                 h1: "Anti-Dumping",
-                p: `We provide remedies to counteract the dumping of imported products into Ghana.`,
+                p: `We provide remedies to counteract the dumping of imported products onto the Ghanaian market.`,
             },
             buttons: ["Learn More"],
         },
         {
             image: "/images/banner/customs-valuation.jpg",
             content: {
-                h1: "Customs Valuation", //(Dispute Settlement)
+                h1: "Customs Valuation (Dispute Settlement)", //(Dispute Settlement)
                 p: `We settle disputes arising from classification, valuation, or origin determination by Customs Division of Ghana Revenue Authority.`,
             },
             buttons: ["Learn More"],
@@ -52,8 +52,8 @@ const BannerHome = () => {
         {
             image: "/images/banner/subsidy.png",
             content: {
-                h1: "Subsidy & Countervailing",
-                p: `We provide measures to counteract the adverse effect of imported subsidized Products.`,
+                h1: "Subsidies and Countervailing Measures ",
+                p: `We provide measures to counteract the adverse effects of imported subsidized products.`,
             },
             buttons: ["Learn More"],
         },
@@ -82,7 +82,7 @@ const BannerAbout = () => {
     return (
         <section className="banner__static about h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-5xl lg:text-7xl text-bold">About Us</h1>
+                <h1 className="text-5xl lg:text-6xl text-bold">About Us</h1>
                 {/* <p className="mt-8 text-[1.2rem] lg:text-3xl font-light text-white"></p> */}
             </article>
         </section>
@@ -92,7 +92,7 @@ const BannerServices = () => {
     return (
         <section className="banner__static services h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-7xl text-bold">Our Services</h1>
+                <h1 className="text-6xl text-bold">Our Services</h1>
                 <p className="mt-8 text-3xl font-light text-white"></p>
             </article>
         </section>
@@ -102,7 +102,7 @@ const BannerResources = () => {
     return (
         <section className="banner__static resources h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-5xl lg:text-7xl text-bold">Resources</h1>
+                <h1 className="text-5xl lg:text-6xl text-bold">Resources</h1>
                 <p className="mt-8 text-3xl font-light text-white"></p>
             </article>
         </section>
@@ -114,7 +114,9 @@ const BannerGalleries = () => {
         <section className="banner__static gallery h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
                 <h1 className="text-5xl lg:text-7xl text-bold">Gallery</h1>
-                <p className="mt-8 text-3xl font-light text-white"></p>
+                <p className="mt-8 text-3xl font-light text-white">
+                    Pictures of determinations, workshops, and much more.
+                </p>
             </article>
         </section>
     );
@@ -125,7 +127,7 @@ const ContactUs = () => {
         <section className="banner__static contact h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
                 <h1 className="text-5xl lg:text-7xl text-bold">Contact Us</h1>
-                <p className="mt-8 text-3xl font-light text-white">
+                <p className="mt-8 text-[1.8rem] font-light text-white">
                     Connect with Us
                 </p>
             </article>
@@ -137,7 +139,7 @@ const Publication = () => {
     return (
         <section className="banner__static publication h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-5xl lg:text-7xl text-bold">Publications</h1>
+                <h1 className="text-5xl lg:text-6xl text-bold">Publications</h1>
             </article>
         </section>
     );
@@ -147,7 +149,7 @@ const Story = () => {
     return (
         <section className="banner__static story h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-5xl lg:text-7xl text-bold">Our Story</h1>
+                <h1 className="text-5xl lg:text-6xl text-bold">Our Story</h1>
             </article>
         </section>
     );
@@ -156,7 +158,7 @@ const Message = () => {
     return (
         <section className="banner__static message h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-5xl lg:text-7xl text-bold">Our Message</h1>
+                <h1 className="text-5xl lg:text-6xl text-bold">Our Message</h1>
             </article>
         </section>
     );
@@ -165,12 +167,12 @@ const Faq = () => {
     return (
         <section className="banner__static faq h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
-                <h1 className="text-5xl lg:text-7xl text-bold">
+                <h1 className="text-5xl lg:text-6xl text-bold">
                     Frequently Asked Question
                 </h1>
                 <p className="mt-8 text-3xl font-light text-white">
                     The most common questions about how our business works and
-                    what can do for you.
+                    what can be done for you.
                 </p>
             </article>
         </section>

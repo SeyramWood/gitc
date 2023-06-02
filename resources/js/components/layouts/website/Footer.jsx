@@ -55,6 +55,10 @@ const Footer = () => {
                                 style={{ fontStyle: "normal" }}
                             >
                                 <span className="text-white opacity-60">
+                                    P.O. Box 6297, Cantonments – Accra.
+                                </span>
+                                <br />
+                                <span className="text-white opacity-60">
                                     Ghana Free Zones Building
                                 </span>
                                 <br />
@@ -63,7 +67,7 @@ const Footer = () => {
                                 </span>
                                 <br />
                                 <span className="text-white opacity-60">
-                                    East Cantonment
+                                    East Cantonments
                                 </span>
                                 <br />
                                 <span className="text-white opacity-60">
