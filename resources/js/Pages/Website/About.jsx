@@ -38,7 +38,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-4 cursor-pointer bg-red-100">
+                            <div className="p-4 cursor-pointer bg-slate-200">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Dr. Edmumd Prempeh
@@ -57,7 +57,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-4 bg-red-100">
+                            <div className="p-4 bg-slate-200">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Prof. Paul Kuruk
@@ -76,7 +76,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-4 bg-red-100">
+                            <div className="p-4 bg-slate-200">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Mr. Philip Mensah
@@ -95,7 +95,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-3 bg-red-100">
+                            <div className="p-3 bg-slate-200">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Mr. Arnold Tetteh Okai
@@ -114,7 +114,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-3 bg-red-100">
+                            <div className="p-3 bg-slate-200">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Ms. Sophia Kokor
@@ -133,7 +133,7 @@ const About = () => {
                                     alt=""
                                 />
                             </div>
-                            <div className="p-3 bg-red-100">
+                            <div className="p-3 bg-slate-200">
                                 <Link href="/">
                                     <h2 className="text-primary">
                                         Mr. Frank Agyekum
@@ -184,7 +184,7 @@ const About = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="p-3 text-center bg-red-100 sm:h-[7rem]">
+                                <div className="p-3 text-center bg-slate-200 sm:h-[7rem]">
                                     <p className="font-semibold">
                                         Linda Adomako - Kwabia
                                     </p>
@@ -203,7 +203,7 @@ const About = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="p-3 text-center bg-red-100 sm:h-[7rem]">
+                                <div className="p-3 text-center bg-slate-200 sm:h-[7rem]">
                                     <p className="font-semibold">
                                         Bernard Manu Afreh
                                     </p>
@@ -223,7 +223,7 @@ const About = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="p-3 text-center bg-red-100 sm:h-[7rem]">
+                                <div className="p-3 text-center bg-slate-200 sm:h-[7rem]">
                                     <p className="font-semibold">
                                         Paa Kwesi Fynn
                                     </p>
@@ -240,7 +240,7 @@ const About = () => {
                                         alt=""
                                     />
                                 </div>
-                                <div className="p-3 text-center bg-red-100 sm:h-[7rem]">
+                                <div className="p-3 text-center bg-slate-200 sm:h-[7rem]">
                                     <p className="font-semibold">
                                         Nathan Lartey
                                     </p>

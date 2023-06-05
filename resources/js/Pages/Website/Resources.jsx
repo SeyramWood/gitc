@@ -58,27 +58,29 @@ function Resources() {
                 <div className="grid w-[60%] sm:grid-cols-2 gap-16 mx-auto ">
                     {data.map((item, index) => (
                         <div
-                            className="border pt-10 shadow-xl sm:my-0 my-3 h-[17rem] cursor-pointer hover:bg-black/30 transition duration-500 ease-in-out hover:scale-110"
+                            className=""
                             key={index}
                             onClick={() => opneFile(item.pdf)}
                         >
                            
                             <div className="mx-auto ">
-                                <a href={currentFile} target="_blank" >
+                                {/* <a href={currentFile} target="_blank" > */}
 
                                     <AiOutlineFilePdf className="text-[8rem] w-[100%] text-center text-red-700 " />
                                     <p className="text-center px-4 text-[13px] sm:text-[1rem]">
                                         {item.name}
                                     </p>
-                                </a>
+                                {/* </a> */}
                             </div>
                             <div className=" -translate-y-[9rem] p-5 opacity-0 z-10 hover:opacity-100">
+                            <a href={currentFile} target="_blank" >
                                 <AiOutlineLink className="text-white translate-x-[4rem] sm:translate-x-[8rem] text-[4rem] p-2 rounded-full bg-black/60  " />
+                            </a>
                             </div>
                         </div>
                     ))}
-                </div>
-                {/* <div className="grid grid-cols-5 gap-5 mx-auto px-10">
+            </div>
+            {/* <div className="grid grid-cols-5 gap-5 mx-auto px-10">
                     <Modal
                         key="pdf__modal"
                         classNames={{
@@ -105,8 +107,8 @@ function Resources() {
                         </div>
                     </Modal>
                 </div> */}
-            </div>
-        </WebsiteLayout>
+        </div>
+        </WebsiteLayout >
     );
 }
 

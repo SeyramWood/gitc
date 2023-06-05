@@ -25,41 +25,53 @@ const AboutMessage = () => {
                     </div>
                     <div className="mt-4 sm:pr-6 sm:w-[80%] px-3  ">
                         <p className="mb-6 text-black">
-                            Ghana International Trade Commission (GITC), was
-                            established in September 2016 under
-                            Parliamentary Act 926 to provide for the regulation
-                            of Ghana’s International Trade in conformity with
-                            the rules and regulations of the world trade
-                            system and related matters.
+                            Ghana is a founding member of the World Trade Organization (WTO),
+                            and having ratified the Marrakech Agreement in December 1994, it
+                            assumed all the obligations
+                            and commitments under the multilateral agreements of the Organization.
                         </p>
                         <p className="mb-6 text-black">
-                            The World Trade Organization (WTO) provides the forum
-                            for a multilateral rule-based global system that ensure
-                            fairness in global trade. Yet not all international trade is
-                            rule based us some countries support their domestic
-                            industries to produce and be competitive in international
-                            markets.Such Support provided through subsidies may
-                            make the exported products cheaper, which hurts
-                            domestic industries producing similar products.
+                            As a country which operates a liberalized trade regime under WTO
+                            regulations there was the need for a legal and institutional framework
+                            to protect its domestic trade and industry from unfair trade practices
+                            with it accompanying any unexpected surges in imports that could offset
+                            the gains to domestic trade and industry.
+                            This need culminated in the establishment of the Ghana International Trade Commission (GITC) in 2016.
                         </p>
                         <p className="mb-6 text-black">
-                            With in the frame work of the WTO countries have the
-                            policy and legal space to protect their domestic industries
-                            from such unfair trade practices. Many Countries in the
-                            developed would have trade remedy institutions, such as
-                            the GITC established with the view to provide impartial
-                            investigations, adjudication and imposition of measures to
-                            protect domestic industries from such harmful effects of
-                            international trade.
+                            Prior to the establishment of the GITC, the Minister for Trade and
+                            Industry directed the creation of the now-defunct Tariff Advisory Board
+                            (TAB) in 2009. The TAB then served as an advisory body on matters
+                            relating to trade contingency measures.
+                            Recommendations by the TAB had to be presented to the Minister who then
+                            forwarded same to Parliament for legal backing.
+                        </p>
+                        <p className="mb-6 text-black">
+                            TAB served as precursor to the establishment of
+                            the GITC by an Act of Parliament, GITC Act 926,
+                            2016, to regulate Ghana’s international trade
+                            architecture in conformity with the rules and
+                            regulations of the World Trade System and to provide
+                            for related matters.
+                        </p>
+                        <p className="mb-6 text-black">
+                            TThe GITC is thus the legally competent authority in Ghana to handle
+                            and investigate issues relating to trade contingency measures.
+                            The legal framework of the Commission is consistent with the relevant
+                            provisions contained in the Agreement on the Implementation of Article
+                            VI of GATT, 1994, referred to as the Antidumping Agreement; Agreement on
+                            Subsidies and Countervailing Measures (SCM Agreement); and the Agreement
+                            on Safeguards. The Commission also provides advice to the Minister for
+                            Trade and Industry
+                            on matters relating to Ghana’s trade and industry policy.
                         </p>
                         <p className=" text-black">
-                            However, in Africa the trade remedy laws and
-                            Investigating authorities are in Egypt, SouthAfrica,
-                            Morocco, Tunisia, Mauritius and Madagascar. In the
-                            developed world, however, such institutions have existed
-                            for along time such as in the United States where the U.S
-                            International Trade Commission (USITC) was set up in
-                            September 1916.
+                            The Commission commenced operations in April 2018, when
+                            its five-member Governing Board was inaugurated by the President of the
+                            Republic. The Commission has a Secretariat with departments/divisions.
+                            The Secretariat is headed by an Executive
+                            Secretary who serves as the Secretary to a Governing Board,
+                            whose members are referred to as Commissioners.
                         </p>
                     </div>
                 </div>

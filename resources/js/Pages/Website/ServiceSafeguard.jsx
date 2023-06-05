@@ -43,7 +43,7 @@ function ServiceSafeguard() {
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}
                                     <span className="pt-6">
                                         <a className="font-bold" href="\pdfFiles\resourcesPdfs\GITC_SAFEGUARD_MEASURES_REGULATIONS_2020_YET_TO_BE_PASSED.pdf" target="_blank">
-                                            GITC (Safeguards Measures) Regulations, 2020 (L.I 2426)
+                                            GITC (Safeguards Measures) Regulations, 2020 (L.I 2426)
                                         </a>
                                     </span>
                                 </div>

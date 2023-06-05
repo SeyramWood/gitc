@@ -46,7 +46,7 @@ function ServiceDumping() {
                                     Related Downloads
                                 </h2>
                                 <i>
-                                    Downloadable Legislative Instrument 
+                                    Downloadable Legislative Instrument
                                 </i>
                                 <div className="flex p-5 my-2 transition duration-500 ease-in-out rounded shadow-lg cursor-pointer hover:scale-110 ">
                                     <AiOutlineFilePdf className="w-[4rem] h-[4rem] text-red-700 " />{" "}

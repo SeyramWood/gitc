@@ -52,7 +52,7 @@ function ServiceDispute() {
                                     <span className="pt-6">
                                         {" "}
                                         <a className="font-bold" href="\pdfFiles\resourcesPdfs\CUSTOMS_VALUATION_AND_DISPUTE_SETTLEMENT_REGULATIONS_2019_L.I_2382.pdf" target="_blank">
-                                            GITC (Customs Valuation) (Dispute Settlement) Regulations, 2019 (L.I 2382).
+                                            GITC (Customs Valuation) (Dispute Settlement) Regulations, 2019 (L.I 2382)
                                         </a>{" "}
                                     </span>
                                 </div>
