@@ -201,14 +201,14 @@ const Footer = () => {
                         </li>
                     </ul>
                 </section>
-                <section className="w-[100%] md:w-[50%] lg:w-[25%] mt-web-l md:mt-web-l">
+                <section className="w-[100%] md:w-[25%] lg:w-[18%] mt-web-l md:mt-web-l">
                     <div className="w-[100%] mb-web-xs md:mb-web-md">
                         <h5 className="text-xl font-bold capitalize">
                             Gallery
                         </h5>
                     </div>
 
-                    <section className="grid grid-cols-2 gap-2">
+                    <section className="grid gap-2 grid-cols-4 md:grid-cols-2">
                         {albums.map((a, index) => (
                             <Link
                                 href="/gallery"

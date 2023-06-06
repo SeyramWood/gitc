@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
     {
         return [
             [
-                "name" => "(Anti - Dumping) Regulations, 2019 (L.I 2380)",
+                "name" => "Anti-Dumping Duty",
                 "slug" => "anti-dumping",
             ],
             [
@@ -40,12 +40,16 @@ class DatabaseSeeder extends Seeder
                 "slug" => "customs-valuation",
             ],
             [
-                "name" => "(Subsidy and Countervailing Measures) Regulations, 2020 (L.I 2425)",
+                "name" => "Countervailing Duty",
                 "slug" => "subsidy-and-countervailing-measures",
             ],
             [
-                "name" => "(Safeguards Measures) Regulations, 2020 (L.I 2426)",
+                "name" => "Safeguard Measures",
                 "slug" => "safeguards-measures",
+            ],
+            [
+                "name" => "Miscellaneous",
+                "slug" => "miscellaneous",
             ],
         ];
     }

@@ -111,7 +111,7 @@ function Cases({ categories, yearFilters, cases }) {
                                 national circulation.
                             </p>
                             <p className="mt-6">
-                                Following is a list of completed and ongoing
+                                The following is a list of completed and ongoing
                                 cases:
                             </p>
                         </article>

@@ -83,7 +83,9 @@ const BannerAbout = () => {
         <section className="banner__static about h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
                 <h1 className="text-5xl lg:text-6xl text-bold">About Us</h1>
-                {/* <p className="mt-8 text-[1.2rem] lg:text-3xl font-light text-white"></p> */}
+                <p className="mt-8 text-[1.2rem] lg:text-3xl font-light text-white">
+                    Who we are.
+                </p>
             </article>
         </section>
     );
@@ -140,6 +142,10 @@ const Publication = () => {
         <section className="banner__static publication h-[var(--banner-height-sm)] md:h-[var(--banner-height-sm)] lg:h-[var(--banner-height)]">
             <article className="text-white banner__static__article">
                 <h1 className="text-5xl lg:text-6xl text-bold">Publications</h1>
+                <p className="mt-8 text-[1.8rem] font-light text-white">
+                    These include Commission reports, studies, face sheets and
+                    much more.
+                </p>
             </article>
         </section>
     );
