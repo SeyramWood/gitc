@@ -1,14 +1,14 @@
-import { Link } from "@inertiajs/inertia-react";
-// import FsLightbox from "fslightbox-react";
 import React, { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
-import "yet-another-react-lightbox/plugins/counter.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import "yet-another-react-lightbox/styles.css";
 
 import { WebsiteLayout } from "../../components/layouts";
 import { formatDateTimeShort } from "../../helpers";
+
+import { Link } from "@inertiajs/inertia-react";
+import "yet-another-react-lightbox/plugins/counter.css";
+import "yet-another-react-lightbox/styles.css";
 
 function Gallery({ albums }) {
     const [currentGallery, setCurrentGallery] = useState();
@@ -65,7 +65,13 @@ function Gallery({ albums }) {
                                     <div className="overflow-hidden bg-black cursor-pointer ">
                                         <div className="w-full bg-white/90">
                                             <div className="h-[15rem] ">
-                                                <div className=" overflow-hidden p-3 justify-between  h-[50%]">
+                                                <div
+                                                    className={`overflow-hidden p-3 justify-between ${
+                                                        item.gallery.length == 1
+                                                            ? "h-[100%]"
+                                                            : "h-[50%]"
+                                                    }`}
+                                                >
                                                     <div className="overflow-hidden ">
                                                         <img
                                                             src={`/uploads/gallery/${item.gallery[0].image}`}
@@ -80,33 +86,38 @@ function Gallery({ albums }) {
                                                         />
                                                     </div>
                                                 </div>
+
                                                 <div className="flex p-3 justify-between gap-4  h-[50%]">
-                                                    <div className="overflow-hidden ">
-                                                        <img
-                                                            src={`/uploads/gallery/${item.gallery[1].image}`}
-                                                            className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
-                                                            alt=""
-                                                            onClick={() =>
-                                                                openGallery(
-                                                                    item.gallery,
-                                                                    1
-                                                                )
-                                                            }
-                                                        />
-                                                    </div>
-                                                    <div className="overflow-hidden">
-                                                        <img
-                                                            src={`/uploads/gallery/${item.gallery[2].image}`}
-                                                            className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
-                                                            alt=""
-                                                            onClick={() =>
-                                                                openGallery(
-                                                                    item.gallery,
-                                                                    2
-                                                                )
-                                                            }
-                                                        />
-                                                    </div>
+                                                    {item.gallery[1] && (
+                                                        <div className="overflow-hidden ">
+                                                            <img
+                                                                src={`/uploads/gallery/${item.gallery[1].image}`}
+                                                                className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
+                                                                alt=""
+                                                                onClick={() =>
+                                                                    openGallery(
+                                                                        item.gallery,
+                                                                        1
+                                                                    )
+                                                                }
+                                                            />
+                                                        </div>
+                                                    )}
+                                                    {item.gallery[2] && (
+                                                        <div className="overflow-hidden">
+                                                            <img
+                                                                src={`/uploads/gallery/${item.gallery[2].image}`}
+                                                                className="object-cover transition duration-700 ease-in-out hover:opacity-75 bg-black/40 hover:scale-110"
+                                                                alt=""
+                                                                onClick={() =>
+                                                                    openGallery(
+                                                                        item.gallery,
+                                                                        2
+                                                                    )
+                                                                }
+                                                            />
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>

@@ -7,7 +7,6 @@ import { SlArrowDown, SlMagnifier } from "react-icons/sl";
 import "../../../../css/navigation.scss";
 
 const Navigation = () => {
-    const [navMarginTop, _] = React.useState("17rem");
     const [searchToggle, setSearchToggle] = React.useState(false);
     const [menuToggle, setMenuToggle] = React.useState(false);
     const [headerStyle, setHeaderStyle] = React.useState({
@@ -37,7 +36,7 @@ const Navigation = () => {
             };
             const shouldBeStyle = {
                 position: isSticky ? "sticky" : "absolute",
-                top: isSticky ? "0" : `${navMarginTop}`,
+                top: isSticky ? "0" : "17rem",
             };
             if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) {
                 return;
@@ -160,7 +159,7 @@ const Navigation = () => {
                             <ul className=" text-white [&>li>a]:text-md dropdown opacity-60 [&>li>a]:font-thin [&>li:hover>a]:text-primary-light">
                                 <li>
                                     <Link href="/resources">
-                                        Legislative Instrument
+                                        Legislative Instruments
                                     </Link>
                                 </li>
                                 <li>
@@ -188,7 +187,7 @@ const Navigation = () => {
             {/* Main Navigation */}
 
             <section
-                className={`w-full bg-transparent absolute top-[${navMarginTop}] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper`}
+                className={`w-full bg-transparent absolute top-[17rem] left-0 h-[4rem] justify-center items-center hidden md:flex navigation-wrapper`}
                 style={{ ...headerStyle }}
             >
                 <nav
@@ -271,6 +270,11 @@ const Navigation = () => {
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
                                 <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
+                                    <li>
+                                        <Link href="/resources">
+                                            Legislative Instruments
+                                        </Link>
+                                    </li>
                                     <li>
                                         <Link href="/publications">
                                             Publications

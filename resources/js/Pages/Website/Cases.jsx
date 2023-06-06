@@ -21,13 +21,6 @@ import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
 // data
 import "react-responsive-modal/styles.css";
 
-const pageLayout = {
-    transformSize: ({ size }) => ({
-        height: size.height + 20,
-        width: size.width + 20,
-    }),
-};
-
 function Cases({ categories, yearFilters, cases }) {
     const [currentURL, setCurrentURL] = useState();
 
@@ -46,29 +39,33 @@ function Cases({ categories, yearFilters, cases }) {
         <WebsiteLayout page="resource">
             <div className="w-[100%]   bg-white">
                 <div className="px-10 py-16 sm:flex">
-                    <div className="sm:w-[40%] sm:block hidden">
+                    <div className="sm:w-[30%] sm:block hidden">
                         <div className="sm:pr-7">
                             <h2 className="sm:text-3xl ">
                                 Legislative Instruments
                             </h2>
                             <div className="pb-20 sm:pl-3">
-                                {categories?.map((cat) => (
-                                    <p
-                                        key={cat.name}
-                                        className={`${
-                                            cat.slug ===
-                                                currentURL?.split("/")[2] &&
-                                            "font-bold"
-                                        } py-3 text-red-500  duration-700 ease-in-out cursor-pointer hover:text-red-500/90 hover:scale-105 transition`}
-                                    >
-                                        <Link
-                                            href={`/cases/${cat.slug}`}
-                                            preserveScroll
+                                {categories?.map((cat) =>
+                                    cat.cases_count ? (
+                                        <p
+                                            key={cat.name}
+                                            className={`${
+                                                cat.slug ===
+                                                    currentURL?.split("/")[2] &&
+                                                "font-bold"
+                                            } py-3 text-red-500  duration-700 ease-in-out cursor-pointer hover:text-red-500/90 hover:scale-105 transition`}
                                         >
-                                            {`${cat.name} - (${cat.cases_count})`}
-                                        </Link>
-                                    </p>
-                                ))}
+                                            <Link
+                                                href={`/cases/${cat.slug}`}
+                                                preserveScroll
+                                            >
+                                                {`${cat.name} - (${cat.cases_count})`}
+                                            </Link>
+                                        </p>
+                                    ) : (
+                                        ""
+                                    )
+                                )}
                             </div>
                             {yearFilters.length > 0 && (
                                 <div className="px-2 text-center w-[50%] border rounded bg-green-100/20 ">
@@ -94,24 +91,42 @@ function Cases({ categories, yearFilters, cases }) {
                             )}
                         </div>
                     </div>
-                    <div className=" sm:w-[60%]">
-                        <p className="pb-12">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Id, suscipit reiciendis porro laborum
-                            inventore beatae pariatur ex omnis? Voluptatem
-                            consequatur reprehenderit harum enim blanditiis!
-                            Eligendi in laborum tempora eius doloremque?
-                        </p>
+                    <div className=" sm:w-[70%]">
+                        <article className="mb-12">
+                            <p className="">
+                                The Commission upon receiving a petition
+                                undertake through investigations in the matter
+                                engaging all interested parties. On concluding
+                                its investigation, the Commission gives a
+                                determination based on the merits of the case
+                                under consideration.
+                            </p>
+                            <p className="mt-2">
+                                Petitions could be brought by aggrieved
+                                companies or individuals or through the
+                                Commission own initiative. Before the
+                                commencement and conclusion of any investigation
+                                the Commission issue a public notice in the
+                                national gazette as well as a newspaper with
+                                national circulation.
+                            </p>
+                            <p className="mt-6">
+                                Following is a list of completed and ongoing
+                                cases:
+                            </p>
+                        </article>
 
                         <div className="border">
-                            <table className="table-fixed w-[100%] ">
+                            <table className=" table-fixed w-[100%] ">
                                 <thead className="text-left bg-red-100/30">
                                     <tr className="border-b">
                                         <th className="p-3 text-sm">
                                             Investigation Title
                                         </th>
                                         <th className="p-3 text-sm">Inv #</th>
-                                        <th className="p-3 text-sm">Action</th>
+                                        <th className="p-3 text-sm w-[25rem]">
+                                            Action
+                                        </th>
                                         <th className="p-3 text-sm w-[5rem]">
                                             Date Issued
                                         </th>
