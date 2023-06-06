@@ -26,6 +26,7 @@ import "react-responsive-modal/styles.css";
 // Import styles
 import { Link } from "@inertiajs/inertia-react";
 import "@react-pdf-viewer/page-navigation/lib/styles/index.css";
+import { AiOutlineLink } from "react-icons/ai";
 
 const pageLayout = {
     transformSize: ({ size }) => ({
@@ -73,9 +74,12 @@ const Publication = ({ publications }) => {
                                         className="block"
                                     >
                                         <div className="relative">
+                                            <div className=" mx-auto  text-center sm:translate-y-[12rem] translate-y-[9rem] ">
+                                                <AiOutlineLink className="rounded-full translate-x-[9rem] text-white text-[4.5rem] text-center p-6 bg-black/40 hover:bg-black/80" />
+                                            </div>
                                             <img
                                                 src={`/uploads/publications/images/${item.image}`}
-                                                className="object-cover sm:h-[20rem]"
+                                                className="object-cover sm:h-[20rem] "
                                                 alt={item.title}
                                             />
                                             <div className="absolute bottom-0 left-0 bg-primary h-[5rem] w-[5rem]">
@@ -83,9 +87,9 @@ const Publication = ({ publications }) => {
                                                     <div>
                                                         {
                                                             month[
-                                                                new Date(
-                                                                    item.published_date
-                                                                ).getMonth()
+                                                            new Date(
+                                                                item.published_date
+                                                            ).getMonth()
                                                             ]
                                                         }
                                                     </div>
@@ -119,11 +123,10 @@ const Publication = ({ publications }) => {
                                         <Link
                                             preserveScroll
                                             href={`${link.url}`}
-                                            className={`${
-                                                link.active
-                                                    ? "bg-red-400 text-white"
-                                                    : "bg-gray-300"
-                                            } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white`}
+                                            className={`${link.active
+                                                ? "bg-red-400 text-white"
+                                                : "bg-gray-300"
+                                                } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white`}
                                             key={index}
                                             as="button"
                                             type="button"
@@ -138,11 +141,10 @@ const Publication = ({ publications }) => {
                                         <Link
                                             preserveScroll
                                             href={`${link.url}`}
-                                            className={`${
-                                                link.active
-                                                    ? "bg-red-400 text-white"
-                                                    : "bg-gray-300"
-                                            } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white `}
+                                            className={`${link.active
+                                                ? "bg-red-400 text-white"
+                                                : "bg-gray-300"
+                                                } px-4 py-2 text-gray-500 rounded-md hover:bg-red-400 hover:text-white `}
                                             key={index}
                                             disabled
                                             as="button"
