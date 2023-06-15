@@ -1,3 +1,4 @@
+import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 
 const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
@@ -38,7 +39,9 @@ const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
                     </div>
                     <section className="w-[100%]  mt-16 banner__buttons">
                         {buttons.map((btn, index) => (
-                            <button
+                            <Link
+                                href="/story"
+                                as="button"
                                 className={`banner__buttons__btn banner__buttons--solid ${
                                     status === "active"
                                         ? "animate__animated animate__fadeInUp animate__delay-2s"
@@ -47,7 +50,7 @@ const CarouselItem = ({ src, heading, paragraph, buttons, status }) => {
                                 key={index.toString()}
                             >
                                 {btn}
-                            </button>
+                            </Link>
                         ))}
                     </section>
                 </div>

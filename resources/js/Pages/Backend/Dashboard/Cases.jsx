@@ -51,9 +51,9 @@ const Cases = ({ categories }) => {
             category: "required|numeric",
             investigation_number: "required",
             title: "required",
-            pdf: "required",
+            pdf: "",
             description: "",
-            issued_date: "required",
+            issued_date: "",
         },
         submitCaseForm
     );

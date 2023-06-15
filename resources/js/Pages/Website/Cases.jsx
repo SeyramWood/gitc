@@ -42,7 +42,7 @@ function Cases({ categories, yearFilters, cases }) {
                     <div className="sm:w-[30%] sm:block hidden">
                         <div className="sm:pr-7">
                             <h2 className="sm:text-3xl ">
-                                Legislative Instruments
+                                Notices
                             </h2>
                             <div className="pb-20 sm:pl-3">
                                 {categories?.map((cat) =>
@@ -94,25 +94,25 @@ function Cases({ categories, yearFilters, cases }) {
                     <div className=" sm:w-[70%]">
                         <article className="mb-12">
                             <p className="">
-                                The Commission upon receiving a petition
-                                undertake through investigations in the matter
-                                engaging all interested parties. On concluding
-                                its investigation, the Commission gives a
-                                determination based on the merits of the case
-                                under consideration.
+                                The Commission, upon receiving a petition,
+                                undertakes thorough investigation into the
+                                matter engaging all interested parties. On
+                                concluding its investigation, the Commission
+                                gives a determination based on the merits of the
+                                case under consideration.
                             </p>
                             <p className="mt-2">
                                 Petitions could be brought by aggrieved
                                 companies or individuals or through the
                                 Commission own initiative. Before the
                                 commencement and conclusion of any investigation
-                                the Commission issue a public notice in the
+                                the Commissions issues a public notice in the
                                 national gazette as well as a newspaper with
                                 national circulation.
                             </p>
                             <p className="mt-6">
                                 The following is a list of completed and ongoing
-                                cases:
+                                petitions:
                             </p>
                         </article>
 
@@ -144,7 +144,7 @@ function Cases({ categories, yearFilters, cases }) {
                                                         href={`/uploads/cases/${item.pdf}`}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="p-3 text-primary/60 hover:underline"
+                                                        className="text-primary/60 hover:underline"
                                                     >
                                                         {item.title}
                                                     </a>

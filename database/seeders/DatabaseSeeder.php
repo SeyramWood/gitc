@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
                 "slug" => "anti-dumping",
             ],
             [
-                "name" => "(Customs Valuation) (Dispute Settlement) Regulations, 2019 (L.I 2382)",
+                "name" => "Custom Valuation (Dispute Settlement)",
                 "slug" => "customs-valuation",
             ],
             [
@@ -46,6 +46,14 @@ class DatabaseSeeder extends Seeder
             [
                 "name" => "Safeguard Measures",
                 "slug" => "safeguards-measures",
+            ],
+            [
+                "name" => "Tariff Review",
+                "slug" => "tariff-review",
+            ],
+            [
+                "name" => "Stakeholder Consultation",
+                "slug" => "stakeholder-consultation",
             ],
             [
                 "name" => "Miscellaneous",

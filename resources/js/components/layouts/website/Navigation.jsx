@@ -169,7 +169,7 @@ const Navigation = () => {
                                 </li>
                                 <li>
                                     <Link href="/cases/anti-dumping">
-                                        Cases
+                                        Petitions
                                     </Link>
                                 </li>
                             </ul>
@@ -206,7 +206,7 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-light">
                                     <li>
                                         <Link href="/about">Our Team</Link>
                                     </li>
@@ -227,7 +227,7 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-light">
                                     <li>
                                         <Link href="/service/subsidy">
                                             Subsidy and Counter
@@ -269,7 +269,7 @@ const Navigation = () => {
                                 </span>
                             </Link>
                             <div className="absolute  top-[4rem]  dropdown__wrapper">
-                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-thin">
+                                <ul className="bg-white text-tertiary min-w-[15rem] [&>li>a]:text-sm dropdown__list font-light">
                                     <li>
                                         <Link href="/resources">
                                             Legislative Instruments
@@ -282,7 +282,7 @@ const Navigation = () => {
                                     </li>
                                     <li>
                                         <Link href="/cases/anti-dumping">
-                                            Cases
+                                            Petitions
                                         </Link>
                                     </li>
                                 </ul>

@@ -29,10 +29,10 @@ class CasesController extends Controller
     {
         $request->validate([
             'category' => 'required|numeric',
-            'pdf' => 'required',
+            'pdf' => 'nullable',
             'title' => 'required',
             'description' => 'nullable',
-            'issued_date' => 'required',
+            'issued_date' => 'nullable',
             'investigation_number' => 'required'
         ]);
         $pdf = $request->file('pdf');
@@ -67,7 +67,7 @@ class CasesController extends Controller
             'description' => 'nullable',
             'pdf' => 'nullable',
             'investigation_number' => "required",
-            'issued_date' => 'required',
+            'issued_date' => 'nullable',
         ]);
 
         $name = sha1(date('YmdHis') . Str::random(30));

@@ -1,16 +1,16 @@
 import { Link, useForm } from "@inertiajs/inertia-react";
 import AOS from "aos";
-import "aos/dist/aos.css";
-import "keen-slider/keen-slider.min.css";
+import axios from "axios";
 import { useKeenSlider } from "keen-slider/react";
 import React, { useEffect, useState } from "react";
 
+import useFormValidation from "../../components/form/useFormValidation";
 import { WebsiteLayout } from "../../components/layouts";
 import Button from "../../components/layouts/website/Button";
 import ButtonOutline from "../../components/layouts/website/ButtonOutline";
-import axios from "axios";
 
-import useFormValidation from "../../components/form/useFormValidation";
+import "aos/dist/aos.css";
+import "keen-slider/keen-slider.min.css";
 
 const animation = { duration: 40000, easing: (t) => t };
 

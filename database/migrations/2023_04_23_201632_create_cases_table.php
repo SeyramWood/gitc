@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('investigation_number');
             $table->string('title');
             $table->string('description')->nullable();
-            $table->string('pdf');
+            $table->string('pdf')->nullable();
             $table->timestamp('issued_date')->nullable();
             $table->timestamps();
         });

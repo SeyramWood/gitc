@@ -162,7 +162,7 @@ const About = () => {
                                             Our Team
                                         </h1>
                                         <p className="text-black sm:text-[16px] uppercase">
-                                            Meet The Heads Of Departments
+                                            Meet the heads of departments
                                         </p>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@ const About = () => {
                                         Nathan Lartey
                                     </p>
                                     <p>
-                                        Management Information System
+                                        Management Information Systems
                                     </p>
                                 </div>
                             </Link>
