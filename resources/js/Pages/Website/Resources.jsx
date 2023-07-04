@@ -6,11 +6,10 @@ import { getFilePlugin } from "@react-pdf-viewer/get-file";
 import { pageNavigationPlugin } from "@react-pdf-viewer/page-navigation";
 import React, { useState } from "react";
 import { AiOutlineFilePdf, AiOutlineLink } from "react-icons/ai";
-// modal
-import { Modal } from "react-responsive-modal";
+
 
 import { WebsiteLayout } from "../../components/layouts";
-import data from "../../files/resourceFile";
+import data from "../../../../public/pdfFiles/files/resourceFile";
 
 // Import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";
