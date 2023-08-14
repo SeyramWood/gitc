@@ -1,7 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
 
 import { WebsiteLayout } from "../../components/layouts";
-import Paragraph from "../../components/layouts/website/Paragraph";
 
 const About = () => {
     return (
@@ -169,10 +168,6 @@ const About = () => {
                             </div>
 
                         </div>
-                        {/* <h2 className="mb-0 pb-0 text-red-600 text-center sm:text-[4rem]">
-                            Our Team
-                        </h2>
-                        <p className="text-black uppercase">Meet The Heads Of Departments</p> */}
                     </div>
                     <div className="p-4 gap-7 sm:flex">
                         <div className="sm:w-[25%] mx-2 mb-4 transition duration-700 ease-in-out shadow-lg hover:scale-110">

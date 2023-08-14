@@ -1,18 +1,9 @@
-// slider
-// gallery
+
 import React from "react";
 
 import { WebsiteLayout } from "../../components/layouts";
 
 import "keen-slider/keen-slider.min.css";
-// import "../../../css/style.css";
-
-// pdf
-// Import the main component
-// import React, { useState } from "react";
-// modal
-
-// import { WebsiteLayout } from "../../components/layouts";
 
 // Import styles
 import "@react-pdf-viewer/core/lib/styles/index.css";

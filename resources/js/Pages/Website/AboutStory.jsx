@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { WebsiteLayout } from "../../components/layouts";
-import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
-import Paragraph from "../../components/layouts/website/Paragraph";
 import AOS from "aos";
-import { Link } from "@inertiajs/inertia-react";
 import "aos/dist/aos.css";
-import ButtonOutline from "../../components/layouts/website/ButtonOutline";
-import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
 
 
 const AboutMessage = () => {

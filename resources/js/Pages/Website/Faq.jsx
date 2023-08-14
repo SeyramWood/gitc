@@ -1,8 +1,5 @@
 import { WebsiteLayout } from "../../components/layouts";
-import { Link } from "@inertiajs/inertia-react";
-import Paragraph from "../../components/layouts/website/Paragraph";
-import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";
-import HeadingSecondary from "../../components/layouts/website/HeadingSecondary";
+
 const Faq = () => {
     return (
         <WebsiteLayout page="faq">

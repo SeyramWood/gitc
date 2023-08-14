@@ -1,4 +1,4 @@
-import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
+import { AiOutlineFilePdf } from "react-icons/ai";
 
 import { WebsiteLayout } from "../../components/layouts";
 import ServicesNav from "../../components/layouts/website/ServicesNav";

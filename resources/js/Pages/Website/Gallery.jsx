@@ -40,20 +40,6 @@ function Gallery({ albums }) {
             <div className="pb-10 bg-white">
                 {/* gallery */}
                 <div className="">
-                    {/* <div className="h-[15rem] ">
-                        <div className="" >
-                            <img src="images/homePage/headings/GALLERY.jpg" className="object-contain mx-auto " alt="" />
-                            <div className="-translate-y-[13rem]">
-                                <div className="text-center mb-7">
-                                    <h1 className=" mb-0 pb-0 text-[4rem] ">
-                                        Our gallery
-                                    </h1>
-                                    <p className="text-black sm:text-[16px] uppercase">MEETINGS, WORSHSHOPS, COURTESY CALLS</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> */}
 
                     <div className="justify-center pt-16 sm:flex">
                         <div className="grid-cols-3 sm:grid">
@@ -121,13 +107,7 @@ function Gallery({ albums }) {
                                                 </div>
                                             </div>
                                         </div>
-                                        {/* <img
-                                            src={item.imagePath}
-                                            className="object-cover h-[17rem] transition duration-700 ease-in-out hover:scale-110 hover:opacity-75 bg-black/40"
-                                            alt=""
-                                        /> */}
                                     </div>
-                                    {/* <div className="absolute bg-black/40 insect-0"></div> */}
 
                                     <div className="text-center bg-slate-100 p-5  sm:h-[35%]">
                                         <p className="uppercase text-primary ">

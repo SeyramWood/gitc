@@ -1,6 +1,4 @@
 import { WebsiteLayout } from "../../components/layouts";
-import HeadingPrimary from "../../components/layouts/website/HeadingPrimary";;
-import Paragraph from "../../components/layouts/website/Paragraph";
 
 const AboutMessage = () => {
     return (

@@ -1,7 +1,5 @@
 import { WebsiteLayout } from "../../components/layouts";
 import React from "react";
-import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
-import ServiceLinks from "../../components/layouts/website/ServiceLinks";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 
 function ServiceTarrif() {

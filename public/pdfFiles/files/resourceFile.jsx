@@ -7,7 +7,7 @@ const data = [
     {
         id: '2',
         name: 'Ghana International Trade commission Act, 2016 ',
-        pdf: 'pdfFiles/resourcesPdfs/GHANA_INTERNATONAL_TRADE_COMMISSION_ACT_2016 _ ACT_2016.pdf',
+        pdf: 'pdfFiles/resourcesPdfs/GHANA_INTERNATONAL_TRADE_COMMISSION_ACT_2016 _ ACT 2016.pdf',
     },
     {
         id: '3',

@@ -7,26 +7,6 @@ import useFormValidation from "../../components/form/useFormValidation";
 import { useState } from "react";
 
 const Contact = () => {
-    // const { data, setData, post, progress, processing, reset, errors } =
-    //     useForm({
-    //         first_name: "",
-    //         last_name: "",
-    //         email: "",
-    //         phone: "",
-    //         subject: "",
-    //         message: "",
-    //         industry: "",
-    //     });
-
-    // function submit(e) {
-    //     e.preventDefault();
-    //     post(route("contact.store"), {
-    //         data,
-    //         onSuccess: () => {
-    //             reset();
-    //         },
-    //     });
-    // }
     const [successMessage, setSuccessMessage] = useState(false)
 
     const [error, setError] = useState(true)
@@ -188,10 +168,6 @@ const Contact = () => {
                                                             <div className="text-left text-[13px] text-red-600"> {it} </div>
                                                         </>
                                                     ))
-                                                    // <>
-                                                    //     <p className="text-left text-[13px] text-red-600">{it[0]}  {it[1]} </p>
-
-                                                    // </>
                                                 )
                                                 )
                                             }

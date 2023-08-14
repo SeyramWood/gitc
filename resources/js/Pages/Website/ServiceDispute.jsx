@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
+import { AiOutlineFilePdf } from "react-icons/ai";
 import { WebsiteLayout } from "../../components/layouts";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 
@@ -14,15 +14,12 @@ function ServiceDispute() {
                             <h2 className="text-primary text-[3rem] pb-0 ">
                                 Customs Valuation (Dispute Settlement)
                             </h2>
-
-                            {/* <h2 className="text-red-500 text-4xl font-bold mt-20">  Dispute Settlement</h2> */}
                             <div className=" my-10 shadow-xl">
                                 <img
                                     src="/../images/dispute.jpg"
                                     className="overflow-hidden w-full sm:h-[28rem] shadow-xl"
                                     alt=""
                                 />
-                                {/* <img src="i" className="overflow-hidden" alt="image" /> */}
                             </div>
                             <div className="">
                                 <p className="pb-8 ">

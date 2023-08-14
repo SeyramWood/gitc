@@ -1,8 +1,7 @@
 import { WebsiteLayout } from "../../components/layouts";
 
-import { AiOutlineFileWord, AiOutlineFilePdf } from "react-icons/ai";
+import { AiOutlineFilePdf } from "react-icons/ai";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
-import ServiceLinks from "../../components/layouts/website/ServiceLinks";
 
 function ServiceSafeguard() {
     return (

@@ -1,6 +1,5 @@
 import { WebsiteLayout } from "../../components/layouts";
 
-import { AiOutlineFilePdf, AiOutlineFileWord } from "react-icons/ai";
 import ServicesNav from "../../components/layouts/website/ServicesNav";
 
 function ServiceResarch() {

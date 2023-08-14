@@ -91,8 +91,7 @@ const Index = () => {
             s.moveToIdx(s.track.details.abs + 5, true, animation);
         },
     });
-    // old newsletter
-    // const [emailInput, setEmailInput] = useState("");
+    
     const [success, setSuccess] = useState(false)
     const [errorMessage, setErrorMessage] = useState(" ")
 
@@ -167,7 +166,6 @@ const Index = () => {
                                         style={{ borderRadius: "100%" }}
                                     >
                                         <img
-                                            // src="images/homePage/objectivity.png"
                                             src="images/homePage/professionalism.png"
                                             alt="professional"
                                             className="object-contain -translate-x-1 -translate-y-5"
@@ -214,7 +212,6 @@ const Index = () => {
                                         className="sm:bg-black/5"
                                         style={{ borderRadius: "100%" }}
                                     >
-                                        {/* <BiSearchAlt className="w-[7rem] h-[7rem] text-black" /> */}
                                         <img
                                             src="images/homePage/search.png"
                                             alt="Integrity"
@@ -414,14 +411,7 @@ const Index = () => {
                                         backgroundSize: "cover",
                                     }}
                                 >
-                                    {/* <div className="sm:h-[35rem] bg-red-700" >
-                   */}
-                                    {/* <img
-                                        className="sm:hidden opacity-90"
-                                        src="images/homePage/storyOne.jpg"
-                                        alt=""
-                                        style={{}}
-                                    />  */}
+                               
                                 </div>
                                 <div className="bg-white sm:w-[50%] ">
                                     <div
@@ -488,16 +478,6 @@ const Index = () => {
                                     </div>
                                 </div>
 
-                                {/* <div
-                                    className="sm:w-[80rem] sm:h-[40rem] h-52  opacity-60"
-                                    style={{
-                                        backgroundImage:
-                                            "url('/images/homePage/Min.jpg')",
-                                        backgroundAttachment: "fixed",
-                                        objectFit: "fill",
-                                        backgroundRepeat: "round",
-                                    }}
-                                > */}
                                 <div className="sm:w-[50%]">
                                     <img
                                         className="sm:h-[100%] "
@@ -563,17 +543,7 @@ const Index = () => {
                                 </div>
 
                                 <div className="pb-16">
-                                    {/* <form onSubmit={submitEmail} className="sm:w-[40rem]" >
-                                        <input
-                                            onBlur={newsLetter.handleBlur}
-                                            required="required"
-                                            type="email"
-                                            value={newsLetter.state.email}
-                                            name="email"
-                                            onChange={newsLetter.handleChange}
-                                            placeholder="enter your email" />
-                                        <button type="submit" className="p-1 border-red-200 bg-white m-3">Subscribe</button>
-                                    </form> */}
+                                   
                                     <form onSubmit={newsLetter.handleSubmit} className="sm:w-[40rem]">
                                         {success ?
                                             <p className="text-[18px] text-red-600 ">
@@ -597,12 +567,6 @@ const Index = () => {
                                                         onChange={newsLetter.handleChange}
                                                         placeholder="Enter Your Email"
                                                     />
-
-
-                                                    {/* <p className="bg-red-200/80 rounded m-4 text-center text-red-600">
-                                                        You have subscribed to our daily newsletters !!
-                                                    </p> */}
-
                                                     <button type="submit" className="py-2 sm:px-3 px-2 rounded border text-white bg-red-500 hover:bg-red-400 hover:text-white ">Subscribe</button>
 
                                                 </div>

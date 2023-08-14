@@ -37,19 +37,17 @@ function MeasuresFiles() {
     // modal
     const [open, setOpen] = useState(false);
     const [currentFile, setCurrentFile] = useState();
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
+ 
 
     function opneFile(filePath) {
         setCurrentFile(filePath);
         setOpen(true);
     }
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
+    // function onDocumentLoadSuccess({ numPages }) {
+    //     setNumPages(numPages);
+    // }
     // pdf viewer
     const getFilePluginInstance = getFilePlugin();
-    const { DownloadButton } = getFilePluginInstance;
     return (
         <WebsiteLayout page="resource">
             <div className="w-[100%]   bg-white">
